@@ -1,5 +1,8 @@
 {
-  "seo": { "title": "The Curators | HeartLink", "description": "Meet HeartLink founders Gopi Shah and Alpa Apoorva, combining artistic curation with therapeutic counsel." },
+  "seo": {
+    "title": "The Curators | HeartLink",
+    "description": "Meet HeartLink founders Gopi Shah and Alpa Apoorva, combining artistic curation with therapeutic counsel."
+  },
   "hero": {
     "eyebrow": "About the curators",
     "title": "An artist’s eye. A therapist’s <em>understanding.</em>",
@@ -12,7 +15,7 @@
       "eyebrow": "The master artisan of connection",
       "title": "She has always known how to bring separate worlds into harmony.",
       "lead": "Before she curated life partnerships, Gopi Shah curated culture, craft and extraordinary human moments across Mumbai, Chicago and Florida.",
-      "image": "",
+      "image": "/media/gopi-shah.jpg",
       "imageAlt": "Gopi Shah",
       "theme": "plum",
       "paragraphs": [
@@ -21,10 +24,22 @@
         "Today, she applies an artisan’s patience to a more consequential form of composition: threading together two individuals, two families and two futures. Every active HeartLink interaction is personally structured by her."
       ],
       "credentials": [
-        { "title": "Global", "description": "Creative direction and cultural representation across India and the United States" },
-        { "title": "Honoured", "description": "Recipient of the Dr. Sarojini Naidu International Award" },
-        { "title": "Disciplined", "description": "NCC state representative and award-winning .22 calibre rifle shooter" },
-        { "title": "Trusted", "description": "Five years operating Jeevansathi as an honorary matrimonial service" }
+        {
+          "title": "Global",
+          "description": "Creative direction and cultural representation across India and the United States"
+        },
+        {
+          "title": "Honoured",
+          "description": "Recipient of the Dr. Sarojini Naidu International Award"
+        },
+        {
+          "title": "Disciplined",
+          "description": "NCC state representative and award-winning .22 calibre rifle shooter"
+        },
+        {
+          "title": "Trusted",
+          "description": "Five years operating Jeevansathi as an honorary matrimonial service"
+        }
       ]
     },
     {
@@ -33,7 +48,7 @@
       "eyebrow": "The architecture of emotional readiness",
       "title": "A match can be introduced. A relationship must be understood.",
       "lead": "Alpa Apoorva gives HeartLink its profound advisory strength: a compassionate, rigorous understanding of what allows connection to mature into partnership.",
-      "image": "",
+      "image": "/media/alpa-apoorva.png",
       "imageAlt": "Alpa Apoorva",
       "theme": "cyan",
       "paragraphs": [
@@ -42,10 +57,22 @@
         "This is why HeartLink does not simply pursue a successful introduction. It builds a holistic architecture around partner selection, courtship counsel and family guidance, so compatibility can become generational alignment."
       ],
       "credentials": [
-        { "title": "Certified", "description": "Emotional therapy, relationship and transformation coaching" },
-        { "title": "Holistic", "description": "Individual identity, couple dynamics and family systems" },
-        { "title": "Preventive", "description": "Resolving conflict before it becomes disconnection" },
-        { "title": "Continuous", "description": "Support through courtship and the first year of marriage" }
+        {
+          "title": "Certified",
+          "description": "Emotional therapy, relationship and transformation coaching"
+        },
+        {
+          "title": "Holistic",
+          "description": "Individual identity, couple dynamics and family systems"
+        },
+        {
+          "title": "Preventive",
+          "description": "Resolving conflict before it becomes disconnection"
+        },
+        {
+          "title": "Continuous",
+          "description": "Support through courtship and the first year of marriage"
+        }
       ]
     }
   ],
