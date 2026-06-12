@@ -1,22 +1,22 @@
 {
-  "seo": { "title": "Membership & Curation Channels | HeartLink", "description": "Explore HeartLink's four private curation channels. Participation is by invitation only and cannot be purchased directly." },
+  "seo": { "title": "Membership & Curation Channels | HeartLink", "description": "Explore HeartLink's four ways to join, from the open Registry Network to a bespoke global search." },
   "hero": {
     "eyebrow": "Membership & curation channels",
     "title": "Access is considered. Never <em>purchased.</em>",
-    "description": "HeartLink does not sell memberships from a rate card. Following a private review, each accepted family is placed within the channel best suited to the scope and complexity of the mandate."
+    "description": "Anyone may submit a profile to the Registry Network. Families seeking a more active mandate can select the service model that matches the level of search, counsel and principal attention they require."
   },
   "tiers": [
-    { "label": "Channel 01 · Foundational", "title": "The Registry Network", "description": "For considered individuals invited into HeartLink’s protected active circle, with founder-reviewed profile curation and selective introductions.", "features": ["Private compatibility intake", "Founder-reviewed registry access", "Consent-led introductions"], "button": "Request an Invitation", "black": false },
-    { "label": "Channel 02 · Guided", "title": "The Success Tier", "description": "For those seeking a more actively guided path, with expanded search stewardship and advisory support through emerging courtship.", "features": ["Directed partner search", "Compatibility reassessment", "Courtship counsel"], "button": "Request an Invitation", "black": false },
-    { "label": "Channel 03 · Comprehensive", "title": "The Premium Circle", "description": "A whole-family mandate encompassing deep curation, relationship counsel and family integration from first consideration through commitment.", "features": ["Expanded private network", "Pre-marital counselling", "Family guidance protocol"], "button": "Request an Invitation", "black": false },
-    { "label": "Channel 04 · Bespoke", "title": "The Black Tier", "description": "HeartLink’s most discreet and exacting global search, reserved for mandates requiring exceptional privacy, reach and principal-level attention.", "features": ["Bespoke international scouting", "Principal-only communication", "One-year post-marital continuity"], "button": "Request an Invitation", "black": true }
+    { "label": "01 · Open application", "title": "The Registry Network", "description": "Anyone may apply to join HeartLink’s protected registry and be considered for founder-reviewed introductions.", "features": ["Free profile submission", "Founder-reviewed consideration", "Consent-led introductions"], "button": "Submit Your Profile", "tone": "registry", "black": false },
+    { "label": "02 · Success based", "title": "The Success Tier", "description": "No registration or upfront fee. A success fee applies only when your match is made through HeartLink.", "features": ["No upfront registration fee", "Curated introductions", "Fee only on successful match"], "button": "Explore Success Tier", "tone": "success", "black": false },
+    { "label": "03 · Retained search", "title": "The Premium Circle", "description": "For clients who retain HeartLink to actively search, advise and work alongside them throughout the mandate.", "features": ["Active partner search", "Ongoing relationship counsel", "Family guidance protocol"], "button": "Retain HeartLink", "tone": "premium", "black": false },
+    { "label": "04 · Bespoke legacy", "title": "The Black Tier", "description": "Our highest-touch mandate for exceptional profiles requiring discreet outreach, global search and principal-level stewardship.", "features": ["Bespoke international scouting", "Principal-only communication", "Maximum discretion and continuity"], "button": "Request a Private Dialogue", "tone": "black", "black": true }
   ],
   "protocol": {
-    "title": "There is no “buy now” in a decision this consequential.",
+    "title": "A clear model for every kind of search.",
     "paragraphs": [
-      "An invitation reflects mutual suitability: your readiness for the process, our ability to serve the mandate with integrity, and the current composition of the active registry.",
-      "Financial terms are discussed privately only after the appropriate curation channel has been established. Payment can never secure acceptance."
+      "The Registry Network is open for profile submissions. Paid channels provide progressively deeper search stewardship; they do not purchase a match or bypass mutual consent.",
+      "Terms for the Success, Premium and Black tiers are discussed privately after HeartLink understands the mandate."
     ]
   },
-  "closing": { "eyebrow": "Private admissions", "quote": "Begin with an introduction, not a biodata sheet.", "button": "Request an Invitation" }
+  "closing": { "eyebrow": "Start where you are", "quote": "Submit a profile or begin a private service conversation.", "button": "Explore Your Options" }
 }

@@ -3,63 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Request a private invitation to HeartLink. Begin with verified LinkedIn and Instagram profiles rather than a traditional biodata sheet.">
+  <meta name="description" content="Submit a profile for yourself or a family member to HeartLink's private registry.">
   <meta name="theme-color" content="#2C052E">
-  <title>Private Application | HeartLink</title>
+  <title>Apply to HeartLink | Private Registry</title>
   <link rel="icon" href="/Heartlink%20Logo.png">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=2">
 </head>
 <body>
   <header data-site-header></header>
   <main class="application-shell">
     <section class="application-intro">
       <div>
-        <span class="eyebrow">Private admissions</span>
-        <h1>Begin with who you are <span class="accent">now.</span></h1>
-        <p>No lengthy biodata is required at this stage. A concise introduction and your established digital presence allow the private desk to begin a more human, contextual review.</p>
+        <span class="eyebrow">Private registry application</span>
+        <h1>Introduce the person, <span class="accent">not just a profile.</span></h1>
+        <p>Apply for yourself or on behalf of someone you care for. The private desk uses this first submission to understand the applicant, family context and preferred service channel.</p>
+        <div class="form-switch"><a class="button" href="#application-form">Apply to the Registry</a><a class="button button-outline" href="/contact">Contact Us</a></div>
       </div>
       <div class="protocol-list">
-        <div><strong>01</strong><span>Digital introduction</span></div>
-        <div><strong>02</strong><span>Private verification</span></div>
-        <div><strong>03</strong><span>Invitation dialogue</span></div>
+        <div><strong>01</strong><span>Applicant details</span></div>
+        <div><strong>02</strong><span>Private review</span></div>
+        <div><strong>03</strong><span>Direct dialogue</span></div>
       </div>
     </section>
 
-    <section class="form-panel">
-      <span class="eyebrow">Step one · Confidential introduction</span>
-      <p>Fields marked required are necessary to establish a secure verification dialogue. Your information is never added to a public directory.</p>
-      <form id="private-application" class="form-grid">
-        <div class="field"><label for="name">Full name · Required</label><input id="name" name="name" autocomplete="name" required placeholder="Your full name"></div>
-        <div class="field"><label for="age">Age bracket</label><select id="age" name="age"><option value="">Prefer not to say yet</option><option>25–29</option><option>30–34</option><option>35–39</option><option>40–49</option><option>50+</option></select></div>
-        <div class="field"><label for="email">Private email · Required</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+    <section class="form-panel" id="application-form">
+      <span class="eyebrow">Confidential registry application</span>
+      <p>Fields marked required help us verify the applicant and contact the right family member. Information is never placed in a public directory.</p>
+      <form id="private-application" class="form-grid" data-submission-type="application">
+        <fieldset class="form-section">
+          <legend>Who is completing this form?</legend>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="applyingFor" value="self" required checked><span>I am applying for myself</span></label>
+            <label class="choice"><input type="radio" name="applyingFor" value="someone-else" required><span>I am applying for someone else</span></label>
+          </div>
+        </fieldset>
+
+        <div class="form-section-title"><span>01</span><div><strong>Applicant details</strong><small>The person seeking a match</small></div></div>
+        <div class="field"><label for="applicantName">Applicant full name · Required</label><input id="applicantName" name="applicantName" autocomplete="name" required></div>
+        <div class="field"><label for="age">Age bracket · Required</label><select id="age" name="age" required><option value="">Select</option><option>25–29</option><option>30–34</option><option>35–39</option><option>40–49</option><option>50+</option></select></div>
+        <div class="field field-full"><label for="address">Current address / city · Required</label><input id="address" name="address" autocomplete="street-address" required placeholder="City, state and country"></div>
+        <div class="field"><label for="company">Company / organisation</label><input id="company" name="company" autocomplete="organization"></div>
+        <div class="field"><label for="designation">Designation / profession</label><input id="designation" name="designation" autocomplete="organization-title"></div>
+        <div class="field"><label for="linkedin">LinkedIn URL</label><input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/..."></div>
+        <div class="field"><label for="instagram">Instagram URL</label><input id="instagram" name="instagram" type="url" placeholder="https://instagram.com/..."></div>
+        <div class="field field-full"><label for="introduction">A few words about the applicant</label><textarea id="introduction" name="introduction" maxlength="1200" placeholder="What matters to them, and what are they hoping to build with a partner?"></textarea></div>
+
+        <div class="form-section-title"><span>02</span><div><strong>Primary contact</strong><small>The person HeartLink should speak with</small></div></div>
+        <div class="field"><label for="contactName">Contact full name · Required</label><input id="contactName" name="contactName" autocomplete="name" required></div>
+        <div class="field"><label for="relationship">Relationship to applicant · Required</label><input id="relationship" name="relationship" required placeholder="Self, mother, father, sibling..."></div>
+        <div class="field"><label for="email">Email · Required</label><input id="email" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label for="phone">Mobile / WhatsApp · Required</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 00000 00000"></div>
-        <div class="field"><label for="city">Current city · Required</label><input id="city" name="city" autocomplete="address-level2" required placeholder="Mumbai"></div>
-        <div class="field"><label for="referral">How did you hear of us?</label><select id="referral" name="referral"><option value="">Select one</option><option>Private referral</option><option>HeartLink digital channel</option><option>Press or event</option><option>Professional advisor</option><option>Other</option></select></div>
-        <div class="field"><label for="linkedin">LinkedIn URL · Required</label><input id="linkedin" name="linkedin" type="url" required pattern="https?://(www\.)?linkedin\.com/.*" placeholder="https://linkedin.com/in/…"></div>
-        <div class="field"><label for="instagram">Instagram URL · Required</label><input id="instagram" name="instagram" type="url" required pattern="https?://(www\.)?instagram\.com/.*" placeholder="https://instagram.com/…"></div>
-        <div class="field field-full"><label for="introduction">A few words about the life you are building</label><textarea id="introduction" name="introduction" maxlength="700" placeholder="Tell us what matters to you now, and what you hope partnership will make possible."></textarea></div>
-        <div class="verification-note"><strong>Entry protocol:</strong> Following HeartLink’s official digital channels and establishing a direct verification dialogue are required components of admission. This protects the integrity of the registry and ensures every applicant enters through a consistent, human-reviewed process.</div>
-        <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I confirm that these profiles are my own, consent to confidential review by the HeartLink private desk, and understand that submission does not guarantee an invitation.</span></label>
-        <button class="button" type="submit">Submit Private Introduction</button>
-        <p id="form-status" role="alert" aria-live="polite"></p>
+
+        <div class="form-section-title"><span>03</span><div><strong>Family details</strong><small>Optional at this first stage</small></div></div>
+        <div class="field"><label for="motherName">Mother’s name</label><input id="motherName" name="motherName"></div>
+        <div class="field"><label for="motherWork">Mother’s company and designation</label><input id="motherWork" name="motherWork"></div>
+        <div class="field"><label for="fatherName">Father’s name</label><input id="fatherName" name="fatherName"></div>
+        <div class="field"><label for="fatherWork">Father’s company and designation</label><input id="fatherWork" name="fatherWork"></div>
+
+        <div class="form-section-title"><span>04</span><div><strong>Service interest</strong><small>Select one or more</small></div></div>
+        <fieldset class="form-section">
+          <legend class="sr-only">Membership interests</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="membershipInterest" value="Registry Network"><span><strong>Registry Network</strong>Free profile submission</span></label>
+            <label class="choice"><input type="checkbox" name="membershipInterest" value="Success Tier"><span><strong>Success Tier</strong>No upfront fee</span></label>
+            <label class="choice"><input type="checkbox" name="membershipInterest" value="Premium Circle"><span><strong>Premium Circle</strong>Retained active search</span></label>
+            <label class="choice"><input type="checkbox" name="membershipInterest" value="Black Tier"><span><strong>Black Tier</strong>Bespoke legacy mandate</span></label>
+          </div>
+        </fieldset>
+
+        <div class="verification-note"><strong>Entry protocol:</strong> Every submission is reviewed by a person. HeartLink may contact the nominated representative to verify identity, intent and the most suitable service channel before presenting any profile.</div>
+        <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I confirm that I am authorised to submit these details, consent to confidential review by HeartLink, and understand that submission does not guarantee an introduction or acceptance into a paid mandate.</span></label>
+        <button class="button" type="submit">Submit Registry Application</button>
+        <p class="form-status" role="alert" aria-live="polite"></p>
       </form>
 
-      <div style="margin-top:100px">
+      <div class="faq-block">
         <span class="eyebrow">Before you begin</span>
-        <div class="accordion">
-          <div class="accordion-item" data-accordion>
-            <button type="button" aria-expanded="false"><span>Who will see my information?</span><span>+</span></button>
-            <div class="accordion-content"><p>Your initial submission is reviewed only by HeartLink’s private admissions desk and its principals. It is not published, indexed or shared with prospective matches.</p></div>
-          </div>
-          <div class="accordion-item" data-accordion>
-            <button type="button" aria-expanded="false"><span>Why are social profiles required?</span><span>+</span></button>
-            <div class="accordion-content"><p>Established professional and social profiles offer a lighter, more natural first layer of identity verification and context than demanding a long biodata document before a relationship with the firm exists.</p></div>
-          </div>
-          <div class="accordion-item" data-accordion>
-            <button type="button" aria-expanded="false"><span>What happens after submission?</span><span>+</span></button>
-            <div class="accordion-content"><p>If the mandate appears aligned with our current registry and advisory capacity, the private desk will establish a direct verification dialogue before any invitation or commercial discussion.</p></div>
-          </div>
-        </div>
+        <div class="accordion"></div>
       </div>
     </section>
   </main>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact HeartLink's private desk.">
+  <meta name="theme-color" content="#2C052E">
+  <title>Contact HeartLink | Private Enquiries</title>
+  <link rel="icon" href="/Heartlink%20Logo.png">
+  <link rel="stylesheet" href="/styles.css?v=2">
+</head>
+<body>
+  <header data-site-header></header>
+  <main>
+    <section class="page-hero compact-hero">
+      <div class="hero-inner"><span class="eyebrow">Contact the private desk</span><h1>A simple first <span class="accent">conversation.</span></h1><p class="hero-copy">Not ready to submit a full registry application? Tell us who you are and what you would like to understand.</p></div>
+    </section>
+    <section class="section surface">
+      <div class="form-card section-narrow">
+        <span class="eyebrow">General enquiry</span>
+        <h2>How can we help?</h2>
+        <p>A member of the private desk will route your enquiry to the right person.</p>
+        <form class="form-grid" data-submission-type="contact">
+          <div class="field"><label for="name">Full name · Required</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email · Required</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="phone">Phone number · Required</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="enquiryRole">I am a... · Required</label><select id="enquiryRole" name="enquiryRole" required><option value="">Select</option><option>Potential applicant</option><option>Mother or father of a potential applicant</option><option>Partner matchmaker</option><option>Other</option></select></div>
+          <div class="field field-full"><label for="message">What would you like to know?</label><textarea id="message" name="message" maxlength="1200"></textarea></div>
+          <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I consent to HeartLink using these details to respond to my enquiry.</span></label>
+          <button class="button" type="submit">Send Enquiry</button>
+          <p class="form-status" role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer data-site-footer></footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

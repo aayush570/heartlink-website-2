@@ -9,6 +9,7 @@
   "pressEmail": "press@heartlink.in",
   "careersEmail": "careers@heartlink.in",
   "privacyEmail": "privacy@heartlink.in",
+  "partnershipsEmail": "partnerships@heartlink.in",
   "locations": "Mumbai · India · Global",
   "footerStatement": "Some introductions change a life.<br>Ours are designed to unite legacies.",
   "navigation": [
@@ -17,6 +18,7 @@
     { "href": "/methodology", "label": "Methodology" },
     { "href": "/membership", "label": "Membership" },
     { "href": "/impact", "label": "Impact & Press" },
+    { "href": "/partnerships", "label": "Partnerships" },
     { "href": "/careers", "label": "Careers" }
   ]
 }

@@ -55,6 +55,7 @@ content:
       - { name: pressEmail, label: Press email, type: string }
       - { name: careersEmail, label: Careers email, type: string }
       - { name: privacyEmail, label: Privacy email, type: string }
+      - { name: partnershipsEmail, label: Partnerships email, type: string }
       - { name: locations, label: Footer locations, type: string }
       - { name: footerStatement, label: Footer statement, type: text, description: Use <br> where you want a line break. }
       - name: navigation
@@ -96,6 +97,16 @@ content:
           - { name: title, label: Title, type: string }
           - { name: description, label: Description, type: text }
           - { name: linkText, label: Link text, type: string }
+      - name: proof
+        label: Credibility numbers
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{value} · {label}"
+        fields:
+          - { name: value, label: Value, type: string }
+          - { name: label, label: Caption, type: string }
       - name: advantage
         label: Comparison grid
         type: object
@@ -115,13 +126,8 @@ content:
               - { name: explanation, label: Explanation, type: text }
               - { name: apps, label: Dating apps, type: string, description: Separate the bold heading and detail with a | character. }
               - { name: diy, label: DIY search, type: string, description: Separate the bold heading and detail with a | character. }
+              - { name: matchmakers, label: Matchmakers, type: string, description: Separate the bold heading and detail with a | character. }
               - { name: heartlink, label: HeartLink, type: string, description: Separate the bold heading and detail with a | character. }
-      - name: philosophy
-        label: Philosophy quote
-        type: object
-        fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: quote, label: Quote, type: text }
       - name: dimensions
         label: Three dimensions
         type: object
@@ -218,6 +224,7 @@ content:
           - { name: description, label: Description, type: text }
           - { name: features, label: Included features, type: string, list: true }
           - { name: button, label: Button text, type: string }
+          - { name: tone, label: Colour treatment, type: string, description: Use registry, success, premium, or black. }
           - { name: black, label: Use Black Tier styling, type: boolean }
       - name: protocol
         label: Admissions explanation
@@ -341,7 +348,7 @@ content:
           - { name: answer, label: Answer, type: text }
 
   - name: privacy
-    label: "08 · Privacy"
+    label: "10 · Privacy"
     type: file
     path: public/content/privacy.json
     format: json
@@ -355,6 +362,46 @@ content:
           - { name: title, label: Section title, type: string }
           - { name: lead, label: Lead statement, type: text }
           - { name: paragraphs, label: Paragraphs, type: text, list: true }
+
+  - name: contact
+    label: "08 · Contact"
+    type: file
+    path: public/content/contact.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: form
+        label: Contact form
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: introduction, label: Introductory text, type: text }
+          - { name: button, label: Button text, type: string }
+
+  - name: partnerships
+    label: "09 · Partnerships"
+    type: file
+    path: public/content/partnerships.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: models
+        label: Partnership models
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: cards, label: Partnership cards, component: card, list: true }
+      - name: form
+        label: Partnership form
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: introduction, label: Introductory text, type: text }
+          - { name: button, label: Button text, type: string }
 
 settings:
   content:

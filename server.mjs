@@ -23,8 +23,10 @@ const pageRoutes = new Map([
   ["/methodology", "methodology.html"],
   ["/membership", "membership.html"],
   ["/impact", "impact.html"],
+  ["/partnerships", "partnerships.html"],
   ["/careers", "careers.html"],
-  ["/apply", "apply.html"]
+  ["/apply", "apply.html"],
+  ["/contact", "contact.html"]
 ]);
 
 function sendJson(response, status, body) {
@@ -44,37 +46,118 @@ async function readBody(request) {
   return JSON.parse(body);
 }
 
-function validApplication(data) {
-  const required = ["name", "email", "phone", "city", "linkedin", "instagram", "consent"];
-  return required.every((key) => data[key]) &&
+const submissionRequirements = {
+  application: ["applicantName", "age", "address", "contactName", "relationship", "email", "phone", "consent"],
+  contact: ["name", "email", "phone", "enquiryRole", "consent"],
+  partnership: ["name", "practice", "email", "phone", "partnershipType", "consent"]
+};
+
+function validSubmission(data) {
+  const required = submissionRequirements[data.type];
+  return required &&
+    required.every((key) => data[key]) &&
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) &&
-    /^https?:\/\/(www\.)?linkedin\.com\//i.test(data.linkedin) &&
-    /^https?:\/\/(www\.)?instagram\.com\//i.test(data.instagram);
+    String(data.phone).replace(/\D/g, "").length >= 7;
 }
 
-async function handleApplication(request, response) {
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function submissionRows(submission) {
+  return Object.entries(submission)
+    .filter(([key]) => !["consent"].includes(key))
+    .map(([key, value]) => `<tr><th style="padding:8px;text-align:left;vertical-align:top">${escapeHtml(key)}</th><td style="padding:8px">${escapeHtml(Array.isArray(value) ? value.join(", ") : value)}</td></tr>`)
+    .join("");
+}
+
+async function storeInSupabase(record) {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return false;
+
+  const response = await fetch(`${url.replace(/\/$/, "")}/rest/v1/submissions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: key,
+      Authorization: `Bearer ${key}`,
+      Prefer: "return=minimal"
+    },
+    body: JSON.stringify(record)
+  });
+  if (!response.ok) throw new Error("Database delivery failed");
+  return true;
+}
+
+async function sendNotification(record) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const recipient = process.env.HEARTLINK_NOTIFICATION_EMAIL;
+  const sender = process.env.HEARTLINK_FROM_EMAIL;
+  if (!apiKey || !recipient || !sender) return false;
+
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      from: sender,
+      to: [recipient],
+      reply_to: record.payload.email,
+      subject: `HeartLink ${record.submission_type} submission · ${record.reference}`,
+      html: `<h1>New HeartLink submission</h1><p><strong>Reference:</strong> ${escapeHtml(record.reference)}</p><table style="border-collapse:collapse">${submissionRows(record.payload)}</table>`
+    })
+  });
+  if (!response.ok) throw new Error("Email notification failed");
+  return true;
+}
+
+async function handleSubmission(request, response) {
   try {
-    const application = await readBody(request);
-    if (!validApplication(application)) {
-      return sendJson(response, 422, { message: "Please complete every required field with valid profile URLs." });
+    const submission = await readBody(request);
+    if (!validSubmission(submission)) {
+      return sendJson(response, 422, { message: "Please complete every required field with valid contact details." });
     }
 
     const reference = `HL-${new Date().getUTCFullYear()}-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
+    const submittedAt = new Date().toISOString();
+    const record = {
+      reference,
+      submission_type: submission.type,
+      submitted_at: submittedAt,
+      payload: submission
+    };
     const webhook = process.env.HEARTLINK_APPLICATION_WEBHOOK;
+    const hasSupabase = Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+    const hasResend = Boolean(process.env.RESEND_API_KEY && process.env.HEARTLINK_NOTIFICATION_EMAIL && process.env.HEARTLINK_FROM_EMAIL);
 
     if (webhook) {
       const delivery = await fetch(webhook, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...application, reference, submittedAt: new Date().toISOString() })
+        body: JSON.stringify(record)
       });
       if (!delivery.ok) throw new Error("Application delivery failed");
-    } else if (isProduction) {
+    }
+
+    const [stored, notified] = await Promise.all([
+      storeInSupabase(record),
+      sendNotification(record)
+    ]);
+
+    if (isProduction && !webhook && (!hasSupabase || !hasResend || !stored || !notified)) {
       return sendJson(response, 503, { message: "The private desk is temporarily unavailable. Please try again shortly." });
     }
 
     return sendJson(response, 202, {
-      message: "Your private introduction has been received.",
+      message: submission.type === "application" ? "Your registry application has been received." : "Your enquiry has been received.",
       reference
     });
   } catch (error) {
@@ -89,7 +172,7 @@ async function serveFile(response, filePath) {
     if (!fileStat.isFile()) throw new Error("Not found");
     const data = await readFile(filePath);
     const extension = extname(filePath);
-    const cache = [".html", ".json"].includes(extension) ? "no-cache" : "public, max-age=604800";
+    const cache = [".html", ".json", ".css", ".js"].includes(extension) ? "no-cache" : "public, max-age=604800";
     response.writeHead(200, {
       "Content-Type": types[extname(filePath)] || "application/octet-stream",
       "Cache-Control": cache,
@@ -108,8 +191,8 @@ async function serveFile(response, filePath) {
 createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host}`);
 
-  if (request.method === "POST" && url.pathname === "/api/applications") {
-    return handleApplication(request, response);
+  if (request.method === "POST" && ["/api/submissions", "/api/applications"].includes(url.pathname)) {
+    return handleSubmission(request, response);
   }
 
   if (!["GET", "HEAD"].includes(request.method)) {

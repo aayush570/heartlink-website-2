@@ -20,7 +20,9 @@ Pages CMS will automatically read `.pages.yml` from the root of the repository. 
 - `05 · Impact & Press`
 - `06 · Careers`
 - `07 · Private Application`
-- `08 · Privacy`
+- `08 · Contact`
+- `09 · Partnerships`
+- `10 · Privacy`
 
 ## Edit and publish
 
@@ -63,13 +65,19 @@ The CMS controls content, images, contact details, navigation labels, lists, and
 
 ## Important application-form note
 
-Website applications are delivered to the URL configured in Vercel as:
+Website applications and enquiries are stored in Supabase and emailed through Resend. Configure these server-only values in Vercel:
 
 ```text
-HEARTLINK_APPLICATION_WEBHOOK
+SUPABASE_URL
+SUPABASE_SERVICE_ROLE_KEY
+RESEND_API_KEY
+HEARTLINK_NOTIFICATION_EMAIL
+HEARTLINK_FROM_EMAIL
 ```
 
-This can point to Zapier, Make, a CRM, Airtable automation, or another secure endpoint. Do not place private applicant data in Pages CMS or a public content file.
+Run `supabase-schema.sql` once in the Supabase SQL editor before accepting production submissions. `HEARTLINK_APPLICATION_WEBHOOK` can still be added for Zapier, Make, a CRM, or another secure endpoint.
+
+Never place private applicant data or any service-role/API key in Pages CMS, `public/content`, or another browser-visible file.
 
 ## Undo a mistake
 

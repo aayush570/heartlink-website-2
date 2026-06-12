@@ -21,9 +21,21 @@ Open `http://localhost:4173`.
 ## Production
 
 ```bash
-PORT=4173 HEARTLINK_APPLICATION_WEBHOOK=https://your-secure-endpoint.example npm start
+PORT=4173 \
+SUPABASE_URL=https://your-project.supabase.co \
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key \
+RESEND_API_KEY=re_your_key \
+HEARTLINK_NOTIFICATION_EMAIL=you@example.com \
+HEARTLINK_FROM_EMAIL="HeartLink Website <website@your-verified-domain.com>" \
+npm start
 ```
 
-The server forwards validated application submissions to `HEARTLINK_APPLICATION_WEBHOOK`. In development, submissions are accepted without persistence so the flow can be tested safely. In production, the endpoint returns a temporary-unavailable response until a webhook is configured.
+The server supports registry applications, general enquiries, and partnership enquiries. For a free production setup:
 
-The webhook receives JSON containing the application fields, a private reference, and an ISO submission timestamp.
+1. Create a free Supabase project and run [`supabase-schema.sql`](./supabase-schema.sql) in its SQL editor.
+2. Create a free Resend account and verify the sending domain.
+3. Add the five environment variables above to Vercel.
+
+Submissions are stored in the private Supabase `submissions` table and emailed through Resend. The service-role key is server-only and must never use a `NEXT_PUBLIC_` or other browser-exposed prefix.
+
+`HEARTLINK_APPLICATION_WEBHOOK` remains supported as an optional alternative or additional delivery path.

@@ -15,25 +15,27 @@
   },
   "registry": {
     "eyebrow": "The active registry",
-    "number": "30–50",
-    "title": "Exclusivity is not a promise. It is an operating principle.",
-    "description": "At any single period, HeartLink strictly limits its active global registry to a maximum of 30 to 50 applications. Every introduction, conversation and reassessment is structured exclusively by Gopi Shah, protecting the depth of judgment that cannot be delegated or automated.",
+    "number": "50",
+    "title": "Exclusivity is not just a promise. <em>It’s our operating principle.</em>",
+    "description": "At any single period, HeartLink limits its active global registry to 50 profiles. Every introduction, conversation and reassessment is structured by Gopi Shah, protecting the depth of judgment that cannot be delegated or automated.",
     "linkText": "Meet the woman behind every introduction"
   },
+  "proof": [
+    { "value": "50", "label": "Maximum active profiles" },
+    { "value": "7", "label": "Stages of considered counsel" },
+    { "value": "1 year", "label": "Post-marital continuity" },
+    { "value": "Global", "label": "Private search reach" }
+  ],
   "advantage": {
     "eyebrow": "The strategic advantage",
     "title": "Beyond discovery. Toward discernment.",
     "description": "Most platforms increase the number of people you encounter. HeartLink increases the quality of the decision you make.",
     "rows": [
-      { "subject": "Selection logic", "explanation": "The intelligence behind who enters your consideration.", "apps": "Algorithmic|Optimised for engagement", "diy": "Intuitive|Limited by personal reach", "heartlink": "Human curation|Founder-led and contextual" },
-      { "subject": "Family alignment", "explanation": "Values, expectations and generational context.", "apps": "—|Rarely considered", "diy": "○|Usually informal", "heartlink": "●|Architected from day one" },
-      { "subject": "Continuity of care", "explanation": "Support beyond the first introduction.", "apps": "—|Ends at connection", "diy": "—|No formal support", "heartlink": "●|Through one year of marriage" },
-      { "subject": "Privacy protocol", "explanation": "How identity and intent are protected.", "apps": "Public-facing|Profile-led discovery", "diy": "Variable|Trust is self-managed", "heartlink": "Mutual consent|Controlled identity disclosure" }
+      { "subject": "Selection logic", "explanation": "Who enters consideration.", "heartlink": "Human curation|Founder-led and contextual", "matchmakers": "Network-led|Varies by individual practice", "apps": "Algorithmic|Optimised for engagement", "diy": "Intuitive|Limited by personal reach" },
+      { "subject": "Family alignment", "explanation": "Values and generational context.", "heartlink": "Built in|Architected from day one", "matchmakers": "Variable|Often introduced later", "apps": "Rare|Usually outside the model", "diy": "Informal|Handled personally" },
+      { "subject": "Continuity of care", "explanation": "Support after introduction.", "heartlink": "Continuous|Through one year of marriage", "matchmakers": "Limited|Commonly ends at commitment", "apps": "None|Ends at connection", "diy": "None|No formal support" },
+      { "subject": "Privacy protocol", "explanation": "How identity is protected.", "heartlink": "Mutual consent|Controlled disclosure", "matchmakers": "Practice-led|Standards may differ", "apps": "Public-facing|Profile-led discovery", "diy": "Variable|Trust is self-managed" }
     ]
-  },
-  "philosophy": {
-    "eyebrow": "Our philosophy",
-    "quote": "“Compatibility begins with two people. Enduring harmony requires an understanding of the worlds they each bring with them.”"
   },
   "dimensions": {
     "eyebrow": "One advisory. Three dimensions.",

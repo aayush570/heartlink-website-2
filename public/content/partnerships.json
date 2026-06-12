@@ -1,0 +1,26 @@
+{
+  "seo": {
+    "title": "Matchmaker Partnerships | HeartLink",
+    "description": "Partner with HeartLink on profile matching, referrals and operating under the HeartLink advisory umbrella."
+  },
+  "hero": {
+    "eyebrow": "Partnerships",
+    "title": "Trusted networks. A stronger <em>standard.</em>",
+    "description": "HeartLink works with established matchmakers and trusted connectors when shared judgment, discretion and complementary networks can create a better outcome."
+  },
+  "models": {
+    "eyebrow": "Ways to work together",
+    "title": "Collaborate without compromising trust.",
+    "description": "Every partnership begins with alignment on privacy, consent and client care.",
+    "cards": [
+      { "label": "01 · Profile collaboration", "title": "Work together on a match.", "description": "Share selected, consented opportunities across trusted networks while each advisor protects their client relationship." },
+      { "label": "02 · Referral partnership", "title": "Refer a mandate with confidence.", "description": "Introduce clients whose needs fit HeartLink’s curation or advisory model through a clear and discreet referral process." },
+      { "label": "03 · HeartLink network", "title": "Operate within our umbrella.", "description": "Experienced matchmakers may explore joining HeartLink’s standards, systems and wider network as an aligned partner." }
+    ]
+  },
+  "form": {
+    "eyebrow": "Partnership introduction",
+    "introduction": "Tell us about your practice, network and the kind of collaboration you have in mind.",
+    "button": "Introduce Your Practice"
+  }
+}

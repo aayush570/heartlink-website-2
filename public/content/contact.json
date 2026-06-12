@@ -1,0 +1,16 @@
+{
+  "seo": {
+    "title": "Contact HeartLink | Private Enquiries",
+    "description": "Contact HeartLink for applicant, parent, matchmaker and general partnership enquiries."
+  },
+  "hero": {
+    "eyebrow": "Contact the private desk",
+    "title": "A simple first <em>conversation.</em>",
+    "description": "Not ready to submit a full registry application? Tell us who you are and what you would like to understand."
+  },
+  "form": {
+    "eyebrow": "General enquiry",
+    "introduction": "A member of the private desk will route your enquiry to the right person.",
+    "button": "Send Enquiry"
+  }
+}
