@@ -1,0 +1,16 @@
+{
+  "seo": { "title": "Privacy Protocol | HeartLink", "description": "How HeartLink protects applicant and member information." },
+  "hero": {
+    "eyebrow": "Privacy protocol",
+    "title": "Discretion, made <em>operational.</em>",
+    "description": "HeartLink collects only the information required to assess and serve a private mandate. Identity is never displayed in a public directory."
+  },
+  "content": {
+    "title": "Our working principles",
+    "lead": "Private information is not inventory. It is entrusted context.",
+    "paragraphs": [
+      "Application details are reviewed for admissions and verification purposes. Prospective introductions receive information only through controlled, consent-led disclosure. HeartLink does not sell applicant data or use it for public advertising profiles.",
+      "Applicants may request access, correction or deletion of submitted information by writing to the privacy desk."
+    ]
+  }
+}

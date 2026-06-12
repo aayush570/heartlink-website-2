@@ -1,0 +1,23 @@
+{
+  "seo": { "title": "The Methodology | HeartLink", "description": "Explore HeartLink's seven-step architectural process for partner selection, courtship, family guidance and post-marital support." },
+  "hero": {
+    "eyebrow": "The methodology",
+    "title": "Not a funnel. A seven-part <em>architecture.</em>",
+    "description": "A private, living process that evolves as two people move from consideration to commitment, and as two families learn to move together."
+  },
+  "steps": [
+    { "label": "Foundation · Selection", "number": "01", "title": "Personalised Partner Selection", "description": "We begin beyond the checklist. Personality, patterns, priorities, preferences, family dynamics and the life each person is actually building become the basis for a highly considered search." },
+    { "label": "Composition · Curation", "number": "02", "title": "Profile Presentation", "description": "Only carefully selected possibilities are presented. We consider mental, emotional, intellectual and social alignment, then offer the context required to see the person rather than merely scan a profile." },
+    { "label": "Observation · Reassessment", "number": "03", "title": "Compatibility Reassessment", "description": "Once two individuals connect, theory gives way to lived chemistry. We reassess organic compatibility, observing the ease, curiosity and priorities emerging between them." },
+    { "label": "Dialogue · Counsel", "number": "04", "title": "Courtship Counselling", "description": "Alpa creates a confidential space for honest conversation: how each person gives and receives care, handles difference, defines partnership and recognises whether their needs are truly being met." },
+    { "label": "Readiness · Clarity", "number": "05", "title": "Pre-Marital Counselling", "description": "Before celebration comes clarity. Bride and groom explore rights, responsibilities, emotional labour, personal ambition, finances, boundaries and the expectations that shape everyday married life." },
+    { "label": "Integration · Family", "number": "06", "title": "Family Guidance", "description": "We work thoughtfully with both families to create mutual respect, navigate the wedding process and establish the deeper understanding upon which long-term family integration depends." },
+    { "label": "Continuity · First year", "number": "07", "title": "Post-Marital Support", "description": "For up to one year, HeartLink remains close. We support the couple through personal, professional and social transitions, helping a new marriage find its own confident rhythm." }
+  ],
+  "closing": {
+    "eyebrow": "The constant throughout",
+    "title": "One relationship. One continuous line of counsel.",
+    "description": "You are never passed from sales to matching to support. Context is preserved, judgment compounds and confidentiality remains intact.",
+    "button": "Request an Invitation"
+  }
+}

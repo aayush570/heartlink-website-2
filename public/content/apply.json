@@ -1,0 +1,25 @@
+{
+  "seo": { "title": "Private Application | HeartLink", "description": "Request a private invitation to HeartLink. Begin with verified LinkedIn and Instagram profiles rather than a traditional biodata sheet." },
+  "intro": {
+    "eyebrow": "Private admissions",
+    "title": "Begin with who you are <em>now.</em>",
+    "description": "No lengthy biodata is required at this stage. A concise introduction and your established digital presence allow the private desk to begin a more human, contextual review.",
+    "protocol": [
+      { "number": "01", "label": "Digital introduction" },
+      { "number": "02", "label": "Private verification" },
+      { "number": "03", "label": "Invitation dialogue" }
+    ]
+  },
+  "form": {
+    "eyebrow": "Step one · Confidential introduction",
+    "introduction": "Fields marked required are necessary to establish a secure verification dialogue. Your information is never added to a public directory.",
+    "verificationNote": "Following HeartLink’s official digital channels and establishing a direct verification dialogue are required components of admission. This protects the integrity of the registry and ensures every applicant enters through a consistent, human-reviewed process.",
+    "consent": "I confirm that these profiles are my own, consent to confidential review by the HeartLink private desk, and understand that submission does not guarantee an invitation.",
+    "button": "Submit Private Introduction"
+  },
+  "faqs": [
+    { "question": "Who will see my information?", "answer": "Your initial submission is reviewed only by HeartLink’s private admissions desk and its principals. It is not published, indexed or shared with prospective matches." },
+    { "question": "Why are social profiles required?", "answer": "Established professional and social profiles offer a lighter, more natural first layer of identity verification and context than demanding a long biodata document before a relationship with the firm exists." },
+    { "question": "What happens after submission?", "answer": "If the mandate appears aligned with our current registry and advisory capacity, the private desk will establish a direct verification dialogue before any invitation or commercial discussion." }
+  ]
+}

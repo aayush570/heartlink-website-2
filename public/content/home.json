@@ -1,0 +1,48 @@
+{
+  "seo": {
+    "title": "HeartLink | Private Matchmaking & Family Advisory",
+    "description": "HeartLink is an invite-only matchmaking and holistic family advisory led by Gopi Shah and Alpa Apoorva."
+  },
+  "hero": {
+    "eyebrow": "Invite-only · India & the world",
+    "title": "Where two legacies <em>become one.</em>",
+    "description": "Private matchmaking and whole-family counsel, personally architected for those who understand that marriage is not a transaction. It is a generational decision.",
+    "primaryButton": "Request an Invitation",
+    "secondaryButton": "Discover the Method",
+    "note": "No public directory · No algorithmic matching · Absolute discretion",
+    "privacyNote": "A protected global circle. Identity is revealed only with mutual consent.",
+    "profileImages": []
+  },
+  "registry": {
+    "eyebrow": "The active registry",
+    "number": "30–50",
+    "title": "Exclusivity is not a promise. It is an operating principle.",
+    "description": "At any single period, HeartLink strictly limits its active global registry to a maximum of 30 to 50 applications. Every introduction, conversation and reassessment is structured exclusively by Gopi Shah, protecting the depth of judgment that cannot be delegated or automated.",
+    "linkText": "Meet the woman behind every introduction"
+  },
+  "advantage": {
+    "eyebrow": "The strategic advantage",
+    "title": "Beyond discovery. Toward discernment.",
+    "description": "Most platforms increase the number of people you encounter. HeartLink increases the quality of the decision you make.",
+    "rows": [
+      { "subject": "Selection logic", "explanation": "The intelligence behind who enters your consideration.", "apps": "Algorithmic|Optimised for engagement", "diy": "Intuitive|Limited by personal reach", "heartlink": "Human curation|Founder-led and contextual" },
+      { "subject": "Family alignment", "explanation": "Values, expectations and generational context.", "apps": "—|Rarely considered", "diy": "○|Usually informal", "heartlink": "●|Architected from day one" },
+      { "subject": "Continuity of care", "explanation": "Support beyond the first introduction.", "apps": "—|Ends at connection", "diy": "—|No formal support", "heartlink": "●|Through one year of marriage" },
+      { "subject": "Privacy protocol", "explanation": "How identity and intent are protected.", "apps": "Public-facing|Profile-led discovery", "diy": "Variable|Trust is self-managed", "heartlink": "Mutual consent|Controlled identity disclosure" }
+    ]
+  },
+  "philosophy": {
+    "eyebrow": "Our philosophy",
+    "quote": "“Compatibility begins with two people. Enduring harmony requires an understanding of the worlds they each bring with them.”"
+  },
+  "dimensions": {
+    "eyebrow": "One advisory. Three dimensions.",
+    "title": "Selection. Courtship. Family.",
+    "description": "HeartLink combines the eye of a master curator with therapeutic intelligence, guiding the relationship and the family system around it.",
+    "cards": [
+      { "label": "01 · Curation", "title": "A smaller, more meaningful field.", "description": "Prospects are selected through personality, priorities, social context, family dynamics and long-horizon compatibility." },
+      { "label": "02 · Counsel", "title": "The conversation after chemistry.", "description": "Emotional and relationship guidance helps couples move from possibility to informed commitment without performance or pressure." },
+      { "label": "03 · Continuity", "title": "Two families, thoughtfully integrated.", "description": "Pre-marital, family and post-marital support protects the transition well beyond the wedding." }
+    ]
+  }
+}

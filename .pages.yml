@@ -1,0 +1,367 @@
+media:
+  input: public/media
+  output: /media
+  rename: safe
+  categories: [image]
+
+components:
+  seo:
+    label: Search & sharing
+    type: object
+    fields:
+      - { name: title, label: Browser title, type: string, required: true }
+      - { name: description, label: Search description, type: text, required: true }
+  hero:
+    label: Page introduction
+    type: object
+    fields:
+      - { name: eyebrow, label: Small heading, type: string }
+      - name: title
+        label: Main headline
+        type: string
+        required: true
+        description: Wrap the words that should be pink and italic in <em> and </em>.
+      - { name: description, label: Introductory paragraph, type: text }
+  closing:
+    label: Closing call to action
+    type: object
+    fields:
+      - { name: eyebrow, label: Small heading, type: string }
+      - { name: quote, label: Large statement, type: text }
+      - { name: button, label: Button text, type: string }
+  card:
+    label: Card
+    type: object
+    fields:
+      - { name: label, label: Small label, type: string }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Description, type: text }
+      - { name: image, label: Optional image, type: image }
+
+content:
+  - name: site
+    label: "00 · Global brand & contact"
+    type: file
+    path: public/content/site.json
+    format: json
+    fields:
+      - { name: brandName, label: Brand name, type: string, required: true }
+      - { name: brandDescriptor, label: Brand descriptor, type: string }
+      - { name: logo, label: Logo, type: image, required: true }
+      - { name: primaryColor, label: Primary plum colour, type: string, description: "Hex colour, for example #2C052E" }
+      - { name: accentColor, label: Signature pink colour, type: string, description: "Hex colour, for example #E235F7" }
+      - { name: secondaryAccentColor, label: Secondary cyan colour, type: string }
+      - { name: conciergeEmail, label: Concierge email, type: string }
+      - { name: pressEmail, label: Press email, type: string }
+      - { name: careersEmail, label: Careers email, type: string }
+      - { name: privacyEmail, label: Privacy email, type: string }
+      - { name: locations, label: Footer locations, type: string }
+      - { name: footerStatement, label: Footer statement, type: text, description: Use <br> where you want a line break. }
+      - name: navigation
+        label: Navigation links
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - { name: label, label: Link label, type: string }
+          - { name: href, label: Link path, type: string, description: "Examples: /about or https://example.com" }
+
+  - name: home
+    label: "01 · Home / The Vanguard"
+    type: file
+    path: public/content/home.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Main headline, type: string, description: Wrap highlighted words in <em> and </em>. }
+          - { name: description, label: Introductory paragraph, type: text }
+          - { name: primaryButton, label: Primary button, type: string }
+          - { name: secondaryButton, label: Secondary button, type: string }
+          - { name: note, label: Privacy line, type: string }
+          - { name: privacyNote, label: Carousel privacy note, type: text }
+          - { name: profileImages, label: Private profile carousel images, type: image, list: { max: 5 }, description: Add up to five images. They are automatically blurred. }
+      - name: registry
+        label: Active registry section
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: number, label: Large number, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: linkText, label: Link text, type: string }
+      - name: advantage
+        label: Comparison grid
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - name: rows
+            label: Comparison rows
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{subject}"
+            fields:
+              - { name: subject, label: Subject, type: string }
+              - { name: explanation, label: Explanation, type: text }
+              - { name: apps, label: Dating apps, type: string, description: Separate the bold heading and detail with a | character. }
+              - { name: diy, label: DIY search, type: string, description: Separate the bold heading and detail with a | character. }
+              - { name: heartlink, label: HeartLink, type: string, description: Separate the bold heading and detail with a | character. }
+      - name: philosophy
+        label: Philosophy quote
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: quote, label: Quote, type: text }
+      - name: dimensions
+        label: Three dimensions
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: cards, label: Cards, component: card, list: true }
+
+  - name: about
+    label: "02 · About the Curators"
+    type: file
+    path: public/content/about.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: curators
+        label: Curator profiles
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - { name: role, label: Role, type: string }
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Large title, type: string }
+          - { name: lead, label: Lead paragraph, type: text }
+          - { name: image, label: Portrait, type: image, description: Portrait-oriented images work best. Leave blank for the abstract silhouette. }
+          - { name: imageAlt, label: Image description, type: string }
+          - { name: theme, label: Abstract colour theme, type: string, description: Use plum or cyan. This is only used when no portrait is uploaded. }
+          - { name: paragraphs, label: Biography paragraphs, type: text, list: true }
+          - name: credentials
+            label: Credentials
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - { name: title, label: Short title, type: string }
+              - { name: description, label: Description, type: text }
+      - { name: closing, component: closing }
+
+  - name: methodology
+    label: "03 · Methodology"
+    type: file
+    path: public/content/methodology.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: steps
+        label: Process steps
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{number} · {title}"
+        fields:
+          - { name: label, label: Small label, type: string }
+          - { name: number, label: Step number, type: string }
+          - { name: title, label: Step title, type: string }
+          - { name: description, label: Description, type: text }
+      - name: closing
+        label: Closing section
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: button, label: Button text, type: string }
+
+  - name: membership
+    label: "04 · Membership & Tiers"
+    type: file
+    path: public/content/membership.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: tiers
+        label: Curation channels
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: label, label: Channel label, type: string }
+          - { name: title, label: Channel name, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: features, label: Included features, type: string, list: true }
+          - { name: button, label: Button text, type: string }
+          - { name: black, label: Use Black Tier styling, type: boolean }
+      - name: protocol
+        label: Admissions explanation
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+      - { name: closing, component: closing }
+
+  - name: impact
+    label: "05 · Impact & Press"
+    type: file
+    path: public/content/impact.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: stats
+        label: Impact statistics
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{value} · {label}"
+        fields:
+          - { name: value, label: Large value, type: string }
+          - { name: label, label: Caption, type: string }
+      - name: feature
+        label: Jwala feature
+        type: object
+        fields:
+          - { name: image, label: Feature image, type: image }
+          - { name: imageAlt, label: Image description, type: string }
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+      - name: recognition
+        label: Recognition cards
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: cards, label: Cards, component: card, list: true }
+      - { name: closing, component: closing }
+
+  - name: careers
+    label: "06 · Careers"
+    type: file
+    path: public/content/careers.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: rolesIntro
+        label: Open roles introduction
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+      - name: roles
+        label: Open roles
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: title, label: Job title, type: string }
+          - { name: details, label: Location and requirements, type: text }
+      - name: culture
+        label: Culture
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: cards, label: Values, component: card, list: true }
+      - { name: closing, component: closing }
+
+  - name: apply
+    label: "07 · Private Application"
+    type: file
+    path: public/content/apply.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - name: intro
+        label: Application introduction
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Main headline, type: string, description: Wrap highlighted words in <em> and </em>. }
+          - { name: description, label: Description, type: text }
+          - name: protocol
+            label: Entry steps
+            type: object
+            list: true
+            fields:
+              - { name: number, label: Number, type: string }
+              - { name: label, label: Step, type: string }
+      - name: form
+        label: Form guidance
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: introduction, label: Introductory text, type: text }
+          - { name: verificationNote, label: Verification protocol, type: text }
+          - { name: consent, label: Consent statement, type: text }
+          - { name: button, label: Submit button, type: string }
+      - name: faqs
+        label: Frequently asked questions
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{question}"
+        fields:
+          - { name: question, label: Question, type: string }
+          - { name: answer, label: Answer, type: text }
+
+  - name: privacy
+    label: "08 · Privacy"
+    type: file
+    path: public/content/privacy.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: content
+        label: Privacy content
+        type: object
+        fields:
+          - { name: title, label: Section title, type: string }
+          - { name: lead, label: Lead statement, type: text }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+
+settings:
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "content: create {filename}"
+      update: "content: update {filename}"
+      delete: "content: remove {filename}"
+      rename: "content: rename {oldFilename} to {newFilename}"

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Request a private invitation to HeartLink. Begin with verified LinkedIn and Instagram profiles rather than a traditional biodata sheet.">
+  <meta name="theme-color" content="#2C052E">
+  <title>Private Application | HeartLink</title>
+  <link rel="icon" href="/Heartlink%20Logo.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header data-site-header></header>
+  <main class="application-shell">
+    <section class="application-intro">
+      <div>
+        <span class="eyebrow">Private admissions</span>
+        <h1>Begin with who you are <span class="accent">now.</span></h1>
+        <p>No lengthy biodata is required at this stage. A concise introduction and your established digital presence allow the private desk to begin a more human, contextual review.</p>
+      </div>
+      <div class="protocol-list">
+        <div><strong>01</strong><span>Digital introduction</span></div>
+        <div><strong>02</strong><span>Private verification</span></div>
+        <div><strong>03</strong><span>Invitation dialogue</span></div>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <span class="eyebrow">Step one · Confidential introduction</span>
+      <p>Fields marked required are necessary to establish a secure verification dialogue. Your information is never added to a public directory.</p>
+      <form id="private-application" class="form-grid">
+        <div class="field"><label for="name">Full name · Required</label><input id="name" name="name" autocomplete="name" required placeholder="Your full name"></div>
+        <div class="field"><label for="age">Age bracket</label><select id="age" name="age"><option value="">Prefer not to say yet</option><option>25–29</option><option>30–34</option><option>35–39</option><option>40–49</option><option>50+</option></select></div>
+        <div class="field"><label for="email">Private email · Required</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+        <div class="field"><label for="phone">Mobile / WhatsApp · Required</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 00000 00000"></div>
+        <div class="field"><label for="city">Current city · Required</label><input id="city" name="city" autocomplete="address-level2" required placeholder="Mumbai"></div>
+        <div class="field"><label for="referral">How did you hear of us?</label><select id="referral" name="referral"><option value="">Select one</option><option>Private referral</option><option>HeartLink digital channel</option><option>Press or event</option><option>Professional advisor</option><option>Other</option></select></div>
+        <div class="field"><label for="linkedin">LinkedIn URL · Required</label><input id="linkedin" name="linkedin" type="url" required pattern="https?://(www\.)?linkedin\.com/.*" placeholder="https://linkedin.com/in/…"></div>
+        <div class="field"><label for="instagram">Instagram URL · Required</label><input id="instagram" name="instagram" type="url" required pattern="https?://(www\.)?instagram\.com/.*" placeholder="https://instagram.com/…"></div>
+        <div class="field field-full"><label for="introduction">A few words about the life you are building</label><textarea id="introduction" name="introduction" maxlength="700" placeholder="Tell us what matters to you now, and what you hope partnership will make possible."></textarea></div>
+        <div class="verification-note"><strong>Entry protocol:</strong> Following HeartLink’s official digital channels and establishing a direct verification dialogue are required components of admission. This protects the integrity of the registry and ensures every applicant enters through a consistent, human-reviewed process.</div>
+        <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I confirm that these profiles are my own, consent to confidential review by the HeartLink private desk, and understand that submission does not guarantee an invitation.</span></label>
+        <button class="button" type="submit">Submit Private Introduction</button>
+        <p id="form-status" role="alert" aria-live="polite"></p>
+      </form>
+
+      <div style="margin-top:100px">
+        <span class="eyebrow">Before you begin</span>
+        <div class="accordion">
+          <div class="accordion-item" data-accordion>
+            <button type="button" aria-expanded="false"><span>Who will see my information?</span><span>+</span></button>
+            <div class="accordion-content"><p>Your initial submission is reviewed only by HeartLink’s private admissions desk and its principals. It is not published, indexed or shared with prospective matches.</p></div>
+          </div>
+          <div class="accordion-item" data-accordion>
+            <button type="button" aria-expanded="false"><span>Why are social profiles required?</span><span>+</span></button>
+            <div class="accordion-content"><p>Established professional and social profiles offer a lighter, more natural first layer of identity verification and context than demanding a long biodata document before a relationship with the firm exists.</p></div>
+          </div>
+          <div class="accordion-item" data-accordion>
+            <button type="button" aria-expanded="false"><span>What happens after submission?</span><span>+</span></button>
+            <div class="accordion-content"><p>If the mandate appears aligned with our current registry and advisory capacity, the private desk will establish a direct verification dialogue before any invitation or commercial discussion.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer data-site-footer></footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

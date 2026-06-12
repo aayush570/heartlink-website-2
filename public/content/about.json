@@ -1,0 +1,57 @@
+{
+  "seo": { "title": "The Curators | HeartLink", "description": "Meet HeartLink founders Gopi Shah and Alpa Apoorva, combining artistic curation with therapeutic counsel." },
+  "hero": {
+    "eyebrow": "About the curators",
+    "title": "An artist’s eye. A therapist’s <em>understanding.</em>",
+    "description": "HeartLink was founded on a rare conviction: the right partner is discovered through discernment, and a lasting marriage is built through emotional architecture."
+  },
+  "curators": [
+    {
+      "name": "Gopi Shah",
+      "role": "Founder & Principal Curator",
+      "eyebrow": "The master artisan of connection",
+      "title": "She has always known how to bring separate worlds into harmony.",
+      "lead": "Before she curated life partnerships, Gopi Shah curated culture, craft and extraordinary human moments across Mumbai, Chicago and Florida.",
+      "image": "",
+      "imageAlt": "Gopi Shah",
+      "theme": "plum",
+      "paragraphs": [
+        "Her journey began with the discipline of handwork: a Home Science education at MS University of Baroda, specialising in stitching and embroidery. It developed into an international design career devoted to preserving Indian artisanship, including machinery-free, hand-stitched interpretations of Western tailoring and a Mumbai workstation created to support Indian craftspeople directly.",
+        "As Creative Director for Tarana Kathak Academy and Nali Design in the United States, and through collaborations spanning Chicago, New York and Florida, Gopi learned to read proportion, character and context. She later brought that same sensibility to high-profile cultural representation, including the coordination of a major performance at the Great Wall of China.",
+        "Today, she applies an artisan’s patience to a more consequential form of composition: threading together two individuals, two families and two futures. Every active HeartLink interaction is personally structured by her."
+      ],
+      "credentials": [
+        { "title": "Global", "description": "Creative direction and cultural representation across India and the United States" },
+        { "title": "Honoured", "description": "Recipient of the Dr. Sarojini Naidu International Award" },
+        { "title": "Disciplined", "description": "NCC state representative and award-winning .22 calibre rifle shooter" },
+        { "title": "Trusted", "description": "Five years operating Jeevansathi as an honorary matrimonial service" }
+      ]
+    },
+    {
+      "name": "Alpa Apoorva",
+      "role": "Co-founder & Relationship Advisor",
+      "eyebrow": "The architecture of emotional readiness",
+      "title": "A match can be introduced. A relationship must be understood.",
+      "lead": "Alpa Apoorva gives HeartLink its profound advisory strength: a compassionate, rigorous understanding of what allows connection to mature into partnership.",
+      "image": "",
+      "imageAlt": "Alpa Apoorva",
+      "theme": "cyan",
+      "paragraphs": [
+        "A renowned emotional therapist, certified relationship coach, transformation coach and menopause trainer, Alpa is recognised for an approach that is patient, non-judgmental and deeply attentive to the person beneath the presentation.",
+        "Her work helps individuals recognise patterns, articulate needs and encounter one another without inherited scripts. During courtship, she creates the conditions for honest dialogue. Before marriage, she guides couples through rights, responsibilities and the expectations that often remain unspoken. When families enter the process, she helps turn difference into understanding.",
+        "This is why HeartLink does not simply pursue a successful introduction. It builds a holistic architecture around partner selection, courtship counsel and family guidance, so compatibility can become generational alignment."
+      ],
+      "credentials": [
+        { "title": "Certified", "description": "Emotional therapy, relationship and transformation coaching" },
+        { "title": "Holistic", "description": "Individual identity, couple dynamics and family systems" },
+        { "title": "Preventive", "description": "Resolving conflict before it becomes disconnection" },
+        { "title": "Continuous", "description": "Support through courtship and the first year of marriage" }
+      ]
+    }
+  ],
+  "closing": {
+    "eyebrow": "The HeartLink dual lens",
+    "quote": "Gopi sees the composition. Alpa understands the emotional structure. Together, they consider the whole.",
+    "button": "Request an Invitation"
+  }
+}

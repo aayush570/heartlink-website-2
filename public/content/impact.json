@@ -1,0 +1,37 @@
+{
+  "seo": { "title": "Impact & Press | HeartLink", "description": "HeartLink's institutional trust is rooted in global cultural leadership, the Dr. Sarojini Naidu International Award and NGO Jwala." },
+  "hero": {
+    "eyebrow": "Impact & institutional trust",
+    "title": "A private firm with a <em>public conscience.</em>",
+    "description": "Long before HeartLink, its founders earned trust in communities, institutions and moments that demanded service without spectacle."
+  },
+  "stats": [
+    { "value": "01", "label": "International honour" },
+    { "value": "05", "label": "Years of honorary matchmaking service" },
+    { "value": "∞", "label": "Commitment to women and families" }
+  ],
+  "feature": {
+    "image": "",
+    "imageAlt": "Women represented through NGO Jwala",
+    "eyebrow": "NGO Jwala · Women’s empowerment",
+    "title": "Visibility for women whose stories deserve a wider world.",
+    "paragraphs": [
+      "Through leadership in Jwala, Gopi Shah has helped advance nationwide women’s empowerment and humanitarian initiatives. As programme coordinator for Brides of Tribes, she brought tribal women and their living heritage into view through fashion, craft and cultural storytelling.",
+      "The work reflects a principle that also shapes HeartLink: tradition has greatest dignity when the people carrying it possess agency, recognition and a meaningful voice."
+    ]
+  },
+  "recognition": {
+    "eyebrow": "Recognition & service",
+    "title": "Credibility earned beyond the world of matchmaking.",
+    "description": "Institutional recognition matters because it reveals how a person acts when entrusted with communities, culture and responsibility.",
+    "cards": [
+      { "label": "International recognition", "title": "Dr. Sarojini Naidu International Award", "description": "Recognition of Gopi Shah’s contribution to education, culture and community service.", "image": "" },
+      { "label": "Global cultural representation", "title": "A landmark performance at the Great Wall of China", "description": "Coordination across artists, cultures and institutions on one of the world’s most symbolic stages.", "image": "" },
+      { "label": "Humanitarian response", "title": "Care when communities needed it most", "description": "During the COVID-19 crisis, Gopi helped establish care centres and mobilise oxygen support for those in need.", "image": "" },
+      { "label": "Indian artisanship", "title": "Tradition translated, never diluted", "description": "A Mumbai workstation created to employ artisans directly and sustain hand-stitched, machinery-free craft.", "image": "" },
+      { "label": "Community trust", "title": "Jeevansathi, offered as service", "description": "Five years of honorary matrimonial work laid the human foundation for HeartLink’s private advisory model.", "image": "" },
+      { "label": "Press & institutional enquiries", "title": "A considered dialogue with the world", "description": "For awards, speaking, cultural partnerships and press correspondence, contact the private office.", "image": "" }
+    ]
+  },
+  "closing": { "eyebrow": "Our measure", "quote": "Trust is not what is said before the introduction. It is what has been demonstrated for years before it.", "button": "Contact the Private Office" }
+}
