@@ -347,22 +347,6 @@ content:
           - { name: question, label: Question, type: string }
           - { name: answer, label: Answer, type: text }
 
-  - name: privacy
-    label: "10 · Privacy"
-    type: file
-    path: public/content/privacy.json
-    format: json
-    fields:
-      - { name: seo, component: seo }
-      - { name: hero, component: hero }
-      - name: content
-        label: Privacy content
-        type: object
-        fields:
-          - { name: title, label: Section title, type: string }
-          - { name: lead, label: Lead statement, type: text }
-          - { name: paragraphs, label: Paragraphs, type: text, list: true }
-
   - name: contact
     label: "08 · Contact"
     type: file
@@ -402,6 +386,22 @@ content:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: introduction, label: Introductory text, type: text }
           - { name: button, label: Button text, type: string }
+
+  - name: privacy
+    label: "10 · Privacy"
+    type: file
+    path: public/content/privacy.json
+    format: json
+    fields:
+      - { name: seo, component: seo }
+      - { name: hero, component: hero }
+      - name: content
+        label: Privacy content
+        type: object
+        fields:
+          - { name: title, label: Section title, type: string }
+          - { name: lead, label: Lead statement, type: text }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
 
 settings:
   content:
