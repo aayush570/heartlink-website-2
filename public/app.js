@@ -27,9 +27,9 @@ const site = await loadJson("/content/site.json", {
 const pageContent = await loadJson(`/content/${pageKey}.json`);
 const navigation = site.navigation || [];
 
-document.documentElement.style.setProperty("--plum", site.primaryColor || "#2C052E");
-document.documentElement.style.setProperty("--pink", site.accentColor || "#E235F7");
-document.documentElement.style.setProperty("--cyan", site.secondaryAccentColor || "#19C8D3");
+document.documentElement.style.setProperty("--maroon", site.primaryColor || "#5F1724");
+document.documentElement.style.setProperty("--gold", site.accentColor || "#B8954F");
+document.documentElement.style.setProperty("--forest", site.secondaryAccentColor || "#183F32");
 
 const header = document.querySelector("[data-site-header]");
 if (header) {
@@ -37,15 +37,15 @@ if (header) {
   header.innerHTML = `
     <div class="nav-shell">
       <a class="brand" href="/" aria-label="HeartLink home">
-        <img src="${site.logo}" alt="" width="54" height="44">
+        <i class="brand-seal" aria-hidden="true">HL</i>
         <span>${site.brandName}<small>${site.brandDescriptor}</small></span>
       </a>
       <nav class="desktop-nav" aria-label="Primary navigation">
         ${navigation.map(({ href, label }) => `<a href="${href}" ${path === href ? 'aria-current="page"' : ""}>${label}</a>`).join("")}
       </nav>
       <div class="nav-actions">
-        <a class="button button-small button-outline desktop-contact" href="/contact">Contact</a>
-        <a class="button button-small desktop-apply" href="/apply">Apply</a>
+        <a class="button button-small button-outline desktop-contact" href="/contact">Private Desk</a>
+        <a class="button button-small desktop-apply" href="/apply">Request Consultation</a>
       </div>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
@@ -54,7 +54,7 @@ if (header) {
     <div class="mobile-menu" aria-hidden="true">
       <nav aria-label="Mobile navigation">
         ${navigation.map(({ href, label }, index) => `<a href="${href}"><span>0${index + 1}</span>${label}</a>`).join("")}
-        <div class="mobile-actions"><a class="button" href="/apply">Apply to HeartLink</a><a class="button button-outline" href="/contact">Contact Us</a></div>
+        <div class="mobile-actions"><a class="button" href="/apply">Request a Private Consultation</a><a class="button button-outline" href="/contact">Contact the Private Desk</a></div>
       </nav>
     </div>`;
 
@@ -74,13 +74,13 @@ if (footer) {
   footer.className = "site-footer";
   footer.innerHTML = `
     <div class="footer-mark">
-      <img src="${site.logo}" alt="" width="76" height="62">
+      <i class="footer-seal" aria-hidden="true">HL</i>
       <p>${site.footerStatement}</p>
     </div>
     <div class="footer-links">
-      <div><span>Private Desk</span><a href="/apply">Apply to the registry</a><a href="/contact">Contact HeartLink</a><a href="mailto:${site.conciergeEmail}">${site.conciergeEmail}</a></div>
-      <div><span>Explore</span><a href="/about">The Curators</a><a href="/methodology">Our Methodology</a><a href="/impact">Institutional Trust</a></div>
-      <div><span>Connect</span><a href="/membership">Curation Channels</a><a href="/partnerships">Matchmaker Partnerships</a><a href="/careers">Join the Firm</a><a href="/privacy.html">Privacy</a></div>
+      <div><span>Private Admissions</span><a href="/apply">Request a private consultation</a><a href="/contact">Contact the private desk</a><a href="mailto:${site.conciergeEmail}">${site.conciergeEmail}</a></div>
+      <div><span>Our House</span><a href="/about">Founder & advisors</a><a href="/methodology">The gold-thread process</a><a href="/impact">Trust & recognition</a></div>
+      <div><span>Further Enquiries</span><a href="/membership">Advisory mandates</a><a href="/partnerships">Private partnerships</a><a href="/careers">Careers</a><a href="/privacy.html">Confidentiality</a></div>
     </div>
     <div class="footer-base"><span>© ${new Date().getFullYear()} ${site.brandName} ${site.brandDescriptor}</span><span>${site.locations}</span></div>`;
 }
@@ -119,48 +119,6 @@ if (pageContent.seo) {
   if (description) description.content = pageContent.seo.description;
 }
 renderHero(pageContent.hero);
-
-if (pageKey === "home" && pageContent.hero) {
-  setText(".home-hero .button:not(.button-outline)", pageContent.hero.primaryButton);
-  setText(".home-hero .button-outline", pageContent.hero.secondaryButton);
-  setText(".hero-note", pageContent.hero.note);
-  setText(".privacy-orbit", pageContent.hero.privacyNote);
-  (pageContent.hero.profileImages || []).slice(0, 5).forEach((image, index) => {
-    const art = document.querySelectorAll(".profile-art")[index];
-    if (art && image) art.style.backgroundImage = `url("${image}")`;
-  });
-
-  const proofGrid = document.querySelector("[data-proof-grid]");
-  if (proofGrid) proofGrid.innerHTML = (pageContent.proof || []).map((item) => `<div><strong>${item.value}</strong><span>${item.label}</span></div>`).join("");
-  setText(".registry-statement .eyebrow", pageContent.registry.eyebrow);
-  setText(".registry-number", pageContent.registry.number);
-  setHtml(".registry-copy h2", titleHtml(pageContent.registry.title));
-  setText(".registry-copy p", pageContent.registry.description);
-  setText(".registry-copy .text-link", `${pageContent.registry.linkText} ↗`);
-  setText(".section-heading .eyebrow", pageContent.advantage.eyebrow);
-  setText(".section-heading h2", pageContent.advantage.title);
-  setText(".section-heading p", pageContent.advantage.description);
-  const advantageGrid = document.querySelector(".advantage-grid");
-  if (advantageGrid) {
-    advantageGrid.innerHTML = `
-      <div class="grid-head heartlink-col">HeartLink</div><div class="grid-head">What truly matters</div><div class="grid-head">Matchmakers</div><div class="grid-head">Dating apps</div><div class="grid-head">DIY search</div>
-      ${pageContent.advantage.rows.map((row) => {
-        const cell = (value, className = "") => {
-          const [title, detail] = value.split("|");
-          return `<div class="${className}"><strong>${title}</strong><p>${detail || ""}</p></div>`;
-        };
-        return `${cell(row.heartlink, "heartlink-col")}<div><strong>${row.subject}</strong><p>${row.explanation}</p></div>${cell(row.matchmakers)}${cell(row.apps)}${cell(row.diy)}`;
-      }).join("")}`;
-  }
-  const dimensionHeading = document.querySelectorAll(".section-heading")[1];
-  if (dimensionHeading) {
-    dimensionHeading.querySelector(".eyebrow").textContent = pageContent.dimensions.eyebrow;
-    dimensionHeading.querySelector("h2").textContent = pageContent.dimensions.title;
-    dimensionHeading.querySelector("p").textContent = pageContent.dimensions.description;
-  }
-  const dimensionGrid = document.querySelector(".surface:last-of-type .press-grid");
-  if (dimensionGrid) dimensionGrid.innerHTML = renderCards(pageContent.dimensions.cards);
-}
 
 if (pageKey === "about" && pageContent.curators) {
   const curatorContainer = document.querySelector(".curator-grid");
@@ -253,22 +211,6 @@ if (pageKey === "careers" && pageContent.roles) {
   if (careersButton) careersButton.href = `mailto:${site.careersEmail}?subject=Confidential%20Expression%20of%20Interest`;
 }
 
-if (pageKey === "apply" && pageContent.intro) {
-  setText(".application-intro .eyebrow", pageContent.intro.eyebrow);
-  setHtml(".application-intro h1", titleHtml(pageContent.intro.title));
-  setText(".application-intro > div > p", pageContent.intro.description);
-  const protocol = document.querySelector(".protocol-list");
-  if (protocol) protocol.innerHTML = pageContent.intro.protocol.map((item) => `<div><strong>${item.number}</strong><span>${item.label}</span></div>`).join("");
-  setText(".form-panel > .eyebrow", pageContent.form.eyebrow);
-  setText(".form-panel > p", pageContent.form.introduction);
-  const verification = document.querySelector(".verification-note");
-  if (verification) verification.innerHTML = `<strong>Entry protocol:</strong> ${pageContent.form.verificationNote}`;
-  setText(".consent span", pageContent.form.consent);
-  setText('#private-application button[type="submit"]', pageContent.form.button);
-  const accordion = document.querySelector(".accordion");
-  if (accordion) accordion.innerHTML = pageContent.faqs.map((faq) => `<div class="accordion-item" data-accordion><button type="button" aria-expanded="false"><span>${faq.question}</span><span>+</span></button><div class="accordion-content"><p>${faq.answer}</p></div></div>`).join("");
-}
-
 if (pageKey === "contact" && pageContent.form) {
   setText(".form-card > .eyebrow", pageContent.form.eyebrow);
   setText(".form-card > p", pageContent.form.introduction);
@@ -312,6 +254,52 @@ if ("IntersectionObserver" in window && observed.length) {
   observed.forEach((element) => reveal.observe(element));
 } else {
   observed.forEach((element) => element.classList.add("is-visible"));
+}
+
+const siteHeader = document.querySelector(".site-header");
+const updateHeader = () => siteHeader?.classList.toggle("is-scrolled", window.scrollY > 24);
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
+
+const threadContainers = document.querySelectorAll("[data-gold-thread], .timeline");
+if (threadContainers.length) {
+  const updateThreads = () => {
+    threadContainers.forEach((thread) => {
+      const bounds = thread.getBoundingClientRect();
+      const viewportAnchor = window.innerHeight * .62;
+      const progress = Math.max(0, Math.min(1, (viewportAnchor - bounds.top) / Math.max(bounds.height, 1)));
+      thread.style.setProperty("--thread-progress", `${progress * 100}%`);
+    });
+  };
+  updateThreads();
+  window.addEventListener("scroll", updateThreads, { passive: true });
+  window.addEventListener("resize", updateThreads);
+}
+
+const stepper = document.querySelector(".stepper-form");
+if (stepper) {
+  const steps = [...stepper.querySelectorAll(".inquiry-step")];
+  const count = document.querySelector("[data-step-count]");
+  const progress = document.querySelector("[data-step-progress]");
+  let currentStep = 0;
+
+  const showStep = (index) => {
+    currentStep = Math.max(0, Math.min(index, steps.length - 1));
+    steps.forEach((step, stepIndex) => step.classList.toggle("is-active", stepIndex === currentStep));
+    if (count) count.textContent = `${String(currentStep + 1).padStart(2, "0")} / ${String(steps.length).padStart(2, "0")}`;
+    if (progress) progress.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+    document.querySelector(".form-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  stepper.querySelectorAll("[data-next]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const fields = [...steps[currentStep].querySelectorAll("input, select, textarea")];
+      const invalid = fields.find((field) => !field.checkValidity());
+      if (invalid) return invalid.reportValidity();
+      showStep(currentStep + 1);
+    });
+  });
+  stepper.querySelectorAll("[data-back]").forEach((button) => button.addEventListener("click", () => showStep(currentStep - 1)));
 }
 
 document.querySelectorAll("[data-accordion]").forEach((item) => {
@@ -361,7 +349,7 @@ document.querySelectorAll("form[data-submission-type]").forEach((form) => {
           <span class="eyebrow">Received securely</span>
           <h2>Thank you, <span data-first-name></span>.</h2>
           <p>${result.message} Your confidential reference is <strong>${result.reference}</strong>. A member of the private desk will review it before making contact.</p>
-          <a class="text-link" href="/">Return to The Vanguard <span>↗</span></a>
+          <a class="text-link" href="/">Return to HeartLink <span>↗</span></a>
         </div>`;
       form.querySelector("[data-first-name]").textContent = firstName;
     } catch (error) {

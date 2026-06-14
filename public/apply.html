@@ -3,87 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Submit a profile for yourself or a family member to HeartLink's private registry.">
-  <meta name="theme-color" content="#2C052E">
-  <title>Apply to HeartLink | Private Registry</title>
+  <meta name="description" content="Request a private consultation with HeartLink for yourself or a family member.">
+  <meta name="theme-color" content="#F8F4EC">
+  <title>Request a Private Consultation | HeartLink</title>
   <link rel="icon" href="/Heartlink%20Logo.png">
-  <link rel="stylesheet" href="/styles.css?v=3">
+  <link rel="stylesheet" href="/styles.css?v=4">
 </head>
 <body>
   <header data-site-header></header>
   <main class="application-shell">
-    <section class="application-intro">
+    <aside class="application-intro">
       <div>
-        <span class="eyebrow">Private registry application</span>
-        <h1>Introduce the person, <span class="accent">not just a profile.</span></h1>
-        <p>Apply for yourself or on behalf of someone you care for. The private desk uses this first submission to understand the applicant, family context and preferred service channel.</p>
-        <div class="form-switch"><a class="button" href="#application-form">Apply to the Registry</a><a class="button button-outline" href="/contact">Contact Us</a></div>
+        <span class="eyebrow">Request an invitation</span>
+        <h1>Every enduring alliance begins with a <em>private conversation.</em></h1>
+        <p>This considered inquiry helps Gopi Shah understand whom you are seeking for, your family context and whether HeartLink is the right advisor for the journey.</p>
       </div>
-      <div class="protocol-list">
-        <div><strong>01</strong><span>Applicant details</span></div>
-        <div><strong>02</strong><span>Private review</span></div>
-        <div><strong>03</strong><span>Direct dialogue</span></div>
+      <div class="admission-assurance">
+        <div class="mini-seal">HL</div>
+        <p><strong>Handled in complete confidence.</strong><br>Your information is reviewed only by HeartLink’s private admissions desk and principals.</p>
       </div>
-    </section>
+      <a class="text-link" href="/">Return to the residence <span>↗</span></a>
+    </aside>
 
     <section class="form-panel" id="application-form">
-      <span class="eyebrow">Confidential registry application</span>
-      <p>Fields marked required help us verify the applicant and contact the right family member. Information is never placed in a public directory.</p>
-      <form id="private-application" class="form-grid" data-submission-type="application">
-        <fieldset class="form-section">
-          <legend>Who is completing this form?</legend>
-          <div class="choice-row">
-            <label class="choice"><input type="radio" name="applyingFor" value="self" required checked><span>I am applying for myself</span></label>
-            <label class="choice"><input type="radio" name="applyingFor" value="someone-else" required><span>I am applying for someone else</span></label>
-          </div>
-        </fieldset>
-
-        <div class="form-section-title"><span>01</span><div><strong>Applicant details</strong><small>The person seeking a match</small></div></div>
-        <div class="field"><label for="applicantName">Applicant full name · Required</label><input id="applicantName" name="applicantName" autocomplete="name" required></div>
-        <div class="field"><label for="age">Age bracket · Required</label><select id="age" name="age" required><option value="">Select</option><option>25–29</option><option>30–34</option><option>35–39</option><option>40–49</option><option>50+</option></select></div>
-        <div class="field field-full"><label for="address">Current address / city · Required</label><input id="address" name="address" autocomplete="street-address" required placeholder="City, state and country"></div>
-        <div class="field"><label for="company">Company / organisation</label><input id="company" name="company" autocomplete="organization"></div>
-        <div class="field"><label for="designation">Designation / profession</label><input id="designation" name="designation" autocomplete="organization-title"></div>
-        <div class="field"><label for="linkedin">LinkedIn URL</label><input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/..."></div>
-        <div class="field"><label for="instagram">Instagram URL</label><input id="instagram" name="instagram" type="url" placeholder="https://instagram.com/..."></div>
-        <div class="field field-full"><label for="introduction">A few words about the applicant</label><textarea id="introduction" name="introduction" maxlength="1200" placeholder="What matters to them, and what are they hoping to build with a partner?"></textarea></div>
-
-        <div class="form-section-title"><span>02</span><div><strong>Primary contact</strong><small>The person HeartLink should speak with</small></div></div>
-        <div class="field"><label for="contactName">Contact full name · Required</label><input id="contactName" name="contactName" autocomplete="name" required></div>
-        <div class="field"><label for="relationship">Relationship to applicant · Required</label><input id="relationship" name="relationship" required placeholder="Self, mother, father, sibling..."></div>
-        <div class="field"><label for="email">Email · Required</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="phone">Mobile / WhatsApp · Required</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 00000 00000"></div>
-
-        <div class="form-section-title"><span>03</span><div><strong>Family details</strong><small>Optional at this first stage</small></div></div>
-        <div class="field"><label for="motherName">Mother’s name</label><input id="motherName" name="motherName"></div>
-        <div class="field"><label for="motherWork">Mother’s company and designation</label><input id="motherWork" name="motherWork"></div>
-        <div class="field"><label for="fatherName">Father’s name</label><input id="fatherName" name="fatherName"></div>
-        <div class="field"><label for="fatherWork">Father’s company and designation</label><input id="fatherWork" name="fatherWork"></div>
-
-        <div class="form-section-title"><span>04</span><div><strong>Service interest</strong><small>Select one or more</small></div></div>
-        <fieldset class="form-section">
-          <legend class="sr-only">Membership interests</legend>
-          <div class="choice-grid">
-            <label class="choice"><input type="checkbox" name="membershipInterest" value="Registry Network"><span><strong>Registry Network</strong>Free profile submission</span></label>
-            <label class="choice"><input type="checkbox" name="membershipInterest" value="Success Tier"><span><strong>Success Tier</strong>No upfront fee</span></label>
-            <label class="choice"><input type="checkbox" name="membershipInterest" value="Premium Circle"><span><strong>Premium Circle</strong>Retained active search</span></label>
-            <label class="choice"><input type="checkbox" name="membershipInterest" value="Black Tier"><span><strong>Black Tier</strong>Bespoke legacy mandate</span></label>
-          </div>
-        </fieldset>
-
-        <div class="verification-note"><strong>Entry protocol:</strong> Every submission is reviewed by a person. HeartLink may contact the nominated representative to verify identity, intent and the most suitable service channel before presenting any profile.</div>
-        <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I confirm that I am authorised to submit these details, consent to confidential review by HeartLink, and understand that submission does not guarantee an introduction or acceptance into a paid mandate.</span></label>
-        <button class="button" type="submit">Submit Registry Application</button>
-        <p class="form-status" role="alert" aria-live="polite"></p>
-      </form>
-
-      <div class="faq-block">
-        <span class="eyebrow">Before you begin</span>
-        <div class="accordion"></div>
+      <div class="step-header">
+        <div>
+          <span class="eyebrow">Private consultation request</span>
+          <p>Approximately 5 minutes · Save is not required</p>
+        </div>
+        <strong data-step-count>01 / 04</strong>
       </div>
+      <div class="step-progress" aria-hidden="true"><i data-step-progress></i></div>
+
+      <form id="private-application" class="form-grid stepper-form" data-submission-type="application">
+        <fieldset class="inquiry-step is-active" data-step="1">
+          <legend><span>01</span><small>The introduction</small>Who are we speaking with?</legend>
+          <p class="step-intro">You may begin this conversation for yourself, your son, daughter or a close family member.</p>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="applyingFor" value="self" required checked><span><strong>For myself</strong>I am personally seeking a life partner</span></label>
+            <label class="choice"><input type="radio" name="applyingFor" value="someone-else" required><span><strong>For my family</strong>I am enquiring for someone close to me</span></label>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="contactName">Your full name</label><input id="contactName" name="contactName" autocomplete="name" required placeholder="As you would like us to address you"></div>
+            <div class="field"><label for="relationship">Relationship to the individual</label><input id="relationship" name="relationship" required placeholder="Self, mother, father, sibling"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="email">Private email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="phone">Mobile / WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91"></div>
+          </div>
+          <div class="step-actions"><button class="button" type="button" data-next>Continue privately <span>→</span></button></div>
+        </fieldset>
+
+        <fieldset class="inquiry-step" data-step="2">
+          <legend><span>02</span><small>The individual</small>Tell us about the person.</legend>
+          <p class="step-intro">A thoughtful introduction matters more to us than an exhaustive biodata sheet.</p>
+          <div class="field-row">
+            <div class="field"><label for="applicantName">Full name</label><input id="applicantName" name="applicantName" autocomplete="name" required></div>
+            <div class="field"><label for="age">Age bracket</label><select id="age" name="age" required><option value="">Please select</option><option>25–29</option><option>30–34</option><option>35–39</option><option>40–49</option><option>50+</option></select></div>
+          </div>
+          <div class="field field-full"><label for="address">Current city and country</label><input id="address" name="address" autocomplete="address-level2" required placeholder="Mumbai, India"></div>
+          <div class="field-row">
+            <div class="field"><label for="company">Organisation / family enterprise</label><input id="company" name="company" autocomplete="organization"></div>
+            <div class="field"><label for="designation">Profession / designation</label><input id="designation" name="designation" autocomplete="organization-title"></div>
+          </div>
+          <div class="field field-full"><label for="introduction">What makes them distinctly themselves?</label><textarea id="introduction" name="introduction" maxlength="1200" placeholder="Their character, interests, ambitions and the life they hope to build..."></textarea></div>
+          <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="button" data-next>Continue <span>→</span></button></div>
+        </fieldset>
+
+        <fieldset class="inquiry-step" data-step="3">
+          <legend><span>03</span><small>The family context</small>Help us understand the home.</legend>
+          <p class="step-intro">These details are optional at this first stage, but help us appreciate the family’s background and world.</p>
+          <div class="field-row">
+            <div class="field"><label for="fatherName">Father’s name</label><input id="fatherName" name="fatherName"></div>
+            <div class="field"><label for="fatherWork">Profession / enterprise</label><input id="fatherWork" name="fatherWork"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="motherName">Mother’s name</label><input id="motherName" name="motherName"></div>
+            <div class="field"><label for="motherWork">Profession / enterprise</label><input id="motherWork" name="motherWork"></div>
+          </div>
+          <div class="field field-full"><label for="familyValues">What does your family value most in this alliance?</label><textarea id="familyValues" name="familyValues" maxlength="900" placeholder="Shared values, culture, education, outlook, geography..."></textarea></div>
+          <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="button" data-next>Final consideration <span>→</span></button></div>
+        </fieldset>
+
+        <fieldset class="inquiry-step" data-step="4">
+          <legend><span>04</span><small>The mandate</small>How may HeartLink serve you?</legend>
+          <p class="step-intro">Select the approach closest to your needs. The appropriate mandate is always discussed personally before any engagement.</p>
+          <div class="choice-grid service-choices">
+            <label class="choice"><input type="radio" name="membershipInterest" value="Private Registry"><span><strong>Private Registry</strong>Consideration for consent-led introductions</span></label>
+            <label class="choice"><input type="radio" name="membershipInterest" value="Retained Search"><span><strong>Retained Search</strong>Active, principal-led partner search</span></label>
+            <label class="choice"><input type="radio" name="membershipInterest" value="Family Advisory"><span><strong>Family Advisory</strong>Selection, courtship and family counsel</span></label>
+            <label class="choice"><input type="radio" name="membershipInterest" value="Unsure"><span><strong>I would value guidance</strong>Help us identify the right path</span></label>
+          </div>
+          <div class="verification-note"><i>HL</i><span><strong>A note from the private desk</strong>Every inquiry is reviewed by a person. Submission is an opening for dialogue, not an automatic admission to the registry.</span></div>
+          <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I am authorised to share these details and consent to their confidential review by HeartLink for the purpose of this inquiry.</span></label>
+          <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="submit">Request Private Consultation <span>→</span></button></div>
+          <p class="form-status" role="alert" aria-live="polite"></p>
+        </fieldset>
+      </form>
     </section>
   </main>
   <footer data-site-footer></footer>
-  <script type="module" src="/app.js?v=2"></script>
+  <script type="module" src="/app.js?v=4"></script>
 </body>
 </html>
