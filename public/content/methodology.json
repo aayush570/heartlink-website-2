@@ -1,23 +1,61 @@
 {
-  "seo": { "title": "The Methodology | HeartLink", "description": "Explore HeartLink's seven-step architectural process for partner selection, courtship, family guidance and post-marital support." },
+  "seo": {
+    "title": "How HeartLink Works | Private Matchmaking",
+    "description": "See HeartLink's private matchmaking process for partner search, family checks, introductions and guidance."
+  },
   "hero": {
-    "eyebrow": "The methodology",
-    "title": "Not a funnel. A seven-part <em>architecture.</em>",
-    "description": "A private, living process that evolves as two people move from consideration to commitment, and as two families learn to move together."
+    "eyebrow": "How it works",
+    "title": "A simple process with <em>careful checks.</em>",
+    "description": "HeartLink keeps the search private, selective and family-focused from the first meeting to the final decision."
   },
   "steps": [
-    { "label": "Foundation · Selection", "number": "01", "title": "Personalised Partner Selection", "description": "We begin beyond the checklist. Personality, patterns, priorities, preferences, family dynamics and the life each person is actually building become the basis for a highly considered search." },
-    { "label": "Composition · Curation", "number": "02", "title": "Profile Presentation", "description": "Only carefully selected possibilities are presented. We consider mental, emotional, intellectual and social alignment, then offer the context required to see the person rather than merely scan a profile." },
-    { "label": "Observation · Reassessment", "number": "03", "title": "Compatibility Reassessment", "description": "Once two individuals connect, theory gives way to lived chemistry. We reassess organic compatibility, observing the ease, curiosity and priorities emerging between them." },
-    { "label": "Dialogue · Counsel", "number": "04", "title": "Courtship Counselling", "description": "Alpa creates a confidential space for honest conversation: how each person gives and receives care, handles difference, defines partnership and recognises whether their needs are truly being met." },
-    { "label": "Readiness · Clarity", "number": "05", "title": "Pre-Marital Counselling", "description": "Before celebration comes clarity. Bride and groom explore rights, responsibilities, emotional labour, personal ambition, finances, boundaries and the expectations that shape everyday married life." },
-    { "label": "Integration · Family", "number": "06", "title": "Family Guidance", "description": "We work thoughtfully with both families to create mutual respect, navigate the wedding process and establish the deeper understanding upon which long-term family integration depends." },
-    { "label": "Continuity · First year", "number": "07", "title": "Post-Marital Support", "description": "For up to one year, HeartLink remains close. We support the couple through personal, professional and social transitions, helping a new marriage find its own confident rhythm." }
+    {
+      "label": "Step 01",
+      "number": "01",
+      "title": "Private Meeting",
+      "description": "We speak with the family and understand the person, background, preferences and expectations."
+    },
+    {
+      "label": "Step 02",
+      "number": "02",
+      "title": "Profile Review",
+      "description": "We review education, work, family details, values, lifestyle and long-term compatibility."
+    },
+    {
+      "label": "Step 03",
+      "number": "03",
+      "title": "Background Checks",
+      "description": "We use personal references, conversations and direct checks before moving forward."
+    },
+    {
+      "label": "Step 04",
+      "number": "04",
+      "title": "Selected Introductions",
+      "description": "Only suitable profiles are shared. There is no public browsing and no random matching."
+    },
+    {
+      "label": "Step 05",
+      "number": "05",
+      "title": "Family Discussion",
+      "description": "When both sides are interested, we help the families speak clearly and respectfully."
+    },
+    {
+      "label": "Step 06",
+      "number": "06",
+      "title": "Compatibility Guidance",
+      "description": "We help the couple and families understand expectations before taking the next step."
+    },
+    {
+      "label": "Step 07",
+      "number": "07",
+      "title": "Support After Commitment",
+      "description": "When needed, HeartLink can continue guidance through engagement and early married life."
+    }
   ],
   "closing": {
-    "eyebrow": "The constant throughout",
-    "title": "One relationship. One continuous line of counsel.",
-    "description": "You are never passed from sales to matching to support. Context is preserved, judgment compounds and confidentiality remains intact.",
-    "button": "Request an Invitation"
+    "eyebrow": "Our promise",
+    "title": "Private, selective and personal.",
+    "description": "Your case is not handled like a mass-market profile. Every serious introduction is reviewed with care.",
+    "button": "Request a Meeting"
   }
 }

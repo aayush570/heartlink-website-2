@@ -1,30 +1,37 @@
 {
-  "seo": { "title": "Careers | HeartLink", "description": "Join HeartLink's discreet global team of relationship managers, elite scouts and psychologists." },
+  "seo": {
+    "title": "Careers | HeartLink",
+    "description": "Join HeartLink's private matchmaking team."
+  },
   "hero": {
     "eyebrow": "Careers at HeartLink",
-    "title": "For those trusted with what cannot be <em>casual.</em>",
-    "description": "We seek people of judgment, emotional intelligence and impeccable discretion. The work is intimate, exacting and quietly consequential."
+    "title": "Work that needs <em>trust.</em>",
+    "description": "We look for people with maturity, good judgment, strong communication and complete respect for privacy."
   },
   "rolesIntro": {
     "eyebrow": "The standard",
-    "title": "A prestigious practice of human understanding.",
-    "description": "HeartLink is not a volume recruitment environment. Every colleague becomes a custodian of private lives and family legacies. We value cultural fluency, elegant communication, mature judgment and the restraint to know when not to speak."
+    "title": "Work that needs trust and maturity.",
+    "description": "HeartLink is not a volume business. Every team member handles private family information. We value good communication, cultural understanding, mature judgment and privacy."
   },
   "roles": [
     { "title": "Senior Relationship Manager", "details": "Mumbai · Hybrid · 8+ years in private client, luxury or advisory services" },
-    { "title": "Elite Network Scout", "details": "Global · Flexible · Exceptional social intelligence and trusted networks" },
-    { "title": "Relationship Psychologist", "details": "India · Consulting · Advanced qualification and couple/family practice" },
-    { "title": "Private Office Associate", "details": "Mumbai · Full-time · High-touch operations and absolute confidentiality" }
+    { "title": "Network Scout", "details": "Global · Flexible · Strong social intelligence and trusted networks" },
+    { "title": "Relationship Advisor", "details": "India · Consulting · Couple or family guidance experience" },
+    { "title": "Private Office Associate", "details": "Mumbai · Full-time · High-touch operations and strict confidentiality" }
   ],
   "culture": {
     "eyebrow": "Our culture",
-    "title": "Small by design. Exacting by nature.",
-    "description": "We work without scripts, quotas or superficial signals of success. The standard is a thoughtful process, a protected client and advice we would stand behind in the lives of our own families.",
+    "title": "Small team. High standards.",
+    "description": "We work carefully, privately and without pressure. The goal is a good match, not a fast match.",
     "cards": [
-      { "label": "01", "title": "Discretion is a discipline.", "description": "Privacy is practised in every message, meeting, note and introduction." },
-      { "label": "02", "title": "Judgment over velocity.", "description": "We reward depth of thought, not the speed of moving a profile through a system." },
-      { "label": "03", "title": "Service without servility.", "description": "We are warm, exact and candid enough to offer clients the truth with care." }
+      { "label": "01", "title": "Privacy is serious.", "description": "Every message, meeting and introduction must protect the client." },
+      { "label": "02", "title": "Quality over speed.", "description": "We prefer fewer, better introductions." },
+      { "label": "03", "title": "Warm but honest.", "description": "Clients should feel respected and clearly guided." }
     ]
   },
-  "closing": { "eyebrow": "Confidential expressions of interest", "quote": "Exceptional people do not always arrive through open roles.", "button": "Introduce Yourself" }
+  "closing": {
+    "eyebrow": "Careers",
+    "quote": "Good people may not always fit an open role, but we are happy to hear from them.",
+    "button": "Introduce Yourself"
+  }
 }

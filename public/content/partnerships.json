@@ -1,21 +1,21 @@
 {
   "seo": {
-    "title": "Matchmaker Partnerships | HeartLink",
-    "description": "Partner with HeartLink on profile matching, referrals and operating under the HeartLink advisory umbrella."
+    "title": "Partnerships | HeartLink",
+    "description": "Partner with HeartLink on profile matching, referrals and private family introductions."
   },
   "hero": {
     "eyebrow": "Partnerships",
     "title": "Trusted networks. A stronger <em>standard.</em>",
-    "description": "HeartLink works with established matchmakers and trusted connectors when shared judgment, discretion and complementary networks can create a better outcome."
+    "description": "HeartLink works with established matchmakers and trusted connectors when privacy, family trust and client care are aligned."
   },
   "models": {
     "eyebrow": "Ways to work together",
-    "title": "Collaborate without compromising trust.",
-    "description": "Every partnership begins with alignment on privacy, consent and client care.",
+    "title": "Partner with clear privacy standards.",
+    "description": "Every partnership must protect client privacy and family trust.",
     "cards": [
-      { "label": "01 · Profile collaboration", "title": "Work together on a match.", "description": "Share selected, consented opportunities across trusted networks while each advisor protects their client relationship." },
-      { "label": "02 · Referral partnership", "title": "Refer a mandate with confidence.", "description": "Introduce clients whose needs fit HeartLink’s curation or advisory model through a clear and discreet referral process." },
-      { "label": "03 · HeartLink network", "title": "Operate within our umbrella.", "description": "Experienced matchmakers may explore joining HeartLink’s standards, systems and wider network as an aligned partner." }
+      { "label": "01 · Profile collaboration", "title": "Work together on a match.", "description": "Share selected opportunities across trusted networks while protecting each client relationship." },
+      { "label": "02 · Referral partnership", "title": "Refer clients with confidence.", "description": "Introduce clients whose needs fit HeartLink through a clear and private referral process." },
+      { "label": "03 · HeartLink network", "title": "Join our partner network.", "description": "Experienced matchmakers can explore working with HeartLink's standards, systems and wider network." }
     ]
   },
   "form": {

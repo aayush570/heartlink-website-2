@@ -1,25 +1,28 @@
 {
-  "seo": { "title": "Apply to HeartLink | Private Registry", "description": "Submit a profile for yourself or a family member and select the HeartLink service channel that interests you." },
+  "seo": {
+    "title": "Request a Private Meeting | HeartLink",
+    "description": "Request a private meeting with HeartLink for yourself or a family member."
+  },
   "intro": {
-    "eyebrow": "Private admissions",
-    "title": "Introduce the person, <em>not just a profile.</em>",
-    "description": "Apply for yourself or on behalf of someone you care for. The private desk uses this first submission to understand the applicant, family context and preferred service channel.",
+    "eyebrow": "Request a meeting",
+    "title": "Start with a <em>private conversation.</em>",
+    "description": "Share basic details about the person seeking a match. The HeartLink team will review if we can help.",
     "protocol": [
-      { "number": "01", "label": "Applicant details" },
+      { "number": "01", "label": "Basic details" },
       { "number": "02", "label": "Private review" },
-      { "number": "03", "label": "Direct dialogue" }
+      { "number": "03", "label": "Follow-up call" }
     ]
   },
   "form": {
-    "eyebrow": "Confidential registry application",
-    "introduction": "Fields marked required help us verify the applicant and contact the right family member. Information is never placed in a public directory.",
-    "verificationNote": "Every submission is reviewed by a person. HeartLink may contact the nominated representative to verify identity, intent and the most suitable service channel before presenting any profile.",
-    "consent": "I confirm that I am authorised to submit these details, consent to confidential review by HeartLink, and understand that submission does not guarantee an introduction or acceptance into a paid mandate.",
-    "button": "Submit Registry Application"
+    "eyebrow": "Private meeting request",
+    "introduction": "Your details are reviewed privately and are not shown in a public directory.",
+    "verificationNote": "Every enquiry is reviewed by a person. HeartLink may contact the nominated representative to verify identity and understand the right service option.",
+    "consent": "I am authorised to share these details and agree that HeartLink may review them confidentially.",
+    "button": "Request Private Meeting"
   },
   "faqs": [
-    { "question": "Who will see my information?", "answer": "Your initial submission is reviewed only by HeartLink’s private admissions desk and its principals. It is not published, indexed or shared with prospective matches." },
-    { "question": "Can a parent or relative apply?", "answer": "Yes. Select that you are applying for someone else, then provide the applicant’s details and the best family contact for the private desk." },
-    { "question": "What happens after submission?", "answer": "If the mandate appears aligned with our current registry and advisory capacity, the private desk will establish a direct verification dialogue before any invitation or commercial discussion." }
+    { "question": "Who will see my information?", "answer": "Only the HeartLink team. Your details are not published or shared publicly." },
+    { "question": "Can a parent or relative enquire?", "answer": "Yes. Parents and close family members can start the enquiry." },
+    { "question": "What happens after submission?", "answer": "If we can help, HeartLink will contact you privately for the next conversation." }
   ]
 }

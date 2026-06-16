@@ -1,50 +1,50 @@
 {
   "seo": {
-    "title": "HeartLink | Private Matrimonial & Family Advisory",
-    "description": "Founder-led private matrimonial and family advisory for distinguished Gujarati and Marwari families in India and across the world."
+    "title": "HeartLink | Private Matchmaking",
+    "description": "Private matchmaking for select Gujarati and Marwari families in India and across the world."
   },
   "hero": {
-    "eyebrow": "Invite-only · India & the world",
-    "title": "Where two legacies <em>become one.</em>",
-    "description": "Private matchmaking and whole-family counsel, personally architected for those who understand that marriage is not a transaction. It is a generational decision.",
-    "primaryButton": "Request a Private Consultation",
-    "secondaryButton": "Explore our approach",
-    "note": "No public directory · No algorithmic matching · Absolute discretion",
-    "privacyNote": "A protected global circle. Identity is revealed only with mutual consent.",
+    "eyebrow": "Private matchmaking · India & global",
+    "title": "Trusted matchmaking for <em>select Indian families.</em>",
+    "description": "HeartLink helps Gujarati and Marwari families find suitable life partners through a private, carefully checked and family-focused process.",
+    "primaryButton": "Request a Private Meeting",
+    "secondaryButton": "See how it works",
+    "note": "No public profiles · No app culture · Strict privacy",
+    "privacyNote": "Identity is shared only with approval.",
     "profileImages": []
   },
   "registry": {
-    "eyebrow": "The active registry",
+    "eyebrow": "Limited active profiles",
     "number": "50",
-    "title": "Exclusivity is not just a promise. <em>It’s our operating principle.</em>",
-    "description": "At any single period, HeartLink limits its active global registry to 50 profiles. Every introduction, conversation and reassessment is structured by Gopi Shah, protecting the depth of judgment that cannot be delegated or automated.",
-    "linkText": "Meet the woman behind every introduction"
+    "title": "We work with a limited number of families at a time.",
+    "description": "This allows HeartLink to give personal attention to each serious case. Important introductions are reviewed by Gopi Shah.",
+    "linkText": "Meet Gopi Shah"
   },
   "proof": [
-    { "value": "50", "label": "Maximum active profiles" },
-    { "value": "7", "label": "Stages of considered counsel" },
-    { "value": "1 year", "label": "Post-marital continuity" },
-    { "value": "Global", "label": "Private search reach" }
+    { "value": "50", "label": "Limited active profiles" },
+    { "value": "7", "label": "Clear process steps" },
+    { "value": "1 year", "label": "Support when needed" },
+    { "value": "Global", "label": "Private family network" }
   ],
   "advantage": {
-    "eyebrow": "The strategic advantage",
-    "title": "Beyond discovery. Toward discernment.",
-    "description": "Most platforms increase the number of people you encounter. HeartLink increases the quality of the decision you make.",
+    "eyebrow": "Why HeartLink",
+    "title": "Private, selective and family-focused.",
+    "description": "Most platforms show many profiles. HeartLink focuses on fewer, better introductions.",
     "rows": [
-      { "subject": "Selection logic", "explanation": "Who enters consideration.", "heartlink": "Human curation|Founder-led and contextual", "matchmakers": "Network-led|Varies by individual practice", "apps": "Algorithmic|Optimised for engagement", "diy": "Intuitive|Limited by personal reach" },
-      { "subject": "Family alignment", "explanation": "Values and generational context.", "heartlink": "Built in|Architected from day one", "matchmakers": "Variable|Often introduced later", "apps": "Rare|Usually outside the model", "diy": "Informal|Handled personally" },
-      { "subject": "Continuity of care", "explanation": "Support after introduction.", "heartlink": "Continuous|Through one year of marriage", "matchmakers": "Limited|Commonly ends at commitment", "apps": "None|Ends at connection", "diy": "None|No formal support" },
-      { "subject": "Privacy protocol", "explanation": "How identity is protected.", "heartlink": "Mutual consent|Controlled disclosure", "matchmakers": "Practice-led|Standards may differ", "apps": "Public-facing|Profile-led discovery", "diy": "Variable|Trust is self-managed" }
+      { "subject": "Search", "explanation": "Who is shown to you.", "heartlink": "Personal review|Checked by the team", "matchmakers": "Network-led|Depends on the person", "apps": "Algorithm|Too many profiles", "diy": "Personal network|Limited reach" },
+      { "subject": "Family fit", "explanation": "Values and background.", "heartlink": "Important|Checked early", "matchmakers": "Variable|May come later", "apps": "Rare|Not built for families", "diy": "Informal|Handled personally" },
+      { "subject": "Support", "explanation": "Help after introduction.", "heartlink": "Available|Guidance when needed", "matchmakers": "Limited|Often ends early", "apps": "None|Ends at connection", "diy": "None|No formal support" },
+      { "subject": "Privacy", "explanation": "How details are protected.", "heartlink": "Strict|Shared only with approval", "matchmakers": "Variable|Depends on process", "apps": "Public|Profile-based", "diy": "Variable|Self-managed" }
     ]
   },
   "dimensions": {
-    "eyebrow": "One advisory. Three dimensions.",
-    "title": "Selection. Courtship. Family.",
-    "description": "HeartLink combines the eye of a master curator with therapeutic intelligence, guiding the relationship and the family system around it.",
+    "eyebrow": "Our focus",
+    "title": "Background. Compatibility. Family comfort.",
+    "description": "A good match should feel right for the individual and the family.",
     "cards": [
-      { "label": "01 · Curation", "title": "A smaller, more meaningful field.", "description": "Prospects are selected through personality, priorities, social context, family dynamics and long-horizon compatibility." },
-      { "label": "02 · Counsel", "title": "The conversation after chemistry.", "description": "Emotional and relationship guidance helps couples move from possibility to informed commitment without performance or pressure." },
-      { "label": "03 · Continuity", "title": "Two families, thoughtfully integrated.", "description": "Pre-marital, family and post-marital support protects the transition well beyond the wedding." }
+      { "label": "01 · Search", "title": "Fewer, better introductions.", "description": "Profiles are selected with background, values and long-term fit in mind." },
+      { "label": "02 · Guidance", "title": "Support during the process.", "description": "We help both sides understand expectations and move with clarity." },
+      { "label": "03 · Family", "title": "Two families, handled carefully.", "description": "When needed, we support family conversations before and after commitment." }
     ]
   }
 }

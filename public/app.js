@@ -44,8 +44,8 @@ if (header) {
         ${navigation.map(({ href, label }) => `<a href="${href}" ${path === href ? 'aria-current="page"' : ""}>${label}</a>`).join("")}
       </nav>
       <div class="nav-actions">
-        <a class="button button-small button-outline desktop-contact" href="/contact">Private Desk</a>
-        <a class="button button-small desktop-apply" href="/apply">Request Consultation</a>
+        <a class="button button-small button-outline desktop-contact" href="/contact">Contact</a>
+        <a class="button button-small desktop-apply" href="/apply">Request Meeting</a>
       </div>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
@@ -54,7 +54,7 @@ if (header) {
     <div class="mobile-menu" aria-hidden="true">
       <nav aria-label="Mobile navigation">
         ${navigation.map(({ href, label }, index) => `<a href="${href}"><span>0${index + 1}</span>${label}</a>`).join("")}
-        <div class="mobile-actions"><a class="button" href="/apply">Request a Private Consultation</a><a class="button button-outline" href="/contact">Contact the Private Desk</a></div>
+        <div class="mobile-actions"><a class="button" href="/apply">Request a Private Meeting</a><a class="button button-outline" href="/contact">Contact HeartLink</a></div>
       </nav>
     </div>`;
 
@@ -78,9 +78,9 @@ if (footer) {
       <p>${site.footerStatement}</p>
     </div>
     <div class="footer-links">
-      <div><span>Private Admissions</span><a href="/apply">Request a private consultation</a><a href="/contact">Contact the private desk</a><a href="mailto:${site.conciergeEmail}">${site.conciergeEmail}</a></div>
-      <div><span>Our House</span><a href="/about">Founder & advisors</a><a href="/methodology">The gold-thread process</a><a href="/impact">Trust & recognition</a></div>
-      <div><span>Further Enquiries</span><a href="/membership">Advisory mandates</a><a href="/partnerships">Private partnerships</a><a href="/careers">Careers</a><a href="/privacy.html">Confidentiality</a></div>
+      <div><span>Start Here</span><a href="/apply">Request a private meeting</a><a href="/contact">Contact HeartLink</a><a href="mailto:${site.conciergeEmail}">${site.conciergeEmail}</a></div>
+      <div><span>Learn More</span><a href="/about">About Gopi Shah</a><a href="/methodology">Our process</a><a href="/impact">Trust & recognition</a></div>
+      <div><span>More</span><a href="/membership">Services</a><a href="/partnerships">Partnerships</a><a href="/careers">Careers</a><a href="/privacy.html">Privacy</a></div>
     </div>
     <div class="footer-base"><span>© ${new Date().getFullYear()} ${site.brandName} ${site.brandDescriptor}</span><span>${site.locations}</span></div>`;
 }
@@ -348,7 +348,7 @@ document.querySelectorAll("form[data-submission-type]").forEach((form) => {
         <div class="form-success" role="status">
           <span class="eyebrow">Received securely</span>
           <h2>Thank you, <span data-first-name></span>.</h2>
-          <p>${result.message} Your confidential reference is <strong>${result.reference}</strong>. A member of the private desk will review it before making contact.</p>
+          <p>${result.message} Your reference is <strong>${result.reference}</strong>. The HeartLink team will review it privately before making contact.</p>
           <a class="text-link" href="/">Return to HeartLink <span>↗</span></a>
         </div>`;
       form.querySelector("[data-first-name]").textContent = firstName;

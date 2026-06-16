@@ -1,6 +1,6 @@
 {
   "brandName": "HEARTLINK",
-  "brandDescriptor": "Private Matrimonial Advisory",
+  "brandDescriptor": "Private Matchmaking",
   "logo": "/Heartlink Logo.png",
   "primaryColor": "#5F1724",
   "accentColor": "#B8954F",
@@ -11,12 +11,12 @@
   "privacyEmail": "privacy@heartlink.in",
   "partnershipsEmail": "partnerships@heartlink.in",
   "locations": "Mumbai · India · Global",
-  "footerStatement": "Where considered introductions<br>become enduring alliances.",
+  "footerStatement": "Private matchmaking for<br>select Indian families.",
   "navigation": [
-    { "href": "/", "label": "Residence" },
-    { "href": "/about", "label": "Our House" },
-    { "href": "/methodology", "label": "Approach" },
-    { "href": "/membership", "label": "Mandates" },
+    { "href": "/", "label": "Home" },
+    { "href": "/about", "label": "About" },
+    { "href": "/methodology", "label": "Process" },
+    { "href": "/membership", "label": "Services" },
     { "href": "/impact", "label": "Trust" },
     { "href": "/partnerships", "label": "Partnerships" },
     { "href": "/careers", "label": "Careers" }
