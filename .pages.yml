@@ -48,10 +48,11 @@ content:
       - { name: brandName, label: Brand name, type: string, required: true }
       - { name: brandDescriptor, label: Brand descriptor, type: string }
       - { name: logo, label: Logo, type: image, required: true }
-      - { name: primaryColor, label: Primary plum colour, type: string, description: "Hex colour, for example #2C052E" }
-      - { name: accentColor, label: Signature pink colour, type: string, description: "Hex colour, for example #E235F7" }
-      - { name: secondaryAccentColor, label: Secondary cyan colour, type: string }
+      - { name: primaryColor, label: Primary maroon colour, type: string, description: "Hex colour, for example #5F1724" }
+      - { name: accentColor, label: Signature gold colour, type: string, description: "Hex colour, for example #B8954F" }
+      - { name: secondaryAccentColor, label: Secondary green colour, type: string }
       - { name: conciergeEmail, label: Concierge email, type: string }
+      - { name: whatsappNumber, label: WhatsApp number, type: string, description: "Use international format, for example +919326642337." }
       - { name: pressEmail, label: Press email, type: string }
       - { name: careersEmail, label: Careers email, type: string }
       - { name: privacyEmail, label: Privacy email, type: string }
@@ -70,7 +71,7 @@ content:
           - { name: href, label: Link path, type: string, description: "Examples: /about or https://example.com" }
 
   - name: home
-    label: "01 · Home / The Vanguard"
+    label: "01 · Home"
     type: file
     path: public/content/home.json
     format: json
@@ -85,6 +86,7 @@ content:
           - { name: description, label: Introductory paragraph, type: text }
           - { name: primaryButton, label: Primary button, type: string }
           - { name: secondaryButton, label: Secondary button, type: string }
+          - { name: whatsappButton, label: WhatsApp button, type: string }
           - { name: note, label: Privacy line, type: string }
           - { name: privacyNote, label: Carousel privacy note, type: text }
           - { name: profileImages, label: Private profile carousel images, type: image, list: { max: 5 }, description: Add up to five images. They are automatically blurred. }
@@ -98,7 +100,7 @@ content:
           - { name: description, label: Description, type: text }
           - { name: linkText, label: Link text, type: string }
       - name: proof
-        label: Credibility numbers
+        label: Proof numbers
         type: object
         list:
           collapsible:
@@ -107,6 +109,29 @@ content:
         fields:
           - { name: value, label: Value, type: string }
           - { name: label, label: Caption, type: string }
+      - name: proofAssets
+        label: Proof photos and assets
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label} · {title}"
+        fields:
+          - { name: label, label: Small label, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: image, label: Optional image, type: image }
+      - name: stories
+        label: Anonymized stories and testimonials
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - { name: label, label: Story label, type: string }
+          - { name: quote, label: Quote or story, type: text }
+          - { name: source, label: Source line, type: string }
       - name: advantage
         label: Comparison grid
         type: object

@@ -1,6 +1,6 @@
-# HeartLink Private Advisory
+# HeartLink Private Matchmaking
 
-A dependency-free, multi-page website for HeartLink's invite-only matchmaking and family advisory practice.
+A dependency-free, multi-page website for HeartLink's private matchmaking practice for select Indian families.
 
 ## Content management
 
@@ -30,7 +30,7 @@ HEARTLINK_FROM_EMAIL="HeartLink Website <website@your-verified-domain.com>" \
 npm start
 ```
 
-The server supports registry applications, general enquiries, and partnership enquiries. For a free production setup:
+The server supports registry applications, general enquiries, WhatsApp CTAs, and partnership enquiries. For a free production setup:
 
 1. Create a free Supabase project and run [`supabase-schema.sql`](./supabase-schema.sql) in its SQL editor.
 2. Create a free Resend account and verify the sending domain.

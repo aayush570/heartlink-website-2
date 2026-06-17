@@ -8,6 +8,12 @@
     "title": "Trusted networks. A stronger <em>standard.</em>",
     "description": "HeartLink works with established matchmakers and trusted connectors when privacy, family trust and client care are aligned."
   },
+  "cta": {
+    "primaryLabel": "Introduce Your Practice",
+    "primaryUrl": "/partnerships#partnership-form",
+    "showWhatsapp": true,
+    "whatsappLabel": "WhatsApp HeartLink"
+  },
   "models": {
     "eyebrow": "Ways to work together",
     "title": "Partner with clear privacy standards.",

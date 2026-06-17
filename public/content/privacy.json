@@ -8,6 +8,12 @@
     "title": "Your details stay <em>private.</em>",
     "description": "HeartLink collects only the information needed to review your enquiry. Identity is never displayed in a public directory."
   },
+  "cta": {
+    "primaryLabel": "Apply to Registry",
+    "primaryUrl": "/apply",
+    "showWhatsapp": true,
+    "whatsappLabel": "WhatsApp HeartLink"
+  },
   "content": {
     "title": "How HeartLink protects your information",
     "lead": "Privacy is a core part of how HeartLink works.",

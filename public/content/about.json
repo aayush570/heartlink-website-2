@@ -8,6 +8,12 @@
     "title": "A trusted team for <em>serious families.</em>",
     "description": "HeartLink is led by Gopi Shah, with a strong focus on privacy, family background and long-term compatibility."
   },
+  "cta": {
+    "primaryLabel": "Apply to Registry",
+    "primaryUrl": "/apply",
+    "showWhatsapp": true,
+    "whatsappLabel": "WhatsApp HeartLink"
+  },
   "curators": [
     {
       "name": "Gopi Shah",
@@ -74,6 +80,40 @@
           "description": "Support through the match process"
         }
       ]
+    }
+  ],
+  "proofHeading": {
+    "eyebrow": "Public recognition",
+    "title": "Founder credibility families can see.",
+    "description": "Use this area for award photos, event moments, founder photos, press links and other public proof."
+  },
+  "proofAssets": [
+    {
+      "label": "Award proof",
+      "title": "Dr. Sarojini Naidu International Award",
+      "description": "Placeholder for award photo, certificate or public recognition note.",
+      "image": "",
+      "link": "",
+      "source": "",
+      "date": ""
+    },
+    {
+      "label": "Founder photo",
+      "title": "Gopi Shah with families and community",
+      "description": "Placeholder for a warm founder-led photograph that builds trust.",
+      "image": "",
+      "link": "",
+      "source": "",
+      "date": ""
+    },
+    {
+      "label": "Event photo",
+      "title": "Cultural and community work",
+      "description": "Placeholder for event photography connected to Gopi Shah's public work.",
+      "image": "",
+      "link": "",
+      "source": "",
+      "date": ""
     }
   ],
   "closing": {

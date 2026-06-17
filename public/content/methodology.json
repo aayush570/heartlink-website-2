@@ -8,6 +8,12 @@
     "title": "A simple process with <em>careful checks.</em>",
     "description": "HeartLink keeps the search private, selective and family-focused from the first meeting to the final decision."
   },
+  "cta": {
+    "primaryLabel": "Apply to Registry",
+    "primaryUrl": "/apply",
+    "showWhatsapp": true,
+    "whatsappLabel": "WhatsApp HeartLink"
+  },
   "steps": [
     {
       "label": "Step 01",
@@ -52,6 +58,17 @@
       "description": "When needed, HeartLink can continue guidance through engagement and early married life."
     }
   ],
+  "afterSubmit": {
+    "eyebrow": "After you submit",
+    "title": "What happens after your application.",
+    "description": "A simple private review helps us guide each family to the right next step.",
+    "cards": [
+      { "label": "01", "title": "Private review", "description": "The HeartLink team reviews the enquiry and basic profile details privately.", "image": "", "link": "", "source": "", "date": "" },
+      { "label": "02", "title": "Follow-up", "description": "If we can help, a team member may contact the family representative for more context.", "image": "", "link": "", "source": "", "date": "" },
+      { "label": "03", "title": "Fit discussion", "description": "We understand expectations, privacy needs and which service option may suit the family.", "image": "", "link": "", "source": "", "date": "" },
+      { "label": "04", "title": "Next-step recommendation", "description": "HeartLink recommends Registry, success-only support or retained search where appropriate.", "image": "", "link": "", "source": "", "date": "" }
+    ]
+  },
   "closing": {
     "eyebrow": "Our promise",
     "title": "Private, selective and personal.",

@@ -8,6 +8,12 @@
     "title": "Work that needs <em>trust.</em>",
     "description": "We look for people with maturity, good judgment, strong communication and complete respect for privacy."
   },
+  "cta": {
+    "primaryLabel": "Introduce Yourself",
+    "primaryUrl": "mailto:careers@heartlink.in?subject=Confidential%20Expression%20of%20Interest",
+    "showWhatsapp": false,
+    "whatsappLabel": "WhatsApp HeartLink"
+  },
   "rolesIntro": {
     "eyebrow": "The standard",
     "title": "Work that needs trust and maturity.",

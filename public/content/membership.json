@@ -1,38 +1,44 @@
 {
   "seo": {
     "title": "Services | HeartLink",
-    "description": "Explore HeartLink's private matchmaking services for select families."
+    "description": "Explore HeartLink's private registry, success-based introductions and invitation-only retained search."
   },
   "hero": {
     "eyebrow": "Services",
     "title": "Choose the level of <em>support you need.</em>",
-    "description": "Some families want to submit a profile. Others want HeartLink to actively search. We guide you to the right option after speaking with you."
+    "description": "Some families want to submit a profile privately. Others want deeper personal involvement from Gopi Shah. We guide you to the right option after speaking with you."
+  },
+  "cta": {
+    "primaryLabel": "Apply to Registry",
+    "primaryUrl": "/apply",
+    "showWhatsapp": true,
+    "whatsappLabel": "WhatsApp HeartLink"
   },
   "tiers": [
     {
       "label": "01 · Profile submission",
       "title": "Private Registry",
-      "description": "Submit a profile to be considered for selected HeartLink introductions.",
-      "features": ["Confidential profile review", "Founder-led consideration", "Introductions only with consent"],
-      "button": "Submit Profile",
+      "description": "Submit a profile free of charge to be considered for selected HeartLink introductions.",
+      "features": ["Free confidential profile submission", "Private review by the HeartLink team", "Introductions only with consent"],
+      "button": "Apply to Registry",
       "tone": "registry",
       "black": false
     },
     {
       "label": "02 · Success based",
       "title": "Success Plan",
-      "description": "No upfront registration fee. A success fee applies only if the match is made through HeartLink.",
-      "features": ["No upfront fee", "Selected introductions", "Fee only on successful match"],
-      "button": "Explore Success Plan",
+      "description": "No upfront registration fee. A success fee applies only if HeartLink successfully makes the match.",
+      "features": ["No upfront registration fee", "Selected introductions", "Success fee only after match"],
+      "button": "Ask About Success Plan",
       "tone": "success",
       "black": false
     },
     {
       "label": "03 · Active search",
       "title": "Premium Search",
-      "description": "For families who want HeartLink to actively search, shortlist and guide the process.",
-      "features": ["Active partner search", "Regular guidance", "Family support"],
-      "button": "Discuss Premium Search",
+      "description": "An application-based retained search for families where Gopi Shah feels HeartLink can add strong value.",
+      "features": ["Upfront retainership discussed privately", "Only selected mandates accepted", "Part of the 50 active retained mandate limit"],
+      "button": "Apply for Retained Search",
       "tone": "premium",
       "black": false
     },
@@ -40,7 +46,7 @@
       "label": "04 · Highest touch",
       "title": "Private Circle",
       "description": "For select families who need a highly private, wider search with senior-level attention.",
-      "features": ["Private outreach", "Wider search network", "High privacy"],
+      "features": ["Senior-level private outreach", "Wider trusted network", "Maximum discretion"],
       "button": "Request Private Circle",
       "tone": "black",
       "black": true
@@ -49,8 +55,8 @@
   "protocol": {
     "title": "Exclusive does not mean complicated.",
     "paragraphs": [
-      "HeartLink works with a limited number of families so quality stays high.",
-      "Acceptance, fees and service level are discussed only after we understand your family and requirements."
+      "The Registry Network can grow widely, but retained search remains intentionally limited.",
+      "HeartLink accepts a maximum of 50 active retained mandates at one time. Acceptance, fees and service level are discussed only after we understand your family and requirements."
     ]
   },
   "closing": {

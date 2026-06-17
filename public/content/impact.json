@@ -8,10 +8,16 @@
     "title": "A name families can <em>trust.</em>",
     "description": "HeartLink is built on years of social work, cultural leadership and private matrimonial experience."
   },
+  "cta": {
+    "primaryLabel": "Apply to Registry",
+    "primaryUrl": "/apply",
+    "showWhatsapp": true,
+    "whatsappLabel": "WhatsApp HeartLink"
+  },
   "stats": [
-    { "value": "01", "label": "International award" },
-    { "value": "05", "label": "Years of matrimonial service" },
-    { "value": "50", "label": "Limited active profiles" }
+    { "value": "1,000+", "label": "Profiles tracked for client searches" },
+    { "value": "250+", "label": "Families advised over time" },
+    { "value": "50", "label": "Maximum active retained mandates" }
   ],
   "feature": {
     "image": "",
@@ -28,12 +34,12 @@
     "title": "Experience beyond matchmaking.",
     "description": "Families trust people who have already shown responsibility in real life. HeartLink carries that background.",
     "cards": [
-      { "label": "Award", "title": "Dr. Sarojini Naidu International Award", "description": "Recognition for Gopi Shah's contribution to education, culture and community service.", "image": "" },
-      { "label": "Global work", "title": "Great Wall of China performance", "description": "Coordination of a major cultural performance on an international stage.", "image": "" },
-      { "label": "Service", "title": "COVID-19 support", "description": "Helped arrange care centres and oxygen support during the crisis.", "image": "" },
-      { "label": "Indian craft", "title": "Support for artisans", "description": "Created work opportunities for Indian artisans through hand-crafted design work.", "image": "" },
-      { "label": "Matrimonial trust", "title": "Five years of Jeevansathi service", "description": "Honorary matrimonial work that became the foundation for HeartLink.", "image": "" },
-      { "label": "Private office", "title": "Press and partnership enquiries", "description": "For awards, speaking, partnerships and press, contact the HeartLink office.", "image": "" }
+      { "label": "Award", "title": "Dr. Sarojini Naidu International Award", "description": "Recognition for Gopi Shah's contribution to education, culture and community service.", "image": "", "link": "", "source": "", "date": "" },
+      { "label": "Global work", "title": "Great Wall of China performance", "description": "Coordination of a major cultural performance on an international stage.", "image": "", "link": "", "source": "", "date": "" },
+      { "label": "Service", "title": "COVID-19 support", "description": "Helped arrange care centres and oxygen support during the crisis.", "image": "", "link": "", "source": "", "date": "" },
+      { "label": "Indian craft", "title": "Support for artisans", "description": "Created work opportunities for Indian artisans through hand-crafted design work.", "image": "", "link": "", "source": "", "date": "" },
+      { "label": "Matrimonial trust", "title": "Five years of Jeevansathi service", "description": "Honorary matrimonial work that became the foundation for HeartLink.", "image": "", "link": "", "source": "", "date": "" },
+      { "label": "Private office", "title": "Press and partnership enquiries", "description": "For awards, speaking, partnerships and press, contact the HeartLink office.", "image": "", "link": "", "source": "", "date": "" }
     ]
   },
   "closing": {

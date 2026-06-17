@@ -26,7 +26,8 @@ const pageRoutes = new Map([
   ["/partnerships", "partnerships.html"],
   ["/careers", "careers.html"],
   ["/apply", "apply.html"],
-  ["/contact", "contact.html"]
+  ["/contact", "contact.html"],
+  ["/privacy", "privacy.html"]
 ]);
 
 function sendJson(response, status, body) {

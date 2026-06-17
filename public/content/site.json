@@ -6,12 +6,41 @@
   "accentColor": "#B8954F",
   "secondaryAccentColor": "#183F32",
   "conciergeEmail": "concierge@heartlink.in",
+  "whatsappNumber": "+919326642337",
   "pressEmail": "press@heartlink.in",
   "careersEmail": "careers@heartlink.in",
   "privacyEmail": "privacy@heartlink.in",
   "partnershipsEmail": "partnerships@heartlink.in",
   "locations": "Mumbai · India · Global",
   "footerStatement": "Private matchmaking for<br>select Indian families.",
+  "footerLegal": "HeartLink reviews enquiries privately. Profiles are not public, and personal details are shared only after consent.",
+  "footerColumns": [
+    {
+      "title": "Start Here",
+      "links": [
+        { "label": "Apply to the registry", "href": "/apply" },
+        { "label": "WhatsApp HeartLink", "href": "{{whatsapp}}" },
+        { "label": "concierge@heartlink.in", "href": "mailto:concierge@heartlink.in" }
+      ]
+    },
+    {
+      "title": "Learn More",
+      "links": [
+        { "label": "About Gopi Shah", "href": "/about" },
+        { "label": "Our process", "href": "/methodology" },
+        { "label": "Trust & recognition", "href": "/impact" }
+      ]
+    },
+    {
+      "title": "More",
+      "links": [
+        { "label": "Services", "href": "/membership" },
+        { "label": "Partnerships", "href": "/partnerships" },
+        { "label": "Careers", "href": "/careers" },
+        { "label": "Privacy", "href": "/privacy" }
+      ]
+    }
+  ],
   "navigation": [
     { "href": "/", "label": "Home" },
     { "href": "/about", "label": "About" },

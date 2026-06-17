@@ -13,7 +13,7 @@ You do not need to edit code to update the website.
 Pages CMS will automatically read `.pages.yml` from the root of the repository. The editor will show numbered sections:
 
 - `00 · Global brand & contact`
-- `01 · Home / The Vanguard`
+- `01 · Home`
 - `02 · About the Curators`
 - `03 · Methodology`
 - `04 · Membership & Tiers`

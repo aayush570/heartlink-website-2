@@ -1,12 +1,12 @@
 {
   "seo": {
-    "title": "Request a Private Meeting | HeartLink",
-    "description": "Request a private meeting with HeartLink for yourself or a family member."
+    "title": "Apply to HeartLink | Private Registry",
+    "description": "Apply privately to HeartLink's registry or request a private matchmaking conversation for yourself or a family member."
   },
   "intro": {
-    "eyebrow": "Request a meeting",
+    "eyebrow": "Private registry application",
     "title": "Start with a <em>private conversation.</em>",
-    "description": "Share basic details about the person seeking a match. The HeartLink team will review if we can help.",
+    "description": "Share basic details about the person seeking a match. HeartLink will review the enquiry privately before any next step.",
     "protocol": [
       { "number": "01", "label": "Basic details" },
       { "number": "02", "label": "Private review" },
@@ -14,11 +14,11 @@
     ]
   },
   "form": {
-    "eyebrow": "Private meeting request",
-    "introduction": "Your details are reviewed privately and are not shown in a public directory.",
+    "eyebrow": "Registry and private search enquiry",
+    "introduction": "Your details are reviewed privately and are never shown in a public directory.",
     "verificationNote": "Every enquiry is reviewed by a person. HeartLink may contact the nominated representative to verify identity and understand the right service option.",
     "consent": "I am authorised to share these details and agree that HeartLink may review them confidentially.",
-    "button": "Request Private Meeting"
+    "button": "Submit Private Application"
   },
   "faqs": [
     { "question": "Who will see my information?", "answer": "Only the HeartLink team. Your details are not published or shared publicly." },

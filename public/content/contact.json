@@ -8,6 +8,19 @@
     "title": "Speak with us <em>privately.</em>",
     "description": "Have a question before submitting a profile? Send a short enquiry and the right person will respond."
   },
+  "cta": {
+    "primaryLabel": "Apply to Registry",
+    "primaryUrl": "/apply",
+    "showWhatsapp": true,
+    "whatsappLabel": "WhatsApp HeartLink"
+  },
+  "whatsappSection": {
+    "eyebrow": "Direct enquiry",
+    "title": "Prefer to speak first?",
+    "description": "Families can also message or call HeartLink privately before completing the full application.",
+    "whatsappLabel": "+91 93266 42337",
+    "callLabel": "+91 93266 42337"
+  },
   "form": {
     "eyebrow": "General enquiry",
     "introduction": "Share your details and we will get back to you privately.",
