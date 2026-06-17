@@ -162,7 +162,7 @@ em, .accent { color: var(--maroon); font-weight: 400; }
   min-height: 100svh;
   background:
     linear-gradient(90deg, rgba(35,27,17,.04), transparent 35%),
-    url("/media/heartlink-heritage-invitation.png") center / cover;
+    image-set(url("/media/heartlink-heritage-invitation.avif") type("image/avif"), url("/media/heartlink-heritage-invitation.png") type("image/png")) center / cover;
   animation: heroReveal 2s var(--ease) both;
 }
 @keyframes heroReveal { from { opacity: 0; transform: scale(1.035); } }

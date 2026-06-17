@@ -4,7 +4,7 @@
     "description": "Private matchmaking for select Indian families in India and across the world.",
     "ogTitle": "HeartLink | Private Matchmaking",
     "ogDescription": "Founder-led matchmaking for select Indian families, with privacy, trust and family-first review.",
-    "ogImage": "/media/heartlink-heritage-invitation.webp"
+    "ogImage": "/media/heartlink-heritage-invitation.png"
   },
   "hero": {
     "eyebrow": "Private matchmaking · India & global",
@@ -124,7 +124,7 @@
     { "label": "Story 03", "quote": "Placeholder note from a candidate who valued comfort, clarity and no app-style experience.", "source": "Candidate · Overseas Indian family" }
   ],
   "founder": {
-    "image": "/media/gopi-shah.webp",
+    "image": "/media/gopi-shah.jpg",
     "imageAlt": "Gopi Shah, Founder and Principal Advisor of HeartLink",
     "badge": "Founder & Principal Advisor",
     "eyebrow": "Led by Gopi Shah",

@@ -381,7 +381,7 @@ function renderAbout() {
       const image = safeUrl(curator.image || "", "");
       const style = image
         ? `background-image:linear-gradient(to top,rgba(8,5,10,.55),transparent),url('${escapeHtml(image)}')`
-        : curator.theme === "cyan"
+        : curator.theme === "deep"
           ? "background:radial-gradient(circle at 50% 25%,rgba(25,200,211,.28),transparent 20%),linear-gradient(160deg,#123241,#0d0a0f 70%)"
           : "";
       return `

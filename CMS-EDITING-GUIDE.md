@@ -12,12 +12,12 @@ You do not need to edit code to update the website.
 
 Pages CMS will automatically read `.pages.yml` from the root of the repository. The editor will show numbered sections:
 
-- `00 · Global brand & contact`
+- `00 · Global brand, contact & footer`
 - `01 · Home`
-- `02 · About the Curators`
-- `03 · Methodology`
-- `04 · Membership & Tiers`
-- `05 · Impact & Press`
+- `02 · About`
+- `03 · Process`
+- `04 · Services`
+- `05 · Trust & Recognition`
 - `06 · Careers`
 - `07 · Private Application`
 - `08 · Contact`
@@ -40,7 +40,7 @@ Images uploaded through Pages CMS are saved in `public/media` and become part of
 
 Recommended formats:
 
-- Photos: `.webp` or high-quality `.jpg`
+- Photos: `.avif` or high-quality `.jpg`
 - Logos and transparent graphics: `.png`
 - Keep individual images below 1.5 MB where possible
 - Founder portraits: portrait orientation, ideally 1200 × 1600 pixels
@@ -61,7 +61,7 @@ Only place `<em>` before the highlighted words and `</em>` after them.
 
 ## What is intentionally protected
 
-The CMS controls content, images, contact details, navigation labels, lists, and brand colours. The underlying spacing, animation, typography, responsiveness, form validation, and privacy behavior remain in code so an accidental edit cannot break the design.
+The CMS controls content, images, proof numbers, proof cards, stories, CTA labels and links, WhatsApp display text, contact details, navigation labels, footer links, lists, and brand colours. The underlying spacing, animation, typography, responsiveness, form validation, and privacy behavior remain in code so an accidental edit cannot break the design.
 
 ## Important application-form note
 

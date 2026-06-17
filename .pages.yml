@@ -6,22 +6,47 @@ media:
 
 components:
   seo:
-    label: Search & sharing
+    label: Search & social sharing
     type: object
     fields:
       - { name: title, label: Browser title, type: string, required: true }
       - { name: description, label: Search description, type: text, required: true }
+      - { name: ogTitle, label: Social share title, type: string }
+      - { name: ogDescription, label: Social share description, type: text }
+      - { name: ogImage, label: Social share image, type: image }
   hero:
     label: Page introduction
     type: object
     fields:
       - { name: eyebrow, label: Small heading, type: string }
-      - name: title
-        label: Main headline
-        type: string
-        required: true
-        description: Wrap the words that should be pink and italic in <em> and </em>.
+      - { name: title, label: Main headline, type: string, required: true, description: "Use <em>highlighted words</em>. Use <br> only where a line break is intentional." }
       - { name: description, label: Introductory paragraph, type: text }
+  cta:
+    label: Hero call to action
+    type: object
+    fields:
+      - { name: primaryLabel, label: Main button label, type: string }
+      - { name: primaryUrl, label: Main button link, type: string }
+      - { name: showWhatsapp, label: Show WhatsApp button, type: boolean }
+      - { name: whatsappLabel, label: WhatsApp button label, type: string }
+  sectionIntro:
+    label: Section heading
+    type: object
+    fields:
+      - { name: eyebrow, label: Small heading, type: string }
+      - { name: title, label: Section title, type: string, description: "Use <em>highlighted words</em>. Use <br> only where needed." }
+      - { name: description, label: Supporting text, type: text }
+  proofCard:
+    label: Proof, story or media card
+    type: object
+    fields:
+      - { name: label, label: Small label, type: string }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Description, type: text }
+      - { name: image, label: Optional image, type: image }
+      - { name: link, label: Optional proof link, type: string }
+      - { name: source, label: Source or publication, type: string }
+      - { name: date, label: Date or year, type: string }
   closing:
     label: Closing call to action
     type: object
@@ -29,18 +54,11 @@ components:
       - { name: eyebrow, label: Small heading, type: string }
       - { name: quote, label: Large statement, type: text }
       - { name: button, label: Button text, type: string }
-  card:
-    label: Card
-    type: object
-    fields:
-      - { name: label, label: Small label, type: string }
-      - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: text }
-      - { name: image, label: Optional image, type: image }
+      - { name: url, label: Button link, type: string }
 
 content:
   - name: site
-    label: "00 · Global brand & contact"
+    label: "00 · Global brand, contact & footer"
     type: file
     path: public/content/site.json
     format: json
@@ -48,8 +66,8 @@ content:
       - { name: brandName, label: Brand name, type: string, required: true }
       - { name: brandDescriptor, label: Brand descriptor, type: string }
       - { name: logo, label: Logo, type: image, required: true }
-      - { name: primaryColor, label: Primary maroon colour, type: string, description: "Hex colour, for example #5F1724" }
-      - { name: accentColor, label: Signature gold colour, type: string, description: "Hex colour, for example #B8954F" }
+      - { name: primaryColor, label: Primary maroon colour, type: string }
+      - { name: accentColor, label: Signature gold colour, type: string }
       - { name: secondaryAccentColor, label: Secondary green colour, type: string }
       - { name: conciergeEmail, label: Concierge email, type: string }
       - { name: whatsappNumber, label: WhatsApp number, type: string, description: "Use international format, for example +919326642337." }
@@ -57,18 +75,29 @@ content:
       - { name: careersEmail, label: Careers email, type: string }
       - { name: privacyEmail, label: Privacy email, type: string }
       - { name: partnershipsEmail, label: Partnerships email, type: string }
-      - { name: locations, label: Footer locations, type: string }
-      - { name: footerStatement, label: Footer statement, type: text, description: Use <br> where you want a line break. }
+      - { name: locations, label: Footer location line, type: string }
+      - { name: footerStatement, label: Footer statement, type: text, description: "Use <br> where a line break is intentional." }
+      - { name: footerLegal, label: Footer privacy/legal note, type: text }
+      - name: footerColumns
+        label: Footer link columns
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
+        fields:
+          - { name: title, label: Column title, type: string }
+          - name: links
+            label: Links
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{label}" } }
+            fields:
+              - { name: label, label: Link label, type: string }
+              - { name: href, label: Link path, type: string, description: "Use {{whatsapp}} for the WhatsApp link." }
       - name: navigation
         label: Navigation links
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
         fields:
           - { name: label, label: Link label, type: string }
-          - { name: href, label: Link path, type: string, description: "Examples: /about or https://example.com" }
+          - { name: href, label: Link path, type: string }
 
   - name: home
     label: "01 · Home"
@@ -82,143 +111,199 @@ content:
         type: object
         fields:
           - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Main headline, type: string, description: Wrap highlighted words in <em> and </em>. }
+          - { name: title, label: Main headline, type: string, description: "Use <em>highlighted words</em>." }
           - { name: description, label: Introductory paragraph, type: text }
-          - { name: primaryButton, label: Primary button, type: string }
-          - { name: secondaryButton, label: Secondary button, type: string }
-          - { name: whatsappButton, label: WhatsApp button, type: string }
-          - { name: note, label: Privacy line, type: string }
-          - { name: privacyNote, label: Carousel privacy note, type: text }
-          - { name: profileImages, label: Private profile carousel images, type: image, list: { max: 5 }, description: Add up to five images. They are automatically blurred. }
-      - name: registry
-        label: Active registry section
+          - { name: primaryButton, label: Main button label, type: string }
+          - { name: primaryUrl, label: Main button link, type: string }
+          - { name: secondaryButton, label: Secondary link label, type: string }
+          - { name: secondaryUrl, label: Secondary link, type: string }
+          - { name: whatsappButton, label: WhatsApp button label, type: string }
+          - { name: assurances, label: Assurance bullets under hero, type: string, list: true }
+          - { name: note, label: Internal note line, type: string }
+          - { name: privacyNote, label: Privacy note, type: text }
+          - { name: profileImages, label: Private profile carousel images, type: image, list: true }
+      - name: principles
+        label: Four principle strip
         type: object
+        list: { collapsible: { collapsed: true, summary: "{number} · {label}" } }
         fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: number, label: Large number, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: description, label: Description, type: text }
-          - { name: linkText, label: Link text, type: string }
+          - { name: number, label: Number, type: string }
+          - { name: label, label: Label, type: string }
       - name: proof
-        label: Proof numbers
+        label: Top proof numbers
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{value} · {label}"
+        list: { collapsible: { collapsed: true, summary: "{value} · {label}" } }
         fields:
           - { name: value, label: Value, type: string }
           - { name: label, label: Caption, type: string }
-      - name: proofAssets
-        label: Proof photos and assets
+      - name: legacy
+        label: Family trust section
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label} · {title}"
         fields:
-          - { name: label, label: Small label, type: string }
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Lead statement, type: text }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+          - { name: linkText, label: Link label, type: string }
+          - { name: linkUrl, label: Link URL, type: string }
+      - name: audience
+        label: Parents and candidates section
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Title, type: string }
           - { name: description, label: Description, type: text }
-          - { name: image, label: Optional image, type: image }
+          - name: cards
+            label: Audience cards
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{label}" } }
+            fields:
+              - { name: label, label: Card label, type: string }
+              - { name: icon, label: Icon text, type: string }
+              - { name: title, label: Title, type: string }
+              - { name: description, label: Description, type: text }
+              - { name: points, label: Bullet points, type: string, list: true }
+      - name: registry
+        label: Registry section
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Lead statement, type: text }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+          - { name: primaryLabel, label: Main button label, type: string }
+          - { name: primaryUrl, label: Main button link, type: string }
+          - { name: secondaryLabel, label: Secondary link label, type: string }
+          - { name: secondaryUrl, label: Secondary link, type: string }
+      - name: privacy
+        label: Privacy cards section
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - name: cards
+            label: Privacy cards
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{number} · {title}" } }
+            fields:
+              - { name: number, label: Number, type: string }
+              - { name: title, label: Title, type: string }
+              - { name: description, label: Description, type: text }
+          - { name: seal, label: Seal text, type: text }
+      - { name: proofHeading, component: sectionIntro }
+      - { name: proofAssets, label: Proof photos and assets, component: proofCard, list: true }
+      - name: process
+        label: Homepage process section
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - name: steps
+            label: Steps
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{number} · {title}" } }
+            fields:
+              - { name: number, label: Number, type: string }
+              - { name: label, label: Small label, type: string }
+              - { name: title, label: Title, type: string }
+              - { name: description, label: Description, type: text }
+      - { name: storiesHeading, component: sectionIntro }
       - name: stories
         label: Anonymized stories and testimonials
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
         fields:
           - { name: label, label: Story label, type: string }
           - { name: quote, label: Quote or story, type: text }
           - { name: source, label: Source line, type: string }
-      - name: advantage
-        label: Comparison grid
+      - name: founder
+        label: Founder quote section
+        type: object
+        fields:
+          - { name: image, label: Founder image, type: image }
+          - { name: imageAlt, label: Image description, type: string }
+          - { name: badge, label: Image badge, type: string }
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: quote, label: Quote, type: text }
+          - { name: description, label: Description, type: text }
+          - { name: signature, label: Signature text, type: string }
+          - { name: linkText, label: Link label, type: string }
+          - { name: linkUrl, label: Link URL, type: string }
+      - name: finalCta
+        label: Final invitation CTA
         type: object
         fields:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Title, type: string }
           - { name: description, label: Description, type: text }
-          - name: rows
-            label: Comparison rows
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{subject}"
-            fields:
-              - { name: subject, label: Subject, type: string }
-              - { name: explanation, label: Explanation, type: text }
-              - { name: apps, label: Dating apps, type: string, description: Separate the bold heading and detail with a | character. }
-              - { name: diy, label: DIY search, type: string, description: Separate the bold heading and detail with a | character. }
-              - { name: matchmakers, label: Matchmakers, type: string, description: Separate the bold heading and detail with a | character. }
-              - { name: heartlink, label: HeartLink, type: string, description: Separate the bold heading and detail with a | character. }
-      - name: dimensions
-        label: Three dimensions
-        type: object
-        fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: description, label: Description, type: text }
-          - { name: cards, label: Cards, component: card, list: true }
+          - { name: primaryLabel, label: Main button label, type: string }
+          - { name: primaryUrl, label: Main button link, type: string }
+          - { name: showWhatsapp, label: Show WhatsApp button, type: boolean }
+          - { name: whatsappLabel, label: WhatsApp button label, type: string }
+          - { name: note, label: Small note, type: string }
 
   - name: about
-    label: "02 · About the Curators"
+    label: "02 · About"
     type: file
     path: public/content/about.json
     format: json
     fields:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
+      - { name: cta, component: cta }
       - name: curators
-        label: Curator profiles
+        label: Founder and advisor profiles
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{name}"
+        list: { collapsible: { collapsed: true, summary: "{name}" } }
         fields:
           - { name: name, label: Name, type: string, required: true }
           - { name: role, label: Role, type: string }
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Large title, type: string }
           - { name: lead, label: Lead paragraph, type: text }
-          - { name: image, label: Portrait, type: image, description: Portrait-oriented images work best. Leave blank for the abstract silhouette. }
+          - { name: image, label: Portrait, type: image }
           - { name: imageAlt, label: Image description, type: string }
-          - { name: theme, label: Abstract colour theme, type: string, description: Use plum or cyan. This is only used when no portrait is uploaded. }
+          - { name: theme, label: Fallback portrait style, type: string, description: "Used only if no portrait is uploaded. Recommended values: classic or deep." }
           - { name: paragraphs, label: Biography paragraphs, type: text, list: true }
           - name: credentials
             label: Credentials
             type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{title}"
+            list: { collapsible: { collapsed: true, summary: "{title}" } }
             fields:
               - { name: title, label: Short title, type: string }
               - { name: description, label: Description, type: text }
+      - { name: proofHeading, component: sectionIntro }
+      - { name: proofAssets, label: Founder proof and media assets, component: proofCard, list: true }
       - { name: closing, component: closing }
 
   - name: methodology
-    label: "03 · Methodology"
+    label: "03 · Process"
     type: file
     path: public/content/methodology.json
     format: json
     fields:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
+      - { name: cta, component: cta }
       - name: steps
         label: Process steps
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{number} · {title}"
+        list: { collapsible: { collapsed: true, summary: "{number} · {title}" } }
         fields:
           - { name: label, label: Small label, type: string }
           - { name: number, label: Step number, type: string }
           - { name: title, label: Step title, type: string }
           - { name: description, label: Description, type: text }
+      - name: afterSubmit
+        label: After-submit explanation
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: cards, label: Cards, component: proofCard, list: true }
       - name: closing
         label: Closing section
         type: object
@@ -229,28 +314,26 @@ content:
           - { name: button, label: Button text, type: string }
 
   - name: membership
-    label: "04 · Membership & Tiers"
+    label: "04 · Services"
     type: file
     path: public/content/membership.json
     format: json
     fields:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
+      - { name: cta, component: cta }
       - name: tiers
-        label: Curation channels
+        label: Service options
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
         fields:
-          - { name: label, label: Channel label, type: string }
-          - { name: title, label: Channel name, type: string }
+          - { name: label, label: Option label, type: string }
+          - { name: title, label: Option name, type: string }
           - { name: description, label: Description, type: text }
           - { name: features, label: Included features, type: string, list: true }
           - { name: button, label: Button text, type: string }
-          - { name: tone, label: Colour treatment, type: string, description: Use registry, success, premium, or black. }
-          - { name: black, label: Use Black Tier styling, type: boolean }
+          - { name: tone, label: Visual treatment, type: string, description: "Use registry, success, premium or black." }
+          - { name: black, label: Use dark premium styling, type: boolean }
       - name: protocol
         label: Admissions explanation
         type: object
@@ -260,25 +343,23 @@ content:
       - { name: closing, component: closing }
 
   - name: impact
-    label: "05 · Impact & Press"
+    label: "05 · Trust & Recognition"
     type: file
     path: public/content/impact.json
     format: json
     fields:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
+      - { name: cta, component: cta }
       - name: stats
-        label: Impact statistics
+        label: Proof numbers
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{value} · {label}"
+        list: { collapsible: { collapsed: true, summary: "{value} · {label}" } }
         fields:
           - { name: value, label: Large value, type: string }
           - { name: label, label: Caption, type: string }
       - name: feature
-        label: Jwala feature
+        label: Founder/community feature
         type: object
         fields:
           - { name: image, label: Feature image, type: image }
@@ -287,13 +368,13 @@ content:
           - { name: title, label: Title, type: string }
           - { name: paragraphs, label: Paragraphs, type: text, list: true }
       - name: recognition
-        label: Recognition cards
+        label: Awards, testimonials, stories and proof
         type: object
         fields:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Title, type: string }
           - { name: description, label: Description, type: text }
-          - { name: cards, label: Cards, component: card, list: true }
+          - { name: cards, label: Proof cards, component: proofCard, list: true }
       - { name: closing, component: closing }
 
   - name: careers
@@ -304,20 +385,12 @@ content:
     fields:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
-      - name: rolesIntro
-        label: Open roles introduction
-        type: object
-        fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: description, label: Description, type: text }
+      - { name: cta, component: cta }
+      - { name: rolesIntro, component: sectionIntro }
       - name: roles
         label: Open roles
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
         fields:
           - { name: title, label: Job title, type: string }
           - { name: details, label: Location and requirements, type: text }
@@ -328,7 +401,7 @@ content:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Title, type: string }
           - { name: description, label: Description, type: text }
-          - { name: cards, label: Values, component: card, list: true }
+          - { name: cards, label: Values, component: proofCard, list: true }
       - { name: closing, component: closing }
 
   - name: apply
@@ -343,7 +416,7 @@ content:
         type: object
         fields:
           - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Main headline, type: string, description: Wrap highlighted words in <em> and </em>. }
+          - { name: title, label: Main headline, type: string }
           - { name: description, label: Description, type: text }
           - name: protocol
             label: Entry steps
@@ -364,10 +437,7 @@ content:
       - name: faqs
         label: Frequently asked questions
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{question}"
+        list: { collapsible: { collapsed: true, summary: "{question}" } }
         fields:
           - { name: question, label: Question, type: string }
           - { name: answer, label: Answer, type: text }
@@ -380,6 +450,16 @@ content:
     fields:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
+      - { name: cta, component: cta }
+      - name: whatsappSection
+        label: WhatsApp and call section
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Supporting text, type: text }
+          - { name: whatsappLabel, label: WhatsApp display number, type: string }
+          - { name: callLabel, label: Call display number, type: string }
       - name: form
         label: Contact form
         type: object
@@ -396,6 +476,7 @@ content:
     fields:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
+      - { name: cta, component: cta }
       - name: models
         label: Partnership models
         type: object
@@ -403,7 +484,7 @@ content:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Title, type: string }
           - { name: description, label: Description, type: text }
-          - { name: cards, label: Partnership cards, component: card, list: true }
+          - { name: cards, label: Partnership cards, component: proofCard, list: true }
       - name: form
         label: Partnership form
         type: object
@@ -420,6 +501,7 @@ content:
     fields:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
+      - { name: cta, component: cta }
       - name: content
         label: Privacy content
         type: object
