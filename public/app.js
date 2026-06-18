@@ -539,11 +539,10 @@ function renderImpact() {
 }
 
 function renderCareers() {
-  const headings = document.querySelectorAll(".section-heading");
-  if (headings[0] && pageContent.rolesIntro) headings[0].outerHTML = renderSectionHeading(pageContent.rolesIntro);
   const roles = document.querySelector(".roles");
   if (roles && pageContent.roles) roles.innerHTML = pageContent.roles.map((role) => `<article class="role" data-reveal><h2>${escapeHtml(role.title)}</h2><p>${escapeHtml(role.details)}</p><a href="mailto:${escapeHtml(site.careersEmail)}?subject=${encodeURIComponent(role.title)}" aria-label="Apply for ${escapeHtml(role.title)}"><span>Apply</span><b aria-hidden="true">↗</b></a></article>`).join("");
-  if (headings[1] && pageContent.culture) headings[1].outerHTML = renderSectionHeading(pageContent.culture);
+  const cultureHeading = document.querySelector(".plum-surface .section-heading");
+  if (cultureHeading && pageContent.culture) cultureHeading.outerHTML = renderSectionHeading(pageContent.culture);
   const cultureGrid = document.querySelector(".plum-surface .press-grid");
   if (cultureGrid && pageContent.culture?.cards) cultureGrid.innerHTML = renderCards(pageContent.culture.cards);
   renderClosing(pageContent.closing);

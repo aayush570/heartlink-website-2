@@ -89,9 +89,9 @@ const submissionRequirements = {
 };
 
 const allowedFields = {
-  application: new Set(["type", "applyingFor", "contactName", "relationship", "email", "phone", "applicantName", "age", "address", "company", "designation", "introduction", "fatherName", "fatherWork", "motherName", "motherWork", "familyValues", "membershipInterest", "consent", "submittedFrom"]),
+  application: new Set(["type", "applyingFor", "contactName", "relationship", "email", "phone", "applicantName", "age", "address", "company", "designation", "instagramProfile", "linkedinProfile", "introduction", "fatherName", "fatherWork", "motherName", "motherWork", "familyValues", "membershipInterest", "consent", "submittedFrom"]),
   contact: new Set(["type", "name", "email", "phone", "enquiryRole", "message", "consent", "submittedFrom"]),
-  partnership: new Set(["type", "name", "practice", "email", "phone", "partnershipType", "message", "consent", "submittedFrom"])
+  partnership: new Set(["type", "name", "practice", "email", "phone", "partnerWebsite", "partnershipType", "message", "consent", "submittedFrom"])
 };
 
 function validSubmission(data) {
