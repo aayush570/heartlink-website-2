@@ -235,22 +235,22 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .lens-card ul { margin: auto 0 0; padding: 25px 0 0; border-top: 1px solid var(--line); list-style: none; }
 .lens-card li { position: relative; padding: 8px 0 8px 20px; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .lens-card li::before { content: "◇"; position: absolute; left: 0; color: var(--gold); }
-.vault-section { overflow: hidden; color: var(--warm-light); background: var(--maroon); padding-top: clamp(48px, 4.5vw, 75px); padding-bottom: clamp(48px, 4.5vw, 75px); }
+.vault-section { overflow: hidden; color: var(--warm-light); background: var(--maroon); padding-top: clamp(40px, 3.5vw, 56px); padding-bottom: clamp(40px, 3.5vw, 56px); }
 .vault-section::before { content: ""; position: absolute; inset: 0; opacity: .08; background-image: linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px); background-size: 90px 90px; }
 .vault-watermark { position: absolute; right: -8vw; top: 50%; width: 46vw; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(212,175,55,.11); border-radius: 50%; color: rgba(212,175,55,.045); font: 500 33vw/1 var(--serif); transform: translateY(-50%); }
 .vault-watermark::before, .vault-watermark::after { content: ""; position: absolute; border: 1px solid rgba(212,175,55,.08); border-radius: 50%; }
 .vault-watermark::before { inset: 8%; }
 .vault-watermark::after { inset: 17%; }
-.vault-heading { position: relative; max-width: 800px; margin-bottom: clamp(32px, 3.5vw, 50px); }
+.vault-heading { position: relative; max-width: 800px; margin-bottom: clamp(24px, 3vw, 36px); }
 .vault-heading h2 { font-size: clamp(51px, 6.1vw, 85px); margin-bottom: 14px; }
 .vault-heading h2 em { color: var(--gold-bright); }
 .vault-heading p { max-width: 610px; color: rgba(245,239,229,.66); }
-.vault-grid { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(212,175,55,.28); border-left: 1px solid rgba(212,175,55,.28); }
-.vault-grid article { min-height: 230px; padding: 38px; border-right: 1px solid rgba(212,175,55,.28); border-bottom: 1px solid rgba(212,175,55,.28); }
+.vault-grid { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(212,175,55,.28); border-left: 1px solid rgba(212,175,55,.28); }
+.vault-grid article { min-height: 175px; padding: 24px 28px; border-right: 1px solid rgba(212,175,55,.28); border-bottom: 1px solid rgba(212,175,55,.28); }
 .vault-grid article > span { color: var(--gold-bright); font: 500 27px var(--serif); }
-.vault-grid h3 { margin: 40px 0 12px; font-size: 32px; }
-.vault-grid p { max-width: 430px; margin-bottom: 0; color: rgba(245,239,229,.62); font-size: 13px; }
-.vault-seal { position: relative; margin-top: 45px; display: flex; align-items: center; gap: 18px; }
+.vault-grid h3 { margin: 24px 0 8px; font-size: 24px; }
+.vault-grid p { max-width: 430px; margin-bottom: 0; color: rgba(245,239,229,.62); font-size: 12px; }
+.vault-seal { position: relative; margin-top: 24px; display: flex; align-items: center; gap: 18px; }
 .logo-seal { width: 66px; height: 66px; flex: 0 0 auto; object-fit: contain; }
 .vault-seal span { color: rgba(245,239,229,.58); font-size: 8px; font-weight: 600; line-height: 1.7; letter-spacing: .17em; text-transform: uppercase; }
 .process-section { background: var(--paper); }
@@ -555,6 +555,8 @@ em, .accent { color: var(--maroon); font-weight: 400; }
   .tier-grid { grid-template-columns: repeat(2, 1fr); }
   .application-shell { grid-template-columns: 1fr; }
   .application-intro { position: relative; top: 0; height: auto; min-height: 680px; }
+  .vault-grid { grid-template-columns: repeat(2, 1fr); }
+  .vault-grid article { min-height: 210px; }
 }
 
 @media (max-width: 760px) {
