@@ -243,7 +243,11 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .vault-watermark::after { inset: 17%; }
 .vault-heading { position: relative; max-width: 800px; margin-bottom: clamp(24px, 3vw, 36px); }
 .vault-heading h2 { font-size: clamp(51px, 6.1vw, 85px); margin-bottom: 14px; }
-.vault-heading h2 em { color: var(--gold-bright); }
+.vault-heading h2 em,
+.vault-heading h2 .accent {
+  color: inherit;
+  font-style: italic;
+}
 .vault-heading p { max-width: 610px; color: rgba(245,239,229,.66); }
 .vault-grid { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(212,175,55,.28); border-left: 1px solid rgba(212,175,55,.28); }
 .vault-grid article { min-height: 175px; padding: 24px 28px; border-right: 1px solid rgba(212,175,55,.28); border-bottom: 1px solid rgba(212,175,55,.28); }
@@ -289,7 +293,10 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .invitation-frame { width: min(1160px, 100%); margin: auto; padding: clamp(32px, 4vw, 56px) clamp(30px, 6vw, 90px); border: 1px solid rgba(212,175,55,.48); outline: 1px solid rgba(212,175,55,.18); outline-offset: -12px; text-align: center; }
 .invitation-frame .eyebrow { color: var(--gold-bright); }
 .invitation-frame h2 { margin-bottom: 24px; font-size: clamp(47px, 6.4vw, 85px); }
-.invitation-frame h2 em { color: var(--gold-bright); }
+.invitation-frame h2 em,
+.invitation-frame h2 .accent {
+  color: var(--gold-bright);
+}
 .invitation-frame p { max-width: 650px; margin: 0 auto 35px; color: rgba(255,255,255,.64); }
 .invitation-frame small { display: block; margin-top: 30px; color: rgba(255,255,255,.42); font-size: 7px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
 
