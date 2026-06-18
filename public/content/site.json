@@ -31,7 +31,7 @@
       "links": [
         { "label": "About Gopi Shah", "href": "/about" },
         { "label": "Our process", "href": "/methodology" },
-        { "label": "Trust & recognition", "href": "/impact" }
+        { "label": "Trust & recognition", "href": "/about#trust" }
       ]
     },
     {
@@ -49,7 +49,6 @@
     { "href": "/about", "label": "About" },
     { "href": "/methodology", "label": "Process" },
     { "href": "/membership", "label": "Services" },
-    { "href": "/impact", "label": "Trust" },
     { "href": "/partnerships", "label": "Partnerships" },
     { "href": "/careers", "label": "Careers" }
   ]

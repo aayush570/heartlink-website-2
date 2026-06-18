@@ -14,6 +14,26 @@
     "showWhatsapp": true,
     "whatsappLabel": "Quick WhatsApp Enquiry"
   },
+  "trustHeading": {
+    "eyebrow": "Trust & recognition",
+    "title": "A public record behind the private work.",
+    "description": "HeartLink's credibility is built on years of community service, cultural leadership and careful matrimonial guidance."
+  },
+  "trustStats": [
+    { "value": "1,000+", "label": "Profiles tracked for client searches" },
+    { "value": "250+", "label": "Families advised over time" },
+    { "value": "50", "label": "Maximum active Premium Search mandates" }
+  ],
+  "trustFeature": {
+    "image": "",
+    "imageAlt": "Women represented through NGO Jwala",
+    "eyebrow": "NGO Jwala",
+    "title": "Community work that built real trust.",
+    "paragraphs": [
+      "Through Jwala, Gopi Shah has supported women-focused and humanitarian initiatives across India.",
+      "This work reflects the same values HeartLink follows today: dignity, privacy, respect and responsibility."
+    ]
+  },
   "curators": [
     {
       "name": "Gopi Shah",
@@ -83,13 +103,13 @@
     }
   ],
   "proofHeading": {
-    "eyebrow": "Public recognition",
-    "title": "Founder credibility families can see.",
-    "description": "A concise public record of the experience behind HeartLink's private advisory work."
+    "eyebrow": "Credibility",
+    "title": "Experience beyond matchmaking.",
+    "description": "Families trust people who have already shown responsibility in real life. HeartLink carries that background."
   },
   "proofAssets": [
     {
-      "label": "Award proof",
+      "label": "Award",
       "title": "Dr. Sarojini Naidu International Award",
       "description": "Recognition for Gopi Shah's contribution to education, culture and community service.",
       "image": "",
@@ -98,18 +118,45 @@
       "date": ""
     },
     {
-      "label": "Matrimonial service",
-      "title": "Five years of honorary Jeevansathi service",
-      "description": "Hands-on matrimonial work before HeartLink shaped the current private, careful and family-first process.",
+      "label": "Global work",
+      "title": "Great Wall of China performance",
+      "description": "Coordination of a major cultural performance on an international stage.",
       "image": "",
       "link": "",
       "source": "",
       "date": ""
     },
     {
-      "label": "Cultural work",
-      "title": "India and United States community experience",
-      "description": "Creative, cultural and community projects across Mumbai, Chicago and Florida inform Gopi Shah's judgment and network.",
+      "label": "Service",
+      "title": "COVID-19 support",
+      "description": "Helped arrange care centres and oxygen support during the crisis.",
+      "image": "",
+      "link": "",
+      "source": "",
+      "date": ""
+    },
+    {
+      "label": "Indian craft",
+      "title": "Support for artisans",
+      "description": "Created work opportunities for Indian artisans through hand-crafted design work.",
+      "image": "",
+      "link": "",
+      "source": "",
+      "date": ""
+    },
+    {
+      "label": "Matrimonial trust",
+      "title": "Five years of Jeevansathi service",
+      "description": "Honorary matrimonial work that became the foundation for HeartLink.",
+      "image": "",
+      "link": "",
+      "source": "",
+      "date": ""
+    },
+    {
+      "label": "Private office",
+      "title": "Press and partnership enquiries",
+      "description": "For awards, speaking, partnerships and press, contact the HeartLink office.",
       "image": "",
       "link": "",
       "source": "",

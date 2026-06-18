@@ -296,7 +296,7 @@ function renderFooter() {
   if (!footer) return;
   const footerColumns = site.footerColumns || [
     { title: "Start Here", links: [{ label: "Apply to the registry", href: "/apply" }, { label: "Quick WhatsApp Enquiry", href: whatsappHref }, { label: site.conciergeEmail, href: `mailto:${site.conciergeEmail}` }] },
-    { title: "Learn More", links: [{ label: "About Gopi Shah", href: "/about" }, { label: "Our process", href: "/methodology" }, { label: "Trust & recognition", href: "/impact" }] },
+    { title: "Learn More", links: [{ label: "About Gopi Shah", href: "/about" }, { label: "Our process", href: "/methodology" }, { label: "Trust & recognition", href: "/about#trust" }] },
     { title: "More", links: [{ label: "Services", href: "/membership" }, { label: "Partnerships", href: "/partnerships" }, { label: "Careers", href: "/careers" }, { label: "Privacy", href: "/privacy" }] }
   ];
   footer.className = "site-footer";
@@ -473,6 +473,23 @@ function renderAbout() {
         </article>`;
     }).join("");
   }
+  const trustHeading = document.querySelector(".impact-stats-section .section-heading");
+  if (trustHeading && pageContent.trustHeading) trustHeading.outerHTML = renderSectionHeading(pageContent.trustHeading);
+  const trustStats = document.querySelector("[data-about-trust-stats]");
+  if (trustStats && pageContent.trustStats) {
+    trustStats.innerHTML = pageContent.trustStats.map((stat) => `<div><strong>${escapeHtml(stat.value)}</strong><span>${escapeHtml(stat.label)}</span></div>`).join("");
+  }
+  const trustFeatureArt = document.querySelector("[data-about-trust-feature-art]");
+  if (trustFeatureArt && pageContent.trustFeature?.image) {
+    trustFeatureArt.style.backgroundImage = `linear-gradient(rgba(44,5,46,.2),rgba(8,5,10,.45)),url("${safeUrl(pageContent.trustFeature.image)}")`;
+    trustFeatureArt.setAttribute("role", "img");
+    trustFeatureArt.setAttribute("aria-label", pageContent.trustFeature.imageAlt || "");
+  }
+  setText("[data-about-trust-feature-eyebrow]", pageContent.trustFeature?.eyebrow);
+  setText("[data-about-trust-feature-title]", pageContent.trustFeature?.title);
+  document.querySelectorAll("[data-about-trust-feature-paragraph]").forEach((element, index) => {
+    element.textContent = pageContent.trustFeature?.paragraphs?.[index] || "";
+  });
   renderProofSection("[data-about-proof-assets]", pageContent.proofHeading, pageContent.proofAssets);
   renderClosing(pageContent.closing);
 }

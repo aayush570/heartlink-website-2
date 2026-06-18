@@ -27,7 +27,7 @@ const pageRoutes = new Map([
   ["/about", "about.html"],
   ["/methodology", "methodology.html"],
   ["/membership", "membership.html"],
-  ["/impact", "impact.html"],
+  ["/impact", "about.html"],
   ["/partnerships", "partnerships.html"],
   ["/careers", "careers.html"],
   ["/apply", "apply.html"],
