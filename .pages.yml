@@ -66,6 +66,9 @@ content:
       - { name: brandName, label: Brand name, type: string, required: true }
       - { name: brandDescriptor, label: Brand descriptor, type: string }
       - { name: logo, label: Logo, type: image, required: true }
+      - { name: siteUrl, label: Canonical site URL, type: string, description: "Optional. Leave blank to use the deployed domain automatically." }
+      - { name: defaultOgImage, label: Default social share image, type: image }
+      - { name: themeColor, label: Browser theme colour, type: string, description: "Use the approved ivory default #F8F4EC unless the brand system changes." }
       - { name: primaryColor, label: Primary maroon colour, type: string }
       - { name: accentColor, label: Signature gold colour, type: string }
       - { name: secondaryAccentColor, label: Secondary green colour, type: string }

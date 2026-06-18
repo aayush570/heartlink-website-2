@@ -12,13 +12,14 @@
     "primaryLabel": "Apply to Registry",
     "primaryUrl": "/apply",
     "showWhatsapp": true,
-    "whatsappLabel": "WhatsApp HeartLink"
+    "whatsappLabel": "Quick WhatsApp Enquiry"
   },
   "content": {
-    "title": "How HeartLink protects your information",
-    "lead": "Privacy is a core part of how HeartLink works.",
+    "title": "The HeartLink confidentiality promise",
+    "lead": "Privacy is not an add-on. It is the operating standard for every enquiry, review and introduction.",
     "paragraphs": [
-      "Application details are reviewed only for verification and matchmaking. Prospective introductions receive information only after approval. HeartLink does not sell applicant data or use it for public advertising profiles.",
+      "Application details are reviewed only for verification and matchmaking. Profiles are not made public, browsable or searchable. Prospective introductions receive information only after approval and genuine mutual interest.",
+      "HeartLink does not sell applicant data or use it for public advertising profiles. Family details, candidate preferences and contact information are handled by the HeartLink team for private review and follow-up only.",
       "Applicants may request access, correction or deletion of submitted information by writing to the privacy desk."
     ]
   }

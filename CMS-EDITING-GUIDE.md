@@ -49,6 +49,24 @@ Recommended formats:
 
 Always complete the image description field. It helps accessibility and search engines.
 
+## Brand colour rules
+
+HeartLink uses a restrained private-advisory palette:
+
+- Ivory / paper backgrounds: `#F8F4EC` and `#FDFBF6`
+- Primary maroon: `#5F1724`
+- Confidentiality green: `#183F32`
+- Muted gold accent: `#B8954F`
+- Ink text: `#29251F`
+
+Keep the bright magenta and blue from the logo inside the logo itself. Do not use those colours for buttons, backgrounds, cards, headings or section themes unless the full brand system is intentionally redesigned.
+
+## Proof and story rules
+
+Do not publish placeholder proof, draft testimonials, invented quotes, or "coming soon" cards. If a proof item is not ready, remove it from the CMS until there is a real award, founder milestone, public recognition, anonymized example, image, source or approved story to show.
+
+Anonymized stories should be specific enough to build trust but must not identify a family, candidate, employer, address, community detail or private circumstance without written approval.
+
 ## Headline highlights
 
 Some main headlines contain pink italic words. In the CMS, these look like:
@@ -76,6 +94,8 @@ HEARTLINK_FROM_EMAIL
 ```
 
 Run `supabase-schema.sql` once in the Supabase SQL editor before accepting production submissions. `HEARTLINK_APPLICATION_WEBHOOK` can still be added for Zapier, Make, a CRM, or another secure endpoint.
+
+Before launch, submit one test application, one contact enquiry and one partnership enquiry from the deployed site. Confirm each record appears in Supabase, each email arrives through Resend, and the Vercel logs show `heartlink_submission_delivery` with `stored: true` and `notified: true`.
 
 Never place private applicant data or any service-role/API key in Pages CMS, `public/content`, or another browser-visible file.
 

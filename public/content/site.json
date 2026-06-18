@@ -2,6 +2,9 @@
   "brandName": "HEARTLINK",
   "brandDescriptor": "Private Matchmaking",
   "logo": "/Heartlink Logo.png",
+  "siteUrl": "",
+  "defaultOgImage": "/media/heartlink-heritage-invitation.png",
+  "themeColor": "#F8F4EC",
   "primaryColor": "#5F1724",
   "accentColor": "#B8954F",
   "secondaryAccentColor": "#183F32",
@@ -19,7 +22,7 @@
       "title": "Start Here",
       "links": [
         { "label": "Apply to the registry", "href": "/apply" },
-        { "label": "WhatsApp HeartLink", "href": "{{whatsapp}}" },
+        { "label": "Quick WhatsApp Enquiry", "href": "{{whatsapp}}" },
         { "label": "concierge@heartlink.in", "href": "mailto:concierge@heartlink.in" }
       ]
     },

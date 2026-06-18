@@ -39,3 +39,11 @@ The server supports registry applications, general enquiries, WhatsApp CTAs, and
 Submissions are stored in the private Supabase `submissions` table and emailed through Resend. The service-role key is server-only and must never use a `NEXT_PUBLIC_` or other browser-exposed prefix.
 
 `HEARTLINK_APPLICATION_WEBHOOK` remains supported as an optional alternative or additional delivery path.
+
+## Launch checklist
+
+- Confirm the approved Luxury Trust palette remains in use: ivory, paper, maroon, forest, muted gold and ink.
+- Remove any draft proof cards, placeholder stories or unapproved testimonials before publishing.
+- Configure Supabase and Resend environment variables in production.
+- Submit test application, contact and partnership forms from the deployed domain.
+- Check production logs for `heartlink_submission_delivery` events with successful storage and notification.

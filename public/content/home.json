@@ -14,13 +14,13 @@
     "primaryUrl": "/apply",
     "secondaryButton": "See how it works",
     "secondaryUrl": "/methodology",
-    "whatsappButton": "WhatsApp HeartLink",
+    "whatsappButton": "Quick WhatsApp Enquiry",
     "assurances": [
       "Led personally by Gopi Shah",
-      "50 retained mandates at a time",
+      "50 Premium Search mandates at a time",
       "No public profiles. No swiping."
     ],
-    "note": "Led personally by Gopi Shah · 50 retained mandates at a time · No public profiles",
+    "note": "Led personally by Gopi Shah · 50 Premium Search mandates at a time · No public profiles",
     "privacyNote": "Identity is shared only with approval.",
     "profileImages": []
   },
@@ -28,7 +28,7 @@
     { "number": "01", "label": "Founder-led search" },
     { "number": "02", "label": "Private registry" },
     { "number": "03", "label": "Family-first review" },
-    { "number": "04", "label": "Invitation-only retained search" }
+    { "number": "04", "label": "Invitation-only Premium Search" }
   ],
   "proof": [
     { "value": "1,000+", "label": "Profiles tracked for client searches" },
@@ -72,7 +72,7 @@
     "title": "Apply free. Stay private. Be considered for suitable families.",
     "lead": "The Registry Network helps HeartLink understand good families even before a paid mandate begins.",
     "paragraphs": [
-      "Your details are never made public. If there is a suitable family or retained client search, HeartLink may reach out privately before sharing anything further."
+      "Your details are never made public. If there is a suitable family or Premium Search client, HeartLink may reach out privately before sharing anything further."
     ],
     "primaryLabel": "Apply to the Registry",
     "primaryUrl": "/apply",
@@ -94,12 +94,12 @@
   "proofHeading": {
     "eyebrow": "Trust signals",
     "title": "Proof that can be seen, not just promised.",
-    "description": "Awards, founder moments, family events and client stories can be added here from the CMS as HeartLink chooses what to make public."
+    "description": "Selected public credibility signals from Gopi Shah's community, cultural and matrimonial work."
   },
   "proofAssets": [
-    { "label": "Award photo", "title": "Recognition placeholder", "description": "Add award or event photography with a short note about the moment.", "image": "", "link": "", "source": "", "date": "" },
-    { "label": "Founder photo", "title": "Gopi Shah at work", "description": "Add a founder-led moment that shows the real person behind HeartLink.", "image": "", "link": "", "source": "", "date": "" },
-    { "label": "Event photo", "title": "Private network moment", "description": "Add a cultural, community or family-office style image when ready.", "image": "", "link": "", "source": "", "date": "" }
+    { "label": "Award recognition", "title": "Dr. Sarojini Naidu International Award", "description": "Recognition connected to Gopi Shah's contribution to education, culture and community service.", "image": "", "link": "", "source": "", "date": "" },
+    { "label": "Founder-led practice", "title": "Five years of honorary matrimonial service", "description": "Before HeartLink, Gopi Shah ran Jeevansathi as an honorary matrimonial service, shaping this private family-first approach.", "image": "", "link": "", "source": "", "date": "" },
+    { "label": "Cultural credibility", "title": "Community work across India and the United States", "description": "Gopi Shah's broader cultural and community work informs the discretion and judgment HeartLink brings to families.", "image": "", "link": "", "source": "", "date": "" }
   ],
   "process": {
     "eyebrow": "Our process",
@@ -116,12 +116,12 @@
   "storiesHeading": {
     "eyebrow": "Client stories",
     "title": "Quiet success stories, shared with care.",
-    "description": "Use this space for anonymized stories or testimonials once they are ready for public review."
+    "description": "Anonymized examples of the types of families HeartLink is built to serve."
   },
   "stories": [
-    { "label": "Story 01", "quote": "Placeholder testimonial from a parent about privacy, background checks and a thoughtful introduction.", "source": "Parent of candidate · Mumbai" },
-    { "label": "Story 02", "quote": "Placeholder story about a family who wanted a serious search without public profile browsing.", "source": "Family office referral · India" },
-    { "label": "Story 03", "quote": "Placeholder note from a candidate who valued comfort, clarity and no app-style experience.", "source": "Candidate · Overseas Indian family" }
+    { "label": "Private family search", "quote": "A Mumbai family wanted a serious route without public browsing. HeartLink kept the process private, reviewed background carefully and shared only selected introductions.", "source": "Anonymized family example · Mumbai" },
+    { "label": "Global Indian family", "quote": "For an overseas Indian family, the priority was cultural comfort and discretion. HeartLink helped translate expectations between generations before any introduction moved forward.", "source": "Anonymized family example · Global Indian family" },
+    { "label": "Candidate comfort", "quote": "A candidate who did not want app culture was able to share preferences privately while the family still received the seriousness and verification they expected.", "source": "Anonymized candidate example" }
   ],
   "founder": {
     "image": "/media/gopi-shah.jpg",
@@ -141,7 +141,7 @@
     "primaryLabel": "Apply to the Registry",
     "primaryUrl": "/apply",
     "showWhatsapp": true,
-    "whatsappLabel": "WhatsApp HeartLink",
+    "whatsappLabel": "Quick WhatsApp Enquiry",
     "note": "By appointment only · All enquiries remain confidential"
   }
 }

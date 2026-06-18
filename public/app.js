@@ -16,6 +16,7 @@ const site = await loadJson("/content/site.json", {
   brandName: "HEARTLINK",
   brandDescriptor: "Private Matchmaking",
   logo: "/Heartlink Logo.png",
+  siteUrl: "",
   conciergeEmail: "concierge@heartlink.in",
   whatsappNumber: "+919326642337",
   pressEmail: "press@heartlink.in",
@@ -29,6 +30,8 @@ const pageContent = await loadJson(`/content/${pageKey}.json`);
 const navigation = site.navigation || [];
 const whatsappDigits = String(site.whatsappNumber || "").replace(/\D/g, "");
 const whatsappHref = whatsappDigits ? `https://wa.me/${whatsappDigits}` : "/contact";
+const siteOrigin = String(site.siteUrl || window.location.origin).replace(/\/$/, "");
+const canonicalHref = `${siteOrigin}${path === "/" ? "/" : path}`;
 
 document.documentElement.style.setProperty("--maroon", site.primaryColor || "#5F1724");
 document.documentElement.style.setProperty("--gold", site.accentColor || "#B8954F");
@@ -67,6 +70,23 @@ function linkAttrs(url = "") {
   return /^https?:\/\//i.test(url) ? ' target="_blank" rel="noopener"' : "";
 }
 
+function absoluteUrl(url = "", fallback = "/") {
+  const safe = safeUrl(url, fallback);
+  return safe.startsWith("http") ? safe : `${siteOrigin}${safe.startsWith("/") ? "" : "/"}${safe}`;
+}
+
+function upsertHeadTag(selector, tagName, attributes = {}) {
+  let tag = document.querySelector(selector);
+  if (!tag) {
+    tag = document.createElement(tagName);
+    document.head.append(tag);
+  }
+  Object.entries(attributes).forEach(([name, value]) => {
+    if (value !== undefined && value !== null) tag.setAttribute(name, value);
+  });
+  return tag;
+}
+
 function setText(selector, value) {
   const element = document.querySelector(selector);
   if (element && value !== undefined) element.textContent = value;
@@ -91,7 +111,7 @@ function renderCta(cta = {}, options = {}) {
   const primaryLabel = cta.primaryLabel || cta.label || "Apply to Registry";
   const primaryUrl = safeUrl(cta.primaryUrl || cta.url || "/apply", "/apply");
   const showWhatsapp = cta.showWhatsapp !== false && (cta.showWhatsapp || options.defaultWhatsapp);
-  const whatsappLabel = cta.whatsappLabel || "WhatsApp HeartLink";
+  const whatsappLabel = cta.whatsappLabel || "Quick WhatsApp Enquiry";
   const className = options.className || "hero-cta";
   return `
     <div class="${className}">
@@ -129,8 +149,30 @@ function renderCards(cards = []) {
   }).join("");
 }
 
+function shouldShowCard(card = {}) {
+  const joined = [card.title, card.description, card.label].join(" ").toLowerCase();
+  return Boolean(card.title || card.description || card.image || card.link) &&
+    !joined.includes("placeholder") &&
+    !joined.includes("use this area") &&
+    !joined.includes("can be added here");
+}
+
+function renderProofSection(selector, heading, cards) {
+  const grid = document.querySelector(selector);
+  if (!grid || !cards) return;
+  const visibleCards = cards.filter(shouldShowCard);
+  const section = grid.closest(".section");
+  if (!visibleCards.length) {
+    section?.remove();
+    return;
+  }
+  const headingElement = section?.querySelector(".section-heading");
+  if (headingElement && heading) headingElement.outerHTML = renderSectionHeading(heading);
+  grid.innerHTML = renderCards(visibleCards);
+}
+
 function renderStories(stories = []) {
-  return stories.map((story) => `
+  return stories.filter((story) => ![story.quote, story.label].join(" ").toLowerCase().includes("placeholder")).map((story) => `
     <article class="story-card" data-reveal>
       ${story.label ? `<span>${escapeHtml(story.label)}</span>` : ""}
       <p>“${escapeHtml(story.quote)}”</p>
@@ -139,15 +181,25 @@ function renderStories(stories = []) {
 }
 
 function updateMeta(seo = {}) {
-  if (!seo.title && !seo.description) return;
+  const title = seo.title || document.title;
+  const descriptionText = seo.description || document.querySelector('meta[name="description"]')?.content || "";
+  const ogImage = seo.ogImage || site.defaultOgImage || "/media/heartlink-heritage-invitation.png";
+  const absoluteOgImage = absoluteUrl(ogImage, "/media/heartlink-heritage-invitation.png");
+  upsertHeadTag('link[rel="canonical"]', "link", { rel: "canonical", href: canonicalHref });
+  if (title) document.title = title;
   if (seo.title) document.title = seo.title;
   const description = document.querySelector('meta[name="description"]');
-  if (description && seo.description) description.content = seo.description;
+  if (description && descriptionText) description.content = descriptionText;
   const metaPairs = {
-    "og:title": seo.ogTitle || seo.title,
-    "og:description": seo.ogDescription || seo.description,
-    "og:image": seo.ogImage,
-    "twitter:card": seo.ogImage ? "summary_large_image" : undefined
+    "og:title": seo.ogTitle || title,
+    "og:description": seo.ogDescription || descriptionText,
+    "og:image": absoluteOgImage,
+    "og:url": canonicalHref,
+    "og:type": "website",
+    "twitter:card": "summary_large_image",
+    "twitter:title": seo.ogTitle || title,
+    "twitter:description": seo.ogDescription || descriptionText,
+    "twitter:image": absoluteOgImage
   };
   Object.entries(metaPairs).forEach(([property, content]) => {
     if (!content) return;
@@ -158,6 +210,28 @@ function updateMeta(seo = {}) {
       document.head.append(tag);
     }
     tag.setAttribute("content", content);
+  });
+  upsertHeadTag('meta[name="theme-color"]', "meta", { name: "theme-color", content: site.themeColor || "#F8F4EC" });
+  const structured = upsertHeadTag('script[type="application/ld+json"][data-structured-brand]', "script", {
+    type: "application/ld+json",
+    "data-structured-brand": "true"
+  });
+  structured.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "HeartLink",
+    url: siteOrigin,
+    logo: absoluteUrl(site.logo || "/Heartlink Logo.png", "/Heartlink Logo.png"),
+    description: descriptionText,
+    areaServed: ["India", "Global"],
+    email: site.conciergeEmail,
+    telephone: site.whatsappNumber,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Mumbai",
+      addressCountry: "IN"
+    },
+    sameAs: []
   });
 }
 
@@ -201,7 +275,7 @@ function renderHeader() {
     <div class="mobile-menu" aria-hidden="true">
       <nav aria-label="Mobile navigation">
         ${navigation.map(({ href, label }, index) => `<a href="${escapeHtml(safeUrl(href, "/"))}"><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(label)}</a>`).join("")}
-        <div class="mobile-actions"><a class="button" href="/apply">Apply to the Registry</a><a class="button button-outline" data-whatsapp-link href="${whatsappHref}">WhatsApp HeartLink</a></div>
+        <div class="mobile-actions"><a class="button" href="/apply">Apply to the Registry</a><a class="button button-outline" data-whatsapp-link href="${whatsappHref}">Quick WhatsApp Enquiry</a></div>
       </nav>
     </div>`;
 
@@ -221,7 +295,7 @@ function renderFooter() {
   const footer = document.querySelector("[data-site-footer]");
   if (!footer) return;
   const footerColumns = site.footerColumns || [
-    { title: "Start Here", links: [{ label: "Apply to the registry", href: "/apply" }, { label: "WhatsApp HeartLink", href: whatsappHref }, { label: site.conciergeEmail, href: `mailto:${site.conciergeEmail}` }] },
+    { title: "Start Here", links: [{ label: "Apply to the registry", href: "/apply" }, { label: "Quick WhatsApp Enquiry", href: whatsappHref }, { label: site.conciergeEmail, href: `mailto:${site.conciergeEmail}` }] },
     { title: "Learn More", links: [{ label: "About Gopi Shah", href: "/about" }, { label: "Our process", href: "/methodology" }, { label: "Trust & recognition", href: "/impact" }] },
     { title: "More", links: [{ label: "Services", href: "/membership" }, { label: "Partnerships", href: "/partnerships" }, { label: "Careers", href: "/careers" }, { label: "Privacy", href: "/privacy" }] }
   ];
@@ -262,7 +336,7 @@ function renderHome() {
     secondary.innerHTML = `${escapeHtml(hero.secondaryButton || "See how it works")} <span>↗</span>`;
   }
   const whatsapp = document.querySelector(".hero-actions [data-whatsapp-link]");
-  if (whatsapp) whatsapp.textContent = hero.whatsappButton || "WhatsApp HeartLink";
+  if (whatsapp) whatsapp.textContent = hero.whatsappButton || "Quick WhatsApp Enquiry";
   const assurances = document.querySelector(".hero-assurance");
   if (assurances && hero.assurances) assurances.innerHTML = hero.assurances.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
 
@@ -337,11 +411,13 @@ function renderHome() {
   }
 
   const proofAssets = document.querySelector("[data-home-proof-assets]");
-  if (proofAssets && pageContent.proofAssets) proofAssets.innerHTML = renderCards(pageContent.proofAssets);
-  const proofSection = document.querySelector(".proof-gallery .section-heading");
-  if (proofSection && pageContent.proofHeading) proofSection.outerHTML = renderSectionHeading(pageContent.proofHeading);
+  if (proofAssets && pageContent.proofAssets) renderProofSection("[data-home-proof-assets]", pageContent.proofHeading, pageContent.proofAssets);
   const stories = document.querySelector("[data-home-stories]");
-  if (stories && pageContent.stories) stories.innerHTML = renderStories(pageContent.stories);
+  if (stories && pageContent.stories) {
+    const storyMarkup = renderStories(pageContent.stories);
+    if (storyMarkup) stories.innerHTML = storyMarkup;
+    else stories.closest(".stories-section")?.remove();
+  }
   const storyHeading = document.querySelector(".stories-section .section-heading");
   if (storyHeading && pageContent.storiesHeading) storyHeading.outerHTML = renderSectionHeading(pageContent.storiesHeading, true);
 
@@ -402,15 +478,6 @@ function renderAbout() {
   renderClosing(pageContent.closing);
 }
 
-function renderProofSection(selector, heading, cards) {
-  const grid = document.querySelector(selector);
-  if (!grid || !cards) return;
-  const section = grid.closest(".section");
-  const headingElement = section?.querySelector(".section-heading");
-  if (headingElement && heading) headingElement.outerHTML = renderSectionHeading(heading);
-  grid.innerHTML = renderCards(cards);
-}
-
 function renderClosing(closing = {}) {
   if (!closing) return;
   setText(".plum-surface .quote small", closing.eyebrow);
@@ -469,7 +536,7 @@ function renderCareers() {
   const headings = document.querySelectorAll(".section-heading");
   if (headings[0] && pageContent.rolesIntro) headings[0].outerHTML = renderSectionHeading(pageContent.rolesIntro);
   const roles = document.querySelector(".roles");
-  if (roles && pageContent.roles) roles.innerHTML = pageContent.roles.map((role) => `<article class="role" data-reveal><h2>${escapeHtml(role.title)}</h2><p>${escapeHtml(role.details)}</p><a href="mailto:${escapeHtml(site.careersEmail)}?subject=${encodeURIComponent(role.title)}" aria-label="Apply for ${escapeHtml(role.title)}">↗</a></article>`).join("");
+  if (roles && pageContent.roles) roles.innerHTML = pageContent.roles.map((role) => `<article class="role" data-reveal><h2>${escapeHtml(role.title)}</h2><p>${escapeHtml(role.details)}</p><a href="mailto:${escapeHtml(site.careersEmail)}?subject=${encodeURIComponent(role.title)}" aria-label="Apply for ${escapeHtml(role.title)}"><span>Apply</span><b aria-hidden="true">↗</b></a></article>`).join("");
   if (headings[1] && pageContent.culture) headings[1].outerHTML = renderSectionHeading(pageContent.culture);
   const cultureGrid = document.querySelector(".plum-surface .press-grid");
   if (cultureGrid && pageContent.culture?.cards) cultureGrid.innerHTML = renderCards(pageContent.culture.cards);
@@ -608,6 +675,9 @@ if (requestedInterest) {
 
 document.querySelectorAll("form[data-submission-type]").forEach((form) => {
   const status = form.querySelector(".form-status");
+  if (!form.querySelector('input[name="website"]')) {
+    form.insertAdjacentHTML("afterbegin", '<div class="hp-field" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>');
+  }
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const submit = form.querySelector('button[type="submit"]');
@@ -620,6 +690,7 @@ document.querySelectorAll("form[data-submission-type]").forEach((form) => {
     }
     data.consent = Boolean(data.consent);
     data.type = form.dataset.submissionType;
+    data.submittedFrom = path;
     submit.disabled = true;
     submit.textContent = "Sending securely...";
     status.textContent = "";
@@ -631,7 +702,7 @@ document.querySelectorAll("form[data-submission-type]").forEach((form) => {
         body: JSON.stringify(data)
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.message);
+      if (!response.ok) throw new Error(result.message || "We could not receive this enquiry. Please try again.");
       const firstName = String(data.applicantName || data.name || "there").trim().split(/\s+/)[0];
       form.innerHTML = `
         <div class="form-success" role="status">
@@ -642,7 +713,7 @@ document.querySelectorAll("form[data-submission-type]").forEach((form) => {
         </div>`;
       form.querySelector("[data-first-name]").textContent = firstName;
     } catch (error) {
-      status.textContent = error.message;
+      status.textContent = error.message || "We could not receive this enquiry. Please try again or contact HeartLink directly.";
       submit.disabled = false;
       submit.textContent = originalLabel;
     }

@@ -12,12 +12,12 @@
     "primaryLabel": "Apply to Registry",
     "primaryUrl": "/apply",
     "showWhatsapp": true,
-    "whatsappLabel": "WhatsApp HeartLink"
+    "whatsappLabel": "Quick WhatsApp Enquiry"
   },
   "stats": [
     { "value": "1,000+", "label": "Profiles tracked for client searches" },
     { "value": "250+", "label": "Families advised over time" },
-    { "value": "50", "label": "Maximum active retained mandates" }
+    { "value": "50", "label": "Maximum active Premium Search mandates" }
   ],
   "feature": {
     "image": "",

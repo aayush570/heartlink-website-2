@@ -12,7 +12,7 @@
     "primaryLabel": "Apply to Registry",
     "primaryUrl": "/apply",
     "showWhatsapp": true,
-    "whatsappLabel": "WhatsApp HeartLink"
+    "whatsappLabel": "Quick WhatsApp Enquiry"
   },
   "curators": [
     {
@@ -85,31 +85,31 @@
   "proofHeading": {
     "eyebrow": "Public recognition",
     "title": "Founder credibility families can see.",
-    "description": "Use this area for award photos, event moments, founder photos, press links and other public proof."
+    "description": "A concise public record of the experience behind HeartLink's private advisory work."
   },
   "proofAssets": [
     {
       "label": "Award proof",
       "title": "Dr. Sarojini Naidu International Award",
-      "description": "Placeholder for award photo, certificate or public recognition note.",
+      "description": "Recognition for Gopi Shah's contribution to education, culture and community service.",
       "image": "",
       "link": "",
       "source": "",
       "date": ""
     },
     {
-      "label": "Founder photo",
-      "title": "Gopi Shah with families and community",
-      "description": "Placeholder for a warm founder-led photograph that builds trust.",
+      "label": "Matrimonial service",
+      "title": "Five years of honorary Jeevansathi service",
+      "description": "Hands-on matrimonial work before HeartLink shaped the current private, careful and family-first process.",
       "image": "",
       "link": "",
       "source": "",
       "date": ""
     },
     {
-      "label": "Event photo",
-      "title": "Cultural and community work",
-      "description": "Placeholder for event photography connected to Gopi Shah's public work.",
+      "label": "Cultural work",
+      "title": "India and United States community experience",
+      "description": "Creative, cultural and community projects across Mumbai, Chicago and Florida inform Gopi Shah's judgment and network.",
       "image": "",
       "link": "",
       "source": "",

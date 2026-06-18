@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Services | HeartLink",
-    "description": "Explore HeartLink's private registry, success-based introductions and invitation-only retained search."
+    "description": "Explore HeartLink's Private Registry, Success Plan, Premium Search and Private Circle options."
   },
   "hero": {
     "eyebrow": "Services",
@@ -12,7 +12,7 @@
     "primaryLabel": "Apply to Registry",
     "primaryUrl": "/apply",
     "showWhatsapp": true,
-    "whatsappLabel": "WhatsApp HeartLink"
+    "whatsappLabel": "Quick WhatsApp Enquiry"
   },
   "tiers": [
     {
@@ -36,9 +36,9 @@
     {
       "label": "03 · Active search",
       "title": "Premium Search",
-      "description": "An application-based retained search for families where Gopi Shah feels HeartLink can add strong value.",
-      "features": ["Upfront retainership discussed privately", "Only selected mandates accepted", "Part of the 50 active retained mandate limit"],
-      "button": "Apply for Retained Search",
+      "description": "An application-based Premium Search for families where Gopi Shah feels HeartLink can add strong value.",
+      "features": ["Upfront advisory fee discussed privately", "Only selected mandates accepted", "Part of the 50 active Premium Search mandate limit"],
+      "button": "Apply for Premium Search",
       "tone": "premium",
       "black": false
     },
@@ -55,8 +55,8 @@
   "protocol": {
     "title": "Exclusive does not mean complicated.",
     "paragraphs": [
-      "The Registry Network can grow widely, but retained search remains intentionally limited.",
-      "HeartLink accepts a maximum of 50 active retained mandates at one time. Acceptance, fees and service level are discussed only after we understand your family and requirements."
+      "The Registry Network can grow widely, but Premium Search remains intentionally limited.",
+      "HeartLink accepts a maximum of 50 active Premium Search mandates at one time. Acceptance, fees and service level are discussed only after we understand your family and requirements."
     ]
   },
   "closing": {
