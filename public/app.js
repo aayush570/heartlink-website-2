@@ -507,7 +507,13 @@ function renderMembership() {
   }
   setText(".protocol-note h2", pageContent.protocol?.title);
   const protocolCopy = document.querySelector(".protocol-note > div");
-  if (protocolCopy && pageContent.protocol?.paragraphs) protocolCopy.innerHTML = pageContent.protocol.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
+  if (protocolCopy && pageContent.protocol?.paragraphs) {
+    protocolCopy.innerHTML = pageContent.protocol.paragraphs.map((paragraph, index) => {
+      const safeParagraph = escapeHtml(paragraph);
+      if (index === 1) return `<p>${safeParagraph.replace("50", '<span class="premium-limit-number">50</span>')}</p>`;
+      return `<p>${safeParagraph}</p>`;
+    }).join("");
+  }
   renderClosing(pageContent.closing);
 }
 
