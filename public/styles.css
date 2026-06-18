@@ -225,14 +225,12 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .button-light-outline { color: var(--paper); background: transparent; border-color: rgba(255,255,255,.48); }
 .button-light-outline:hover { color: var(--maroon); background: var(--paper); border-color: var(--paper); }
 .lens-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--gold-soft); }
-.lens-card { min-height: 590px; padding: clamp(35px, 5vw, 70px); display: flex; flex-direction: column; }
+.lens-card { min-height: 420px; padding: clamp(35px, 5vw, 70px); display: flex; flex-direction: column; }
 .lens-card + .lens-card { border-left: 1px solid var(--gold-soft); }
 .lens-family { background: rgba(95,23,36,.035); }
 .lens-individual { background: var(--paper); }
 .card-index { color: var(--gold); font-size: 8px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
-.lens-icon { width: 82px; height: 82px; margin: 55px 0 45px; display: grid; place-items: center; border: 1px solid var(--gold); border-radius: 50%; color: var(--maroon); font: 500 28px var(--serif); }
-.lens-icon { width: 72px; height: 72px; margin: 55px 0 45px; object-fit: contain; }
-.lens-card h3 { max-width: 430px; margin-bottom: 22px; font-size: clamp(38px, 4vw, 55px); }
+.lens-card h3 { margin-top: 30px; max-width: 430px; margin-bottom: 22px; font-size: clamp(38px, 4vw, 55px); }
 .lens-card p { max-width: 500px; color: var(--muted); }
 .lens-card ul { margin: auto 0 0; padding: 25px 0 0; border-top: 1px solid var(--line); list-style: none; }
 .lens-card li { position: relative; padding: 8px 0 8px 20px; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
@@ -244,7 +242,7 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .vault-watermark::before { inset: 8%; }
 .vault-watermark::after { inset: 17%; }
 .vault-heading { position: relative; max-width: 800px; margin-bottom: clamp(32px, 3.5vw, 50px); }
-.vault-heading h2 { font-size: clamp(51px, 6.1vw, 85px); }
+.vault-heading h2 { font-size: clamp(51px, 6.1vw, 85px); margin-bottom: 14px; }
 .vault-heading h2 em { color: var(--gold-bright); }
 .vault-heading p { max-width: 610px; color: rgba(245,239,229,.66); }
 .vault-grid { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(212,175,55,.28); border-left: 1px solid rgba(212,175,55,.28); }
@@ -594,9 +592,8 @@ em, .accent { color: var(--maroon); font-weight: 400; }
   .legacy-heading h2 { font-size: 51px; }
   .marquee-line { max-width: 100%; margin-top: 70px; gap: 25px; justify-content: center; overflow: hidden; white-space: nowrap; }
   .marquee-line span:nth-of-type(even), .marquee-line i:nth-of-type(even) { display: none; }
-  .lens-card { min-height: 540px; padding: 35px 27px; }
+  .lens-card { min-height: 380px; padding: 35px 27px; }
   .lens-card + .lens-card { border-top: 1px solid var(--gold-soft); border-left: 0; }
-  .lens-icon { margin: 40px 0 32px; }
   .vault-grid { grid-template-columns: 1fr; }
   .vault-grid article { min-height: 205px; padding: 28px; }
   .vault-grid h3 { margin-top: 30px; }

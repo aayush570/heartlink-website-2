@@ -370,7 +370,6 @@ function renderHome() {
     lensGrid.innerHTML = audience.cards.map((card, index) => `
       <article class="lens-card ${index === 0 ? "lens-family" : "lens-individual"}" data-reveal>
         <span class="card-index">${escapeHtml(card.label)}</span>
-        <img class="logo-seal lens-icon" src="${escapeHtml(site.logo || "/Heartlink Logo.png")}" alt="" aria-hidden="true">
         <h3>${escapeHtml(card.title)}</h3>
         <p>${escapeHtml(card.description)}</p>
         <ul>${(card.points || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul>
