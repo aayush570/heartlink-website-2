@@ -35,7 +35,7 @@ const canonicalHref = `${siteOrigin}${path === "/" ? "/" : path}`;
 
 document.documentElement.style.setProperty("--maroon", site.primaryColor || "#5F1724");
 document.documentElement.style.setProperty("--gold", site.accentColor || "#B8954F");
-document.documentElement.style.setProperty("--forest", site.secondaryAccentColor || "#183F32");
+document.documentElement.style.setProperty("--forest", site.secondaryAccentColor || "#5F1724");
 
 function escapeHtml(value = "") {
   return String(value)
@@ -302,8 +302,8 @@ function renderFooter() {
   footer.className = "site-footer";
   footer.innerHTML = `
     <div class="footer-mark">
-      <i class="footer-seal" aria-hidden="true">HL</i>
-      <p>${safeLines(site.footerStatement || "Private matchmaking for\nselect Indian families.")}</p>
+      <img class="footer-seal" src="${escapeHtml(site.logo || "/Heartlink Logo.png")}" alt="" aria-hidden="true">
+      <p>${safeTitle(site.footerStatement || "Private matchmaking for\nselect Indian families.")}</p>
     </div>
     <div class="footer-links">
       ${footerColumns.map((column) => `
@@ -356,7 +356,7 @@ function renderHome() {
   const legacyLink = document.querySelector(".legacy-copy .text-link");
   if (legacyLink) {
     legacyLink.href = safeUrl(legacy.linkUrl || "/about", "/about");
-    legacyLink.innerHTML = `${escapeHtml(legacy.linkText || "Meet Gopi Shah")} <span>↗</span>`;
+    legacyLink.innerHTML = `${escapeHtml(legacy.linkText || "Meet our founders")} <span>↗</span>`;
   }
 
   const audience = pageContent.audience || {};
@@ -370,7 +370,7 @@ function renderHome() {
     lensGrid.innerHTML = audience.cards.map((card, index) => `
       <article class="lens-card ${index === 0 ? "lens-family" : "lens-individual"}" data-reveal>
         <span class="card-index">${escapeHtml(card.label)}</span>
-        <div class="lens-icon ${index === 1 ? "lens-monogram" : ""}" aria-hidden="true">${escapeHtml(card.icon || (index === 0 ? "HL" : "H"))}</div>
+        <img class="logo-seal lens-icon" src="${escapeHtml(site.logo || "/Heartlink Logo.png")}" alt="" aria-hidden="true">
         <h3>${escapeHtml(card.title)}</h3>
         <p>${escapeHtml(card.description)}</p>
         <ul>${(card.points || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul>

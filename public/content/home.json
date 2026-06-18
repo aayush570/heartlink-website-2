@@ -43,7 +43,7 @@
     "paragraphs": [
       "We look beyond biodata to understand family background, education, values, lifestyle and long-term compatibility. Every introduction is private and shared only when there is genuine interest."
     ],
-    "linkText": "Meet Gopi Shah",
+    "linkText": "Meet our founders",
     "linkUrl": "/about"
   },
   "audience": {
@@ -53,7 +53,6 @@
     "cards": [
       {
         "label": "For parents & families",
-        "icon": "HL",
         "title": "Strong family understanding.",
         "description": "We understand family values, reputation, education, profession and social background before suggesting any introduction.",
         "points": ["Family and reference checks", "Identity and intent verification", "Social and family comfort"]
