@@ -296,7 +296,7 @@ function renderFooter() {
   if (!footer) return;
   const footerColumns = site.footerColumns || [
     { title: "Start Here", links: [{ label: "Apply to the registry", href: "/apply" }, { label: "Quick WhatsApp Enquiry", href: whatsappHref }, { label: site.conciergeEmail, href: `mailto:${site.conciergeEmail}` }] },
-    { title: "Learn More", links: [{ label: "About Gopi Shah", href: "/about" }, { label: "Our process", href: "/methodology" }, { label: "Trust & recognition", href: "/about#trust" }] },
+    { title: "Learn More", links: [{ label: "About Gopi Shah", href: "/about" }, { label: "Our process", href: "/membership#process" }, { label: "Trust & recognition", href: "/about#trust" }] },
     { title: "More", links: [{ label: "Services", href: "/membership" }, { label: "Partnerships", href: "/partnerships" }, { label: "Careers", href: "/careers" }, { label: "Privacy", href: "/privacy" }] }
   ];
   footer.className = "site-footer";
@@ -332,7 +332,7 @@ function renderHome() {
   }
   const secondary = document.querySelector(".hero-actions .text-link");
   if (secondary) {
-    secondary.href = safeUrl(hero.secondaryUrl || "/methodology", "/methodology");
+    secondary.href = safeUrl(hero.secondaryUrl || "/membership#process", "/membership#process");
     secondary.innerHTML = `${escapeHtml(hero.secondaryButton || "See how it works")} <span>↗</span>`;
   }
   const whatsapp = document.querySelector(".hero-actions [data-whatsapp-link]");
@@ -530,6 +530,14 @@ function renderMembership() {
       return `<p>${safeParagraph}</p>`;
     }).join("");
   }
+  const processHeading = document.querySelector(".process-section .process-heading");
+  if (processHeading && pageContent.process) processHeading.outerHTML = renderSectionHeading(pageContent.process, true).replace("section-heading", "section-heading process-heading");
+  const timeline = document.querySelector("[data-membership-process-timeline]");
+  if (timeline && pageContent.steps) timeline.innerHTML = pageContent.steps.map((step) => `<article class="timeline-item" data-reveal><small>${escapeHtml(step.label)}</small><div class="timeline-number">${escapeHtml(step.number)}</div><h2>${escapeHtml(step.title)}</h2><p>${escapeHtml(step.description)}</p></article>`).join("");
+  const afterSubmitHeading = document.querySelector("[data-membership-after-submit] .section-heading");
+  if (afterSubmitHeading && pageContent.afterSubmit) afterSubmitHeading.outerHTML = renderSectionHeading(pageContent.afterSubmit, true);
+  const afterSubmitCards = document.querySelector("[data-membership-after-submit-cards]");
+  if (afterSubmitCards && pageContent.afterSubmit?.cards) afterSubmitCards.innerHTML = renderCards(pageContent.afterSubmit.cards);
   renderClosing(pageContent.closing);
 }
 
