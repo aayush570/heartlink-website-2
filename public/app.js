@@ -183,7 +183,7 @@ function renderHeader() {
   header.innerHTML = `
     <div class="nav-shell">
       <a class="brand" href="/" aria-label="HeartLink home">
-        <i class="brand-seal" aria-hidden="true">HL</i>
+        <img class="brand-mark" src="${escapeHtml(site.logo || "/Heartlink Logo.png")}" alt="" aria-hidden="true">
         <span>${escapeHtml(site.brandName)}<small>${escapeHtml(site.brandDescriptor)}</small></span>
       </a>
       <nav class="desktop-nav" aria-label="Primary navigation">

@@ -79,16 +79,12 @@ em, .accent { color: var(--maroon); font-weight: 400; }
   gap: 32px;
 }
 .brand { display: flex; align-items: center; gap: 14px; margin-right: auto; }
-.brand-seal {
+.brand-mark {
   width: 43px;
   height: 43px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  color: var(--maroon);
-  font: 600 17px/1 var(--serif);
-  letter-spacing: -.08em;
+  display: block;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 .brand > span { font: 600 22px/1 var(--serif); letter-spacing: .15em; }
 .brand small { display: block; margin-top: 7px; color: var(--muted); font: 500 7px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
@@ -508,7 +504,7 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 @media (max-width: 760px) {
   body { font-size: 14px; }
   .nav-shell { width: calc(100% - 24px); min-height: 76px; }
-  .brand-seal { width: 38px; height: 38px; }
+  .brand-mark { width: 38px; height: 38px; }
   .brand > span { font-size: 19px; }
   .brand small, .desktop-apply, .desktop-contact { display: none; }
   .mobile-actions { flex-direction: column; }
