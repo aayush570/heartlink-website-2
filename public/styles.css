@@ -371,8 +371,10 @@ em, .accent { color: var(--maroon); font-weight: 400; }
   display: inline-block;
   margin: 0 .05em;
   color: var(--maroon);
-  font: 600 clamp(30px, 3.8vw, 50px)/0 var(--serif);
+  font: 600 clamp(30px, 3.8vw, 50px) var(--serif);
+  line-height: 1;
   vertical-align: middle;
+  height: 24px;
 }
 .impact-numbers { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .impact-numbers div { padding: 45px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
