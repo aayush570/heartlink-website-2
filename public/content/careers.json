@@ -14,11 +14,6 @@
     "showWhatsapp": false,
     "whatsappLabel": "Quick WhatsApp Enquiry"
   },
-  "rolesIntro": {
-    "eyebrow": "The standard",
-    "title": "Work that needs trust and maturity.",
-    "description": "HeartLink is not a volume business. Every team member handles private family information. We value good communication, cultural understanding, mature judgment and privacy."
-  },
   "roles": [
     { "title": "Senior Relationship Manager", "details": "Mumbai · Hybrid · 8+ years in private client, luxury or advisory services" },
     { "title": "Network Scout", "details": "Global · Flexible · Strong social intelligence and trusted networks" },

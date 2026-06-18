@@ -652,6 +652,26 @@ if (stepper) {
     document.querySelector(".form-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const applyingForInputs = stepper.querySelectorAll('input[name="applyingFor"]');
+  const relationshipInput = stepper.querySelector('#relationship');
+  if (applyingForInputs.length && relationshipInput) {
+    const relationshipField = relationshipInput.closest('.field');
+    const updateRelationship = () => {
+      const isSelf = stepper.querySelector('input[name="applyingFor"]:checked')?.value === 'self';
+      if (isSelf) {
+        relationshipField.style.display = 'none';
+        relationshipInput.required = false;
+        relationshipInput.value = 'Self';
+      } else {
+        relationshipField.style.display = 'block';
+        relationshipInput.required = true;
+        if (relationshipInput.value === 'Self') relationshipInput.value = '';
+      }
+    };
+    applyingForInputs.forEach(i => i.addEventListener('change', updateRelationship));
+    updateRelationship();
+  }
+
   stepper.querySelectorAll("[data-next]").forEach((button) => {
     button.addEventListener("click", () => {
       const fields = [...steps[currentStep].querySelectorAll("input, select, textarea")];

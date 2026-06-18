@@ -295,7 +295,7 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .invitation-frame small { display: block; margin-top: 30px; color: rgba(255,255,255,.42); font-size: 7px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
 
 /* Interior pages */
-.page-hero { position: relative; min-height: 34vh; padding: 118px max(5vw, 24px) 34px; display: flex; align-items: center; overflow: hidden; background: var(--paper); border-bottom: 1px solid var(--line); }
+.page-hero { position: relative; padding: 104px max(5vw, 24px) 24px; display: flex; align-items: center; overflow: hidden; background: var(--paper); border-bottom: 1px solid var(--line); }
 .page-hero::before { content: ""; position: absolute; right: -6vw; top: 10%; width: 38vw; aspect-ratio: 1; border: 1px solid var(--gold-soft); border-radius: 50%; box-shadow: 0 0 0 80px rgba(184,149,79,.025), 0 0 0 160px rgba(184,149,79,.02); }
 .page-hero .hero-inner { position: relative; z-index: 1; width: min(1180px, 90vw); margin: auto; }
 .page-hero h1 { max-width: 1000px; margin-bottom: 18px; font-size: clamp(50px, 6.6vw, 86px); }
@@ -368,11 +368,10 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .protocol-note p { color: var(--muted); }
 .premium-limit-number {
   display: inline-block;
-  margin: 0 .1em;
+  margin: 0 .05em;
   color: var(--maroon);
-  font: 600 clamp(30px, 3.8vw, 50px)/.95 var(--serif);
-  vertical-align: -.12em;
-  white-space: nowrap;
+  font: 600 clamp(30px, 3.8vw, 50px)/0 var(--serif);
+  vertical-align: middle;
 }
 .impact-numbers { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .impact-numbers div { padding: 45px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -607,7 +606,7 @@ em, .accent { color: var(--maroon); font-weight: 400; }
   .founder-portrait span { right: -20px; }
   .founder-copy blockquote { font-size: 41px; }
   .invitation-frame { padding: 65px 27px; outline-offset: -8px; }
-  .page-hero { min-height: auto; padding: 98px 22px 36px; }
+  .page-hero { padding: 90px 22px 24px; }
   .page-hero h1 { font-size: clamp(53px, 16vw, 76px); }
   .hero-cta { align-items: stretch; flex-direction: column; }
   .curator-card { padding: 13px; }
