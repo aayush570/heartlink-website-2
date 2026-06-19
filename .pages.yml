@@ -281,43 +281,8 @@ content:
       - { name: proofAssets, label: Founder proof and media assets, component: proofCard, list: true }
       - { name: closing, component: closing }
 
-  - name: methodology
-    label: "03 · Process"
-    type: file
-    path: public/content/methodology.json
-    format: json
-    fields:
-      - { name: seo, component: seo }
-      - { name: hero, component: hero }
-      - { name: cta, component: cta }
-      - name: steps
-        label: Process steps
-        type: object
-        list: { collapsible: { collapsed: true, summary: "{number} · {title}" } }
-        fields:
-          - { name: label, label: Small label, type: string }
-          - { name: number, label: Step number, type: string }
-          - { name: title, label: Step title, type: string }
-          - { name: description, label: Description, type: text }
-      - name: afterSubmit
-        label: After-submit explanation
-        type: object
-        fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: description, label: Description, type: text }
-          - { name: cards, label: Cards, component: proofCard, list: true }
-      - name: closing
-        label: Closing section
-        type: object
-        fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: description, label: Description, type: text }
-          - { name: button, label: Button text, type: string }
-
   - name: membership
-    label: "04 · Services"
+    label: "03 · Services"
     type: file
     path: public/content/membership.json
     format: json
@@ -343,45 +308,34 @@ content:
         fields:
           - { name: title, label: Title, type: string }
           - { name: paragraphs, label: Paragraphs, type: text, list: true }
-      - { name: closing, component: closing }
-
-  - name: impact
-    label: "05 · Trust & Recognition"
-    type: file
-    path: public/content/impact.json
-    format: json
-    fields:
-      - { name: seo, component: seo }
-      - { name: hero, component: hero }
-      - { name: cta, component: cta }
-      - name: stats
-        label: Proof numbers
-        type: object
-        list: { collapsible: { collapsed: true, summary: "{value} · {label}" } }
-        fields:
-          - { name: value, label: Large value, type: string }
-          - { name: label, label: Caption, type: string }
-      - name: feature
-        label: Founder/community feature
-        type: object
-        fields:
-          - { name: image, label: Feature image, type: image }
-          - { name: imageAlt, label: Image description, type: string }
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: paragraphs, label: Paragraphs, type: text, list: true }
-      - name: recognition
-        label: Awards, testimonials, stories and proof
+      - name: process
+        label: Service process heading
         type: object
         fields:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Title, type: string }
           - { name: description, label: Description, type: text }
-          - { name: cards, label: Proof cards, component: proofCard, list: true }
+      - name: steps
+        label: Service process steps
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{number} · {title}" } }
+        fields:
+          - { name: label, label: Small label, type: string }
+          - { name: number, label: Step number, type: string }
+          - { name: title, label: Step title, type: string }
+          - { name: description, label: Description, type: text }
+      - name: afterSubmit
+        label: After-submit explanation
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: cards, label: Cards, component: proofCard, list: true }
       - { name: closing, component: closing }
 
   - name: careers
-    label: "06 · Careers"
+    label: "04 · Careers"
     type: file
     path: public/content/careers.json
     format: json
@@ -408,7 +362,7 @@ content:
       - { name: closing, component: closing }
 
   - name: apply
-    label: "07 · Private Application"
+    label: "05 · Private Application"
     type: file
     path: public/content/apply.json
     format: json
@@ -421,8 +375,11 @@ content:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Main headline, type: string }
           - { name: description, label: Description, type: text }
+          - { name: assuranceTitle, label: Confidentiality badge title, type: string }
+          - { name: assuranceDescription, label: Confidentiality badge description, type: text }
+          - { name: returnLinkLabel, label: Return link label, type: string }
           - name: protocol
-            label: Entry steps
+            label: Small progress strip
             type: object
             list: true
             fields:
@@ -432,13 +389,26 @@ content:
         label: Form guidance
         type: object
         fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: introduction, label: Introductory text, type: text }
-          - { name: verificationNote, label: Verification protocol, type: text }
+          - { name: eyebrow, label: Form section label, type: string }
+          - { name: introduction, label: Form introduction, type: text }
+          - name: stepHeader
+            label: Top summary line
+            type: object
+            fields:
+              - { name: durationLabel, label: Left text, type: string, description: "Example: Approximately 5 minutes" }
+              - { name: reviewLabel, label: Right text, type: string, description: "Example: Reviewed privately" }
+          - name: nextSteps
+            label: What happens after submitting
+            type: object
+            fields:
+              - { name: title, label: Box title, type: string }
+              - { name: items, label: Steps list, type: string, list: true }
+          - { name: verificationTitle, label: Verification box title, type: string }
+          - { name: verificationNote, label: Verification box description, type: text }
           - { name: consent, label: Consent statement, type: text }
-          - { name: button, label: Submit button, type: string }
+          - { name: button, label: Submit button label, type: string }
       - name: faqs
-        label: Frequently asked questions
+        label: Frequently asked questions shown below the form
         type: object
         list: { collapsible: { collapsed: true, summary: "{question}" } }
         fields:
@@ -446,7 +416,7 @@ content:
           - { name: answer, label: Answer, type: text }
 
   - name: contact
-    label: "08 · Contact"
+    label: "06 · Contact"
     type: file
     path: public/content/contact.json
     format: json
@@ -468,11 +438,13 @@ content:
         type: object
         fields:
           - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Large heading, type: string }
           - { name: introduction, label: Introductory text, type: text }
+          - { name: consent, label: Consent statement, type: text }
           - { name: button, label: Button text, type: string }
 
   - name: partnerships
-    label: "09 · Partnerships"
+    label: "07 · Partnerships"
     type: file
     path: public/content/partnerships.json
     format: json
@@ -493,11 +465,13 @@ content:
         type: object
         fields:
           - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Large heading, type: string }
           - { name: introduction, label: Introductory text, type: text }
+          - { name: consent, label: Consent statement, type: text }
           - { name: button, label: Button text, type: string }
 
   - name: privacy
-    label: "10 · Privacy"
+    label: "08 · Privacy"
     type: file
     path: public/content/privacy.json
     format: json

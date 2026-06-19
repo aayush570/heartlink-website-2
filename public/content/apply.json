@@ -7,6 +7,9 @@
     "eyebrow": "Private registry application",
     "title": "Start with a <em>private conversation.</em>",
     "description": "Share basic details about the person seeking a match. HeartLink will review the enquiry privately before any next step.",
+    "assuranceTitle": "Strictly confidential.",
+    "assuranceDescription": "Your information is reviewed only by the HeartLink team and never shown in a public directory.",
+    "returnLinkLabel": "Return home",
     "protocol": [
       { "number": "01", "label": "Basic details" },
       { "number": "02", "label": "Private review" },
@@ -16,6 +19,19 @@
   "form": {
     "eyebrow": "Registry and private search enquiry",
     "introduction": "Your details are reviewed privately and are never shown in a public directory.",
+    "stepHeader": {
+      "durationLabel": "Approximately 5 minutes",
+      "reviewLabel": "Reviewed privately"
+    },
+    "nextSteps": {
+      "title": "What happens after you apply?",
+      "items": [
+        "The HeartLink team reviews your enquiry privately.",
+        "If we can help, we contact the family representative for context.",
+        "We guide you toward Private Registry, Success Plan, Premium Search or Private Circle."
+      ]
+    },
+    "verificationTitle": "Private review",
     "verificationNote": "Every enquiry is reviewed by a person. HeartLink may contact the nominated representative to verify identity and understand the right service option.",
     "consent": "I am authorised to share these details and agree that HeartLink may review them confidentially.",
     "button": "Submit Private Application"

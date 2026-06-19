@@ -4,7 +4,7 @@ A dependency-free, multi-page website for HeartLink's private matchmaking practi
 
 ## Content management
 
-The site is configured for [Pages CMS](https://app.pagescms.org). Non-technical editors can update page copy, homepage sections, proof numbers, proof/media cards, stories, CTA labels and links, images, brand colours, navigation, footer links, contact details, roles, tiers, methodology steps, service text, trust assets, and FAQs.
+The site is configured for [Pages CMS](https://app.pagescms.org). Non-technical editors can update page copy, homepage sections, proof numbers, proof/media cards, stories, CTA labels and links, images, brand colours, navigation, footer links, contact details, service tiers, service-process text, careers copy, application text, partnership text, privacy copy, and FAQs.
 
 Pages CMS configuration lives in `.pages.yml`. Editable content lives in `public/content`, and uploaded images are stored in `public/media`.
 

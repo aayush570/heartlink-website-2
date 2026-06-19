@@ -26,7 +26,9 @@
   },
   "form": {
     "eyebrow": "Partnership introduction",
+    "title": "Introduce your practice.",
     "introduction": "Tell us about your practice, network and the kind of collaboration you have in mind.",
+    "consent": "I consent to HeartLink using these details to review and respond to this partnership enquiry.",
     "button": "Introduce Your Practice"
   }
 }

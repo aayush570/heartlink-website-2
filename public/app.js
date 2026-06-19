@@ -576,7 +576,9 @@ function renderCareers() {
 
 function renderContact() {
   setText(".form-card > .eyebrow", pageContent.form?.eyebrow);
+  setText(".form-card > h2", pageContent.form?.title);
   setText(".form-card > p", pageContent.form?.introduction);
+  setText(".form-card .consent span", pageContent.form?.consent);
   setText('.form-card button[type="submit"]', pageContent.form?.button);
   const methods = document.querySelector("[data-contact-methods]");
   if (methods && pageContent.whatsappSection) {
@@ -596,7 +598,9 @@ function renderPartnerships() {
   const grid = document.querySelector(".partnership-models .press-grid");
   if (grid && pageContent.models?.cards) grid.innerHTML = renderCards(pageContent.models.cards);
   setText(".form-card > .eyebrow", pageContent.form?.eyebrow);
+  setText(".form-card > h2", pageContent.form?.title);
   setText(".form-card > p", pageContent.form?.introduction);
+  setText(".form-card .consent span", pageContent.form?.consent);
   setText('.form-card button[type="submit"]', pageContent.form?.button);
 }
 
@@ -607,6 +611,60 @@ function renderPrivacy() {
   if (editorial && pageContent.content?.paragraphs) {
     editorial.querySelectorAll("p:not(.lead)").forEach((element) => element.remove());
     editorial.insertAdjacentHTML("beforeend", pageContent.content.paragraphs.map((paragraph, index) => `<p>${escapeHtml(paragraph)}${index === pageContent.content.paragraphs.length - 1 ? ` <a class="text-link" href="mailto:${escapeHtml(site.privacyEmail)}">${escapeHtml(site.privacyEmail)} <span>↗</span></a>` : ""}</p>`).join(""));
+  }
+}
+
+function renderApply() {
+  const intro = pageContent.intro || {};
+  setText(".application-intro .eyebrow", intro.eyebrow);
+  setSafeHtml(".application-intro h1", intro.title);
+  setText(".application-intro > div > p", intro.description);
+  setText(".application-intro .text-link", intro.returnLinkLabel);
+  const returnLink = document.querySelector(".application-intro .text-link");
+  if (returnLink) returnLink.innerHTML = `${escapeHtml(intro.returnLinkLabel || "Return home")} <span>↗</span>`;
+
+  const assuranceTitle = document.querySelector("[data-apply-assurance-title]");
+  if (assuranceTitle) assuranceTitle.innerHTML = safeTitle(intro.assuranceTitle || "Strictly confidential.");
+  setSafeHtml("[data-apply-assurance-copy]", intro.assuranceDescription || "Your information is reviewed only by the HeartLink team and never shown in a public directory.");
+
+  const stepHeader = pageContent.form?.stepHeader || {};
+  setText(".step-header .eyebrow", pageContent.form?.eyebrow);
+  setText("[data-apply-form-introduction]", pageContent.form?.introduction);
+  setText("[data-apply-step-duration]", stepHeader.durationLabel);
+  setText("[data-apply-step-review-label]", stepHeader.reviewLabel);
+
+  const protocol = document.querySelector("[data-apply-protocol]");
+  if (protocol && intro.protocol) {
+    protocol.innerHTML = intro.protocol.map((item) => `<span><strong>${escapeHtml(item.number)}</strong>${escapeHtml(item.label)}</span>`).join("");
+  }
+
+  const nextStep = pageContent.form?.nextSteps || {};
+  setText("[data-apply-next-steps-title]", nextStep.title);
+  const nextStepsList = document.querySelector("[data-apply-next-steps-list]");
+  if (nextStepsList && nextStep.items) {
+    nextStepsList.innerHTML = nextStep.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  }
+
+  setText("[data-apply-verification-title]", pageContent.form?.verificationTitle);
+  setText("[data-apply-verification-copy]", pageContent.form?.verificationNote);
+  setText(".stepper-form .consent span", pageContent.form?.consent);
+  const submitButton = document.querySelector('.stepper-form button[type="submit"]');
+  if (submitButton) submitButton.innerHTML = `${escapeHtml(pageContent.form?.button || "Submit Private Application")} <span>→</span>`;
+
+  const faqSection = document.querySelector("[data-apply-faqs]");
+  if (faqSection && pageContent.faqs?.length) {
+    faqSection.innerHTML = pageContent.faqs.map((faq) => `
+      <div class="accordion-item" data-accordion>
+        <button type="button" aria-expanded="false">
+          <span>${escapeHtml(faq.question)}</span>
+          <span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>${escapeHtml(faq.answer)}</p>
+        </div>
+      </div>`).join("");
+  } else {
+    faqSection?.closest(".section")?.remove();
   }
 }
 
@@ -622,6 +680,7 @@ if (pageKey === "methodology") renderMethodology();
 if (pageKey === "membership") renderMembership();
 if (pageKey === "impact") renderImpact();
 if (pageKey === "careers") renderCareers();
+if (pageKey === "apply") renderApply();
 if (pageKey === "contact") renderContact();
 if (pageKey === "partnerships") renderPartnerships();
 if (pageKey === "privacy") renderPrivacy();

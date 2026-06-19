@@ -23,7 +23,9 @@
   },
   "form": {
     "eyebrow": "General enquiry",
+    "title": "How can we help?",
     "introduction": "Share your details and we will get back to you privately.",
+    "consent": "I consent to HeartLink using these details to respond to my enquiry.",
     "button": "Send Enquiry"
   }
 }

@@ -10,19 +10,19 @@ You do not need to edit code to update the website.
 4. Authorize Pages CMS for the HeartLink repository.
 5. Select the repository and the `main` branch.
 
-Pages CMS will automatically read `.pages.yml` from the root of the repository. The editor will show numbered sections:
+Pages CMS will automatically read `.pages.yml` from the root of the repository. The editor will show these numbered sections:
 
 - `00 · Global brand, contact & footer`
 - `01 · Home`
 - `02 · About`
-- `03 · Process`
-- `04 · Services`
-- `05 · Trust & Recognition`
-- `06 · Careers`
-- `07 · Private Application`
-- `08 · Contact`
-- `09 · Partnerships`
-- `10 · Privacy`
+- `03 · Services`
+- `04 · Careers`
+- `05 · Private Application`
+- `06 · Contact`
+- `07 · Partnerships`
+- `08 · Privacy`
+
+The old standalone `Process` and `Trust & Recognition` pages now redirect into the live `Services` and `About` pages, so editors do not need to manage those separately anymore.
 
 ## Edit and publish
 
@@ -79,7 +79,7 @@ Only place `<em>` before the highlighted words and `</em>` after them.
 
 ## What is intentionally protected
 
-The CMS controls content, images, proof numbers, proof cards, stories, CTA labels and links, WhatsApp display text, contact details, navigation labels, footer links, lists, and brand colours. The underlying spacing, animation, typography, responsiveness, form validation, and privacy behavior remain in code so an accidental edit cannot break the design.
+The CMS controls content, images, proof numbers, proof cards, stories, CTA labels and links, WhatsApp display text, contact details, navigation labels, footer links, lists, form intro text, application FAQs, and brand colours. The underlying spacing, animation, typography, responsiveness, form validation, and privacy behavior remain in code so an accidental edit cannot break the design.
 
 ## Important application-form note
 
