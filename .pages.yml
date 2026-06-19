@@ -58,7 +58,7 @@ components:
 
 content:
   - name: site
-    label: "00 · Global brand, contact & footer"
+    label: "Site Settings"
     type: file
     path: public/content/site.json
     format: json
@@ -103,7 +103,7 @@ content:
           - { name: href, label: Link path, type: string }
 
   - name: home
-    label: "01 · Home"
+    label: "Home"
     type: file
     path: public/content/home.json
     format: json
@@ -248,7 +248,7 @@ content:
           - { name: note, label: Small note, type: string }
 
   - name: about
-    label: "02 · About"
+    label: "About"
     type: file
     path: public/content/about.json
     format: json
@@ -282,7 +282,7 @@ content:
       - { name: closing, component: closing }
 
   - name: membership
-    label: "03 · Services"
+    label: "Services"
     type: file
     path: public/content/membership.json
     format: json
@@ -335,7 +335,7 @@ content:
       - { name: closing, component: closing }
 
   - name: careers
-    label: "04 · Careers"
+    label: "Careers"
     type: file
     path: public/content/careers.json
     format: json
@@ -362,7 +362,7 @@ content:
       - { name: closing, component: closing }
 
   - name: apply
-    label: "05 · Private Application"
+    label: "Application"
     type: file
     path: public/content/apply.json
     format: json
@@ -416,7 +416,7 @@ content:
           - { name: answer, label: Answer, type: text }
 
   - name: contact
-    label: "06 · Contact"
+    label: "Contact"
     type: file
     path: public/content/contact.json
     format: json
@@ -444,7 +444,7 @@ content:
           - { name: button, label: Button text, type: string }
 
   - name: partnerships
-    label: "07 · Partnerships"
+    label: "Partnerships"
     type: file
     path: public/content/partnerships.json
     format: json
@@ -471,7 +471,7 @@ content:
           - { name: button, label: Button text, type: string }
 
   - name: privacy
-    label: "08 · Privacy"
+    label: "Privacy"
     type: file
     path: public/content/privacy.json
     format: json

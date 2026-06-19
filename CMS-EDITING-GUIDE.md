@@ -10,17 +10,19 @@ You do not need to edit code to update the website.
 4. Authorize Pages CMS for the HeartLink repository.
 5. Select the repository and the `main` branch.
 
-Pages CMS will automatically read `.pages.yml` from the root of the repository. The editor will show these numbered sections:
+Pages CMS will automatically read `.pages.yml` from the root of the repository. The editor will show one entry for each live website page, plus one shared settings section:
 
-- `00 · Global brand, contact & footer`
-- `01 · Home`
-- `02 · About`
-- `03 · Services`
-- `04 · Careers`
-- `05 · Private Application`
-- `06 · Contact`
-- `07 · Partnerships`
-- `08 · Privacy`
+- `Site Settings`
+- `Home`
+- `About`
+- `Services`
+- `Careers`
+- `Application`
+- `Contact`
+- `Partnerships`
+- `Privacy`
+
+`Site Settings` controls shared items used across the whole website, such as the logo, colours, navigation, footer links, WhatsApp number, and contact emails. Keeping those in one place is simpler than repeating the same settings on every page.
 
 The old standalone `Process` and `Trust & Recognition` pages now redirect into the live `Services` and `About` pages, so editors do not need to manage those separately anymore.
 
