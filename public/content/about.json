@@ -1,12 +1,12 @@
 {
   "seo": {
-    "title": "About HeartLink | Gopi Shah",
-    "description": "Meet Gopi Shah and the HeartLink team behind private matchmaking for select Indian families."
+    "title": "About HeartLink - Gopi Shah & Alpa Apoorva",
+    "description": "Meet the co-founders behind HeartLink's private matchmaking practice: family background review, relationship guidance and private introductions for select Indian families."
   },
   "hero": {
     "eyebrow": "About HeartLink",
     "title": "A trusted team for <em>serious families.</em>",
-    "description": "HeartLink is led by Gopi Shah, with a strong focus on privacy, family background and long-term compatibility."
+    "description": "HeartLink is founded and personally led by Gopi Shah and Alpa Apoorva, with a shared focus on family background, emotional readiness and complete privacy."
   },
   "cta": {
     "primaryLabel": "Apply to Registry",
@@ -22,7 +22,8 @@
   "trustStats": [
     { "value": "1,000+", "label": "Profiles tracked for client searches" },
     { "value": "250+", "label": "Families advised over time" },
-    { "value": "50", "label": "Maximum active Premium Search mandates" }
+    { "value": "75+", "label": "Successful matches supported" },
+    { "value": "20+", "label": "Cities across India and overseas" }
   ],
   "trustFeature": {
     "image": "",
@@ -31,7 +32,7 @@
     "title": "Community work that built real trust.",
     "paragraphs": [
       "Through Jwala, Gopi Shah has supported women-focused and humanitarian initiatives across India.",
-      "This work reflects the same values HeartLink follows today: dignity, privacy, respect and responsibility."
+      "The same values guide HeartLink today: dignity, privacy, respect and responsibility."
     ]
   },
   "curators": [
@@ -47,7 +48,8 @@
       "paragraphs": [
         "Her background includes Home Science from MS University of Baroda, creative direction, Indian craft work and cultural projects across Mumbai, Chicago and Florida.",
         "She has coordinated major cultural work, including a performance at the Great Wall of China, and has received the Dr. Sarojini Naidu International Award.",
-        "Before HeartLink, she ran Jeevansathi as an honorary matrimonial service for five years. That experience shaped HeartLink's private, careful and family-first approach."
+        "Before HeartLink, she guided Jeevansathi - Juhu as an honorary matrimonial service for well-regarded Gujarati families. That work was personal, private and never treated like a public database.",
+        "Gopi is not an outside adviser studying these circles from a distance. She understands the schools, expectations, family concerns and social nuance her clients bring to the table because she has lived inside the same world."
       ],
       "credentials": [
         {
@@ -60,7 +62,7 @@
         },
         {
           "title": "Trusted",
-          "description": "Five years of honorary matrimonial service"
+          "description": "Five years guiding Jeevansathi - Juhu"
         },
         {
           "title": "Personal",
@@ -78,14 +80,14 @@
       "imageAlt": "Alpa Apoorva",
       "theme": "deep",
       "paragraphs": [
-        "Alpa is an emotional therapist, certified relationship coach and transformation coach.",
-        "She helps individuals and families speak clearly about expectations, values, responsibilities and comfort before marriage.",
-        "This support helps families move with more clarity, especially when two good families are still learning how to understand each other."
+        "Alpa is trained as a therapist and relationship coach, working with individuals, couples and families.",
+        "She helps people speak clearly about expectations, values, responsibilities and comfort before marriage, not after.",
+        "Her role is central to HeartLink's process: helping good families move with more clarity when they are still learning how to understand each other."
       ],
       "credentials": [
         {
-          "title": "Certified",
-          "description": "Relationship and emotional coaching"
+          "title": "Trained",
+          "description": "Therapist and relationship coach"
         },
         {
           "title": "Balanced",
@@ -105,7 +107,7 @@
   "proofHeading": {
     "eyebrow": "Credibility",
     "title": "Experience beyond matchmaking.",
-    "description": "Families trust people who have already shown responsibility in real life. HeartLink carries that background."
+    "description": "Families trust people who have already carried responsibility in real life. HeartLink carries that record forward."
   },
   "proofAssets": [
     {
@@ -129,7 +131,7 @@
     {
       "label": "Service",
       "title": "COVID-19 support",
-      "description": "Helped arrange care centres and oxygen support during the crisis.",
+      "description": "Helped coordinate care centres and oxygen support during the crisis.",
       "image": "",
       "link": "",
       "source": "",
@@ -146,8 +148,8 @@
     },
     {
       "label": "Matrimonial trust",
-      "title": "Five years of Jeevansathi service",
-      "description": "Honorary matrimonial work that became the foundation for HeartLink.",
+      "title": "Five years of Jeevansathi - Juhu",
+      "description": "Honorary matrimonial guidance that became the foundation for HeartLink.",
       "image": "",
       "link": "",
       "source": "",

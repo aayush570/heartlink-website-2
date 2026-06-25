@@ -491,6 +491,7 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .next-step-note { margin-top: 0; align-items: flex-start; }
 .next-step-note ol { margin: 8px 0 0; padding-left: 18px; }
 .next-step-note li { margin: 5px 0; }
+.form-disclaimer { margin: 18px 0 16px; color: var(--muted); font-size: 10px; line-height: 1.7; }
 .consent { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); font-size: 10px; }
 .consent input { margin-top: 5px; accent-color: var(--maroon); }
 .form-status { color: var(--maroon); font-size: 11px; }

@@ -66,6 +66,25 @@ content:
       - { name: brandName, label: Brand name, type: string, required: true }
       - { name: brandDescriptor, label: Brand descriptor, type: string }
       - { name: logo, label: Logo, type: image, required: true }
+      - name: headerCta
+        label: Header buttons
+        type: object
+        fields:
+          - { name: whatsappLabel, label: Desktop WhatsApp label, type: string }
+          - { name: primaryLabel, label: Desktop apply label, type: string }
+          - { name: primaryUrl, label: Apply link, type: string }
+          - { name: mobileWhatsappLabel, label: Mobile WhatsApp label, type: string }
+          - { name: mobilePrimaryLabel, label: Mobile apply label, type: string }
+      - name: transactional
+        label: Form submit messages
+        type: object
+        fields:
+          - { name: sendingLabel, label: Sending label, type: string }
+          - { name: successEyebrow, label: Success small heading, type: string }
+          - { name: successTitle, label: Success title prefix, type: string }
+          - { name: successSuffix, label: Success body suffix, type: text }
+          - { name: returnLabel, label: Return link label, type: string }
+          - { name: defaultError, label: Default error message, type: text }
       - { name: siteUrl, label: Canonical site URL, type: string, description: "Optional. Leave blank to use the deployed domain automatically." }
       - { name: defaultOgImage, label: Default social share image, type: image }
       - { name: themeColor, label: Browser theme colour, type: string, description: "Use the approved ivory default #F8F4EC unless the brand system changes." }
@@ -397,6 +416,61 @@ content:
             fields:
               - { name: durationLabel, label: Left text, type: string, description: "Example: Approximately 5 minutes" }
               - { name: reviewLabel, label: Right text, type: string, description: "Example: Reviewed privately" }
+          - name: steps
+            label: Four application steps
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{number} · {title}" } }
+            fields:
+              - { name: number, label: Step number, type: string }
+              - { name: small, label: Small step label, type: string }
+              - { name: title, label: Step title, type: string }
+              - { name: intro, label: Step intro text, type: text }
+              - { name: relationshipLabel, label: Relationship field label, type: string }
+              - { name: relationshipOptions, label: Relationship options, type: string, list: true }
+              - name: choices
+                label: Choice cards
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{label}" } }
+                fields:
+                  - { name: label, label: Choice title, type: string }
+                  - { name: description, label: Choice description, type: text }
+                  - { name: value, label: Submitted value, type: string }
+              - name: fields
+                label: Field labels used by this step
+                type: object
+                fields:
+                  - { name: contactName, label: Contact full name, type: string }
+                  - { name: email, label: Email, type: string }
+                  - { name: phone, label: Phone, type: string }
+                  - { name: applicantName, label: Candidate full name, type: string }
+                  - { name: age, label: Age, type: string }
+                  - { name: address, label: Locality/city/country, type: string }
+                  - { name: designation, label: Profession/designation, type: string }
+                  - { name: company, label: Company/organisation, type: string }
+                  - { name: school, label: School, type: string }
+                  - { name: undergraduate, label: Undergraduate, type: string }
+                  - { name: postgraduate, label: Postgraduate, type: string }
+                  - { name: linkedinProfile, label: LinkedIn, type: string }
+                  - { name: instagramProfile, label: Instagram, type: string }
+                  - { name: introduction, label: Candidate introduction, type: string }
+                  - { name: fatherName, label: Father/guardian name, type: string }
+                  - { name: fatherProfession, label: Father/guardian profession, type: string }
+                  - { name: fatherCompany, label: Father/guardian company, type: string }
+                  - { name: motherName, label: Mother/guardian name, type: string }
+                  - { name: motherProfession, label: Mother/guardian profession, type: string }
+                  - { name: motherCompany, label: Mother/guardian company, type: string }
+                  - { name: familyResidence, label: Family residence, type: string }
+                  - { name: familyValues, label: Family priorities, type: string }
+              - name: placeholders
+                label: Placeholder/helper text used by this step
+                type: object
+                fields:
+                  - { name: address, label: Locality placeholder, type: string }
+                  - { name: linkedinProfile, label: LinkedIn placeholder, type: string }
+                  - { name: instagramProfile, label: Instagram placeholder, type: string }
+                  - { name: introduction, label: Candidate intro placeholder, type: text }
+                  - { name: familyResidence, label: Family residence placeholder, type: string }
+                  - { name: familyValues, label: Family priorities placeholder, type: text }
           - name: nextSteps
             label: What happens after submitting
             type: object
@@ -405,6 +479,7 @@ content:
               - { name: items, label: Steps list, type: string, list: true }
           - { name: verificationTitle, label: Verification box title, type: string }
           - { name: verificationNote, label: Verification box description, type: text }
+          - { name: disclaimer, label: Acceptance disclaimer, type: text }
           - { name: consent, label: Consent statement, type: text }
           - { name: button, label: Submit button label, type: string }
       - name: faqs
@@ -440,6 +515,18 @@ content:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Large heading, type: string }
           - { name: introduction, label: Introductory text, type: text }
+          - name: fields
+            label: Form fields
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{label}" } }
+            fields:
+              - { name: name, label: Field key, type: string, description: "Developer key sent to the server. Do not change unless code is updated." }
+              - { name: label, label: Visible label, type: string }
+              - { name: type, label: Field type, type: string, description: "Use text, email, tel, url, select or textarea." }
+              - { name: required, label: Required field, type: boolean }
+              - { name: placeholder, label: Placeholder text, type: string }
+              - { name: maxlength, label: Maximum length, type: number }
+              - { name: options, label: Dropdown options, type: string, list: true }
           - { name: consent, label: Consent statement, type: text }
           - { name: button, label: Button text, type: string }
 
@@ -467,6 +554,18 @@ content:
           - { name: eyebrow, label: Small heading, type: string }
           - { name: title, label: Large heading, type: string }
           - { name: introduction, label: Introductory text, type: text }
+          - name: fields
+            label: Form fields
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{label}" } }
+            fields:
+              - { name: name, label: Field key, type: string, description: "Developer key sent to the server. Do not change unless code is updated." }
+              - { name: label, label: Visible label, type: string }
+              - { name: type, label: Field type, type: string, description: "Use text, email, tel, url, select or textarea." }
+              - { name: required, label: Required field, type: boolean }
+              - { name: placeholder, label: Placeholder text, type: string }
+              - { name: maxlength, label: Maximum length, type: number }
+              - { name: options, label: Dropdown options, type: string, list: true }
           - { name: consent, label: Consent statement, type: text }
           - { name: button, label: Button text, type: string }
 

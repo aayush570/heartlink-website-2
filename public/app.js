@@ -149,6 +149,47 @@ function renderCards(cards = []) {
   }).join("");
 }
 
+function renderFormField(field = {}) {
+  const name = field.name || field.id || "";
+  const id = field.id || name;
+  const type = field.type || "text";
+  const required = field.required ? " required" : "";
+  const label = `${field.label || name}${field.required ? " · Required" : ""}`;
+  const placeholder = field.placeholder ? ` placeholder="${escapeHtml(field.placeholder)}"` : "";
+  const autocomplete = field.autocomplete ? ` autocomplete="${escapeHtml(field.autocomplete)}"` : "";
+  const inputMode = field.inputMode ? ` inputmode="${escapeHtml(field.inputMode)}"` : "";
+  const maxlength = field.maxlength ? ` maxlength="${escapeHtml(field.maxlength)}"` : "";
+  const full = type === "textarea" || field.full ? " field-full" : "";
+  const common = `id="${escapeHtml(id)}" name="${escapeHtml(name)}"${required}${placeholder}${autocomplete}${inputMode}${maxlength}`;
+
+  if (type === "textarea") {
+    return `<div class="field${full}"><label for="${escapeHtml(id)}">${escapeHtml(label)}</label><textarea ${common}></textarea></div>`;
+  }
+  if (type === "select") {
+    const options = (field.options || []).map((option) => {
+      const value = typeof option === "string" ? option : option.value;
+      const optionLabel = typeof option === "string" ? option : option.label;
+      return `<option value="${escapeHtml(value)}">${escapeHtml(optionLabel)}</option>`;
+    }).join("");
+    return `<div class="field${full}"><label for="${escapeHtml(id)}">${escapeHtml(label)}</label><select ${common}><option value="">${escapeHtml(field.placeholder || "Select")}</option>${options}</select></div>`;
+  }
+  return `<div class="field${full}"><label for="${escapeHtml(id)}">${escapeHtml(label)}</label><input ${common} type="${escapeHtml(type)}"></div>`;
+}
+
+function renderManagedForm(form, fields = []) {
+  if (!form || !fields.length) return;
+  const submissionType = form.dataset.submissionType;
+  const status = form.querySelector(".form-status")?.outerHTML || '<p class="form-status" role="alert" aria-live="polite"></p>';
+  const consent = pageContent.form?.consent || "";
+  const button = pageContent.form?.button || "Submit";
+  form.innerHTML = `
+    ${fields.map(renderFormField).join("")}
+    <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>${escapeHtml(consent)}</span></label>
+    <button class="button" type="submit">${escapeHtml(button)}</button>
+    ${status}`;
+  form.dataset.submissionType = submissionType;
+}
+
 function shouldShowCard(card = {}) {
   const joined = [card.title, card.description, card.label].join(" ").toLowerCase();
   return Boolean(card.title || card.description || card.image || card.link) &&
@@ -253,6 +294,8 @@ function renderHero(hero = {}, cta = {}) {
 function renderHeader() {
   const header = document.querySelector("[data-site-header]");
   if (!header) return;
+  const headerCta = site.headerCta || {};
+  const primaryUrl = safeUrl(headerCta.primaryUrl || "/apply", "/apply");
   header.className = "site-header";
   header.innerHTML = `
     <div class="nav-shell">
@@ -267,15 +310,15 @@ function renderHeader() {
         }).join("")}
       </nav>
       <div class="nav-actions">
-        <a class="button button-small button-outline desktop-contact" data-whatsapp-link href="${whatsappHref}">WhatsApp</a>
-        <a class="button button-small desktop-apply" href="/apply">Apply to Registry</a>
+        <a class="button button-small button-outline desktop-contact" data-whatsapp-link href="${whatsappHref}">${escapeHtml(headerCta.whatsappLabel || "WhatsApp")}</a>
+        <a class="button button-small desktop-apply" href="${escapeHtml(primaryUrl)}">${escapeHtml(headerCta.primaryLabel || "Apply to Registry")}</a>
       </div>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
     <div class="mobile-menu" aria-hidden="true">
       <nav aria-label="Mobile navigation">
         ${navigation.map(({ href, label }, index) => `<a href="${escapeHtml(safeUrl(href, "/"))}"><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(label)}</a>`).join("")}
-        <div class="mobile-actions"><a class="button" href="/apply">Apply to the Registry</a><a class="button button-outline" data-whatsapp-link href="${whatsappHref}">Quick WhatsApp Enquiry</a></div>
+        <div class="mobile-actions"><a class="button" href="${escapeHtml(primaryUrl)}">${escapeHtml(headerCta.mobilePrimaryLabel || headerCta.primaryLabel || "Apply to Registry")}</a><a class="button button-outline" data-whatsapp-link href="${whatsappHref}">${escapeHtml(headerCta.mobileWhatsappLabel || headerCta.whatsappLabel || "Quick WhatsApp Enquiry")}</a></div>
       </nav>
     </div>`;
 
@@ -563,6 +606,12 @@ function renderImpact() {
 }
 
 function renderCareers() {
+  const rolesShell = document.querySelector(".roles-section .section-narrow");
+  if (rolesShell && pageContent.rolesIntro && !rolesShell.querySelector(".section-heading")) {
+    rolesShell.insertAdjacentHTML("afterbegin", renderSectionHeading(pageContent.rolesIntro, false));
+  } else if (rolesShell?.querySelector(".section-heading") && pageContent.rolesIntro) {
+    rolesShell.querySelector(".section-heading").outerHTML = renderSectionHeading(pageContent.rolesIntro, false);
+  }
   const roles = document.querySelector(".roles");
   if (roles && pageContent.roles) roles.innerHTML = pageContent.roles.map((role) => `<article class="role" data-reveal><h2>${escapeHtml(role.title)}</h2><p>${escapeHtml(role.details)}</p><a href="mailto:${escapeHtml(site.careersEmail)}?subject=${encodeURIComponent(role.title)}" aria-label="Apply for ${escapeHtml(role.title)}"><span>Apply</span><b aria-hidden="true">↗</b></a></article>`).join("");
   const cultureHeading = document.querySelector(".plum-surface .section-heading");
@@ -578,8 +627,8 @@ function renderContact() {
   setText(".form-card > .eyebrow", pageContent.form?.eyebrow);
   setText(".form-card > h2", pageContent.form?.title);
   setText(".form-card > p", pageContent.form?.introduction);
-  setText(".form-card .consent span", pageContent.form?.consent);
-  setText('.form-card button[type="submit"]', pageContent.form?.button);
+  const form = document.querySelector('form[data-submission-type="contact"]');
+  if (form && pageContent.form?.fields) renderManagedForm(form, pageContent.form.fields);
   const methods = document.querySelector("[data-contact-methods]");
   if (methods && pageContent.whatsappSection) {
     methods.innerHTML = `
@@ -600,8 +649,8 @@ function renderPartnerships() {
   setText(".form-card > .eyebrow", pageContent.form?.eyebrow);
   setText(".form-card > h2", pageContent.form?.title);
   setText(".form-card > p", pageContent.form?.introduction);
-  setText(".form-card .consent span", pageContent.form?.consent);
-  setText('.form-card button[type="submit"]', pageContent.form?.button);
+  const form = document.querySelector('form[data-submission-type="partnership"]');
+  if (form && pageContent.form?.fields) renderManagedForm(form, pageContent.form.fields);
 }
 
 function renderPrivacy() {
@@ -612,6 +661,116 @@ function renderPrivacy() {
     editorial.querySelectorAll("p:not(.lead)").forEach((element) => element.remove());
     editorial.insertAdjacentHTML("beforeend", pageContent.content.paragraphs.map((paragraph, index) => `<p>${escapeHtml(paragraph)}${index === pageContent.content.paragraphs.length - 1 ? ` <a class="text-link" href="mailto:${escapeHtml(site.privacyEmail)}">${escapeHtml(site.privacyEmail)} <span>↗</span></a>` : ""}</p>`).join(""));
   }
+}
+
+function applicationInput(name, label, options = {}) {
+  const type = options.type || "text";
+  const required = options.required === false ? "" : " required";
+  const placeholder = options.placeholder ? ` placeholder="${escapeHtml(options.placeholder)}"` : "";
+  const autocomplete = options.autocomplete ? ` autocomplete="${escapeHtml(options.autocomplete)}"` : "";
+  const maxlength = options.maxlength ? ` maxlength="${escapeHtml(options.maxlength)}"` : "";
+  const full = options.full ? " field-full" : "";
+  if (type === "textarea") {
+    return `<div class="field${full}"><label for="${escapeHtml(name)}">${escapeHtml(label)}</label><textarea id="${escapeHtml(name)}" name="${escapeHtml(name)}"${required}${placeholder}${maxlength}></textarea></div>`;
+  }
+  if (type === "select") {
+    return `<div class="field${full}"><label for="${escapeHtml(name)}">${escapeHtml(label)}</label><select id="${escapeHtml(name)}" name="${escapeHtml(name)}"${required}><option value="">${escapeHtml(options.placeholder || "Please select")}</option>${(options.options || []).map((option) => `<option>${escapeHtml(option)}</option>`).join("")}</select></div>`;
+  }
+  return `<div class="field${full}"><label for="${escapeHtml(name)}">${escapeHtml(label)}</label><input id="${escapeHtml(name)}" name="${escapeHtml(name)}" type="${escapeHtml(type)}"${required}${placeholder}${autocomplete}></div>`;
+}
+
+function renderApplicationForm() {
+  const form = document.querySelector(".stepper-form");
+  const steps = pageContent.form?.steps;
+  if (!form || !steps?.length) return;
+  const contact = steps[0] || {};
+  const candidate = steps[1] || {};
+  const family = steps[2] || {};
+  const service = steps[3] || {};
+  const cFields = contact.fields || {};
+  const pFields = candidate.fields || {};
+  const pPlaceholders = candidate.placeholders || {};
+  const fFields = family.fields || {};
+  const fPlaceholders = family.placeholders || {};
+  const ageOptions = ["24-26", "27-29", "30-34", "35-39", "40-49", "50+"];
+  const relationshipOptions = contact.relationshipOptions || ["Parent", "Sibling", "Other family member"];
+
+  form.innerHTML = `
+    <fieldset class="inquiry-step is-active" data-step="1">
+      <legend><span>${escapeHtml(contact.number || "01")}</span><small>${escapeHtml(contact.small || "Contact details")}</small>${escapeHtml(contact.title || "Who should we speak with?")}</legend>
+      <p class="step-intro">${escapeHtml(contact.intro || "")}</p>
+      <div class="choice-row">
+        ${(contact.choices || []).map((choice, index) => `<label class="choice"><input type="radio" name="applyingFor" value="${escapeHtml(choice.value)}" required${index === 0 ? " checked" : ""}><span><strong>${escapeHtml(choice.label)}</strong>${escapeHtml(choice.description)}</span></label>`).join("")}
+      </div>
+      <div class="field-row">
+        ${applicationInput("contactName", cFields.contactName || "Your full name", { autocomplete: "name" })}
+        <div class="field" style="display: none;"><label for="relationship">${escapeHtml(contact.relationshipLabel || "Relationship to the individual")}</label><select id="relationship" name="relationship"><option value="Self">Self</option><option value="">Please select</option>${relationshipOptions.map((option) => `<option>${escapeHtml(option)}</option>`).join("")}</select></div>
+      </div>
+      <div class="field-row">
+        ${applicationInput("email", cFields.email || "Private email", { type: "email", autocomplete: "email" })}
+        ${applicationInput("phone", cFields.phone || "Mobile / WhatsApp", { type: "tel", placeholder: "+91", autocomplete: "tel" })}
+      </div>
+      <div class="step-actions"><button class="button" type="button" data-next>Continue <span>→</span></button></div>
+    </fieldset>
+
+    <fieldset class="inquiry-step" data-step="2">
+      <legend><span>${escapeHtml(candidate.number || "02")}</span><small>${escapeHtml(candidate.small || "The individual")}</small>${escapeHtml(candidate.title || "Tell us about the person.")}</legend>
+      <p class="step-intro">${escapeHtml(candidate.intro || "")}</p>
+      <div class="field-row">
+        ${applicationInput("applicantName", pFields.applicantName || "Full name", { autocomplete: "name" })}
+        ${applicationInput("age", pFields.age || "Age bracket", { type: "select", options: ageOptions })}
+      </div>
+      ${applicationInput("address", pFields.address || "Current locality, city and country", { full: true, placeholder: pPlaceholders.address || "Mumbai, India", autocomplete: "address-level2" })}
+      <div class="field-row">
+        ${applicationInput("designation", pFields.designation || "Profession / designation", { autocomplete: "organization-title" })}
+        ${applicationInput("company", pFields.company || "Company / organisation", { autocomplete: "organization" })}
+      </div>
+      <div class="field-row">
+        ${applicationInput("school", pFields.school || "Education - school")}
+        ${applicationInput("undergraduate", pFields.undergraduate || "Education - undergraduate")}
+      </div>
+      <div class="field-row">
+        ${applicationInput("postgraduate", pFields.postgraduate || "Education - postgraduate", { required: false })}
+        ${applicationInput("linkedinProfile", pFields.linkedinProfile || "LinkedIn profile or Not active", { placeholder: pPlaceholders.linkedinProfile || "LinkedIn URL or Not active" })}
+      </div>
+      ${applicationInput("instagramProfile", pFields.instagramProfile || "Instagram profile or Not active", { full: true, placeholder: pPlaceholders.instagramProfile || "Instagram URL or Not active" })}
+      ${applicationInput("introduction", pFields.introduction || "Tell us briefly about them", { type: "textarea", full: true, required: false, maxlength: 1200, placeholder: pPlaceholders.introduction || "" })}
+      <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="button" data-next>Continue <span>→</span></button></div>
+    </fieldset>
+
+    <fieldset class="inquiry-step" data-step="3">
+      <legend><span>${escapeHtml(family.number || "03")}</span><small>${escapeHtml(family.small || "Family details")}</small>${escapeHtml(family.title || "Tell us about the family.")}</legend>
+      <p class="step-intro">${escapeHtml(family.intro || "")}</p>
+      <div class="field-row">
+        ${applicationInput("fatherName", fFields.fatherName || "Father / guardian name", { required: false })}
+        ${applicationInput("fatherProfession", fFields.fatherProfession || "Father / guardian profession")}
+      </div>
+      <div class="field-row">
+        ${applicationInput("fatherCompany", fFields.fatherCompany || "Father / guardian company or enterprise")}
+        ${applicationInput("motherName", fFields.motherName || "Mother / guardian name", { required: false })}
+      </div>
+      <div class="field-row">
+        ${applicationInput("motherProfession", fFields.motherProfession || "Mother / guardian profession")}
+        ${applicationInput("motherCompany", fFields.motherCompany || "Mother / guardian company or enterprise")}
+      </div>
+      ${applicationInput("familyResidence", fFields.familyResidence || "Family residence locality", { full: true, placeholder: fPlaceholders.familyResidence || "" })}
+      ${applicationInput("familyValues", fFields.familyValues || "What matters most to your family?", { type: "textarea", full: true, required: false, maxlength: 900, placeholder: fPlaceholders.familyValues || "" })}
+      <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="button" data-next>Continue <span>→</span></button></div>
+    </fieldset>
+
+    <fieldset class="inquiry-step" data-step="4">
+      <legend><span>${escapeHtml(service.number || "04")}</span><small>${escapeHtml(service.small || "Service interest")}</small>${escapeHtml(service.title || "How can HeartLink help?")}</legend>
+      <p class="step-intro">${escapeHtml(service.intro || "")}</p>
+      <div class="choice-grid service-choices">
+        ${(service.choices || []).map((choice) => `<label class="choice"><input type="radio" name="membershipInterest" value="${escapeHtml(choice.value)}"><span><strong>${escapeHtml(choice.label)}</strong>${escapeHtml(choice.description)}</span></label>`).join("")}
+      </div>
+      <div class="verification-note next-step-note"><img class="logo-seal verification-logo" src="/Heartlink%20Logo.png" alt="" aria-hidden="true"><span><strong data-apply-next-steps-title>${escapeHtml(pageContent.form?.nextSteps?.title || "What happens after you apply?")}</strong><ol data-apply-next-steps-list>${(pageContent.form?.nextSteps?.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol></span></div>
+      <div class="verification-note"><img class="logo-seal verification-logo" src="/Heartlink%20Logo.png" alt="" aria-hidden="true"><span><strong data-apply-verification-title>${escapeHtml(pageContent.form?.verificationTitle || "Private review")}</strong> <span data-apply-verification-copy>${escapeHtml(pageContent.form?.verificationNote || "")}</span></span></div>
+      ${pageContent.form?.disclaimer ? `<p class="form-disclaimer">${escapeHtml(pageContent.form.disclaimer)}</p>` : ""}
+      <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>${escapeHtml(pageContent.form?.consent || "")}</span></label>
+      <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="submit">${escapeHtml(pageContent.form?.button || "Submit Private Application")} <span>→</span></button></div>
+      <p class="form-status" role="alert" aria-live="polite"></p>
+    </fieldset>`;
 }
 
 function renderApply() {
@@ -650,6 +809,7 @@ function renderApply() {
   setText(".stepper-form .consent span", pageContent.form?.consent);
   const submitButton = document.querySelector('.stepper-form button[type="submit"]');
   if (submitButton) submitButton.innerHTML = `${escapeHtml(pageContent.form?.button || "Submit Private Application")} <span>→</span>`;
+  renderApplicationForm();
 
   const faqSection = document.querySelector("[data-apply-faqs]");
   if (faqSection && pageContent.faqs?.length) {
@@ -800,7 +960,7 @@ document.querySelectorAll("form[data-submission-type]").forEach((form) => {
     data.type = form.dataset.submissionType;
     data.submittedFrom = path;
     submit.disabled = true;
-    submit.textContent = "Sending securely...";
+    submit.textContent = site.transactional?.sendingLabel || "Sending privately...";
     status.textContent = "";
 
     try {
@@ -814,14 +974,14 @@ document.querySelectorAll("form[data-submission-type]").forEach((form) => {
       const firstName = String(data.applicantName || data.name || "there").trim().split(/\s+/)[0];
       form.innerHTML = `
         <div class="form-success" role="status">
-          <span class="eyebrow">Received securely</span>
-          <h2>Thank you, <span data-first-name></span>.</h2>
-          <p>${escapeHtml(result.message)} Your reference is <strong>${escapeHtml(result.reference)}</strong>. The HeartLink team will review it privately before making contact.</p>
-          <a class="text-link" href="/">Return to HeartLink <span>↗</span></a>
+          <span class="eyebrow">${escapeHtml(site.transactional?.successEyebrow || "Received privately")}</span>
+          <h2>${escapeHtml(site.transactional?.successTitle || "Thank you")}, <span data-first-name></span>.</h2>
+          <p>${escapeHtml(result.message)} Your reference is <strong>${escapeHtml(result.reference)}</strong>. ${escapeHtml(site.transactional?.successSuffix || "The HeartLink team will review it privately before making contact.")}</p>
+          <a class="text-link" href="/">${escapeHtml(site.transactional?.returnLabel || "Return to HeartLink")} <span>↗</span></a>
         </div>`;
       form.querySelector("[data-first-name]").textContent = firstName;
     } catch (error) {
-      status.textContent = error.message || "We could not receive this enquiry. Please try again or contact HeartLink directly.";
+      status.textContent = error.message || site.transactional?.defaultError || "We could not receive this enquiry. Please try again or contact HeartLink directly.";
       submit.disabled = false;
       submit.textContent = originalLabel;
     }

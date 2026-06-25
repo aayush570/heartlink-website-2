@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Apply privately to HeartLink's registry or request a private matchmaking conversation for yourself or a family member.">
+  <meta name="description" content="Start a private enquiry with HeartLink. Reviewed personally, never made public, and never shown in a searchable directory.">
   <meta name="theme-color" content="#F8F4EC">
   <link rel="canonical" href="/apply">
   <title>Apply to HeartLink | Private Registry</title>
@@ -17,16 +17,16 @@
       <div>
         <span class="eyebrow">Private registry application</span>
         <h1>Start with a <em>private conversation.</em></h1>
-        <p>Share basic details about the person seeking a match. HeartLink will review the enquiry privately before any next step.</p>
+        <p>Share the first details about the person seeking a match. HeartLink reviews every enquiry privately before recommending any next step.</p>
         <div class="hero-assurance" data-apply-protocol>
-          <span><strong>01</strong>Basic details</span>
-          <span><strong>02</strong>Private review</span>
+          <span><strong>01</strong>Private details</span>
+          <span><strong>02</strong>Human review</span>
           <span><strong>03</strong>Follow-up call</span>
         </div>
       </div>
       <div class="admission-assurance">
         <img class="logo-seal mini-seal" src="/Heartlink%20Logo.png" alt="" aria-hidden="true">
-        <p><strong data-apply-assurance-title>Strictly confidential.</strong><br><span data-apply-assurance-copy>Your information is reviewed only by the HeartLink team and never shown in a public directory.</span></p>
+        <p><strong data-apply-assurance-title>Strictly confidential.</strong><br><span data-apply-assurance-copy>Your information is reviewed only by the HeartLink team and never shown in a public directory, app or searchable database.</span></p>
       </div>
       <a class="text-link" href="/">Return home <span>↗</span></a>
     </aside>
@@ -36,7 +36,7 @@
         <div>
           <span class="eyebrow">Registry and private search enquiry</span>
           <p data-apply-form-introduction>Your details are reviewed privately and are never shown in a public directory.</p>
-          <p><span data-apply-step-duration>Approximately 5 minutes</span> · <span data-apply-step-review-label>Reviewed privately</span></p>
+          <p><span data-apply-step-duration>Approximately 7 minutes</span> · <span data-apply-step-review-label>Reviewed privately</span></p>
         </div>
         <strong data-step-count>01 / 04</strong>
       </div>
@@ -45,14 +45,14 @@
       <form id="private-application" class="stepper-form" data-submission-type="application">
         <fieldset class="inquiry-step is-active" data-step="1">
           <legend><span>01</span><small>Contact details</small>Who should we speak with?</legend>
-          <p class="step-intro">You can enquire for yourself, your son, daughter or a close family member.</p>
+          <p class="step-intro">You may enquire for yourself, your son, daughter or a close family member.</p>
           <div class="choice-row">
             <label class="choice"><input type="radio" name="applyingFor" value="self" required checked><span><strong>For myself</strong>I am looking for a life partner</span></label>
             <label class="choice"><input type="radio" name="applyingFor" value="someone-else" required><span><strong>For my family</strong>I am enquiring for a family member</span></label>
           </div>
           <div class="field-row">
             <div class="field"><label for="contactName">Your full name</label><input id="contactName" name="contactName" autocomplete="name" required></div>
-            <div class="field" style="display: none;"><label for="relationship">Relationship to the individual</label><input id="relationship" name="relationship" value="Self" placeholder="Self, mother, father, sibling"></div>
+            <div class="field" style="display: none;"><label for="relationship">Your relationship to them</label><select id="relationship" name="relationship"><option value="Self">Self</option><option value="">Please select</option><option>Parent</option><option>Sibling</option><option>Other family member</option></select></div>
           </div>
           <div class="field-row">
             <div class="field"><label for="email">Private email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
@@ -63,36 +63,46 @@
 
         <fieldset class="inquiry-step" data-step="2">
           <legend><span>02</span><small>The individual</small>Tell us about the person.</legend>
-          <p class="step-intro">Basic details are enough for the first review.</p>
+          <p class="step-intro">A clear first picture helps us understand fit before any conversation moves forward.</p>
           <div class="field-row">
             <div class="field"><label for="applicantName">Full name</label><input id="applicantName" name="applicantName" autocomplete="name" required></div>
-            <div class="field"><label for="age">Age bracket</label><select id="age" name="age" required><option value="">Please select</option><option>25–29</option><option>30–34</option><option>35–39</option><option>40–49</option><option>50+</option></select></div>
+            <div class="field"><label for="age">Age bracket</label><select id="age" name="age" required><option value="">Please select</option><option>24-26</option><option>27-29</option><option>30-34</option><option>35-39</option><option>40-49</option><option>50+</option></select></div>
           </div>
-          <div class="field field-full"><label for="address">Current city and country</label><input id="address" name="address" autocomplete="address-level2" required placeholder="Mumbai, India"></div>
+          <div class="field field-full"><label for="address">Current locality, city and country</label><input id="address" name="address" autocomplete="address-level2" required placeholder="Malabar Hill, Mumbai, India"></div>
           <div class="field-row">
-            <div class="field"><label for="company">Organisation / family enterprise</label><input id="company" name="company" autocomplete="organization"></div>
-            <div class="field"><label for="designation">Profession / designation</label><input id="designation" name="designation" autocomplete="organization-title"></div>
+            <div class="field"><label for="designation">Profession / designation</label><input id="designation" name="designation" autocomplete="organization-title" required></div>
+            <div class="field"><label for="company">Company / organisation / family enterprise</label><input id="company" name="company" autocomplete="organization" required></div>
           </div>
           <div class="field-row">
-            <div class="field"><label for="instagramProfile">Candidate's Instagram Profile</label><input id="instagramProfile" name="instagramProfile" type="url" inputmode="url" autocomplete="url" placeholder="https://instagram.com/..."></div>
-            <div class="field"><label for="linkedinProfile">Candidate's LinkedIn Profile</label><input id="linkedinProfile" name="linkedinProfile" type="url" inputmode="url" autocomplete="url" placeholder="https://linkedin.com/in/..."></div>
+            <div class="field"><label for="school">Education - school</label><input id="school" name="school" required></div>
+            <div class="field"><label for="undergraduate">Education - undergraduate</label><input id="undergraduate" name="undergraduate" required></div>
           </div>
-          <div class="field field-full"><label for="introduction">Tell us briefly about them</label><textarea id="introduction" name="introduction" maxlength="1200" placeholder="Education, work, personality, interests and what kind of family you are looking for..."></textarea></div>
+          <div class="field-row">
+            <div class="field"><label for="postgraduate">Education - postgraduate, if any</label><input id="postgraduate" name="postgraduate"></div>
+            <div class="field"><label for="linkedinProfile">LinkedIn profile or Not active</label><input id="linkedinProfile" name="linkedinProfile" required placeholder="LinkedIn URL or Not active"></div>
+          </div>
+          <div class="field field-full"><label for="instagramProfile">Instagram profile or Not active</label><input id="instagramProfile" name="instagramProfile" required placeholder="Instagram URL or Not active"></div>
+          <div class="field field-full"><label for="introduction">Tell us briefly about them</label><textarea id="introduction" name="introduction" maxlength="1200" placeholder="Personality, interests, what they are looking for and anything the family should understand..."></textarea></div>
           <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="button" data-next>Continue <span>→</span></button></div>
         </fieldset>
 
         <fieldset class="inquiry-step" data-step="3">
           <legend><span>03</span><small>Family details</small>Tell us about the family.</legend>
-          <p class="step-intro">These details are optional now, but they help us understand background and fit.</p>
+          <p class="step-intro">These details help us understand background, context and comfort. They are reviewed privately.</p>
           <div class="field-row">
-            <div class="field"><label for="fatherName">Father’s name</label><input id="fatherName" name="fatherName"></div>
-            <div class="field"><label for="fatherWork">Profession / enterprise</label><input id="fatherWork" name="fatherWork"></div>
+            <div class="field"><label for="fatherName">Father / guardian name</label><input id="fatherName" name="fatherName"></div>
+            <div class="field"><label for="fatherProfession">Father / guardian profession</label><input id="fatherProfession" name="fatherProfession" required></div>
           </div>
           <div class="field-row">
-            <div class="field"><label for="motherName">Mother’s name</label><input id="motherName" name="motherName"></div>
-            <div class="field"><label for="motherWork">Profession / enterprise</label><input id="motherWork" name="motherWork"></div>
+            <div class="field"><label for="fatherCompany">Father / guardian company or enterprise</label><input id="fatherCompany" name="fatherCompany" required></div>
+            <div class="field"><label for="motherName">Mother / guardian name</label><input id="motherName" name="motherName"></div>
           </div>
-          <div class="field field-full"><label for="familyValues">What is important for your family?</label><textarea id="familyValues" name="familyValues" maxlength="900" placeholder="Family values, community, education, location, lifestyle..."></textarea></div>
+          <div class="field-row">
+            <div class="field"><label for="motherProfession">Mother / guardian profession</label><input id="motherProfession" name="motherProfession" required></div>
+            <div class="field"><label for="motherCompany">Mother / guardian company or enterprise</label><input id="motherCompany" name="motherCompany" required></div>
+          </div>
+          <div class="field field-full"><label for="familyResidence">Family residence locality</label><input id="familyResidence" name="familyResidence" required placeholder="Juhu, Mumbai"></div>
+          <div class="field field-full"><label for="familyValues">What matters most to your family?</label><textarea id="familyValues" name="familyValues" maxlength="900" placeholder="Family values, community, education, lifestyle, location preferences and what would make both families comfortable..."></textarea></div>
           <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="button" data-next>Continue <span>→</span></button></div>
         </fieldset>
 
@@ -100,13 +110,14 @@
           <legend><span>04</span><small>Service interest</small>How can HeartLink help?</legend>
           <p class="step-intro">Select what best matches your need. We will discuss the right option personally.</p>
           <div class="choice-grid service-choices">
-            <label class="choice"><input type="radio" name="membershipInterest" value="Private Registry"><span><strong>Private Registry</strong>Free profile submission for selected introductions</span></label>
-            <label class="choice"><input type="radio" name="membershipInterest" value="Success Plan"><span><strong>Success Plan</strong>No upfront registration fee; success fee if matched</span></label>
-            <label class="choice"><input type="radio" name="membershipInterest" value="Premium Search"><span><strong>Premium Search</strong>Apply for a private active search mandate</span></label>
+            <label class="choice"><input type="radio" name="membershipInterest" value="Private Registry"><span><strong>Private Registry</strong>Free private consideration for selected introductions</span></label>
+            <label class="choice"><input type="radio" name="membershipInterest" value="Success Plan"><span><strong>Success Plan</strong>No upfront registration fee; success-led engagement</span></label>
+            <label class="choice"><input type="radio" name="membershipInterest" value="Premium Search"><span><strong>Premium Search</strong>Apply for a retained private search mandate</span></label>
             <label class="choice"><input type="radio" name="membershipInterest" value="Unsure"><span><strong>Not sure yet</strong>Please guide us on the right option</span></label>
           </div>
-          <div class="verification-note next-step-note"><img class="logo-seal verification-logo" src="/Heartlink%20Logo.png" alt="" aria-hidden="true"><span><strong data-apply-next-steps-title>What happens after you apply?</strong><ol data-apply-next-steps-list><li>The HeartLink team reviews your enquiry privately.</li><li>If we can help, we contact the family representative for context.</li><li>We guide you toward Private Registry, Success Plan, Premium Search or Private Circle.</li></ol></span></div>
-          <div class="verification-note"><img class="logo-seal verification-logo" src="/Heartlink%20Logo.png" alt="" aria-hidden="true"><span><strong data-apply-verification-title>Private review</strong> <span data-apply-verification-copy>Every enquiry is reviewed by a person. Submission does not create a public profile or guarantee a Premium Search mandate.</span></span></div>
+          <div class="verification-note next-step-note"><img class="logo-seal verification-logo" src="/Heartlink%20Logo.png" alt="" aria-hidden="true"><span><strong data-apply-next-steps-title>What happens after you apply?</strong><ol data-apply-next-steps-list><li>The HeartLink team reviews your enquiry privately.</li><li>If we can help, we contact the nominated representative for context.</li><li>We guide you toward Private Registry, Success Plan, Premium Search or Private Circle.</li></ol></span></div>
+          <div class="verification-note"><img class="logo-seal verification-logo" src="/Heartlink%20Logo.png" alt="" aria-hidden="true"><span><strong data-apply-verification-title>Private review</strong> <span data-apply-verification-copy>Every enquiry is reviewed by a person. HeartLink may contact the nominated representative to verify identity and understand the right service option.</span></span></div>
+          <p class="form-disclaimer">Submitting this form does not guarantee acceptance into Success Plan, Premium Search or Private Circle. Private Registry submissions are added to our private database for future consideration.</p>
           <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I am authorised to share these details and agree that HeartLink may review them confidentially.</span></label>
           <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="submit">Submit Private Application <span>→</span></button></div>
           <p class="form-status" role="alert" aria-live="polite"></p>

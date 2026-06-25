@@ -83,13 +83,13 @@ async function readBody(request) {
 }
 
 const submissionRequirements = {
-  application: ["applicantName", "age", "address", "contactName", "relationship", "email", "phone", "consent"],
+  application: ["applicantName", "age", "address", "designation", "company", "school", "undergraduate", "linkedinProfile", "instagramProfile", "fatherProfession", "fatherCompany", "motherProfession", "motherCompany", "familyResidence", "contactName", "relationship", "email", "phone", "consent"],
   contact: ["name", "email", "phone", "enquiryRole", "consent"],
   partnership: ["name", "practice", "email", "phone", "partnershipType", "consent"]
 };
 
 const allowedFields = {
-  application: new Set(["type", "applyingFor", "contactName", "relationship", "email", "phone", "applicantName", "age", "address", "company", "designation", "instagramProfile", "linkedinProfile", "introduction", "fatherName", "fatherWork", "motherName", "motherWork", "familyValues", "membershipInterest", "consent", "submittedFrom"]),
+  application: new Set(["type", "applyingFor", "contactName", "relationship", "email", "phone", "applicantName", "age", "address", "company", "designation", "school", "undergraduate", "postgraduate", "instagramProfile", "linkedinProfile", "introduction", "fatherName", "fatherWork", "fatherProfession", "fatherCompany", "motherName", "motherWork", "motherProfession", "motherCompany", "familyResidence", "familyValues", "membershipInterest", "consent", "submittedFrom"]),
   contact: new Set(["type", "name", "email", "phone", "enquiryRole", "message", "consent", "submittedFrom"]),
   partnership: new Set(["type", "name", "practice", "email", "phone", "partnerWebsite", "partnershipType", "message", "consent", "submittedFrom"])
 };
@@ -174,10 +174,10 @@ async function handleSubmission(request, response) {
   try {
     const contentType = request.headers["content-type"] || "";
     if (!String(contentType).includes("application/json")) {
-      return sendJson(response, 415, { message: "Please submit the form again from the HeartLink website." });
+      return sendJson(response, 415, { message: "Please submit this enquiry again from the HeartLink website." });
     }
     if (!requestOriginAllowed(request)) {
-      return sendJson(response, 403, { message: "Please submit the form again from the HeartLink website." });
+      return sendJson(response, 403, { message: "Please submit this enquiry again from the HeartLink website." });
     }
     if (rateLimited(request)) {
       return sendJson(response, 429, { message: "Too many attempts. Please wait a few minutes before trying again." });
@@ -186,7 +186,7 @@ async function handleSubmission(request, response) {
     const rawSubmission = await readBody(request);
     if (rawSubmission.website) {
       return sendJson(response, 202, {
-        message: "Your enquiry has been received.",
+        message: "Your private enquiry has been received.",
         reference: `HL-${new Date().getUTCFullYear()}-REVIEW`
       });
     }
@@ -245,7 +245,7 @@ async function handleSubmission(request, response) {
     }
 
     return sendJson(response, 202, {
-      message: submission.type === "application" ? "Your registry application has been received." : "Your enquiry has been received.",
+      message: submission.type === "application" ? "Your private application has been received." : "Your private enquiry has been received.",
       reference
     });
   } catch (error) {
@@ -255,7 +255,7 @@ async function handleSubmission(request, response) {
       status,
       message: error.message
     }));
-    return sendJson(response, status, { message: "We could not receive this enquiry. Please review and try again." });
+    return sendJson(response, status, { message: "We could not receive this enquiry. Please review the details and try again." });
   }
 }
 

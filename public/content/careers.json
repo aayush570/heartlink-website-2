@@ -1,12 +1,12 @@
 {
   "seo": {
     "title": "Careers | HeartLink",
-    "description": "Join HeartLink's private matchmaking team."
+    "description": "Work that needs trust. HeartLink looks for people with judgment, discretion and respect for private-client confidentiality."
   },
   "hero": {
     "eyebrow": "Careers at HeartLink",
     "title": "Work that needs <em>trust.</em>",
-    "description": "We look for people with maturity, good judgment, strong communication and complete respect for privacy."
+    "description": "We look for people with maturity, good judgment, strong communication and complete respect for client privacy."
   },
   "cta": {
     "primaryLabel": "Introduce Yourself",
@@ -20,19 +20,24 @@
     { "title": "Relationship Advisor", "details": "India · Consulting · Couple or family guidance experience" },
     { "title": "Private Office Associate", "details": "Mumbai · Full-time · High-touch operations and strict confidentiality" }
   ],
+  "rolesIntro": {
+    "eyebrow": "Selective hiring",
+    "title": "The right person matters more than an open role.",
+    "description": "HeartLink is a small, deliberately selective team. These are the kinds of roles we consider when the right person appears, not a running list of urgent vacancies."
+  },
   "culture": {
     "eyebrow": "Our culture",
-    "title": "Small team. High standards.",
-    "description": "We work carefully, privately and without pressure. The goal is a good match, not a fast match.",
+    "title": "Small by design. Exacting by nature.",
+    "description": "We work without scripts, quotas or superficial signals of success. The standard is a thoughtful process, a protected client and advice we would stand behind in the lives of our own families.",
     "cards": [
-      { "label": "01", "title": "Privacy is serious.", "description": "Every message, meeting and introduction must protect the client." },
-      { "label": "02", "title": "Quality over speed.", "description": "We prefer fewer, better introductions." },
-      { "label": "03", "title": "Warm but honest.", "description": "Clients should feel respected and clearly guided." }
+      { "label": "01", "title": "Discretion is a discipline.", "description": "Privacy is practised in every message, meeting, note and introduction." },
+      { "label": "02", "title": "Judgment over velocity.", "description": "We reward depth of thought, not the speed of moving a profile through a system." },
+      { "label": "03", "title": "Warm but honest.", "description": "Clients should feel respected, protected and clearly guided." }
     ]
   },
   "closing": {
-    "eyebrow": "Careers",
-    "quote": "Good people may not always fit an open role, but we are happy to hear from them.",
+    "eyebrow": "Confidential expressions of interest",
+    "quote": "Exceptional people do not always arrive through open roles.",
     "button": "Introduce Yourself"
   }
 }

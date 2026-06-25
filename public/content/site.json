@@ -2,6 +2,21 @@
   "brandName": "HEARTLINK",
   "brandDescriptor": "Private Matchmaking",
   "logo": "/Heartlink Logo.png",
+  "headerCta": {
+    "whatsappLabel": "WhatsApp",
+    "primaryLabel": "Apply to Registry",
+    "primaryUrl": "/apply",
+    "mobileWhatsappLabel": "Quick WhatsApp Enquiry",
+    "mobilePrimaryLabel": "Apply to Registry"
+  },
+  "transactional": {
+    "sendingLabel": "Sending privately...",
+    "successEyebrow": "Received privately",
+    "successTitle": "Thank you",
+    "successSuffix": "The HeartLink team will review it privately before making contact.",
+    "returnLabel": "Return to HeartLink",
+    "defaultError": "We could not receive this enquiry. Please try again or contact HeartLink directly."
+  },
   "siteUrl": "",
   "defaultOgImage": "/media/heartlink-heritage-invitation.png",
   "themeColor": "#F8F4EC",
@@ -16,12 +31,12 @@
   "partnershipsEmail": "partnerships@heartlink.in",
   "locations": "Mumbai · India · Global",
   "footerStatement": "Private matchmaking for<br>select Indian families.",
-  "footerLegal": "HeartLink reviews enquiries privately. Profiles are not public, and personal details are shared only after consent.",
+  "footerLegal": "HeartLink reviews enquiries privately. Profiles are never public, searchable or shared without consent.",
   "footerColumns": [
     {
       "title": "Start Here",
       "links": [
-        { "label": "Apply to the registry", "href": "/apply" },
+        { "label": "Apply to Registry", "href": "/apply" },
         { "label": "Quick WhatsApp Enquiry", "href": "{{whatsapp}}" },
         { "label": "concierge@heartlink.in", "href": "mailto:concierge@heartlink.in" }
       ]
@@ -41,6 +56,14 @@
         { "label": "Partnerships", "href": "/partnerships" },
         { "label": "Careers", "href": "/careers" },
         { "label": "Privacy", "href": "/privacy" }
+      ]
+    },
+    {
+      "title": "Visit",
+      "links": [
+        { "label": "Juhu, Mumbai", "href": "/contact" },
+        { "label": "By appointment only", "href": "/contact" },
+        { "label": "+91 93266 42337", "href": "tel:+919326642337" }
       ]
     }
   ],

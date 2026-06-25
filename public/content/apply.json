@@ -1,18 +1,18 @@
 {
   "seo": {
-    "title": "Apply to HeartLink | Private Registry",
-    "description": "Apply privately to HeartLink's registry or request a private matchmaking conversation for yourself or a family member."
+    "title": "Apply to Registry | HeartLink",
+    "description": "Start a private enquiry with HeartLink. Reviewed personally, never made public, and never shown in a searchable directory."
   },
   "intro": {
     "eyebrow": "Private registry application",
     "title": "Start with a <em>private conversation.</em>",
-    "description": "Share basic details about the person seeking a match. HeartLink will review the enquiry privately before any next step.",
+    "description": "Share the first details about the person seeking a match. HeartLink reviews every enquiry privately before recommending any next step.",
     "assuranceTitle": "Strictly confidential.",
-    "assuranceDescription": "Your information is reviewed only by the HeartLink team and never shown in a public directory.",
+    "assuranceDescription": "Your information is reviewed only by the HeartLink team and never shown in a public directory, app or searchable database.",
     "returnLinkLabel": "Return home",
     "protocol": [
-      { "number": "01", "label": "Basic details" },
-      { "number": "02", "label": "Private review" },
+      { "number": "01", "label": "Private details" },
+      { "number": "02", "label": "Human review" },
       { "number": "03", "label": "Follow-up call" }
     ]
   },
@@ -20,25 +20,103 @@
     "eyebrow": "Registry and private search enquiry",
     "introduction": "Your details are reviewed privately and are never shown in a public directory.",
     "stepHeader": {
-      "durationLabel": "Approximately 5 minutes",
+      "durationLabel": "Approximately 7 minutes",
       "reviewLabel": "Reviewed privately"
     },
+    "steps": [
+      {
+        "number": "01",
+        "small": "Contact details",
+        "title": "Who should we speak with?",
+        "intro": "You may enquire for yourself, your son, daughter or a close family member.",
+        "choices": [
+          { "label": "For myself", "description": "I am looking for a life partner", "value": "self" },
+          { "label": "For my family", "description": "I am enquiring for a family member", "value": "someone-else" }
+        ],
+        "relationshipLabel": "Your relationship to them",
+        "relationshipOptions": ["Parent", "Sibling", "Other family member"],
+        "fields": {
+          "contactName": "Your full name",
+          "email": "Private email",
+          "phone": "Mobile / WhatsApp"
+        }
+      },
+      {
+        "number": "02",
+        "small": "The individual",
+        "title": "Tell us about the person.",
+        "intro": "A clear first picture helps us understand fit before any conversation moves forward.",
+        "fields": {
+          "applicantName": "Full name",
+          "age": "Age bracket",
+          "address": "Current locality, city and country",
+          "designation": "Profession / designation",
+          "company": "Company / organisation / family enterprise",
+          "school": "Education - school",
+          "undergraduate": "Education - undergraduate",
+          "postgraduate": "Education - postgraduate, if any",
+          "linkedinProfile": "LinkedIn profile or Not active",
+          "instagramProfile": "Instagram profile or Not active",
+          "introduction": "Tell us briefly about them"
+        },
+        "placeholders": {
+          "address": "Malabar Hill, Mumbai, India",
+          "linkedinProfile": "LinkedIn URL or Not active",
+          "instagramProfile": "Instagram URL or Not active",
+          "introduction": "Personality, interests, what they are looking for and anything the family should understand..."
+        }
+      },
+      {
+        "number": "03",
+        "small": "Family details",
+        "title": "Tell us about the family.",
+        "intro": "These details help us understand background, context and comfort. They are reviewed privately.",
+        "fields": {
+          "fatherName": "Father / guardian name",
+          "fatherProfession": "Father / guardian profession",
+          "fatherCompany": "Father / guardian company or enterprise",
+          "motherName": "Mother / guardian name",
+          "motherProfession": "Mother / guardian profession",
+          "motherCompany": "Mother / guardian company or enterprise",
+          "familyResidence": "Family residence locality",
+          "familyValues": "What matters most to your family?"
+        },
+        "placeholders": {
+          "familyResidence": "Juhu, Mumbai",
+          "familyValues": "Family values, community, education, lifestyle, location preferences and what would make both families comfortable..."
+        }
+      },
+      {
+        "number": "04",
+        "small": "Service interest",
+        "title": "How can HeartLink help?",
+        "intro": "Select what best matches your need. We will discuss the right option personally.",
+        "choices": [
+          { "label": "Private Registry", "description": "Free private consideration for selected introductions", "value": "Private Registry" },
+          { "label": "Success Plan", "description": "No upfront registration fee; success-led engagement", "value": "Success Plan" },
+          { "label": "Premium Search", "description": "Apply for a retained private search mandate", "value": "Premium Search" },
+          { "label": "Not sure yet", "description": "Please guide us on the right option", "value": "Unsure" }
+        ]
+      }
+    ],
     "nextSteps": {
       "title": "What happens after you apply?",
       "items": [
         "The HeartLink team reviews your enquiry privately.",
-        "If we can help, we contact the family representative for context.",
+        "If we can help, we contact the nominated representative for context.",
         "We guide you toward Private Registry, Success Plan, Premium Search or Private Circle."
       ]
     },
     "verificationTitle": "Private review",
     "verificationNote": "Every enquiry is reviewed by a person. HeartLink may contact the nominated representative to verify identity and understand the right service option.",
+    "disclaimer": "Submitting this form does not guarantee acceptance into Success Plan, Premium Search or Private Circle. Private Registry submissions are added to our private database for future consideration.",
     "consent": "I am authorised to share these details and agree that HeartLink may review them confidentially.",
     "button": "Submit Private Application"
   },
   "faqs": [
-    { "question": "Who will see my information?", "answer": "Only the HeartLink team. Your details are not published or shared publicly." },
+    { "question": "Who will see my information?", "answer": "Only the HeartLink team. Your details are not published, listed, browsed or shared publicly." },
     { "question": "Can a parent or relative enquire?", "answer": "Yes. Parents and close family members can start the enquiry." },
-    { "question": "What happens after submission?", "answer": "If we can help, HeartLink will contact you privately for the next conversation." }
+    { "question": "What happens after submission?", "answer": "If we can help, HeartLink will contact the nominated representative privately for the next conversation." },
+    { "question": "Does submitting mean I am accepted?", "answer": "Not automatically. Private Registry applications are kept for future consideration. Success Plan, Premium Search and Private Circle are accepted only after review." }
   ]
 }

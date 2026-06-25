@@ -1,12 +1,12 @@
 {
   "seo": {
     "title": "Services | HeartLink",
-    "description": "Explore HeartLink's Private Registry, Success Plan, Premium Search and Private Circle options."
+    "description": "Explore HeartLink's Private Registry, Success Plan, Premium Search and Private Circle options. By application, not by payment."
   },
   "hero": {
     "eyebrow": "Services",
     "title": "Choose the level of <em>support you need.</em>",
-    "description": "Some families want to submit a profile privately. Others want deeper personal involvement from Gopi Shah. We guide you to the right option after speaking with you."
+    "description": "Some families want a quiet, free listing. Others want Gopi Shah and Alpa Apoorva personally involved from the first conversation. Every tier is by application - not by payment alone."
   },
   "cta": {
     "primaryLabel": "Apply to Registry",
@@ -18,8 +18,8 @@
     {
       "label": "01 · Profile submission",
       "title": "Private Registry",
-      "description": "Submit a profile free of charge to be considered for selected HeartLink introductions.",
-      "features": ["Free confidential profile submission", "Private review by the HeartLink team", "Introductions only with consent"],
+      "description": "Free and entirely private. We do not search on your behalf, but if a retained family is a genuine fit, you will hear from us.",
+      "features": ["No cost, no obligation", "Private review by the HeartLink team", "Contacted only if there is a real fit"],
       "button": "Apply to Registry",
       "tone": "registry",
       "black": false
@@ -27,8 +27,8 @@
     {
       "label": "02 · Success based",
       "title": "Success Plan",
-      "description": "No upfront registration fee. A success fee applies only if HeartLink successfully makes the match.",
-      "features": ["No upfront registration fee", "Selected introductions", "Success fee only after match"],
+      "description": "No registration fee and no advisory fee. HeartLink is paid only when the match succeeds, and we take this on only when we believe we can help.",
+      "features": ["Nothing upfront", "Active, selected introductions", "Success-led engagement"],
       "button": "Ask About Success Plan",
       "tone": "success",
       "black": false
@@ -36,8 +36,8 @@
     {
       "label": "03 · Active search",
       "title": "Premium Search",
-      "description": "An application-based Premium Search for families where Gopi Shah feels HeartLink can add strong value.",
-      "features": ["Upfront advisory fee discussed privately", "Only selected mandates accepted", "Part of the 50 active Premium Search mandate limit"],
+      "description": "A retained, application-based search where Gopi Shah and the team work your mandate personally.",
+      "features": ["Advisory terms discussed privately", "Accepted by application only", "Part of the 50 active mandate limit, combined"],
       "button": "Apply for Premium Search",
       "tone": "premium",
       "black": false
@@ -45,8 +45,8 @@
     {
       "label": "04 · Highest touch",
       "title": "Private Circle",
-      "description": "For select families who need a highly private, wider search with senior-level attention.",
-      "features": ["Senior-level private outreach", "Wider trusted network", "Maximum discretion"],
+      "description": "Our most private engagement, for families who need an even narrower circle than Premium Search provides.",
+      "features": ["Senior-level attention from both founders", "Wider trusted network, narrower visibility", "Not shown within retained searches without explicit permission"],
       "button": "Request Private Circle",
       "tone": "black",
       "black": true
@@ -55,8 +55,8 @@
   "protocol": {
     "title": "Exclusive does not mean complicated.",
     "paragraphs": [
-      "The Registry Network can grow widely, but Premium Search remains intentionally limited.",
-      "HeartLink accepts a maximum of 50 active Premium Search mandates at one time. Acceptance, fees and service level are discussed only after we understand your family and requirements."
+      "The Registry Network can grow widely, but Premium Search and Private Circle remain intentionally limited.",
+      "HeartLink accepts a maximum of 50 active mandates at one time across Premium Search and Private Circle, combined. Acceptance, terms and service level are discussed only after we understand your family and requirements."
     ]
   },
   "process": {
@@ -81,13 +81,13 @@
       "label": "Step 03",
       "number": "03",
       "title": "Background Checks",
-      "description": "We use personal references, conversations and direct checks before moving forward."
+      "description": "We use personal references, social and professional review, conversations and direct checks before moving forward."
     },
     {
       "label": "Step 04",
       "number": "04",
       "title": "Selected Introductions",
-      "description": "Only suitable profiles are shared. There is no public browsing and no random matching."
+      "description": "Only considered profiles are shared. There is no public browsing and no random matching."
     },
     {
       "label": "Step 05",
@@ -111,7 +111,7 @@
   "afterSubmit": {
     "eyebrow": "After you submit",
     "title": "What happens after your application.",
-    "description": "A simple private review helps us guide each family to the right next step.",
+    "description": "A private review helps us guide each family to the right next step.",
     "cards": [
       { "label": "01", "title": "Private review", "description": "The HeartLink team reviews the enquiry and basic profile details privately.", "image": "", "link": "", "source": "", "date": "" },
       { "label": "02", "title": "Follow-up", "description": "If we can help, a team member may contact the family representative for more context.", "image": "", "link": "", "source": "", "date": "" },
@@ -121,7 +121,7 @@
   },
   "closing": {
     "eyebrow": "Private enquiry",
-    "quote": "Tell us what you are looking for. We will guide you to the right option.",
+    "quote": "Tell us what you are looking for. We will guide you to the right level of support.",
     "button": "Request a Meeting"
   }
 }

@@ -1,26 +1,27 @@
 {
   "seo": {
-    "title": "HeartLink | Private Matchmaking",
-    "description": "Private matchmaking for select Indian families in India and across the world.",
-    "ogTitle": "HeartLink | Private Matchmaking",
-    "ogDescription": "Founder-led matchmaking for select Indian families, with privacy, trust and family-first review.",
+    "title": "HeartLink - Private Matchmaking for Select Indian Families",
+    "description": "Founder-led, offline matchmaking for select Indian families. No public profiles, no browsing - private introductions guided by Gopi Shah and Alpa Apoorva.",
+    "ogTitle": "HeartLink - Private Matchmaking",
+    "ogDescription": "Private matchmaking for select Indian families, with careful family background review, relationship guidance and no public profile exposure.",
     "ogImage": "/media/heartlink-heritage-invitation.png"
   },
   "hero": {
     "eyebrow": "Private matchmaking · India & global",
     "title": "Private matchmaking for <em>select Indian families.</em>",
-    "description": "Led personally by Gopi Shah, HeartLink helps families find suitable life partners through trusted networks, careful review and complete privacy.",
+    "description": "HeartLink helps families find the right life partner through trusted networks, careful judgment and complete privacy. Founded by Gopi Shah, with relationship guidance led by Alpa Apoorva.",
     "primaryButton": "Apply to the Registry",
     "primaryUrl": "/apply",
     "secondaryButton": "See how it works",
     "secondaryUrl": "/membership#process",
     "whatsappButton": "Quick WhatsApp Enquiry",
     "assurances": [
-      "Led personally by Gopi Shah",
-      "50 Premium Search mandates at a time",
-      "No public profiles. No swiping."
+      "Co-founded and led personally by Gopi Shah",
+      "Only 50 active mandates, total",
+      "No public profiles. No browsing.",
+      "By application, not by payment"
     ],
-    "note": "Led personally by Gopi Shah · 50 Premium Search mandates at a time · No public profiles",
+    "note": "Co-founded by Gopi Shah · 50 active mandates, total · No public profiles",
     "privacyNote": "Identity is shared only with approval.",
     "profileImages": []
   },
@@ -38,40 +39,40 @@
   ],
   "legacy": {
     "eyebrow": "For serious families",
-    "title": "Marriage is a family decision. We treat it with <em>that respect.</em>",
-    "lead": "Families come to HeartLink when a match needs judgment, privacy and personal attention.",
+    "title": "Marriage is a family decision. We treat it like <em>one.</em>",
+    "lead": "Families come to HeartLink when a match needs judgment, privacy and real attention - not another biodata exchange.",
     "paragraphs": [
-      "We look beyond biodata to understand family background, education, values, lifestyle and long-term compatibility. Every introduction is private and shared only when there is genuine interest."
+      "We look at family background, education, values, lifestyle and long-term fit, not just a profile. Every introduction is private and shared only when there is genuine interest on both sides."
     ],
     "linkText": "Meet our founders",
     "linkUrl": "/about"
   },
   "audience": {
     "eyebrow": "For parents and children",
-    "title": "Families feel secure.<br><em>Children feel understood.</em>",
-    "description": "Parents want trust, background and seriousness. Candidates want compatibility, comfort and privacy. HeartLink gives importance to both.",
+    "title": "Parents feel reassured.<br><em>The next generation feels respected.</em>",
+    "description": "Parents want background, seriousness and trust. Sons and daughters want compatibility, comfort and a real say in the decision. HeartLink holds both, equally.",
     "cards": [
       {
         "label": "For parents & families",
         "title": "Strong family understanding.",
-        "description": "We understand family values, reputation, education, profession and social background before suggesting any introduction.",
+        "description": "Before any introduction is made, we understand family values, reputation, education, profession and social standing - properly, not from a form alone.",
         "points": ["Family and reference checks", "Identity and intent verification", "Social and family comfort"]
       },
       {
         "label": "For sons & daughters",
         "icon": "H",
         "title": "Modern compatibility. No app culture.",
-        "description": "We understand personality, goals and expectations. Introductions are limited, private and shared only after careful thought.",
-        "points": ["Personal preferences understood", "Only selected introductions", "Guidance during the process"]
+        "description": "We take the time to understand personality, goals and what you actually want. Introductions are few, private and yours to say yes or no to.",
+        "points": ["Personal preferences understood", "Only selected introductions", "Guidance through the process"]
       }
     ]
   },
   "registry": {
     "eyebrow": "The private registry",
-    "title": "Apply free. Stay private. Be considered for suitable families.",
-    "lead": "The Registry Network helps HeartLink understand good families even before a paid mandate begins.",
+    "title": "Apply free. Stay private. Be considered, quietly.",
+    "lead": "The Private Registry is not an active search. It is a confidential way for HeartLink to know who you are before a paid mandate ever begins.",
     "paragraphs": [
-      "Your details are never made public. If there is a suitable family or Premium Search client, HeartLink may reach out privately before sharing anything further."
+      "We will not pitch you publicly or circulate your details. If a family we are already working with appears to be a genuine fit, HeartLink may reach out privately before anything is shared."
     ],
     "primaryLabel": "Apply to the Registry",
     "primaryUrl": "/apply",
@@ -81,61 +82,61 @@
   "privacy": {
     "eyebrow": "Privacy first",
     "title": "Your family details stay <em>strictly private.</em>",
-    "description": "There is no public database, no browsing and no sharing of personal details without approval.",
+    "description": "There is no public database. No browsing. No searchable biodata. No sharing of personal details without approval.",
     "cards": [
       { "number": "01", "title": "No public profiles", "description": "Profiles are not shown online or made searchable." },
-      { "number": "02", "title": "Consent before sharing", "description": "Details are shared only after both sides show interest." },
-      { "number": "03", "title": "Human verification", "description": "We use conversations, references and direct checks, not only forms." },
-      { "number": "04", "title": "Gopi Shah reviews", "description": "Important introductions are personally reviewed before moving ahead." }
+      { "number": "02", "title": "Consent before sharing", "description": "Details are shared only after both sides show genuine interest." },
+      { "number": "03", "title": "Human verification", "description": "We use conversations, references, social checks and direct review - not only forms." },
+      { "number": "04", "title": "Founder review", "description": "Important introductions are personally reviewed before moving ahead." }
     ],
     "seal": "Private matchmaking\nStrictly confidential"
   },
   "proofHeading": {
     "eyebrow": "Trust signals",
-    "title": "Proof that can be seen, not just promised.",
-    "description": "Selected public credibility signals from Gopi Shah's community, cultural and matrimonial work."
+    "title": "Public work behind private judgment.",
+    "description": "Selected credibility signals from Gopi Shah's community, cultural and matrimonial work."
   },
   "proofAssets": [
     { "label": "Award recognition", "title": "Dr. Sarojini Naidu International Award", "description": "Recognition connected to Gopi Shah's contribution to education, culture and community service.", "image": "", "link": "", "source": "", "date": "" },
-    { "label": "Founder-led practice", "title": "Five years of honorary matrimonial service", "description": "Before HeartLink, Gopi Shah ran Jeevansathi as an honorary matrimonial service, shaping this private family-first approach.", "image": "", "link": "", "source": "", "date": "" },
-    { "label": "Cultural credibility", "title": "Community work across India and the United States", "description": "Gopi Shah's broader cultural and community work informs the discretion and judgment HeartLink brings to families.", "image": "", "link": "", "source": "", "date": "" }
+    { "label": "Founder-led practice", "title": "Jeevansathi - Juhu", "description": "Before HeartLink, Gopi Shah guided Jeevansathi - Juhu as an honorary matrimonial service for well-regarded families.", "image": "", "link": "", "source": "", "date": "" },
+    { "label": "Cultural credibility", "title": "Community work across India and the United States", "description": "Her broader cultural and community work informs the discretion and judgment HeartLink brings to family-led searches.", "image": "", "link": "", "source": "", "date": "" }
   ],
   "process": {
     "eyebrow": "Our process",
     "title": "Simple steps.<br><em>Careful introductions.</em>",
-    "description": "From the first call to the final decision, the process stays private, personal and clear.",
+    "description": "From the first call to the final decision, the process stays private, personal and deliberate.",
     "steps": [
-      { "number": "01", "label": "Private meeting", "title": "We understand your family.", "description": "We speak with you privately and understand the person, family background and expectations." },
-      { "number": "02", "label": "Profile review", "title": "We prepare a clear picture.", "description": "We understand education, work, personality, values and family details." },
-      { "number": "03", "label": "Selected introductions", "title": "Only suitable options are shared.", "description": "We do not send random profiles. Each introduction is reviewed and shared privately." },
+      { "number": "01", "label": "Private meeting", "title": "We understand your family.", "description": "We speak privately and understand the person, family background, expectations and comfort level." },
+      { "number": "02", "label": "Profile review", "title": "We build the full picture.", "description": "We review education, work, personality, family details, values and social context." },
+      { "number": "03", "label": "Selected introductions", "title": "Only considered options are shared.", "description": "We do not send random profiles. Each introduction is reviewed and shared privately." },
       { "number": "04", "label": "Guidance", "title": "We support the conversation.", "description": "We help both sides move ahead with clarity, comfort and respect." },
-      { "number": "05", "label": "Family support", "title": "We stay involved when needed.", "description": "HeartLink can support family discussions, pre-marriage conversations and early adjustment." }
+      { "number": "05", "label": "Family support", "title": "We stay involved when needed.", "description": "HeartLink can support family discussions, expectation-setting and early adjustment." }
     ]
   },
   "storiesHeading": {
     "eyebrow": "Client stories",
-    "title": "Quiet success stories, shared with care.",
-    "description": "Anonymized examples of the types of families HeartLink is built to serve."
+    "title": "Quiet stories, shared with care.",
+    "description": "Placeholder anonymized examples. Replace these with approved client stories through PagesCMS when ready."
   },
   "stories": [
-    { "label": "Private family search", "quote": "A Mumbai family wanted a serious route without public browsing. HeartLink kept the process private, reviewed background carefully and shared only selected introductions.", "source": "Anonymized family example · Mumbai" },
-    { "label": "Global Indian family", "quote": "For an overseas Indian family, the priority was cultural comfort and discretion. HeartLink helped translate expectations between generations before any introduction moved forward.", "source": "Anonymized family example · Global Indian family" },
-    { "label": "Candidate comfort", "quote": "A candidate who did not want app culture was able to share preferences privately while the family still received the seriousness and verification they expected.", "source": "Anonymized candidate example" }
+    { "label": "Private family search", "quote": "A Mumbai family wanted a serious route without public browsing. HeartLink kept the search private, reviewed the background carefully and shared only introductions that made sense.", "source": "Placeholder anonymized family example · Mumbai" },
+    { "label": "Global Indian family", "quote": "For an overseas Indian family, the priority was cultural comfort and discretion. HeartLink helped translate expectations between generations before any introduction moved forward.", "source": "Placeholder anonymized family example · Global Indian family" },
+    { "label": "Candidate comfort", "quote": "A candidate who did not want app culture was able to share preferences privately, while the family still received the seriousness and verification they expected.", "source": "Placeholder anonymized candidate example" }
   ],
   "founder": {
     "image": "/media/gopi-shah.jpg",
     "imageAlt": "Gopi Shah, Founder and Principal Advisor of HeartLink",
-    "badge": "Founder & Principal Advisor",
+    "badge": "Co-Founder & Principal Advisor",
     "eyebrow": "Led by Gopi Shah",
     "quote": "A good match is not only about two people. It is also about two families feeling comfortable.",
-    "description": "Gopi Shah personally guides HeartLink's matchmaking work. Her network, experience and family-first approach help clients feel safe and well looked after.",
+    "description": "Gopi Shah personally guides HeartLink's matchmaking work, with Alpa Apoorva ensuring every introduction holds up emotionally as well as on paper.",
     "signature": "Gopi Shah",
     "linkText": "Read about Gopi Shah",
     "linkUrl": "/about"
   },
   "finalCta": {
     "eyebrow": "Private enquiry",
-    "title": "Looking for a serious match?<br><em>Start with a private conversation.</em>",
+    "title": "Looking for a serious match?<br><em>Start with a conversation, not a profile.</em>",
     "description": "Tell us about your family and the person seeking a match. Every enquiry is reviewed privately.",
     "primaryLabel": "Apply to the Registry",
     "primaryUrl": "/apply",

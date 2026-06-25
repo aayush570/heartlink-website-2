@@ -1,12 +1,12 @@
 {
   "seo": {
     "title": "Contact HeartLink | Private Enquiries",
-    "description": "Contact HeartLink for family, applicant, matchmaker and partnership enquiries."
+    "description": "Contact HeartLink for private family, applicant, matchmaker and partnership enquiries."
   },
   "hero": {
     "eyebrow": "Contact HeartLink",
     "title": "Speak with us <em>privately.</em>",
-    "description": "Have a question before submitting a profile? Send a short enquiry and the right person will respond."
+    "description": "Have a question before submitting a profile? Send a short enquiry and the right person will respond privately."
   },
   "cta": {
     "primaryLabel": "Apply to Registry",
@@ -17,7 +17,7 @@
   "whatsappSection": {
     "eyebrow": "Direct enquiry",
     "title": "Prefer to speak first?",
-    "description": "Families can also message or call HeartLink privately before completing the full application.",
+    "description": "Families can message or call HeartLink privately before completing the full application. Meetings are by appointment in Juhu, Mumbai.",
     "whatsappLabel": "+91 93266 42337",
     "callLabel": "+91 93266 42337"
   },
@@ -25,6 +25,13 @@
     "eyebrow": "General enquiry",
     "title": "How can we help?",
     "introduction": "Share your details and we will get back to you privately.",
+    "fields": [
+      { "name": "name", "label": "Full name", "type": "text", "required": true },
+      { "name": "email", "label": "Private email", "type": "email", "required": true },
+      { "name": "phone", "label": "Phone / WhatsApp", "type": "tel", "required": true },
+      { "name": "enquiryRole", "label": "I am enquiring as", "type": "select", "required": true, "options": ["Potential applicant", "Parent or family representative", "Partner matchmaker", "Private-client adviser", "Other"] },
+      { "name": "message", "label": "What would you like to know?", "type": "textarea", "required": false, "maxlength": 1200 }
+    ],
     "consent": "I consent to HeartLink using these details to respond to my enquiry.",
     "button": "Send Enquiry"
   }
