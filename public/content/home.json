@@ -25,12 +25,6 @@
     "privacyNote": "Identity is shared only with approval.",
     "profileImages": []
   },
-  "principles": [
-    { "number": "01", "label": "Founder-led search" },
-    { "number": "02", "label": "Private registry" },
-    { "number": "03", "label": "Family-first review" },
-    { "number": "04", "label": "Invitation-only Premium Search" }
-  ],
   "proof": [
     { "value": "1,000+", "label": "Profiles tracked for client searches" },
     { "value": "250+", "label": "Families advised over time" },

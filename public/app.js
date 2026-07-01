@@ -383,10 +383,6 @@ function renderHome() {
   const assurances = document.querySelector(".hero-assurance");
   if (assurances && hero.assurances) assurances.innerHTML = hero.assurances.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
 
-  const principles = document.querySelector(".heritage-band");
-  if (principles && pageContent.principles) {
-    principles.innerHTML = pageContent.principles.map((item) => `<div><strong>${escapeHtml(item.number)}</strong><span>${escapeHtml(item.label)}</span></div>`).join("");
-  }
   const metrics = document.querySelector("[data-home-metrics]");
   if (metrics && pageContent.proof) metrics.innerHTML = pageContent.proof.map((item) => `<article><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span></article>`).join("");
 

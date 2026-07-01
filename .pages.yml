@@ -144,13 +144,6 @@ content:
           - { name: note, label: Internal note line, type: string }
           - { name: privacyNote, label: Privacy note, type: text }
           - { name: profileImages, label: Private profile carousel images, type: image, list: true }
-      - name: principles
-        label: Four principle strip
-        type: object
-        list: { collapsible: { collapsed: true, summary: "{number} · {label}" } }
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: label, label: Label, type: string }
       - name: proof
         label: Top proof numbers
         type: object
