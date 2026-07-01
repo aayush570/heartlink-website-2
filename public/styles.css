@@ -13,7 +13,7 @@
   --warm-light: #f5efe5;
   --warm-dark: #251f19;
   --maroon: #5f1724;
-  --forest: var(--maroon);
+  --forest: #183f32;
   --line: rgba(83, 68, 43, .18);
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Manrope", Arial, sans-serif;
@@ -125,6 +125,12 @@ em, .accent { color: var(--maroon); font-weight: 400; }
 .button-small { min-height: 42px; padding: 0 18px; font-size: 8px; }
 .button-light { color: var(--maroon); background: var(--paper); border-color: var(--paper); }
 .button-light:hover { color: var(--paper); background: transparent; border-color: rgba(255,255,255,.55); }
+.button-light-static:hover,
+.button-light-static:focus-visible {
+  color: var(--maroon);
+  background: var(--paper);
+  border-color: var(--paper);
+}
 .text-link { display: inline-flex; align-items: center; gap: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--gold); font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
 .text-link span { color: var(--maroon); transition: transform .6s var(--ease); }
 .text-link:hover span { transform: translate(3px, -3px); }

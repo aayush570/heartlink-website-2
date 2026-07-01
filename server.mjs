@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
-import { extname, join, normalize } from "node:path";
+import { extname, join, normalize, sep } from "node:path";
 import { randomUUID } from "node:crypto";
 
 const port = Number(process.env.PORT || 4173);
@@ -25,9 +25,7 @@ const types = {
 const pageRoutes = new Map([
   ["/", "index.html"],
   ["/about", "about.html"],
-  ["/methodology", "methodology.html"],
   ["/membership", "membership.html"],
-  ["/impact", "about.html"],
   ["/partnerships", "partnerships.html"],
   ["/careers", "careers.html"],
   ["/apply", "apply.html"],
@@ -35,12 +33,66 @@ const pageRoutes = new Map([
   ["/privacy", "privacy.html"]
 ]);
 
+const redirectRoutes = new Map([
+  ["/impact", "/about#trust"],
+  ["/impact.html", "/about#trust"],
+  ["/methodology", "/membership#process"],
+  ["/methodology.html", "/membership#process"]
+]);
+
+const liveRoutes = ["/", "/about", "/membership", "/partnerships", "/careers", "/apply", "/contact", "/privacy"];
+const securityHeaders = {
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+};
+
 function sendJson(response, status, body) {
   response.writeHead(status, {
     "Content-Type": "application/json; charset=utf-8",
-    "Cache-Control": "no-store"
+    "Cache-Control": "no-store",
+    ...securityHeaders
   });
   response.end(JSON.stringify(body));
+}
+
+function requestBaseUrl(request) {
+  const protocol = request.headers["x-forwarded-proto"] || "http";
+  const host = request.headers["x-forwarded-host"] || request.headers.host || "localhost";
+  return `${String(protocol).split(",")[0]}://${String(host).split(",")[0]}`;
+}
+
+function sendRedirect(response, location, permanent = true) {
+  response.writeHead(permanent ? 301 : 302, {
+    Location: location,
+    "Cache-Control": "public, max-age=3600",
+    ...securityHeaders
+  });
+  response.end();
+}
+
+function sendText(response, status, body, contentType) {
+  response.writeHead(status, {
+    "Content-Type": contentType,
+    "Cache-Control": "no-cache",
+    ...securityHeaders
+  });
+  response.end(body);
+}
+
+function robotsTxt(baseUrl) {
+  return [
+    "User-agent: *",
+    "Allow: /",
+    `Sitemap: ${baseUrl}/sitemap.xml`,
+    ""
+  ].join("\n");
+}
+
+function sitemapXml(baseUrl) {
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = liveRoutes.map((route) => `  <url><loc>${baseUrl}${route}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq></url>`).join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
 function requestOriginAllowed(request) {
@@ -89,7 +141,7 @@ const submissionRequirements = {
 };
 
 const allowedFields = {
-  application: new Set(["type", "applyingFor", "contactName", "relationship", "email", "phone", "applicantName", "age", "address", "company", "designation", "school", "undergraduate", "postgraduate", "instagramProfile", "linkedinProfile", "introduction", "fatherName", "fatherWork", "fatherProfession", "fatherCompany", "motherName", "motherWork", "motherProfession", "motherCompany", "familyResidence", "familyValues", "membershipInterest", "consent", "submittedFrom"]),
+  application: new Set(["type", "applyingFor", "contactName", "relationship", "email", "phone", "applicantName", "age", "address", "company", "designation", "school", "undergraduate", "postgraduate", "instagramProfile", "linkedinProfile", "introduction", "fatherName", "fatherProfession", "fatherCompany", "motherName", "motherProfession", "motherCompany", "familyResidence", "familyValues", "membershipInterest", "consent", "submittedFrom"]),
   contact: new Set(["type", "name", "email", "phone", "enquiryRole", "message", "consent", "submittedFrom"]),
   partnership: new Set(["type", "name", "practice", "email", "phone", "partnerWebsite", "partnershipType", "message", "consent", "submittedFrom"])
 };
@@ -259,7 +311,7 @@ async function handleSubmission(request, response) {
   }
 }
 
-async function serveFile(response, filePath) {
+async function serveFile(request, response, filePath) {
   try {
     const fileStat = await stat(filePath);
     if (!fileStat.isFile()) throw new Error("Not found");
@@ -269,20 +321,27 @@ async function serveFile(response, filePath) {
     response.writeHead(200, {
       "Content-Type": types[extname(filePath)] || "application/octet-stream",
       "Cache-Control": cache,
-      "X-Content-Type-Options": "nosniff",
-      "Referrer-Policy": "strict-origin-when-cross-origin",
-      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      ...securityHeaders
     });
-    response.end(data);
+    response.end(request.method === "HEAD" ? undefined : data);
   } catch {
     const fallback = await readFile(join(publicDir, "404.html"));
-    response.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
-    response.end(fallback);
+    response.writeHead(404, {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-cache",
+      ...securityHeaders
+    });
+    response.end(request.method === "HEAD" ? undefined : fallback);
   }
 }
 
 createServer(async (request, response) => {
-  const url = new URL(request.url, `http://${request.headers.host}`);
+  let url;
+  try {
+    url = new URL(request.url, `http://${request.headers.host}`);
+  } catch {
+    return sendJson(response, 400, { message: "Bad request" });
+  }
 
   if (request.method === "POST" && ["/api/submissions", "/api/applications"].includes(url.pathname)) {
     return handleSubmission(request, response);
@@ -292,14 +351,31 @@ createServer(async (request, response) => {
     return sendJson(response, 405, { message: "Method not allowed" });
   }
 
+  const redirectLocation = redirectRoutes.get(url.pathname);
+  if (redirectLocation) return sendRedirect(response, redirectLocation);
+
+  if (url.pathname === "/robots.txt") {
+    return sendText(response, 200, robotsTxt(requestBaseUrl(request)), "text/plain; charset=utf-8");
+  }
+
+  if (url.pathname === "/sitemap.xml") {
+    return sendText(response, 200, sitemapXml(requestBaseUrl(request)), "application/xml; charset=utf-8");
+  }
+
   let relativePath = pageRoutes.get(url.pathname);
   if (!relativePath) {
-    relativePath = normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, "").replace(/^[/\\]/, "");
+    try {
+      relativePath = normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, "").replace(/^[/\\]/, "");
+    } catch {
+      return sendJson(response, 400, { message: "Bad request" });
+    }
   }
 
   const filePath = join(publicDir, relativePath || "index.html");
-  if (!filePath.startsWith(publicDir)) return serveFile(response, join(publicDir, "404.html"));
-  return serveFile(response, filePath);
+  if (filePath !== publicDir && !filePath.startsWith(`${publicDir}${sep}`)) {
+    return serveFile(request, response, join(publicDir, "404.html"));
+  }
+  return serveFile(request, response, filePath);
 }).listen(port, () => {
   console.log(`HeartLink private site listening at http://localhost:${port}`);
 });

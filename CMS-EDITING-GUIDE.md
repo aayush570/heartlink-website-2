@@ -24,7 +24,7 @@ Pages CMS will automatically read `.pages.yml` from the root of the repository. 
 
 `Site Settings` controls shared items used across the whole website, such as the logo, colours, navigation, footer links, WhatsApp number, and contact emails. Keeping those in one place is simpler than repeating the same settings on every page.
 
-The old standalone `Process` and `Trust & Recognition` pages now redirect into the live `Services` and `About` pages, so editors do not need to manage those separately anymore.
+The old standalone `Process` and `Trust & Recognition` pages now redirect into the live `Services` and `About` pages. Editors do not manage separate content for those URLs anymore.
 
 ## Edit and publish
 
@@ -66,6 +66,8 @@ Keep the bright magenta and blue from the logo inside the logo itself. Do not us
 ## Proof and story rules
 
 Do not publish placeholder proof, draft testimonials, invented quotes, or "coming soon" cards. If a proof item is not ready, remove it from the CMS until there is a real award, founder milestone, public recognition, anonymized example, image, source or approved story to show.
+
+The homepage story section stays hidden while the story list is empty. Only add stories after consent and privacy review.
 
 Anonymized stories should be specific enough to build trust but must not identify a family, candidate, employer, address, community detail or private circumstance without written approval.
 

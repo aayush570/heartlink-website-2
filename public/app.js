@@ -35,7 +35,7 @@ const canonicalHref = `${siteOrigin}${path === "/" ? "/" : path}`;
 
 document.documentElement.style.setProperty("--maroon", site.primaryColor || "#5F1724");
 document.documentElement.style.setProperty("--gold", site.accentColor || "#B8954F");
-document.documentElement.style.setProperty("--forest", site.secondaryAccentColor || "#5F1724");
+document.documentElement.style.setProperty("--forest", site.secondaryAccentColor || "#183F32");
 
 function escapeHtml(value = "") {
   return String(value)
@@ -548,21 +548,10 @@ function renderClosing(closing = {}) {
   }
 }
 
-function renderMethodology() {
-  const timeline = document.querySelector(".timeline");
-  if (timeline && pageContent.steps) timeline.innerHTML = pageContent.steps.map((step) => `<article class="timeline-item" data-reveal><small>${escapeHtml(step.label)}</small><div class="timeline-number">${escapeHtml(step.number)}</div><h2>${escapeHtml(step.title)}</h2><p>${escapeHtml(step.description)}</p></article>`).join("");
-  const after = document.querySelector("[data-after-submit]");
-  if (after && pageContent.afterSubmit) {
-    after.innerHTML = `${renderSectionHeading(pageContent.afterSubmit, true)}<div class="press-grid">${renderCards(pageContent.afterSubmit.cards || [])}</div>`;
-  }
-  const closing = document.querySelector(".plum-surface .section-narrow");
-  if (closing && pageContent.closing) closing.innerHTML = `<div class="closing-stack" data-reveal><span class="eyebrow">${escapeHtml(pageContent.closing.eyebrow)}</span><h2>${escapeHtml(pageContent.closing.title)}</h2><p>${escapeHtml(pageContent.closing.description)}</p><a class="button" href="/apply">${escapeHtml(pageContent.closing.button)}</a></div>`;
-}
-
 function renderMembership() {
   const tierGrid = document.querySelector(".tier-grid");
   if (tierGrid && pageContent.tiers) {
-    tierGrid.innerHTML = pageContent.tiers.map((tier) => `<article class="tier-card ${tier.black ? "black" : ""} ${tier.tone ? `tier-${escapeHtml(tier.tone)}` : ""}" data-reveal><span class="tier-index">${escapeHtml(tier.label)}</span><h2>${escapeHtml(tier.title)}</h2><p>${escapeHtml(tier.description)}</p><ul class="tier-features">${(tier.features || []).map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul><a class="button" href="/apply?interest=${encodeURIComponent(tier.title)}">${escapeHtml(tier.button)}</a></article>`).join("");
+    tierGrid.innerHTML = pageContent.tiers.map((tier) => `<article class="tier-card ${tier.black ? "black" : ""} ${tier.tone ? `tier-${escapeHtml(tier.tone)}` : ""}" data-reveal><span class="tier-index">${escapeHtml(tier.label)}</span><h2>${escapeHtml(tier.title)}</h2><p>${escapeHtml(tier.description)}</p><ul class="tier-features">${(tier.features || []).map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul><a class="button${tier.black ? " button-light button-light-static" : ""}" href="/apply?interest=${encodeURIComponent(tier.title)}">${escapeHtml(tier.button)}</a></article>`).join("");
   }
   setText(".protocol-note h2", pageContent.protocol?.title);
   const protocolCopy = document.querySelector(".protocol-note > div");
@@ -582,27 +571,6 @@ function renderMembership() {
   const afterSubmitCards = document.querySelector("[data-membership-after-submit-cards]");
   if (afterSubmitCards && pageContent.afterSubmit?.cards) afterSubmitCards.innerHTML = renderCards(pageContent.afterSubmit.cards);
   renderClosing(pageContent.closing);
-}
-
-function renderImpact() {
-  const stats = document.querySelector(".impact-numbers");
-  if (stats && pageContent.stats) stats.innerHTML = pageContent.stats.map((stat) => `<div><strong>${escapeHtml(stat.value)}</strong><span>${escapeHtml(stat.label)}</span></div>`).join("");
-  const featureArt = document.querySelector(".feature-art");
-  if (featureArt && pageContent.feature?.image) {
-    featureArt.style.backgroundImage = `linear-gradient(rgba(44,5,46,.2),rgba(8,5,10,.45)),url("${safeUrl(pageContent.feature.image)}")`;
-    featureArt.setAttribute("role", "img");
-    featureArt.setAttribute("aria-label", pageContent.feature.imageAlt || "");
-  }
-  setText(".feature-copy .eyebrow", pageContent.feature?.eyebrow);
-  setText(".feature-copy h2", pageContent.feature?.title);
-  document.querySelectorAll(".feature-copy p").forEach((element, index) => element.textContent = pageContent.feature?.paragraphs?.[index] || "");
-  const recognitionHeading = document.querySelector(".section-heading");
-  if (recognitionHeading && pageContent.recognition) recognitionHeading.outerHTML = renderSectionHeading(pageContent.recognition);
-  const pressGrid = document.querySelector(".press-grid");
-  if (pressGrid && pageContent.recognition?.cards) pressGrid.innerHTML = renderCards(pageContent.recognition.cards);
-  renderClosing(pageContent.closing);
-  const pressButton = document.querySelector(".plum-surface .quote .button");
-  if (pressButton) pressButton.href = `mailto:${site.pressEmail}`;
 }
 
 function renderCareers() {
@@ -635,7 +603,7 @@ function renderContact() {
       ${renderSectionHeading(pageContent.whatsappSection)}
       <div class="contact-options">
         <a class="contact-option" data-whatsapp-link href="${whatsappHref}"${linkAttrs(whatsappHref)}><span>WhatsApp</span><strong>${escapeHtml(pageContent.whatsappSection.whatsappLabel || site.whatsappNumber)}</strong></a>
-        <a class="contact-option" href="tel:${whatsappDigits}"><span>Call</span><strong>${escapeHtml(pageContent.whatsappSection.callLabel || site.whatsappNumber)}</strong></a>
+        <a class="contact-option" href="${whatsappDigits ? `tel:+${whatsappDigits}` : "/contact"}"><span>Call</span><strong>${escapeHtml(pageContent.whatsappSection.callLabel || site.whatsappNumber)}</strong></a>
       </div>`;
     syncWhatsappLinks(methods);
   }
@@ -836,9 +804,7 @@ syncWhatsappLinks();
 
 if (pageKey === "home") renderHome();
 if (pageKey === "about") renderAbout();
-if (pageKey === "methodology") renderMethodology();
 if (pageKey === "membership") renderMembership();
-if (pageKey === "impact") renderImpact();
 if (pageKey === "careers") renderCareers();
 if (pageKey === "apply") renderApply();
 if (pageKey === "contact") renderContact();

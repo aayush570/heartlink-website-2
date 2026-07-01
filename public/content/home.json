@@ -116,13 +116,9 @@
   "storiesHeading": {
     "eyebrow": "Client stories",
     "title": "Quiet stories, shared with care.",
-    "description": "Placeholder anonymized examples. Replace these with approved client stories through PagesCMS when ready."
+    "description": "Approved anonymized client stories can be published after consent and privacy review."
   },
-  "stories": [
-    { "label": "Private family search", "quote": "A Mumbai family wanted a serious route without public browsing. HeartLink kept the search private, reviewed the background carefully and shared only introductions that made sense.", "source": "Placeholder anonymized family example · Mumbai" },
-    { "label": "Global Indian family", "quote": "For an overseas Indian family, the priority was cultural comfort and discretion. HeartLink helped translate expectations between generations before any introduction moved forward.", "source": "Placeholder anonymized family example · Global Indian family" },
-    { "label": "Candidate comfort", "quote": "A candidate who did not want app culture was able to share preferences privately, while the family still received the seriousness and verification they expected.", "source": "Placeholder anonymized candidate example" }
-  ],
+  "stories": [],
   "founder": {
     "image": "/media/gopi-shah.jpg",
     "imageAlt": "Gopi Shah, Founder and Principal Advisor of HeartLink",
