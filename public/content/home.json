@@ -13,7 +13,7 @@
     "primaryButton": "Apply to the Registry",
     "primaryUrl": "/apply",
     "secondaryButton": "See how it works",
-    "secondaryUrl": "/membership#process",
+    "secondaryUrl": "/membership",
     "whatsappButton": "Quick WhatsApp Enquiry",
     "assurances": [
       "Co-founded and led personally by Gopi Shah",
@@ -22,14 +22,25 @@
       "By application, not by payment"
     ],
     "note": "Co-founded by Gopi Shah · 50 active mandates, total · No public profiles",
-    "privacyNote": "Identity is shared only with approval.",
-    "profileImages": []
+    "privacyNote": "Identity is shared only with approval."
   },
   "proof": [
-    { "value": "1,000+", "label": "Profiles tracked for client searches" },
-    { "value": "250+", "label": "Families advised over time" },
-    { "value": "75+", "label": "Successful matches supported" },
-    { "value": "20+", "label": "Cities across India and overseas" }
+    {
+      "value": "1,000+",
+      "label": "Profiles tracked for client searches"
+    },
+    {
+      "value": "250+",
+      "label": "Families advised over time"
+    },
+    {
+      "value": "75+",
+      "label": "Successful matches supported"
+    },
+    {
+      "value": "20+",
+      "label": "Cities across India and overseas"
+    }
   ],
   "legacy": {
     "eyebrow": "For serious families",
@@ -50,14 +61,22 @@
         "label": "For parents & families",
         "title": "Strong family understanding.",
         "description": "Before any introduction is made, we understand family values, reputation, education, profession and social standing - properly, not from a form alone.",
-        "points": ["Family and reference checks", "Identity and intent verification", "Social and family comfort"]
+        "points": [
+          "Family and reference checks",
+          "Identity and intent verification",
+          "Social and family comfort"
+        ]
       },
       {
         "label": "For sons & daughters",
         "icon": "H",
         "title": "Modern compatibility. No app culture.",
         "description": "We take the time to understand personality, goals and what you actually want. Introductions are few, private and yours to say yes or no to.",
-        "points": ["Personal preferences understood", "Only selected introductions", "Guidance through the process"]
+        "points": [
+          "Personal preferences understood",
+          "Only selected introductions",
+          "Guidance through the process"
+        ]
       }
     ]
   },
@@ -78,10 +97,26 @@
     "title": "Your family details stay <em>strictly private.</em>",
     "description": "There is no public database. No browsing. No searchable biodata. No sharing of personal details without approval.",
     "cards": [
-      { "number": "01", "title": "No public profiles", "description": "Profiles are not shown online or made searchable." },
-      { "number": "02", "title": "Consent before sharing", "description": "Details are shared only after both sides show genuine interest." },
-      { "number": "03", "title": "Human verification", "description": "We use conversations, references, social checks and direct review - not only forms." },
-      { "number": "04", "title": "Founder review", "description": "Important introductions are personally reviewed before moving ahead." }
+      {
+        "number": "01",
+        "title": "No public profiles",
+        "description": "Profiles are not shown online or made searchable."
+      },
+      {
+        "number": "02",
+        "title": "Consent before sharing",
+        "description": "Details are shared only after both sides show genuine interest."
+      },
+      {
+        "number": "03",
+        "title": "Human verification",
+        "description": "We use conversations, references, social checks and direct review - not only forms."
+      },
+      {
+        "number": "04",
+        "title": "Founder review",
+        "description": "Important introductions are personally reviewed before moving ahead."
+      }
     ],
     "seal": "Private matchmaking\nStrictly confidential"
   },
@@ -91,20 +126,57 @@
     "description": "Selected credibility signals from Gopi Shah's community, cultural and matrimonial work."
   },
   "proofAssets": [
-    { "label": "Award recognition", "title": "Dr. Sarojini Naidu International Award", "description": "Recognition connected to Gopi Shah's contribution to education, culture and community service.", "image": "", "link": "", "source": "", "date": "" },
-    { "label": "Founder-led practice", "title": "Jeevansathi - Juhu", "description": "Before HeartLink, Gopi Shah guided Jeevansathi - Juhu as an honorary matrimonial service for well-regarded families.", "image": "", "link": "", "source": "", "date": "" },
-    { "label": "Cultural credibility", "title": "Community work across India and the United States", "description": "Her broader cultural and community work informs the discretion and judgment HeartLink brings to family-led searches.", "image": "", "link": "", "source": "", "date": "" }
+    {
+      "label": "Award recognition",
+      "title": "Dr. Sarojini Naidu International Award",
+      "description": "Recognition connected to Gopi Shah's contribution to education, culture and community service."
+    },
+    {
+      "label": "Founder-led practice",
+      "title": "Jeevansathi - Juhu",
+      "description": "Before HeartLink, Gopi Shah guided Jeevansathi - Juhu as an honorary matrimonial service for well-regarded families."
+    },
+    {
+      "label": "Cultural credibility",
+      "title": "Community work across India and the United States",
+      "description": "Her broader cultural and community work informs the discretion and judgment HeartLink brings to family-led searches."
+    }
   ],
   "process": {
     "eyebrow": "Our process",
     "title": "Simple steps.<br><em>Careful introductions.</em>",
     "description": "From the first call to the final decision, the process stays private, personal and deliberate.",
     "steps": [
-      { "number": "01", "label": "Private meeting", "title": "We understand your family.", "description": "We speak privately and understand the person, family background, expectations and comfort level." },
-      { "number": "02", "label": "Profile review", "title": "We build the full picture.", "description": "We review education, work, personality, family details, values and social context." },
-      { "number": "03", "label": "Selected introductions", "title": "Only considered options are shared.", "description": "We do not send random profiles. Each introduction is reviewed and shared privately." },
-      { "number": "04", "label": "Guidance", "title": "We support the conversation.", "description": "We help both sides move ahead with clarity, comfort and respect." },
-      { "number": "05", "label": "Family support", "title": "We stay involved when needed.", "description": "HeartLink can support family discussions, expectation-setting and early adjustment." }
+      {
+        "number": "01",
+        "label": "Private meeting",
+        "title": "We understand your family.",
+        "description": "We speak privately and understand the person, family background, expectations and comfort level."
+      },
+      {
+        "number": "02",
+        "label": "Profile review",
+        "title": "We build the full picture.",
+        "description": "We review education, work, personality, family details, values and social context."
+      },
+      {
+        "number": "03",
+        "label": "Selected introductions",
+        "title": "Only considered options are shared.",
+        "description": "We do not send random profiles. Each introduction is reviewed and shared privately."
+      },
+      {
+        "number": "04",
+        "label": "Guidance",
+        "title": "We support the conversation.",
+        "description": "We help both sides move ahead with clarity, comfort and respect."
+      },
+      {
+        "number": "05",
+        "label": "Family support",
+        "title": "We stay involved when needed.",
+        "description": "HeartLink can support family discussions, expectation-setting and early adjustment."
+      }
     ]
   },
   "storiesHeading": {
@@ -112,7 +184,6 @@
     "title": "Quiet stories, shared with care.",
     "description": "Approved anonymized client stories can be published after consent and privacy review."
   },
-  "stories": [],
   "founder": {
     "image": "/media/gopi-shah.jpg",
     "imageAlt": "Gopi Shah, Founder and Principal Advisor of HeartLink",
