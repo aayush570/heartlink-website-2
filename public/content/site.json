@@ -6,7 +6,7 @@
     "whatsappLabel": "WhatsApp",
     "primaryLabel": "Apply to Registry",
     "primaryUrl": "/apply",
-    "mobileWhatsappLabel": "Quick WhatsApp Enquiry",
+    "mobileWhatsappLabel": "WhatsApp",
     "mobilePrimaryLabel": "Apply to Registry"
   },
   "transactional": {
@@ -17,7 +17,6 @@
     "returnLabel": "Return to HeartLink",
     "defaultError": "We could not receive this enquiry. Please try again or contact HeartLink directly."
   },
-  "siteUrl": "",
   "defaultOgImage": "/media/heartlink-heritage-invitation.png",
   "themeColor": "#F8F4EC",
   "primaryColor": "#5F1724",
@@ -36,42 +35,96 @@
     {
       "title": "Start Here",
       "links": [
-        { "label": "Apply to Registry", "href": "/apply" },
-        { "label": "Quick WhatsApp Enquiry", "href": "{{whatsapp}}" },
-        { "label": "concierge@heartlink.in", "href": "mailto:concierge@heartlink.in" }
+        {
+          "label": "Apply to Registry",
+          "href": "/apply"
+        },
+        {
+          "label": "Quick WhatsApp Enquiry",
+          "href": "{{whatsapp}}"
+        },
+        {
+          "label": "concierge@heartlink.in",
+          "href": "mailto:concierge@heartlink.in"
+        }
       ]
     },
     {
       "title": "Learn More",
       "links": [
-        { "label": "About Gopi Shah", "href": "/about" },
-        { "label": "Our process", "href": "/membership#process" },
-        { "label": "Trust & recognition", "href": "/about#trust" }
+        {
+          "label": "About Gopi Shah",
+          "href": "/about"
+        },
+        {
+          "label": "Our process",
+          "href": "/membership#process"
+        },
+        {
+          "label": "Trust & recognition",
+          "href": "/about#trust"
+        }
       ]
     },
     {
       "title": "More",
       "links": [
-        { "label": "Services", "href": "/membership" },
-        { "label": "Partnerships", "href": "/partnerships" },
-        { "label": "Careers", "href": "/careers" },
-        { "label": "Privacy", "href": "/privacy" }
+        {
+          "label": "Services",
+          "href": "/membership"
+        },
+        {
+          "label": "Partnerships",
+          "href": "/partnerships"
+        },
+        {
+          "label": "Careers",
+          "href": "/careers"
+        },
+        {
+          "label": "Privacy",
+          "href": "/privacy"
+        }
       ]
     },
     {
       "title": "Visit",
       "links": [
-        { "label": "Juhu, Mumbai", "href": "/contact" },
-        { "label": "By appointment only", "href": "/contact" },
-        { "label": "+91 93266 42337", "href": "tel:+919326642337" }
+        {
+          "label": "Juhu, Mumbai",
+          "href": "/contact"
+        },
+        {
+          "label": "By appointment only",
+          "href": "/contact"
+        },
+        {
+          "label": "+91 93266 42337",
+          "href": "tel:+919326642337"
+        }
       ]
     }
   ],
   "navigation": [
-    { "href": "/", "label": "Home" },
-    { "href": "/about", "label": "About" },
-    { "href": "/membership", "label": "Services" },
-    { "href": "/partnerships", "label": "Partnerships" },
-    { "href": "/careers", "label": "Careers" }
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Services",
+      "href": "/membership"
+    },
+    {
+      "label": "Partnerships",
+      "href": "/partnerships"
+    },
+    {
+      "label": "Careers",
+      "href": "/careers"
+    }
   ]
 }
