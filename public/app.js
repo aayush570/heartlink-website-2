@@ -243,7 +243,7 @@ function updateMeta(seo = {}) {
     }
     tag.setAttribute("content", content);
   });
-  upsertHeadTag('meta[name="theme-color"]', "meta", { name: "theme-color", content: site.themeColor || "#320130" });
+  upsertHeadTag('meta[name="theme-color"]', "meta", { name: "theme-color", content: site.themeColor || "#FFFFFF" });
   const structured = upsertHeadTag('script[type="application/ld+json"][data-structured-brand]', "script", {
     type: "application/ld+json",
     "data-structured-brand": "true"

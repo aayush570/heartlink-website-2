@@ -18,7 +18,7 @@
     "defaultError": "We could not receive this enquiry. Please try again or contact HeartLink directly."
   },
   "defaultOgImage": "/media/heartlink-heritage-invitation.png",
-  "themeColor": "#320130",
+  "themeColor": "#FFFFFF",
   "primaryColor": "#320130",
   "accentColor": "#C69216",
   "secondaryAccentColor": "#4A1647",
