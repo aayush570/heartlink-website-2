@@ -20,10 +20,22 @@
     "description": "HeartLink brings together community trust, matrimonial experience and practical relationship guidance."
   },
   "trustStats": [
-    { "value": "5,000+", "label": "Profiles across our trusted network" },
-    { "value": "1,000+", "label": "Families advised over time" },
-    { "value": "50", "label": "Active mandates at a time" },
-    { "value": "10+", "label": "Cities across India and globally" }
+    {
+      "value": "5,000+",
+      "label": "Profiles across our trusted network"
+    },
+    {
+      "value": "1,000+",
+      "label": "Families advised over time"
+    },
+    {
+      "value": "50",
+      "label": "Active mandates at a time"
+    },
+    {
+      "value": "10+",
+      "label": "Cities across India and globally"
+    }
   ],
   "curators": [
     {
@@ -37,7 +49,7 @@
       "theme": "classic",
       "paragraphs": [
         "Gopi's career spans education, culture and community service. Her work has included Khar Education Society, cultural collaborations in India and the United States, and community initiatives with NGO Jwala.",
-        "She founded Juhu Jeevansaathi, an honorary matrimonial service in Juhu, and brings that practical experience to every family conversation at HeartLink.",
+        "She founded Jeevansaathi, an honorary matrimonial service in Juhu, and brings that practical experience to every family conversation at HeartLink.",
         "Gopi is Maharashtra State Chair for G100's Luxury, Fashion, Beauty, Jewellery & Textiles wing and a recipient of the Dr. Sarojini Naidu International Award."
       ],
       "credentials": [
@@ -102,20 +114,12 @@
     {
       "label": "Gopi Shah · Matchmaking & community",
       "title": "Trusted networks with hands-on service",
-      "description": "Founder of Juhu Jeevansaathi, Maharashtra State Chair for the G100 textile wing and recipient of the Dr. Sarojini Naidu International Award.",
-      "image": "",
-      "link": "",
-      "source": "",
-      "date": ""
+      "description": "Founder of Juhu Jeevansaathi, Maharashtra State Chair for the G100 textile wing and recipient of the Dr. Sarojini Naidu International Award."
     },
     {
       "label": "Alpa Apoorva · Relationship & family guidance",
       "title": "Emotional insight beyond the biodata",
-      "description": "Emotional therapy, relationship and transformation coaching, with practical guidance for individuals, couples and families.",
-      "image": "",
-      "link": "",
-      "source": "",
-      "date": ""
+      "description": "Emotional therapy, relationship and transformation coaching, with practical guidance for individuals, couples and families."
     }
   ],
   "closing": {
