@@ -33,7 +33,7 @@ const whatsappHref = whatsappDigits ? `https://wa.me/${whatsappDigits}` : "/cont
 const siteOrigin = String(site.siteUrl || window.location.origin).replace(/\/$/, "");
 const canonicalHref = `${siteOrigin}${path === "/" ? "/" : path}`;
 
-document.documentElement.style.setProperty("--maroon", site.primaryColor || "#5F1724");
+document.documentElement.style.setProperty("--maroon", site.primaryColor || "#320130");
 document.documentElement.style.setProperty("--gold", site.accentColor || "#B8954F");
 document.documentElement.style.setProperty("--forest", site.secondaryAccentColor || "#183F32");
 
@@ -212,15 +212,6 @@ function renderProofSection(selector, heading, cards) {
   grid.innerHTML = renderCards(visibleCards);
 }
 
-function renderStories(stories = []) {
-  return stories.filter((story) => ![story.quote, story.label].join(" ").toLowerCase().includes("placeholder")).map((story) => `
-    <article class="story-card" data-reveal>
-      ${story.label ? `<span>${escapeHtml(story.label)}</span>` : ""}
-      <p>“${escapeHtml(story.quote)}”</p>
-      ${story.source ? `<strong>${escapeHtml(story.source)}</strong>` : ""}
-    </article>`).join("");
-}
-
 function updateMeta(seo = {}) {
   const title = seo.title || document.title;
   const descriptionText = seo.description || document.querySelector('meta[name="description"]')?.content || "";
@@ -252,7 +243,7 @@ function updateMeta(seo = {}) {
     }
     tag.setAttribute("content", content);
   });
-  upsertHeadTag('meta[name="theme-color"]', "meta", { name: "theme-color", content: site.themeColor || "#F8F4EC" });
+  upsertHeadTag('meta[name="theme-color"]', "meta", { name: "theme-color", content: site.themeColor || "#320130" });
   const structured = upsertHeadTag('script[type="application/ld+json"][data-structured-brand]', "script", {
     type: "application/ld+json",
     "data-structured-brand": "true"
@@ -339,7 +330,7 @@ function renderFooter() {
   if (!footer) return;
   const footerColumns = site.footerColumns || [
     { title: "Start Here", links: [{ label: "Apply to the registry", href: "/apply" }, { label: "Quick WhatsApp Enquiry", href: whatsappHref }, { label: site.conciergeEmail, href: `mailto:${site.conciergeEmail}` }] },
-    { title: "Learn More", links: [{ label: "About Gopi Shah", href: "/about" }, { label: "Our process", href: "/membership#process" }, { label: "Trust & recognition", href: "/about#trust" }] },
+    { title: "Learn More", links: [{ label: "About Our Founders", href: "/about" }, { label: "Our process", href: "/membership#process" }, { label: "Trust & recognition", href: "/about#trust" }] },
     { title: "More", links: [{ label: "Services", href: "/membership" }, { label: "Partnerships", href: "/partnerships" }, { label: "Careers", href: "/careers" }, { label: "Privacy", href: "/privacy" }] }
   ];
   footer.className = "site-footer";
@@ -426,54 +417,26 @@ function renderHome() {
     registryActions.innerHTML = `<a class="button" href="${escapeHtml(safeUrl(registry.primaryUrl || "/apply", "/apply"))}">${escapeHtml(registry.primaryLabel || "Apply to the Registry")}</a><a class="text-link" href="${escapeHtml(safeUrl(registry.secondaryUrl || "/membership", "/membership"))}">${escapeHtml(registry.secondaryLabel || "View service options")} <span>↗</span></a>`;
   }
 
-  const privacy = pageContent.privacy || {};
-  if (privacy.title) {
-    const vault = document.querySelector(".vault-section .section-narrow");
-    vault.querySelector(".vault-heading")?.remove();
-    vault.insertAdjacentHTML("afterbegin", `<div class="vault-heading" data-reveal>${privacy.eyebrow ? `<span class="eyebrow">${escapeHtml(privacy.eyebrow)}</span>` : ""}<h2>${safeTitle(privacy.title)}</h2><p>${escapeHtml(privacy.description)}</p></div>`);
+  const founderHeading = document.querySelector(".founder-heading");
+  if (founderHeading && pageContent.founderHeading) {
+    founderHeading.outerHTML = renderSectionHeading(pageContent.founderHeading, true).replace("section-heading", "section-heading founder-heading");
   }
-  const vaultGrid = document.querySelector(".vault-grid");
-  if (vaultGrid && privacy.cards) vaultGrid.innerHTML = privacy.cards.map((card) => `<article data-reveal><span>${escapeHtml(card.number || card.label)}</span><h3>${escapeHtml(card.title)}</h3><p>${escapeHtml(card.description)}</p></article>`).join("");
-  const seal = document.querySelector(".vault-seal span");
-  if (seal && privacy.seal) seal.innerHTML = safeLines(privacy.seal);
-
-  const process = pageContent.process || {};
-  const processSection = document.querySelector(".process-section .section-narrow");
-  if (processSection && process.title) {
-    processSection.querySelector(".process-heading")?.remove();
-    processSection.insertAdjacentHTML("afterbegin", renderSectionHeading(process, true).replace("section-heading", "section-heading process-heading"));
-  }
-  const thread = document.querySelector(".gold-thread");
-  if (thread && process.steps) {
-    thread.innerHTML = '<div class="thread-track" aria-hidden="true"><i></i></div>' + process.steps.map((step) => `<article class="thread-step" data-reveal><span>${escapeHtml(step.number)}</span><div><small>${escapeHtml(step.label)}</small><h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.description)}</p></div></article>`).join("");
-  }
-
-  const proofAssets = document.querySelector("[data-home-proof-assets]");
-  if (proofAssets && pageContent.proofAssets) renderProofSection("[data-home-proof-assets]", pageContent.proofHeading, pageContent.proofAssets);
-  const stories = document.querySelector("[data-home-stories]");
-  if (stories && pageContent.stories) {
-    const storyMarkup = renderStories(pageContent.stories);
-    if (storyMarkup) stories.innerHTML = storyMarkup;
-    else stories.closest(".stories-section")?.remove();
-  }
-  const storyHeading = document.querySelector(".stories-section .section-heading");
-  if (storyHeading && pageContent.storiesHeading) storyHeading.outerHTML = renderSectionHeading(pageContent.storiesHeading, true);
-
-  const founder = pageContent.founder || {};
-  const founderImg = document.querySelector(".founder-portrait img");
-  if (founderImg && founder.image) {
-    founderImg.src = safeUrl(founder.image, founderImg.src);
-    founderImg.alt = founder.imageAlt || founderImg.alt;
-  }
-  setText(".founder-portrait span", founder.badge);
-  setText(".founder-copy .eyebrow", founder.eyebrow);
-  setText(".founder-copy blockquote", founder.quote);
-  setText(".founder-copy p", founder.description);
-  setText(".founder-copy .signature", founder.signature);
-  const founderLink = document.querySelector(".founder-copy .text-link");
-  if (founderLink) {
-    founderLink.href = safeUrl(founder.linkUrl || "/about", "/about");
-    founderLink.innerHTML = `${escapeHtml(founder.linkText || "Read about Gopi Shah")} <span>↗</span>`;
+  const founderPair = document.querySelector("[data-home-founders]");
+  if (founderPair && pageContent.founders) {
+    founderPair.innerHTML = pageContent.founders.map((founder) => {
+      const image = safeUrl(founder.image || "", "");
+      const link = safeUrl(founder.linkUrl || "/about", "/about");
+      return `
+        <article class="founder-card" data-reveal>
+          <div class="founder-card-portrait">${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(founder.imageAlt || founder.name)}">` : ""}</div>
+          <div class="founder-card-copy">
+            <span>${escapeHtml(founder.role)}</span>
+            <h3>${escapeHtml(founder.name)}</h3>
+            <p>${escapeHtml(founder.summary)}</p>
+            <a class="text-link" href="${escapeHtml(link)}">${escapeHtml(founder.linkText || `Meet ${founder.name}`)} <b>↗</b></a>
+          </div>
+        </article>`;
+    }).join("");
   }
 
   const finalCta = pageContent.finalCta || {};
@@ -518,17 +481,6 @@ function renderAbout() {
   if (trustStats && pageContent.trustStats) {
     trustStats.innerHTML = pageContent.trustStats.map((stat) => `<div><strong>${escapeHtml(stat.value)}</strong><span>${escapeHtml(stat.label)}</span></div>`).join("");
   }
-  const trustFeatureArt = document.querySelector("[data-about-trust-feature-art]");
-  if (trustFeatureArt && pageContent.trustFeature?.image) {
-    trustFeatureArt.style.backgroundImage = `linear-gradient(rgba(44,5,46,.2),rgba(8,5,10,.45)),url("${safeUrl(pageContent.trustFeature.image)}")`;
-    trustFeatureArt.setAttribute("role", "img");
-    trustFeatureArt.setAttribute("aria-label", pageContent.trustFeature.imageAlt || "");
-  }
-  setText("[data-about-trust-feature-eyebrow]", pageContent.trustFeature?.eyebrow);
-  setText("[data-about-trust-feature-title]", pageContent.trustFeature?.title);
-  document.querySelectorAll("[data-about-trust-feature-paragraph]").forEach((element, index) => {
-    element.textContent = pageContent.trustFeature?.paragraphs?.[index] || "";
-  });
   renderProofSection("[data-about-proof-assets]", pageContent.proofHeading, pageContent.proofAssets);
   renderClosing(pageContent.closing);
 }

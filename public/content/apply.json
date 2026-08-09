@@ -95,6 +95,7 @@
           { "label": "Private Registry", "description": "Free private consideration for selected introductions", "value": "Private Registry" },
           { "label": "Success Plan", "description": "No upfront registration fee; success-led engagement", "value": "Success Plan" },
           { "label": "Premium Search", "description": "Apply for a retained private search mandate", "value": "Premium Search" },
+          { "label": "Private Circle", "description": "Apply for our most private founder-led circle", "value": "Private Circle" },
           { "label": "Not sure yet", "description": "Please guide us on the right option", "value": "Unsure" }
         ]
       }

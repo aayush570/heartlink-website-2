@@ -1,12 +1,12 @@
 {
   "seo": {
     "title": "About HeartLink - Gopi Shah & Alpa Apoorva",
-    "description": "Meet the co-founders behind HeartLink's private matchmaking practice: family background review, relationship guidance and private introductions for select Indian families."
+    "description": "Meet HeartLink co-founders Gopi Shah and Alpa Apoorva, who bring equal parts family judgment, matchmaking experience and relationship guidance."
   },
   "hero": {
     "eyebrow": "About HeartLink",
     "title": "A trusted team for <em>serious families.</em>",
-    "description": "HeartLink is founded and personally led by Gopi Shah and Alpa Apoorva, with a shared focus on family background, emotional readiness and complete privacy."
+    "description": "HeartLink is co-founded and personally led by Gopi Shah and Alpa Apoorva. Their complementary experience shapes every serious introduction."
   },
   "cta": {
     "primaryLabel": "Apply to Registry",
@@ -16,149 +16,102 @@
   },
   "trustHeading": {
     "eyebrow": "Trust & recognition",
-    "title": "A public record behind the private work.",
-    "description": "HeartLink's credibility is built on years of community service, cultural leadership and careful matrimonial guidance."
+    "title": "Experience that supports the work.",
+    "description": "HeartLink brings together community trust, matrimonial experience and practical relationship guidance."
   },
   "trustStats": [
-    { "value": "1,000+", "label": "Profiles tracked for client searches" },
-    { "value": "250+", "label": "Families advised over time" },
-    { "value": "75+", "label": "Successful matches supported" },
-    { "value": "20+", "label": "Cities across India and overseas" }
+    { "value": "5,000+", "label": "Profiles across our trusted network" },
+    { "value": "1,000+", "label": "Families advised over time" },
+    { "value": "50", "label": "Active mandates at a time" },
+    { "value": "10+", "label": "Cities across India and globally" }
   ],
-  "trustFeature": {
-    "image": "",
-    "imageAlt": "Gopi Shah's Jeevansathi community work",
-    "eyebrow": "Jeevansathi - Juhu",
-    "title": "Five years of service that built real trust.",
-    "paragraphs": [
-      "After COVID, Gopi Shah wound down her fabrics business and looked for work that could add value when families were still rebuilding their lives.",
-      "For five years at Jeevansathi - Juhu, she helped guide introductions with privacy, patience and care, bringing joy through matches rooted in trust."
-    ]
-  },
   "curators": [
     {
       "name": "Gopi Shah",
-      "role": "Co-Founder & Principal Advisor",
-      "eyebrow": "Led by experience and trust",
-      "title": "Gopi Shah personally guides the HeartLink process.",
-      "lead": "Gopi Shah has worked across India and the United States in culture, community work and matrimonial service.",
+      "role": "Co-Founder & Matchmaking Advisor",
+      "eyebrow": "Personally led by Gopi Shah",
+      "title": "Trusted networks, community experience and family judgment.",
+      "lead": "Gopi Shah brings hands-on matrimonial service and decades of community leadership to HeartLink.",
       "image": "/media/gopi-shah.png",
       "imageAlt": "Gopi Shah",
       "theme": "classic",
       "paragraphs": [
-        "Her background includes Home Science from MS University of Baroda, creative direction, Indian craft work and cultural projects across Mumbai, Chicago and Florida.",
-        "She has coordinated major cultural work, including a performance at the Great Wall of China, and has received the Dr. Sarojini Naidu International Award.",
-        "Before HeartLink, she guided Jeevansathi - Juhu as an honorary matrimonial service for well-regarded Gujarati families. That work was personal, private and never treated like a public database.",
-        "Gopi is not an outside adviser studying these circles from a distance. She understands the schools, expectations, family concerns and social nuance her clients bring to the table because she has lived inside the same world."
+        "Gopi's career spans education, culture and community service. Her work has included Khar Education Society, cultural collaborations in India and the United States, and community initiatives with NGO Jwala.",
+        "She founded Juhu Jeevansaathi, an honorary matrimonial service in Juhu, and brings that practical experience to every family conversation at HeartLink.",
+        "Gopi is Maharashtra State Chair for G100's Luxury, Fashion, Beauty, Jewellery & Textiles wing and a recipient of the Dr. Sarojini Naidu International Award."
       ],
       "credentials": [
         {
-          "title": "Global",
-          "description": "Work across India and the United States"
+          "title": "Founder",
+          "description": "Juhu Jeevansaathi honorary matrimonial service"
         },
         {
-          "title": "Honoured",
-          "description": "Recipient of the Dr. Sarojini Naidu International Award"
+          "title": "Leadership",
+          "description": "Maharashtra State Chair for the G100 textile wing"
         },
         {
-          "title": "Trusted",
-          "description": "Five years guiding Jeevansathi - Juhu"
+          "title": "Recognition",
+          "description": "Dr. Sarojini Naidu International Award recipient"
         },
         {
-          "title": "Personal",
-          "description": "Direct involvement in important introductions"
+          "title": "Community",
+          "description": "Education, culture and NGO initiatives"
         }
       ]
     },
     {
       "name": "Alpa Apoorva",
       "role": "Co-Founder & Relationship Advisor",
-      "eyebrow": "Relationship guidance",
-      "title": "A good match also needs emotional understanding.",
-      "lead": "Alpa Apoorva brings relationship coaching and emotional guidance to the HeartLink process.",
+      "eyebrow": "Personally led by Alpa Apoorva",
+      "title": "Relationship insight, emotional clarity and family guidance.",
+      "lead": "Alpa Apoorva helps individuals and families look beyond biodata to readiness, expectations and long-term fit.",
       "image": "/media/alpa-apoorva.png",
       "imageAlt": "Alpa Apoorva",
       "theme": "deep",
       "paragraphs": [
-        "Alpa is trained as a therapist and relationship coach, working with individuals, couples and families.",
-        "She helps people speak clearly about expectations, values, responsibilities and comfort before marriage, not after.",
-        "Her role is central to HeartLink's process: helping good families move with more clarity when they are still learning how to understand each other."
+        "Alpa is an emotional therapist, relationship coach, transformation coach and menopause trainer who works with individuals, couples and families.",
+        "Within HeartLink, she helps candidates speak clearly about expectations, values, responsibilities and comfort before marriage.",
+        "Her perspective complements Gopi's family and network judgment, giving every serious introduction two equally important lenses."
       ],
       "credentials": [
         {
-          "title": "Trained",
-          "description": "Therapist and relationship coach"
+          "title": "Relationship",
+          "description": "Emotional therapist and relationship coach"
         },
         {
-          "title": "Balanced",
-          "description": "Support for individuals, couples and families"
+          "title": "Transformation",
+          "description": "Personal growth and transformation coaching"
         },
         {
-          "title": "Practical",
-          "description": "Guidance on expectations before marriage"
+          "title": "Family",
+          "description": "Guidance for individuals, couples and families"
         },
         {
-          "title": "Continuous",
-          "description": "Support through the match process"
+          "title": "Well-being",
+          "description": "Menopause training and life-stage support"
         }
       ]
     }
   ],
   "proofHeading": {
-    "eyebrow": "Credibility",
-    "title": "Experience beyond matchmaking.",
-    "description": "Families trust people who have already carried responsibility in real life. HeartLink carries that record forward."
+    "eyebrow": "Complementary experience",
+    "title": "Two perspectives, given equal weight.",
+    "description": "One founder brings trusted networks and matrimonial judgment; the other brings relationship insight and emotional clarity."
   },
   "proofAssets": [
     {
-      "label": "Award",
-      "title": "Dr. Sarojini Naidu International Award",
-      "description": "Recognition for Gopi Shah's contribution to education, culture and community service.",
+      "label": "Gopi Shah · Matchmaking & community",
+      "title": "Trusted networks with hands-on service",
+      "description": "Founder of Juhu Jeevansaathi, Maharashtra State Chair for the G100 textile wing and recipient of the Dr. Sarojini Naidu International Award.",
       "image": "",
       "link": "",
       "source": "",
       "date": ""
     },
     {
-      "label": "Global work",
-      "title": "Great Wall of China performance",
-      "description": "Coordination of a major cultural performance on an international stage.",
-      "image": "",
-      "link": "",
-      "source": "",
-      "date": ""
-    },
-    {
-      "label": "Service",
-      "title": "COVID-19 support",
-      "description": "Helped coordinate care centres and oxygen support during the crisis.",
-      "image": "",
-      "link": "",
-      "source": "",
-      "date": ""
-    },
-    {
-      "label": "Indian craft",
-      "title": "Support for artisans",
-      "description": "Created work opportunities for Indian artisans through hand-crafted design work.",
-      "image": "",
-      "link": "",
-      "source": "",
-      "date": ""
-    },
-    {
-      "label": "Matrimonial trust",
-      "title": "Five years of Jeevansathi - Juhu",
-      "description": "Honorary matrimonial guidance that became the foundation for HeartLink.",
-      "image": "",
-      "link": "",
-      "source": "",
-      "date": ""
-    },
-    {
-      "label": "Private office",
-      "title": "Press and partnership enquiries",
-      "description": "For awards, speaking, partnerships and press, contact the HeartLink office.",
+      "label": "Alpa Apoorva · Relationship & family guidance",
+      "title": "Emotional insight beyond the biodata",
+      "description": "Emotional therapy, relationship and transformation coaching, with practical guidance for individuals, couples and families.",
       "image": "",
       "link": "",
       "source": "",
@@ -167,7 +120,7 @@
   ],
   "closing": {
     "eyebrow": "The HeartLink approach",
-    "quote": "Strong background checks. Personal guidance. Complete privacy.",
+    "quote": "Family judgment. Relationship insight. One shared standard.",
     "button": "Request a Meeting"
   }
 }

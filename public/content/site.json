@@ -18,10 +18,10 @@
     "defaultError": "We could not receive this enquiry. Please try again or contact HeartLink directly."
   },
   "defaultOgImage": "/media/heartlink-heritage-invitation.png",
-  "themeColor": "#F8F4EC",
-  "primaryColor": "#5F1724",
-  "accentColor": "#B8954F",
-  "secondaryAccentColor": "#183F32",
+  "themeColor": "#320130",
+  "primaryColor": "#320130",
+  "accentColor": "#C69216",
+  "secondaryAccentColor": "#4A1647",
   "conciergeEmail": "concierge@heartlink.in",
   "whatsappNumber": "+919326642337",
   "pressEmail": "press@heartlink.in",
@@ -53,7 +53,7 @@
       "title": "Learn More",
       "links": [
         {
-          "label": "About Gopi Shah",
+          "label": "About Our Founders",
           "href": "/about"
         },
         {

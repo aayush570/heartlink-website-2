@@ -137,13 +137,8 @@ content:
           - { name: description, label: Introductory paragraph, type: text }
           - { name: primaryButton, label: Main button label, type: string }
           - { name: primaryUrl, label: Main button link, type: string }
-          - { name: secondaryButton, label: Secondary link label, type: string }
-          - { name: secondaryUrl, label: Secondary link, type: string }
           - { name: whatsappButton, label: WhatsApp button label, type: string }
           - { name: assurances, label: Assurance bullets under hero, type: string, list: true }
-          - { name: note, label: Internal note line, type: string }
-          - { name: privacyNote, label: Privacy note, type: text }
-          - { name: profileImages, label: Private profile carousel images, type: image, list: true }
       - name: proof
         label: Top proof numbers
         type: object
@@ -190,60 +185,17 @@ content:
           - { name: primaryUrl, label: Main button link, type: string }
           - { name: secondaryLabel, label: Secondary link label, type: string }
           - { name: secondaryUrl, label: Secondary link, type: string }
-      - name: privacy
-        label: Privacy cards section
+      - { name: founderHeading, label: Founders section heading, component: sectionIntro }
+      - name: founders
+        label: Founder profiles
         type: object
+        list: { collapsible: { collapsed: true, summary: "{name} · {role}" } }
         fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: description, label: Description, type: text }
-          - name: cards
-            label: Privacy cards
-            type: object
-            list: { collapsible: { collapsed: true, summary: "{number} · {title}" } }
-            fields:
-              - { name: number, label: Number, type: string }
-              - { name: title, label: Title, type: string }
-              - { name: description, label: Description, type: text }
-          - { name: seal, label: Seal text, type: text }
-      - { name: proofHeading, component: sectionIntro }
-      - { name: proofAssets, label: Proof photos and assets, component: proofCard, list: true }
-      - name: process
-        label: Homepage process section
-        type: object
-        fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: description, label: Description, type: text }
-          - name: steps
-            label: Steps
-            type: object
-            list: { collapsible: { collapsed: true, summary: "{number} · {title}" } }
-            fields:
-              - { name: number, label: Number, type: string }
-              - { name: label, label: Small label, type: string }
-              - { name: title, label: Title, type: string }
-              - { name: description, label: Description, type: text }
-      - { name: storiesHeading, component: sectionIntro }
-      - name: stories
-        label: Anonymized stories and testimonials
-        type: object
-        list: { collapsible: { collapsed: true, summary: "{label}" } }
-        fields:
-          - { name: label, label: Story label, type: string }
-          - { name: quote, label: Quote or story, type: text }
-          - { name: source, label: Source line, type: string }
-      - name: founder
-        label: Founder quote section
-        type: object
-        fields:
-          - { name: image, label: Founder image, type: image }
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: image, label: Image, type: image }
           - { name: imageAlt, label: Image description, type: string }
-          - { name: badge, label: Image badge, type: string }
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: quote, label: Quote, type: text }
-          - { name: description, label: Description, type: text }
-          - { name: signature, label: Signature text, type: string }
+          - { name: summary, label: Short profile, type: text }
           - { name: linkText, label: Link label, type: string }
           - { name: linkUrl, label: Link URL, type: string }
       - name: finalCta
@@ -268,6 +220,20 @@ content:
       - { name: seo, component: seo }
       - { name: hero, component: hero }
       - { name: cta, component: cta }
+      - name: trustHeading
+        label: Trust & recognition heading
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+      - name: trustStats
+        label: Trust stats
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{value} · {label}" } }
+        fields:
+          - { name: value, label: Value, type: string }
+          - { name: label, label: Caption, type: string }
       - name: curators
         label: Founder and advisor profiles
         type: object
