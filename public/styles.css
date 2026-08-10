@@ -4,9 +4,9 @@
   --ivory: #ffffff;
   --paper: #ffffff;
   --sand: #320130;
-  --ink: #2d1d2c;
+  --ink: #320130;
   --headline-purple: #320130;
-  --muted: #6f626d;
+  --muted: #541450;
   --gold: #320130;
   --gold-bright: #320130;
   --gold-soft: rgba(50, 1, 48, .14);
@@ -102,7 +102,7 @@ h1 em, h1 .accent, h2 em, h2 .accent, h3 em, h3 .accent, blockquote em, blockquo
 .brand > span { font: 600 22px/1 var(--serif); letter-spacing: .15em; }
 .brand small { display: block; margin-top: 7px; color: var(--muted); font: 500 7px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
 .desktop-nav { display: flex; align-items: center; gap: clamp(14px, 1.65vw, 27px); }
-.desktop-nav a { position: relative; color: rgba(45,29,44,.76); font-size: 9px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
+.desktop-nav a { position: relative; color: rgba(50,1,48,.76); font-size: 9px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
 .desktop-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -9px; height: 1px; background: var(--gold); transition: right .7s var(--ease); }
 .desktop-nav a:hover::after, .desktop-nav a[aria-current="page"]::after { right: 0; }
 .nav-actions { display: flex; gap: 9px; align-items: center; }
