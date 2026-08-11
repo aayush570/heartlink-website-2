@@ -85,9 +85,9 @@ content:
           - { name: successSuffix, label: Success body suffix, type: text }
           - { name: returnLabel, label: Return link label, type: string }
           - { name: defaultError, label: Default error message, type: text }
-      - { name: siteUrl, label: Canonical site URL, type: string, description: "Optional. Leave blank to use the deployed domain automatically." }
+      - { name: siteUrl, label: Canonical site URL, type: string, description: "Production origin used by SEO metadata. Keep https://heartlink.in unless the primary domain changes." }
       - { name: defaultOgImage, label: Default social share image, type: image }
-      - { name: themeColor, label: Browser theme colour, type: string, description: "Use the approved ivory default #F8F4EC unless the brand system changes." }
+      - { name: themeColor, label: Browser theme colour, type: string, description: "Use the approved ivory default #F8F3EB unless the brand system changes." }
       - { name: primaryColor, label: Primary maroon colour, type: string }
       - { name: accentColor, label: Signature gold colour, type: string }
       - { name: secondaryAccentColor, label: Secondary green colour, type: string }
@@ -302,14 +302,6 @@ content:
           - { name: number, label: Step number, type: string }
           - { name: title, label: Step title, type: string }
           - { name: description, label: Description, type: text }
-      - name: afterSubmit
-        label: After-submit explanation
-        type: object
-        fields:
-          - { name: eyebrow, label: Small heading, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: description, label: Description, type: text }
-          - { name: cards, label: Cards, component: proofCard, list: true }
       - { name: closing, component: closing }
 
   - name: careers
@@ -542,8 +534,16 @@ content:
         type: object
         fields:
           - { name: title, label: Section title, type: string }
+          - { name: updated, label: Last-updated line, type: string }
           - { name: lead, label: Lead statement, type: text }
-          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+          - { name: intro, label: Introductory paragraph, type: text }
+          - name: sections
+            label: Privacy notice sections
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{title}" } }
+            fields:
+              - { name: title, label: Section title, type: string }
+              - { name: body, label: Section text, type: text }
 
 settings:
   content:

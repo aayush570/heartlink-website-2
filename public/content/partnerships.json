@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "Partnerships | HeartLink",
-    "description": "HeartLink collaborates with established matchmakers and trusted connectors under clear privacy standards."
+    "title": "Matchmaker Partnerships in India | HeartLink",
+    "description": "HeartLink partners with established matchmakers, family connectors and private-client advisers under clear confidentiality standards."
   },
   "hero": {
     "eyebrow": "Partnerships",
@@ -37,7 +37,7 @@
       { "name": "partnershipType", "label": "Partnership interest", "type": "select", "required": true, "options": ["Profile collaboration", "Referral partnership", "Join the HeartLink network", "Other"] },
       { "name": "message", "label": "About your network and proposed collaboration", "type": "textarea", "required": false, "maxlength": 1600 }
     ],
-    "consent": "I consent to HeartLink using these details to review and respond to this partnership enquiry.",
+    "consent": "I consent to HeartLink using these details to review and respond to this partnership enquiry as described in the Privacy Notice.",
     "button": "Introduce Your Practice"
   }
 }

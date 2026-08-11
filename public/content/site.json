@@ -2,6 +2,7 @@
   "brandName": "HEARTLINK",
   "brandDescriptor": "Private Matchmaking",
   "logo": "/Heartlink Logo.png",
+  "siteUrl": "https://heartlink.in",
   "headerCta": {
     "whatsappLabel": "WhatsApp",
     "primaryLabel": "Apply to Registry",
@@ -18,10 +19,10 @@
     "defaultError": "We could not receive this enquiry. Please try again or contact HeartLink directly."
   },
   "defaultOgImage": "/media/heartlink-heritage-invitation.png",
-  "themeColor": "#FFFFFF",
-  "primaryColor": "#320130",
-  "accentColor": "#C69216",
-  "secondaryAccentColor": "#4A1647",
+  "themeColor": "#F8F3EB",
+  "primaryColor": "#3B1735",
+  "accentColor": "#A98443",
+  "secondaryAccentColor": "#203D35",
   "conciergeEmail": "concierge@heartlink.in",
   "whatsappNumber": "+919326642337",
   "pressEmail": "press@heartlink.in",
@@ -29,8 +30,8 @@
   "privacyEmail": "privacy@heartlink.in",
   "partnershipsEmail": "partnerships@heartlink.in",
   "locations": "Mumbai · India · Global",
-  "footerStatement": "Private matchmaking for<br>select Indian families.",
-  "footerLegal": "HeartLink reviews enquiries privately. Profiles are never public, searchable or shared without consent.",
+  "footerStatement": "Private matchmaking,<br>personally led.",
+  "footerLegal": "Every enquiry is reviewed privately. Profiles are never public or searchable, and identifying details are shared only with permission.",
   "footerColumns": [
     {
       "title": "Start Here",

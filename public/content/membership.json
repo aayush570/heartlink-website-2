@@ -1,12 +1,12 @@
 {
   "seo": {
-    "title": "Services | HeartLink",
-    "description": "Explore HeartLink's Private Registry, Success Plan, Premium Search and Private Circle options. By application, not by payment."
+    "title": "Private Matchmaking Services | HeartLink",
+    "description": "Compare HeartLink's confidential Private Registry, Success Plan, Premium Search and Private Circle matchmaking services."
   },
   "hero": {
     "eyebrow": "Services",
-    "title": "Choose the level of <em>support you need.</em>",
-    "description": "Some families want a quiet, free listing. Others want Gopi Shah and Alpa Apoorva personally involved from the first conversation. Every tier is by application - not by payment alone."
+    "title": "Four ways to begin. <em>One standard of care.</em>",
+    "description": "Choose confidential registry consideration, a success-led engagement or a retained private search. Paid services are accepted only when HeartLink believes it can add value."
   },
   "cta": {
     "primaryLabel": "Apply to Registry",
@@ -19,7 +19,7 @@
       "label": "01 · Profile submission",
       "title": "Private Registry",
       "description": "Free and entirely private. We do not search on your behalf, but if a retained family is a genuine fit, you will hear from us.",
-      "features": ["No cost, no obligation", "Private review by the HeartLink team", "Contacted only if there is a real fit"],
+      "features": ["No cost or obligation", "Private review by the HeartLink team", "Contacted only when there is genuine relevance"],
       "button": "Apply to Registry",
       "tone": "registry",
       "black": false
@@ -27,7 +27,7 @@
     {
       "label": "02 · Success based",
       "title": "Success Plan",
-      "description": "No registration fee and no advisory fee. HeartLink is paid only when the match succeeds, and we take this on only when we believe we can help.",
+      "description": "No upfront registration or advisory fee. HeartLink is paid only when a match succeeds, and accepts this engagement only when there is a credible path to help.",
       "features": ["Nothing upfront", "Active, selected introductions", "Success-led engagement"],
       "button": "Ask About Success Plan",
       "tone": "success",
@@ -36,8 +36,8 @@
     {
       "label": "03 · Active search",
       "title": "Premium Search",
-      "description": "A retained, application-based search where Gopi Shah, Alpa Apoorva and the team work your mandate personally.",
-      "features": ["Advisory terms discussed privately", "Accepted by application only", "Part of the 50 active mandate limit, combined"],
+      "description": "A retained search personally directed by Gopi Shah and Alpa Apoorva, with active outreach, private review and selected introductions.",
+      "features": ["Advisory terms discussed privately", "Accepted only where HeartLink can add value", "Included within the 50-mandate capacity"],
       "button": "Apply for Premium Search",
       "tone": "premium",
       "black": false
@@ -45,83 +45,60 @@
     {
       "label": "04 · Highest touch",
       "title": "Private Circle",
-      "description": "Our most private engagement, for families who need an even narrower circle than Premium Search provides.",
-      "features": ["Senior-level attention from both founders", "Wider trusted network, narrower visibility", "Not shown within retained searches without explicit permission"],
+      "description": "Our most discreet, highest-touch engagement for families who require tighter visibility and direct founder involvement.",
+      "features": ["Direct attention from both founders", "Wider trusted network, narrower visibility", "Profile visibility agreed individually"],
       "button": "Request Private Circle",
       "tone": "black",
       "black": true
     }
   ],
   "protocol": {
-    "title": "Exclusive does not mean complicated.",
+    "title": "Capacity is limited by design.",
     "paragraphs": [
-      "The Registry Network can grow widely, but Premium Search and Private Circle remain intentionally limited.",
-      "HeartLink accepts a maximum of 50 active mandates at one time across Premium Search and Private Circle, combined. Acceptance, terms and service level are discussed only after we understand your family and requirements."
+      "The Private Registry can grow, but retained searches stay intentionally limited so every family receives real attention.",
+      "HeartLink accepts a maximum of 50 active mandates across Premium Search and Private Circle, combined. Acceptance, terms and service level are discussed only after we understand the individual, family and search."
     ]
   },
   "process": {
-    "eyebrow": "If approved",
-    "title": "What the HeartLink process looks like <em>next.</em>",
-    "description": "Once your family is accepted, the search stays private, selective and personally guided from the first meeting to the final decision."
+    "eyebrow": "How retained searches work",
+    "title": "A discreet path from first conversation to <em>considered introduction.</em>",
+    "description": "Once a search is accepted, it remains private, selective and personally guided from discovery through mutual decision."
   },
   "steps": [
     {
       "label": "Step 01",
       "number": "01",
-      "title": "Private Meeting",
-      "description": "We speak with the family and understand the person, background, preferences and expectations."
+      "title": "Private Discovery",
+      "description": "We meet the individual and family to understand background, values, preferences, expectations and readiness."
     },
     {
       "label": "Step 02",
       "number": "02",
-      "title": "Profile Review",
-      "description": "We review education, work, family details, values, lifestyle and long-term compatibility."
+      "title": "Search & Verification",
+      "description": "We search within trusted networks and review education, work, family context, identity, intent and references."
     },
     {
       "label": "Step 03",
       "number": "03",
-      "title": "Background Checks",
-      "description": "We use personal references, social and professional review, conversations and direct checks before moving forward."
+      "title": "Selected Introductions",
+      "description": "We present only considered possibilities. Identifying details move forward only with permission and genuine interest."
     },
     {
       "label": "Step 04",
       "number": "04",
-      "title": "Selected Introductions",
-      "description": "Only considered profiles are shared. There is no public browsing and no random matching."
+      "title": "Mutual Conversation",
+      "description": "When both sides are interested, we help the individuals and families begin a clear, respectful conversation."
     },
     {
       "label": "Step 05",
       "number": "05",
-      "title": "Family Discussion",
-      "description": "When both sides are interested, we help the families speak clearly and respectfully."
-    },
-    {
-      "label": "Step 06",
-      "number": "06",
-      "title": "Compatibility Guidance",
-      "description": "We help the couple and families understand expectations before taking the next step."
-    },
-    {
-      "label": "Step 07",
-      "number": "07",
-      "title": "Support After Commitment",
-      "description": "When needed, HeartLink can continue guidance through engagement and early married life."
+      "title": "Decision & Guidance",
+      "description": "We support compatibility conversations, family alignment and—when useful—the transition through commitment."
     }
   ],
-  "afterSubmit": {
-    "eyebrow": "After you submit",
-    "title": "What happens after your application.",
-    "description": "A private review helps us guide each family to the right next step.",
-    "cards": [
-      { "label": "01", "title": "Private review", "description": "The HeartLink team reviews the enquiry and basic profile details privately.", "image": "", "link": "", "source": "", "date": "" },
-      { "label": "02", "title": "Follow-up", "description": "If we can help, a team member may contact the family representative for more context.", "image": "", "link": "", "source": "", "date": "" },
-      { "label": "03", "title": "Fit discussion", "description": "We understand expectations, privacy needs and which service option may suit the family.", "image": "", "link": "", "source": "", "date": "" },
-      { "label": "04", "title": "Next-step recommendation", "description": "HeartLink recommends Private Registry, Success Plan, Premium Search or Private Circle where appropriate.", "image": "", "link": "", "source": "", "date": "" }
-    ]
-  },
   "closing": {
     "eyebrow": "Private enquiry",
-    "quote": "Tell us what you are looking for. We will guide you to the right level of support.",
+    "quote": "Begin with the family, the person and the search—not a package.",
     "button": "Request a Meeting"
   }
 }

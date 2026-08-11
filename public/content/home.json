@@ -1,61 +1,61 @@
 {
   "seo": {
-    "title": "HeartLink - Private Matchmaking for Select Indian Families",
-    "description": "Founder-led matchmaking for select Indian families, co-founded and personally guided by Gopi Shah and Alpa Apoorva.",
-    "ogTitle": "HeartLink - Private Matchmaking",
-    "ogDescription": "Thoughtful matchmaking for select Indian families, combining trusted family networks with relationship guidance.",
+    "title": "Private Matchmaking for Indian Families | HeartLink",
+    "description": "Founder-led private matchmaking for Indian families in Mumbai and worldwide, combining trusted networks, personal judgment and relationship guidance.",
+    "ogTitle": "HeartLink | Private Matchmaking, Personally Led",
+    "ogDescription": "Founder-led private matchmaking for select Indian families in India and worldwide.",
     "ogImage": "/media/heartlink-heritage-invitation.png"
   },
   "hero": {
-    "eyebrow": "Founder-led matchmaking · India & global",
-    "title": "Thoughtful matchmaking for <em>select Indian families.</em>",
-    "description": "HeartLink is co-founded and personally led by Gopi Shah and Alpa Apoorva. Together, they combine trusted family networks, thoughtful judgment and relationship guidance.",
+    "eyebrow": "Founder-led · Mumbai, India & worldwide",
+    "title": "Private matchmaking, with <em>judgment at every step.</em>",
+    "description": "HeartLink helps select Indian families find serious, compatible introductions. Co-founders Gopi Shah and Alpa Apoorva personally combine trusted networks with relationship insight.",
     "primaryButton": "Apply to the Registry",
     "primaryUrl": "/apply",
     "whatsappButton": "Quick WhatsApp Enquiry",
     "assurances": [
       "Personally led by both co-founders",
-      "50 active mandates at a time",
-      "By application, not by payment"
+      "Only 50 active search mandates",
+      "No public profiles or browsing"
     ]
   },
   "proof": [
     {
       "value": "5,000+",
-      "label": "Profiles across our trusted network"
+      "label": "Profiles within our private network"
     },
     {
       "value": "1,000+",
-      "label": "Families advised over time"
+      "label": "Families guided over time"
     },
     {
       "value": "50",
-      "label": "Active mandates at a time"
+      "label": "Active search mandates · maximum"
     },
     {
       "value": "10+",
-      "label": "Cities across India and globally"
+      "label": "Cities across India and worldwide"
     }
   ],
   "legacy": {
-    "eyebrow": "For serious families",
-    "title": "Marriage is a family decision. We treat it like <em>one.</em>",
-    "lead": "Families come to HeartLink when a match needs judgment and real attention - not another biodata exchange.",
+    "eyebrow": "Beyond the biodata",
+    "title": "A biodata can inform. <em>Judgment decides.</em>",
+    "lead": "The right introduction has to work for two people—and feel right to two families.",
     "paragraphs": [
-      "We look at family background, education, values, lifestyle and long-term fit. Introductions move ahead only when there is genuine interest on both sides."
+      "We look beyond education and profession to values, temperament, lifestyle, family expectations and readiness for marriage. Nothing is shared until both sides are comfortable."
     ],
     "linkText": "Meet our founders",
     "linkUrl": "/about"
   },
   "audience": {
-    "eyebrow": "For parents and children",
-    "title": "Parents feel reassured.<br><em>The next generation feels respected.</em>",
-    "description": "Parents want background, seriousness and trust. Sons and daughters want compatibility, comfort and a real say in the decision. HeartLink holds both, equally.",
+    "eyebrow": "One process, two perspectives",
+    "title": "Family context.<br><em>Individual choice.</em>",
+    "description": "Parents deserve confidence in background and intent. Sons and daughters deserve compatibility, comfort and a real voice in the decision. HeartLink gives equal weight to both.",
     "cards": [
       {
         "label": "For parents & families",
-        "title": "Strong family understanding.",
-        "description": "Before any introduction is made, we understand family values, reputation, education, profession and social standing - properly, not from a form alone.",
+        "title": "Confidence before an introduction.",
+        "description": "Before an introduction is made, we understand family values, reputation, education, profession and expectations through real conversations—not a form alone.",
         "points": [
           "Family and reference checks",
           "Identity and intent verification",
@@ -65,8 +65,8 @@
       {
         "label": "For sons & daughters",
         "icon": "H",
-        "title": "Modern compatibility. No app culture.",
-        "description": "We take the time to understand personality, goals and what you actually want. Introductions are few, private and yours to say yes or no to.",
+        "title": "A real voice in every decision.",
+        "description": "We take time to understand personality, goals and what the individual genuinely wants. Introductions are few, private and always theirs to accept or decline.",
         "points": [
           "Personal preferences understood",
           "Only selected introductions",
@@ -77,10 +77,10 @@
   },
   "registry": {
     "eyebrow": "The HeartLink registry",
-    "title": "Join the Registry. Be considered when the fit is right.",
-    "lead": "A free way to introduce your family to HeartLink before a search begins.",
+    "title": "Join privately. Hear from us when there is genuine relevance.",
+    "lead": "The Private Registry is a confidential, no-fee way to introduce your family before a search begins.",
     "paragraphs": [
-      "If an active mandate appears relevant, we contact you before sharing any details."
+      "If a current search appears relevant, we contact you first. Nothing identifying is shared without permission."
     ],
     "primaryLabel": "Apply to the Registry",
     "primaryUrl": "/apply",
@@ -96,7 +96,7 @@
     {
       "name": "Gopi Shah",
       "role": "Co-Founder & Matchmaking Advisor",
-      "image": "/media/gopi-shah.png",
+      "image": "/media/gopi-shah-profile.avif",
       "imageAlt": "Gopi Shah, HeartLink co-founder",
       "summary": "Gopi brings trusted family networks, community experience and practical matchmaking judgment.",
       "linkText": "Meet Gopi",
@@ -105,7 +105,7 @@
     {
       "name": "Alpa Apoorva",
       "role": "Co-Founder & Relationship Advisor",
-      "image": "/media/alpa-apoorva.png",
+      "image": "/media/alpa-apoorva.avif",
       "imageAlt": "Alpa Apoorva, HeartLink co-founder",
       "summary": "Alpa brings relationship insight, emotional clarity and guidance for individuals and families.",
       "linkText": "Meet Alpa",
@@ -114,8 +114,8 @@
   ],
   "finalCta": {
     "eyebrow": "Start here",
-    "title": "Looking for a serious match?<br><em>Start with a conversation.</em>",
-    "description": "Tell us about your family and the person seeking a match. Relevant enquiries are reviewed by the founder-led team.",
+    "title": "Tell us who you are looking for.<br><em>We will tell you honestly if we can help.</em>",
+    "description": "Share a first picture of the individual and family. Every serious enquiry is reviewed privately before we recommend a next step.",
     "primaryLabel": "Apply to the Registry",
     "primaryUrl": "/apply",
     "showWhatsapp": true,

@@ -1,26 +1,53 @@
 {
   "seo": {
-    "title": "Privacy | HeartLink",
-    "description": "How HeartLink handles enquiries, family details and candidate information. No public profiles, ever."
+    "title": "Privacy Notice | HeartLink",
+    "description": "How HeartLink collects, uses, protects and responds to requests about private matchmaking and enquiry information."
   },
   "hero": {
     "eyebrow": "Privacy",
     "title": "Your details stay <em>private.</em>",
-    "description": "HeartLink collects only the information needed to review your enquiry. Identity is never displayed in a public directory, app or searchable database."
+    "description": "This notice explains what we collect, why we use it, when we share it and how to ask for access, correction, deletion or withdrawal of consent."
   },
   "cta": {
     "primaryLabel": "Apply to Registry",
     "primaryUrl": "/apply",
-    "showWhatsapp": true,
+    "showWhatsapp": false,
     "whatsappLabel": "Quick WhatsApp Enquiry"
   },
   "content": {
-    "title": "The HeartLink confidentiality promise",
+    "title": "The HeartLink privacy notice",
+    "updated": "Last updated 11 August 2026",
     "lead": "Privacy is not an add-on. It is the operating standard for every enquiry, review and introduction.",
-    "paragraphs": [
-      "Application details are reviewed only for verification and private matchmaking. Profiles are not made public, browsable or searchable. Prospective introductions receive information only after approval and genuine mutual interest.",
-      "HeartLink does not sell applicant data or use it for public advertising profiles. Family details, candidate preferences, social links and contact information are handled by the HeartLink team for private review and follow-up only.",
-      "Applicants may request access, correction or deletion of submitted information by writing to the privacy desk."
+    "intro": "HeartLink acts as the data fiduciary for information submitted through this website or shared with our team for private matchmaking. This notice applies to applicants, family representatives, partners and general enquirers.",
+    "sections": [
+      {
+        "title": "Information we collect",
+        "body": "Depending on your enquiry, we may collect contact details; identity, age bracket and location; education and professional background; family information; preferences, values and relationship context; social or professional profile links; service interest; messages, consent records and basic technical submission data."
+      },
+      {
+        "title": "Why we use it",
+        "body": "We use information to review and verify enquiries, assess whether HeartLink can help, maintain the Private Registry, identify potentially relevant introductions, communicate with authorised representatives, provide agreed matchmaking or guidance services, protect clients and our systems, and meet legal or record-keeping obligations."
+      },
+      {
+        "title": "How information is shared",
+        "body": "Profiles are not public, browsable or searchable. Within HeartLink, access is limited to people who need the information for review or service delivery. Identifying information is shared with a prospective introduction only after approval and genuine mutual interest. We may also use confidential service providers for secure storage, email delivery and website operations, or disclose information when required by law. We do not sell personal data."
+      },
+      {
+        "title": "Retention and security",
+        "body": "We retain information only for as long as it remains relevant to the Private Registry, an active engagement, a legitimate follow-up need or a legal requirement. We use reasonable administrative and technical safeguards, but no digital system can be guaranteed completely secure."
+      },
+      {
+        "title": "Your choices and rights",
+        "body": "You may ask what personal data we hold about you, request correction or deletion, withdraw consent, or raise a privacy concern. Withdrawing consent does not affect processing already completed and may limit our ability to continue an enquiry or service. We may need to verify identity or authority before acting on a request."
+      },
+      {
+        "title": "Information about another person",
+        "body": "If you enquire for a son, daughter, relative or another individual, you must be authorised to share their information and should ensure they understand how HeartLink will use it. The service is intended for adults; please do not submit information about a minor."
+      },
+      {
+        "title": "Contact the privacy desk",
+        "body": "For access, correction, deletion, consent withdrawal or a complaint, email privacy@heartlink.in. We may update this notice as our services or legal obligations change; the date above shows the latest revision."
+      }
     ]
   }
 }

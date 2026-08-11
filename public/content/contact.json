@@ -1,23 +1,23 @@
 {
   "seo": {
-    "title": "Contact HeartLink | Private Enquiries",
-    "description": "Contact HeartLink for private family, applicant, matchmaker and partnership enquiries."
+    "title": "Contact HeartLink | Private Matchmaking",
+    "description": "Contact HeartLink's private matchmaking team in Mumbai for family, applicant, matchmaker and adviser enquiries."
   },
   "hero": {
     "eyebrow": "Contact HeartLink",
-    "title": "Speak with us <em>privately.</em>",
-    "description": "Have a question before submitting a profile? Send a short enquiry and the right person will respond privately."
+    "title": "Start with the <em>right conversation.</em>",
+    "description": "Have a question before applying? Send a short private enquiry and the right member of the HeartLink team will respond."
   },
   "cta": {
     "primaryLabel": "Apply to Registry",
     "primaryUrl": "/apply",
-    "showWhatsapp": true,
+    "showWhatsapp": false,
     "whatsappLabel": "Quick WhatsApp Enquiry"
   },
   "whatsappSection": {
     "eyebrow": "Direct enquiry",
     "title": "Prefer to speak first?",
-    "description": "Families can message or call HeartLink privately before completing the full application. Meetings are by appointment in Juhu, Mumbai.",
+    "description": "Message or call before completing the full application. Private meetings are available by appointment in Juhu, Mumbai.",
     "whatsappLabel": "+91 93266 42337",
     "callLabel": "+91 93266 42337"
   },
@@ -32,7 +32,7 @@
       { "name": "enquiryRole", "label": "I am enquiring as", "type": "select", "required": true, "options": ["Potential applicant", "Parent or family representative", "Partner matchmaker", "Private-client adviser", "Other"] },
       { "name": "message", "label": "What would you like to know?", "type": "textarea", "required": false, "maxlength": 1200 }
     ],
-    "consent": "I consent to HeartLink using these details to respond to my enquiry.",
+    "consent": "I consent to HeartLink using these details to review and respond to my enquiry as described in the Privacy Notice.",
     "button": "Send Enquiry"
   }
 }

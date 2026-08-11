@@ -1,12 +1,12 @@
 {
   "seo": {
-    "title": "About HeartLink - Gopi Shah & Alpa Apoorva",
-    "description": "Meet HeartLink co-founders Gopi Shah and Alpa Apoorva, who bring equal parts family judgment, matchmaking experience and relationship guidance."
+    "title": "Founder-Led Matchmaking in India | HeartLink",
+    "description": "Meet HeartLink co-founders Gopi Shah and Alpa Apoorva, combining trusted family networks, matchmaking judgment and relationship guidance."
   },
   "hero": {
     "eyebrow": "About HeartLink",
-    "title": "A trusted team for <em>serious families.</em>",
-    "description": "HeartLink is co-founded and personally led by Gopi Shah and Alpa Apoorva. Their complementary experience shapes every serious introduction."
+    "title": "Two perspectives. <em>One standard of judgment.</em>",
+    "description": "Gopi Shah brings trusted networks and matrimonial experience. Alpa Apoorva brings relationship insight and emotional clarity. Both shape every serious introduction."
   },
   "cta": {
     "primaryLabel": "Apply to Registry",
@@ -16,8 +16,8 @@
   },
   "trustHeading": {
     "eyebrow": "Trust & recognition",
-    "title": "Experience that supports the work.",
-    "description": "HeartLink brings together community trust, matrimonial experience and practical relationship guidance."
+    "title": "Trust is earned in the details.",
+    "description": "A private process is only as strong as the judgment, discretion and accountability behind it."
   },
   "trustStats": [
     {
@@ -44,7 +44,7 @@
       "eyebrow": "Personally led by Gopi Shah",
       "title": "Trusted networks, community experience and family judgment.",
       "lead": "Gopi Shah brings hands-on matrimonial service and decades of community leadership to HeartLink.",
-      "image": "/media/gopi-shah.png",
+      "image": "/media/gopi-shah-profile.avif",
       "imageAlt": "Gopi Shah",
       "theme": "classic",
       "paragraphs": [
@@ -77,7 +77,7 @@
       "eyebrow": "Personally led by Alpa Apoorva",
       "title": "Relationship insight, emotional clarity and family guidance.",
       "lead": "Alpa Apoorva helps individuals and families look beyond biodata to readiness, expectations and long-term fit.",
-      "image": "/media/alpa-apoorva.png",
+      "image": "/media/alpa-apoorva.avif",
       "imageAlt": "Alpa Apoorva",
       "theme": "deep",
       "paragraphs": [
@@ -106,9 +106,9 @@
     }
   ],
   "proofHeading": {
-    "eyebrow": "Complementary experience",
-    "title": "Two perspectives, given equal weight.",
-    "description": "One founder brings trusted networks and matrimonial judgment; the other brings relationship insight and emotional clarity."
+    "eyebrow": "The dual-lens advantage",
+    "title": "Networks find possibilities. Judgment finds fit.",
+    "description": "Every promising profile is considered through two lenses: family context and relationship compatibility."
   },
   "proofAssets": [
     {

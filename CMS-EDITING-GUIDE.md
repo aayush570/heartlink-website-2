@@ -55,11 +55,11 @@ Always complete the image description field. It helps accessibility and search e
 
 HeartLink uses a restrained private-advisory palette:
 
-- Ivory / paper backgrounds: `#F8F4EC` and `#FDFBF6`
-- Primary maroon: `#5F1724`
-- Confidentiality green: `#183F32`
-- Muted gold accent: `#B8954F`
-- Ink text: `#29251F`
+- Ivory / paper backgrounds: `#F8F3EB` and `#FFFDF9`
+- Primary maroon: `#3B1735`
+- Confidentiality green: `#203D35`
+- Muted gold accent: `#A98443`
+- Ink text: `#211B1F`
 
 Keep the bright magenta and blue from the logo inside the logo itself. Do not use those colours for buttons, backgrounds, cards, headings or section themes unless the full brand system is intentionally redesigned.
 
@@ -73,7 +73,7 @@ Anonymized stories should be specific enough to build trust but must not identif
 
 ## Headline highlights
 
-Some main headlines contain pink italic words. In the CMS, these look like:
+Some main headlines contain gold-toned italic words. In the CMS, these look like:
 
 ```text
 Where two legacies <em>become one.</em>
@@ -83,7 +83,7 @@ Only place `<em>` before the highlighted words and `</em>` after them.
 
 ## What is intentionally protected
 
-The CMS controls content, images, proof numbers, proof cards, stories, CTA labels and links, WhatsApp display text, contact details, navigation labels, footer links, lists, form intro text, application FAQs, and brand colours. The underlying spacing, animation, typography, responsiveness, form validation, and privacy behavior remain in code so an accidental edit cannot break the design.
+The CMS controls content, images, proof numbers, proof cards, stories, CTA labels and links, WhatsApp display text, contact details, navigation labels, footer links, lists, form intro text, application FAQs, the privacy notice, and brand colours. The underlying spacing, typography, responsiveness, form validation, and privacy behavior remain in code so an accidental edit cannot break the design.
 
 ## Important application-form note
 

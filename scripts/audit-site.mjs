@@ -7,6 +7,7 @@ const contentDir = join(publicDir, "content");
 const liveRoutes = new Set(["/", "/about", "/membership", "/partnerships", "/careers", "/apply", "/contact", "/privacy"]);
 const dynamicRoutes = new Set(["/robots.txt", "/sitemap.xml"]);
 const issues = [];
+const htmlRecords = [];
 
 function walk(dir) {
   return readdirSync(dir).flatMap((entry) => {
@@ -66,6 +67,30 @@ for (const file of walk(publicDir)) {
   }
 
   if (extension === ".html") {
+    const title = text.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim() || "";
+    const descriptionMatch = text.match(/<meta\s+name=(["'])description\1\s+content=(["'])(.*?)\2/i);
+    const description = descriptionMatch?.[3]?.trim() || "";
+    const canonical = text.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1]?.trim() || "";
+    const h1Count = (text.match(/<h1\b/gi) || []).length;
+    const is404 = relative === "public/404.html";
+    htmlRecords.push({ relative, title, description, canonical, is404 });
+
+    if (!/<html\s+lang=["']en-IN["']/i.test(text)) issue(`${relative}: html language must be en-IN`);
+    if (h1Count !== 1) issue(`${relative}: expected exactly one h1, found ${h1Count}`);
+    if (!title || title.length > 65) issue(`${relative}: missing or overly long title (${title.length} characters)`);
+    if (!is404 && (description.length < 80 || description.length > 170)) issue(`${relative}: meta description should be 80-170 characters (${description.length})`);
+    if (!is404 && !/^https:\/\/heartlink\.in(?:\/|$)/.test(canonical)) issue(`${relative}: canonical must use the production https://heartlink.in origin`);
+    if (is404 && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(text)) issue(`${relative}: 404 page must be noindex`);
+    if (!/\/styles\.css\?v=14/.test(text)) issue(`${relative}: stylesheet version is not current`);
+    if (!/\/app\.js\?v=10/.test(text)) issue(`${relative}: app script version is not current`);
+
+    for (const image of text.matchAll(/<img\b[^>]*>/gi)) {
+      if (!/\balt=["'][^"']*["']/i.test(image[0])) issue(`${relative}: image is missing an alt attribute`);
+    }
+    for (const external of text.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi)) {
+      if (!/\brel=["'][^"']*noopener/i.test(external[0])) issue(`${relative}: target=_blank link is missing rel=noopener`);
+    }
+
     for (const match of text.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)) {
       const target = match[1];
       if (/^(?:https?:|mailto:|tel:|data:|#)/i.test(target)) continue;
@@ -77,6 +102,26 @@ for (const file of walk(publicDir)) {
     }
   }
 }
+
+for (const field of ["title", "description"]) {
+  const seen = new Map();
+  for (const record of htmlRecords.filter((item) => !item.is404)) {
+    const value = record[field];
+    if (!value) continue;
+    if (seen.has(value)) issue(`${record.relative}: duplicate ${field} also used by ${seen.get(value)}`);
+    else seen.set(value, record.relative);
+  }
+}
+
+const siteSettings = JSON.parse(readFileSync(join(contentDir, "site.json"), "utf8"));
+if (siteSettings.siteUrl !== "https://heartlink.in") issue("public/content/site.json: siteUrl must be https://heartlink.in");
+if (!/^#[0-9a-f]{6}$/i.test(siteSettings.primaryColor || "")) issue("public/content/site.json: primaryColor must be a six-digit hex colour");
+
+const privacy = JSON.parse(readFileSync(join(contentDir, "privacy.json"), "utf8"));
+if ((privacy.content?.sections || []).length < 6) issue("public/content/privacy.json: privacy notice must retain all launch sections");
+
+const membership = JSON.parse(readFileSync(join(contentDir, "membership.json"), "utf8"));
+if ((membership.steps || []).length > 5) issue("public/content/membership.json: service process has become too long");
 
 if (issues.length) {
   console.error(`Site audit failed with ${issues.length} issue(s):`);

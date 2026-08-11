@@ -1,5 +1,6 @@
 const path = window.location.pathname.replace(/\/$/, "") || "/";
 const pageKey = path === "/" ? "home" : path.replace(/^\//, "").replace(".html", "");
+const managedPages = new Set(["home", "about", "membership", "partnerships", "careers", "apply", "contact", "privacy"]);
 
 async function loadJson(url, fallback = {}) {
   try {
@@ -26,7 +27,7 @@ const site = await loadJson("/content/site.json", {
   locations: "Mumbai · India · Global",
   navigation: []
 });
-const pageContent = await loadJson(`/content/${pageKey}.json`);
+const pageContent = managedPages.has(pageKey) ? await loadJson(`/content/${pageKey}.json`) : {};
 const navigation = site.navigation || [];
 const whatsappDigits = String(site.whatsappNumber || "").replace(/\D/g, "");
 const whatsappHref = whatsappDigits ? `https://wa.me/${whatsappDigits}` : "/contact";
@@ -35,7 +36,9 @@ const canonicalHref = `${siteOrigin}${path === "/" ? "/" : path}`;
 
 document.documentElement.style.setProperty("--maroon", site.primaryColor || "#320130");
 document.documentElement.style.setProperty("--gold", site.accentColor || "#B8954F");
+document.documentElement.style.setProperty("--gold-bright", site.accentColor || "#B8954F");
 document.documentElement.style.setProperty("--forest", site.secondaryAccentColor || "#183F32");
+document.documentElement.style.setProperty("--headline-purple", site.primaryColor || "#320130");
 
 function escapeHtml(value = "") {
   return String(value)
@@ -62,7 +65,7 @@ function safeLines(value = "") {
 function safeUrl(value = "", fallback = "#") {
   const url = String(value || "").trim();
   if (!url) return fallback;
-  if (/^(https?:|mailto:|tel:|\/|#)/i.test(url)) return url;
+  if (/^(https?:|mailto:|tel:|\/(?!\/)|#)/i.test(url)) return url;
   return fallback;
 }
 
@@ -185,6 +188,7 @@ function renderManagedForm(form, fields = []) {
   form.innerHTML = `
     ${fields.map(renderFormField).join("")}
     <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>${escapeHtml(consent)}</span></label>
+    <p class="form-privacy-note">Read how we use and protect information in our <a href="/privacy">Privacy Notice</a>.</p>
     <button class="button" type="submit">${escapeHtml(button)}</button>
     ${status}`;
   form.dataset.submissionType = submissionType;
@@ -220,8 +224,8 @@ function updateMeta(seo = {}) {
   upsertHeadTag('link[rel="canonical"]', "link", { rel: "canonical", href: canonicalHref });
   if (title) document.title = title;
   if (seo.title) document.title = seo.title;
-  const description = document.querySelector('meta[name="description"]');
-  if (description && descriptionText) description.content = descriptionText;
+  const description = upsertHeadTag('meta[name="description"]', "meta", { name: "description" });
+  if (descriptionText) description.content = descriptionText;
   const metaPairs = {
     "og:title": seo.ogTitle || title,
     "og:description": seo.ogDescription || descriptionText,
@@ -244,6 +248,9 @@ function updateMeta(seo = {}) {
     tag.setAttribute("content", content);
   });
   upsertHeadTag('meta[name="theme-color"]', "meta", { name: "theme-color", content: site.themeColor || "#FFFFFF" });
+  if (!managedPages.has(pageKey)) {
+    upsertHeadTag('meta[name="robots"]', "meta", { name: "robots", content: "noindex, nofollow" });
+  }
   const structured = upsertHeadTag('script[type="application/ld+json"][data-structured-brand]', "script", {
     type: "application/ld+json",
     "data-structured-brand": "true"
@@ -258,17 +265,18 @@ function updateMeta(seo = {}) {
     areaServed: ["India", "Global"],
     email: site.conciergeEmail,
     telephone: site.whatsappNumber,
+    inLanguage: "en-IN",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Mumbai",
       addressCountry: "IN"
     },
-    sameAs: []
+    knowsAbout: ["Private matchmaking", "Family introductions", "Relationship guidance"]
   });
 }
 
 function renderHero(hero = {}, cta = {}) {
-  if (!hero) return;
+  if (!hero || !Object.keys(hero).length) return;
   setText(".page-hero .eyebrow", hero.eyebrow);
   setSafeHtml(".page-hero h1", hero.title);
   setText(".page-hero .hero-copy", hero.description);
@@ -287,8 +295,11 @@ function renderHeader() {
   if (!header) return;
   const headerCta = site.headerCta || {};
   const primaryUrl = safeUrl(headerCta.primaryUrl || "/apply", "/apply");
+  const main = document.querySelector("main");
+  if (main && !main.id) main.id = "main-content";
   header.className = "site-header";
   header.innerHTML = `
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="nav-shell">
       <a class="brand" href="/" aria-label="HeartLink home">
         <img class="brand-mark" src="${escapeHtml(site.logo || "/Heartlink Logo.png")}" alt="" aria-hidden="true">
@@ -308,19 +319,29 @@ function renderHeader() {
     </div>
     <div class="mobile-menu" aria-hidden="true">
       <nav aria-label="Mobile navigation">
-        ${navigation.map(({ href, label }, index) => `<a href="${escapeHtml(safeUrl(href, "/"))}"><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(label)}</a>`).join("")}
+        ${navigation.map(({ href, label }, index) => {
+          const safeHref = safeUrl(href, "/");
+          return `<a href="${escapeHtml(safeHref)}" ${path === safeHref ? 'aria-current="page"' : ""}><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(label)}</a>`;
+        }).join("")}
         <div class="mobile-actions"><a class="button" href="${escapeHtml(primaryUrl)}">${escapeHtml(headerCta.mobilePrimaryLabel || headerCta.primaryLabel || "Apply to Registry")}</a><a class="button button-outline" data-whatsapp-link href="${whatsappHref}">${escapeHtml(headerCta.mobileWhatsappLabel || headerCta.whatsappLabel || "Quick WhatsApp Enquiry")}</a></div>
       </nav>
     </div>`;
 
   const toggle = header.querySelector(".menu-toggle");
   const menu = header.querySelector(".mobile-menu");
-  toggle.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    toggle.setAttribute("aria-label", open ? "Open menu" : "Close menu");
-    menu.setAttribute("aria-hidden", String(open));
-    document.body.classList.toggle("menu-open", !open);
+  const setMenuOpen = (open) => {
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    menu.setAttribute("aria-hidden", String(!open));
+    menu.toggleAttribute("inert", !open);
+    document.body.classList.toggle("menu-open", open);
+    if (!open) toggle.focus();
+  };
+  menu.setAttribute("inert", "");
+  toggle.addEventListener("click", () => setMenuOpen(toggle.getAttribute("aria-expanded") !== "true"));
+  menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenuOpen(false)));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") setMenuOpen(false);
   });
   syncWhatsappLinks(header);
 }
@@ -428,7 +449,7 @@ function renderHome() {
       const link = safeUrl(founder.linkUrl || "/about", "/about");
       return `
         <article class="founder-card" data-reveal>
-          <div class="founder-card-portrait">${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(founder.imageAlt || founder.name)}">` : ""}</div>
+          <div class="founder-card-portrait">${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(founder.imageAlt || founder.name)}" loading="lazy" decoding="async">` : ""}</div>
           <div class="founder-card-copy">
             <span>${escapeHtml(founder.role)}</span>
             <h3>${escapeHtml(founder.name)}</h3>
@@ -514,10 +535,6 @@ function renderMembership() {
   if (processHeading && pageContent.process) processHeading.outerHTML = renderSectionHeading(pageContent.process, true).replace("section-heading", "section-heading process-heading");
   const timeline = document.querySelector("[data-membership-process-timeline]");
   if (timeline && pageContent.steps) timeline.innerHTML = pageContent.steps.map((step) => `<article class="timeline-item" data-reveal><small>${escapeHtml(step.label)}</small><div class="timeline-number">${escapeHtml(step.number)}</div><h2>${escapeHtml(step.title)}</h2><p>${escapeHtml(step.description)}</p></article>`).join("");
-  const afterSubmitHeading = document.querySelector("[data-membership-after-submit] .section-heading");
-  if (afterSubmitHeading && pageContent.afterSubmit) afterSubmitHeading.outerHTML = renderSectionHeading(pageContent.afterSubmit, true);
-  const afterSubmitCards = document.querySelector("[data-membership-after-submit-cards]");
-  if (afterSubmitCards && pageContent.afterSubmit?.cards) afterSubmitCards.innerHTML = renderCards(pageContent.afterSubmit.cards);
   renderClosing(pageContent.closing);
 }
 
@@ -529,7 +546,7 @@ function renderCareers() {
     rolesShell.querySelector(".section-heading").outerHTML = renderSectionHeading(pageContent.rolesIntro, false);
   }
   const roles = document.querySelector(".roles");
-  if (roles && pageContent.roles) roles.innerHTML = pageContent.roles.map((role) => `<article class="role" data-reveal><h2>${escapeHtml(role.title)}</h2><p>${escapeHtml(role.details)}</p><a href="mailto:${escapeHtml(site.careersEmail)}?subject=${encodeURIComponent(role.title)}" aria-label="Apply for ${escapeHtml(role.title)}"><span>Apply</span><b aria-hidden="true">↗</b></a></article>`).join("");
+  if (roles && pageContent.roles) roles.innerHTML = pageContent.roles.map((role) => `<article class="role" data-reveal><h2>${escapeHtml(role.title)}</h2><p>${escapeHtml(role.details)}</p><a href="mailto:${escapeHtml(site.careersEmail)}?subject=${encodeURIComponent(`Confidential interest · ${role.title}`)}" aria-label="Express interest in ${escapeHtml(role.title)}"><span>Express interest</span><b aria-hidden="true">↗</b></a></article>`).join("");
   const cultureHeading = document.querySelector(".plum-surface .section-heading");
   if (cultureHeading && pageContent.culture) cultureHeading.outerHTML = renderSectionHeading(pageContent.culture);
   const cultureGrid = document.querySelector(".plum-surface .press-grid");
@@ -570,13 +587,24 @@ function renderPartnerships() {
 }
 
 function renderPrivacy() {
-  setText(".editorial h2", pageContent.content?.title);
-  setText(".editorial .lead", pageContent.content?.lead);
   const editorial = document.querySelector(".editorial");
-  if (editorial && pageContent.content?.paragraphs) {
-    editorial.querySelectorAll("p:not(.lead)").forEach((element) => element.remove());
-    editorial.insertAdjacentHTML("beforeend", pageContent.content.paragraphs.map((paragraph, index) => `<p>${escapeHtml(paragraph)}${index === pageContent.content.paragraphs.length - 1 ? ` <a class="text-link" href="mailto:${escapeHtml(site.privacyEmail)}">${escapeHtml(site.privacyEmail)} <span>↗</span></a>` : ""}</p>`).join(""));
-  }
+  const content = pageContent.content || {};
+  if (!editorial || !content.title) return;
+  editorial.innerHTML = `
+    <div class="editorial-intro">
+      <span class="eyebrow">${escapeHtml(content.updated || "Privacy notice")}</span>
+      <h2>${escapeHtml(content.title)}</h2>
+      <p class="lead">${escapeHtml(content.lead)}</p>
+      ${content.intro ? `<p>${escapeHtml(content.intro)}</p>` : ""}
+    </div>
+    <div class="privacy-sections">
+      ${(content.sections || []).map((section) => `
+        <section>
+          <h3>${escapeHtml(section.title)}</h3>
+          <p>${escapeHtml(section.body)}</p>
+        </section>`).join("")}
+    </div>
+    <p class="privacy-contact">Questions or requests? <a class="text-link" href="mailto:${escapeHtml(site.privacyEmail)}">${escapeHtml(site.privacyEmail)} <span>↗</span></a></p>`;
 }
 
 function applicationInput(name, label, options = {}) {
@@ -684,6 +712,7 @@ function renderApplicationForm() {
       <div class="verification-note"><img class="logo-seal verification-logo" src="/Heartlink%20Logo.png" alt="" aria-hidden="true"><span><strong data-apply-verification-title>${escapeHtml(pageContent.form?.verificationTitle || "Private review")}</strong> <span data-apply-verification-copy>${escapeHtml(pageContent.form?.verificationNote || "")}</span></span></div>
       ${pageContent.form?.disclaimer ? `<p class="form-disclaimer">${escapeHtml(pageContent.form.disclaimer)}</p>` : ""}
       <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>${escapeHtml(pageContent.form?.consent || "")}</span></label>
+      <p class="form-privacy-note">Read how we use and protect information in our <a href="/privacy">Privacy Notice</a>.</p>
       <div class="step-actions"><button class="text-button" type="button" data-back>← Previous</button><button class="button" type="submit">${escapeHtml(pageContent.form?.button || "Submit Private Application")} <span>→</span></button></div>
       <p class="form-status" role="alert" aria-live="polite"></p>
     </fieldset>`;
@@ -807,6 +836,11 @@ if (stepper) {
     if (count) count.textContent = `${String(currentStep + 1).padStart(2, "0")} / ${String(steps.length).padStart(2, "0")}`;
     if (progress) progress.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
     document.querySelector(".form-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const legend = steps[currentStep]?.querySelector("legend");
+    if (legend) {
+      legend.tabIndex = -1;
+      window.setTimeout(() => legend.focus({ preventScroll: true }), 350);
+    }
   };
 
   const applyingForInputs = stepper.querySelectorAll('input[name="applyingFor"]');

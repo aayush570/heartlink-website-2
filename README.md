@@ -18,6 +18,14 @@ npm run dev
 
 Open `http://localhost:4173`.
 
+Before shipping any change, run:
+
+```bash
+npm run check
+```
+
+This validates content and links, checks SEO essentials, starts an isolated local server, and smoke-tests every live route, redirects, security headers, robots/sitemap output, 404 handling, and form validation.
+
 ## Production
 
 ```bash
@@ -30,11 +38,12 @@ HEARTLINK_FROM_EMAIL="HeartLink Website <website@your-verified-domain.com>" \
 npm start
 ```
 
-The server supports registry applications, general enquiries, WhatsApp CTAs, and partnership enquiries. For a free production setup:
+The server supports registry applications, general enquiries, WhatsApp CTAs, and partnership enquiries. The root `server.ts` entry makes the native Node server discoverable by current Vercel deployments, while `server.mjs` remains the local runtime. For a production setup:
 
 1. Create a free Supabase project and run [`supabase-schema.sql`](./supabase-schema.sql) in its SQL editor.
 2. Create a free Resend account and verify the sending domain.
-3. Add the five environment variables above to Vercel.
+3. Add the five environment variables above to Vercel for Production and Preview as appropriate.
+4. Connect the production domain `heartlink.in` and make it the canonical domain.
 
 Submissions are stored in the private Supabase `submissions` table and emailed through Resend. The service-role key is server-only and must never use a `NEXT_PUBLIC_` or other browser-exposed prefix.
 
@@ -46,9 +55,11 @@ The old `/methodology` and `/impact` URLs are permanent redirects to `/membershi
 
 ## Launch checklist
 
-- Confirm the approved Luxury Trust palette remains in use: ivory, paper, maroon, forest, muted gold and ink.
+- Confirm the approved private-advisory palette remains in use: ivory, paper, maroon, forest, muted gold and ink.
 - Run `npm run check` before publishing.
 - Remove any draft proof cards or unapproved testimonials before publishing.
 - Configure Supabase and Resend environment variables in production.
 - Submit test application, contact and partnership forms from the deployed domain.
 - Check production logs for `heartlink_submission_delivery` events with successful storage and notification.
+- Confirm `https://heartlink.in/robots.txt` and `https://heartlink.in/sitemap.xml` use the production domain after DNS is live.
+- Have the launch privacy notice and service claims reviewed by the business owner and qualified Indian counsel before accepting real applicant data.

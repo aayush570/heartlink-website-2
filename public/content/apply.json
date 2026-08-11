@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "Apply to Registry | HeartLink",
-    "description": "Start a private enquiry with HeartLink. Reviewed personally, never made public, and never shown in a searchable directory."
+    "title": "Private Matchmaking Application | HeartLink",
+    "description": "Apply privately to HeartLink's confidential matchmaking registry or founder-led search services for Indian families."
   },
   "intro": {
     "eyebrow": "Private registry application",
@@ -111,7 +111,7 @@
     "verificationTitle": "Private review",
     "verificationNote": "Every enquiry is reviewed by a person. HeartLink may contact the nominated representative to verify identity and understand the right service option.",
     "disclaimer": "Submitting this form does not guarantee acceptance into Success Plan, Premium Search or Private Circle. Private Registry submissions are added to our private database for future consideration.",
-    "consent": "I am authorised to share these details and agree that HeartLink may review them confidentially.",
+    "consent": "I am authorised to share these details and consent to HeartLink using them to review this enquiry, contact the nominated representative and consider the profile for private matchmaking.",
     "button": "Submit Private Application"
   },
   "faqs": [
