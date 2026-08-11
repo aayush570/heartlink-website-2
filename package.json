@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node server.mjs",
-    "start": "NODE_ENV=production node server.mjs",
+    "dev": "node scripts/local-server.mjs",
+    "start": "NODE_ENV=production node scripts/local-server.mjs",
     "audit": "node scripts/audit-site.mjs",
     "smoke": "node scripts/smoke-test.mjs",
-    "check": "node --check server.mjs && node --check public/app.js && node --check scripts/audit-site.mjs && node --check scripts/smoke-test.mjs && npm run audit && npm run smoke"
+    "check": "node --check scripts/local-server.mjs && node --check lib/submissions.mjs && node --check api/submissions.mjs && node --check public/app.js && node --check scripts/audit-site.mjs && node --check scripts/smoke-test.mjs && npm run audit && npm run smoke"
   },
   "engines": {
     "node": ">=20"

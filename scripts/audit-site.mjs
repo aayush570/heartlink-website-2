@@ -80,6 +80,9 @@ for (const file of walk(publicDir)) {
     if (!title || title.length > 65) issue(`${relative}: missing or overly long title (${title.length} characters)`);
     if (!is404 && (description.length < 80 || description.length > 170)) issue(`${relative}: meta description should be 80-170 characters (${description.length})`);
     if (!is404 && !/^https:\/\/heartlink\.in(?:\/|$)/.test(canonical)) issue(`${relative}: canonical must use the production https://heartlink.in origin`);
+    if (!is404 && !/<meta\s+property=["']og:title["']/i.test(text)) issue(`${relative}: missing static Open Graph title`);
+    if (!is404 && !/<meta\s+property=["']og:url["']/i.test(text)) issue(`${relative}: missing static Open Graph URL`);
+    if (!is404 && !/<meta\s+name=["']twitter:card["']/i.test(text)) issue(`${relative}: missing static Twitter card metadata`);
     if (is404 && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(text)) issue(`${relative}: 404 page must be noindex`);
     if (!/\/styles\.css\?v=14/.test(text)) issue(`${relative}: stylesheet version is not current`);
     if (!/\/app\.js\?v=10/.test(text)) issue(`${relative}: app script version is not current`);
@@ -122,6 +125,25 @@ if ((privacy.content?.sections || []).length < 6) issue("public/content/privacy.
 
 const membership = JSON.parse(readFileSync(join(contentDir, "membership.json"), "utf8"));
 if ((membership.steps || []).length > 5) issue("public/content/membership.json: service process has become too long");
+
+const vercelConfigPath = join(root, "vercel.json");
+if (!existsSync(vercelConfigPath)) {
+  issue("vercel.json: missing Vercel static deployment configuration");
+} else {
+  try {
+    const vercelConfig = JSON.parse(readFileSync(vercelConfigPath, "utf8"));
+    if (vercelConfig.buildCommand !== "npm run audit") issue("vercel.json: buildCommand must run the deployment audit");
+    if (vercelConfig.outputDirectory !== "public") issue("vercel.json: outputDirectory must be public");
+    if (vercelConfig.cleanUrls !== true) issue("vercel.json: cleanUrls must remain enabled");
+  } catch (error) {
+    issue(`vercel.json: invalid JSON (${error.message})`);
+  }
+}
+if (existsSync(join(root, "server.ts"))) issue("server.ts: root listener would route static pages through a Vercel function");
+if (existsSync(join(root, "server.mjs"))) issue("server.mjs: root server entry could override the Vercel static deployment");
+if (!existsSync(join(root, "api/submissions.mjs"))) issue("api/submissions.mjs: missing Vercel submission function");
+if (!existsSync(join(publicDir, "robots.txt"))) issue("public/robots.txt: missing static crawler policy");
+if (!existsSync(join(publicDir, "sitemap.xml"))) issue("public/sitemap.xml: missing static sitemap");
 
 if (issues.length) {
   console.error(`Site audit failed with ${issues.length} issue(s):`);
