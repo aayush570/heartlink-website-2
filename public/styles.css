@@ -408,10 +408,21 @@ h1 em, h1 .accent, h2 em, h2 .accent, h3 em, h3 .accent, blockquote em, blockquo
 .curator-copy summary { padding: 18px 0; color: var(--gold-bright); cursor: pointer; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .curator-copy p, .curator-copy details p { color: var(--muted); }
 .curator-copy details p { font-size: 13px; }
+.story-panel { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.story-label { padding: 18px 0 14px; color: var(--gold-bright); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.story-copy { padding-bottom: 4px; }
+.story-copy p { margin-bottom: 15px; font-size: 15px; line-height: 1.7; }
+.story-copy p:last-child { margin-bottom: 18px; }
 .credentials { display: grid; grid-template-columns: 1fr 1fr; margin-top: 25px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .credentials div { min-height: 125px; padding: 19px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .credentials strong { display: block; margin-bottom: 8px; color: var(--gold-bright); font: 600 24px var(--serif); }
 .credentials span { color: var(--muted); font-size: 11px; }
+.about-page .eyebrow { font-size: 11px; }
+.about-page .portrait-badge span { font-size: 10px; line-height: 1.5; }
+.about-page .curator-copy summary { font-size: 12px; letter-spacing: .1em; }
+.about-page .credentials span { font-size: 13px; line-height: 1.6; }
+.about-page .impact-numbers span { font-size: 12px; letter-spacing: .05em; }
+.about-page .quote small { font-size: 10px; }
 
 /* Methodology */
 .timeline { position: relative; width: min(1000px, 90vw); margin: auto; }
@@ -804,7 +815,7 @@ h1 em, h1 .accent, h2 em, h2 .accent, h3 em, h3 .accent, blockquote em, blockquo
   .impact-numbers { grid-template-columns: 1fr 1fr; }
   .impact-numbers div { min-height: 148px; padding: 22px 18px; }
   .impact-numbers strong { font-size: 32px; }
-  .impact-numbers span { font-size: 7px; }
+  .about-page .impact-numbers span { font-size: 11px; line-height: 1.5; }
   .role { grid-template-columns: 1fr auto; }
   .role p { grid-column: 1 / -1; grid-row: 2; }
   .application-shell { padding-top: 76px; }
