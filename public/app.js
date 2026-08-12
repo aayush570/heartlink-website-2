@@ -490,9 +490,7 @@ function renderAbout() {
           </div>
           <div class="curator-copy">
             <p class="lead">${escapeHtml(curator.lead)}</p>
-            ${curator.name === "Gopi Shah"
-              ? `<div class="story-panel"><div class="story-label">Read Gopi's story</div><div class="story-copy">${(curator.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</div></div>`
-              : `<details><summary>Read ${escapeHtml((curator.name || "Alpa").split(" ")[0])}'s story</summary><div>${(curator.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</div></details>`}
+            <div class="story-panel"><div class="story-label">Read ${escapeHtml((curator.name || "Founder's").split(" ")[0])}'s story</div><div class="story-copy">${(curator.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</div></div>
             <div class="credentials">${(curator.credentials || []).map((item) => `<div><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(item.description)}</span></div>`).join("")}</div>
           </div>
         </article>`;
