@@ -53,15 +53,15 @@ Always complete the image description field. It helps accessibility and search e
 
 ## Brand colour rules
 
-HeartLink uses a restrained private-advisory palette:
+HeartLink uses a brochure-led private-advisory palette:
 
-- Ivory / paper backgrounds: `#F8F3EB` and `#FFFDF9`
-- Primary maroon: `#3B1735`
-- Confidentiality green: `#203D35`
-- Muted gold accent: `#A98443`
-- Ink text: `#211B1F`
+- Soft white / lilac backgrounds: `#FFFCFD` and `#F7F1F7`
+- Brochure purple: `#320130`
+- Secondary plum: `#4A1647`
+- Restrained gold accent: `#B58A32`
+- Ink text: `#241B24`
 
-Keep the bright magenta and blue from the logo inside the logo itself. Do not use those colours for buttons, backgrounds, cards, headings or section themes unless the full brand system is intentionally redesigned.
+Keep the bright magenta and blue from the logo inside the logo itself. Use brochure purple—not logo neon—for buttons, backgrounds, cards and headings.
 
 ## Proof and story rules
 

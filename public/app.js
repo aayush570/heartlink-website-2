@@ -37,7 +37,7 @@ const canonicalHref = `${siteOrigin}${path === "/" ? "/" : path}`;
 document.documentElement.style.setProperty("--maroon", site.primaryColor || "#320130");
 document.documentElement.style.setProperty("--gold", site.accentColor || "#B8954F");
 document.documentElement.style.setProperty("--gold-bright", site.accentColor || "#B8954F");
-document.documentElement.style.setProperty("--forest", site.secondaryAccentColor || "#183F32");
+document.documentElement.style.setProperty("--plum-deep", site.secondaryAccentColor || "#4A1647");
 document.documentElement.style.setProperty("--headline-purple", site.primaryColor || "#320130");
 
 function escapeHtml(value = "") {

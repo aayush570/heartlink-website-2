@@ -84,8 +84,8 @@ for (const file of walk(publicDir)) {
     if (!is404 && !/<meta\s+property=["']og:url["']/i.test(text)) issue(`${relative}: missing static Open Graph URL`);
     if (!is404 && !/<meta\s+name=["']twitter:card["']/i.test(text)) issue(`${relative}: missing static Twitter card metadata`);
     if (is404 && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(text)) issue(`${relative}: 404 page must be noindex`);
-    if (!/\/styles\.css\?v=14/.test(text)) issue(`${relative}: stylesheet version is not current`);
-    if (!/\/app\.js\?v=10/.test(text)) issue(`${relative}: app script version is not current`);
+    if (!/\/styles\.css\?v=17/.test(text)) issue(`${relative}: stylesheet version is not current`);
+    if (!/\/app\.js\?v=11/.test(text)) issue(`${relative}: app script version is not current`);
 
     for (const image of text.matchAll(/<img\b[^>]*>/gi)) {
       if (!/\balt=["'][^"']*["']/i.test(image[0])) issue(`${relative}: image is missing an alt attribute`);
@@ -119,6 +119,9 @@ for (const field of ["title", "description"]) {
 const siteSettings = JSON.parse(readFileSync(join(contentDir, "site.json"), "utf8"));
 if (siteSettings.siteUrl !== "https://heartlink.in") issue("public/content/site.json: siteUrl must be https://heartlink.in");
 if (!/^#[0-9a-f]{6}$/i.test(siteSettings.primaryColor || "")) issue("public/content/site.json: primaryColor must be a six-digit hex colour");
+if (siteSettings.themeColor?.toUpperCase() !== "#320130") issue("public/content/site.json: browser theme must use brochure purple #320130");
+if (siteSettings.primaryColor?.toUpperCase() !== "#320130") issue("public/content/site.json: primary colour must use brochure purple #320130");
+if (siteSettings.secondaryAccentColor?.toUpperCase() !== "#4A1647") issue("public/content/site.json: secondary accent must use plum #4A1647");
 
 const privacy = JSON.parse(readFileSync(join(contentDir, "privacy.json"), "utf8"));
 if ((privacy.content?.sections || []).length < 6) issue("public/content/privacy.json: privacy notice must retain all launch sections");

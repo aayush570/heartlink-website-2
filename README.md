@@ -55,7 +55,7 @@ The old `/methodology` and `/impact` URLs are permanent redirects to `/membershi
 
 ## Launch checklist
 
-- Confirm the approved private-advisory palette remains in use: ivory, paper, maroon, forest, muted gold and ink.
+- Confirm the approved brochure-led palette remains in use: soft white, lilac, brochure purple, rich plum, restrained gold and ink.
 - Run `npm run check` before publishing.
 - Remove any draft proof cards or unapproved testimonials before publishing.
 - Configure Supabase and Resend environment variables in production.

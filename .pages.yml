@@ -87,10 +87,10 @@ content:
           - { name: defaultError, label: Default error message, type: text }
       - { name: siteUrl, label: Canonical site URL, type: string, description: "Production origin used by SEO metadata. Keep https://heartlink.in unless the primary domain changes." }
       - { name: defaultOgImage, label: Default social share image, type: image }
-      - { name: themeColor, label: Browser theme colour, type: string, description: "Use the approved ivory default #F8F3EB unless the brand system changes." }
+      - { name: themeColor, label: Browser theme colour, type: string, description: "Use the brochure purple #320130." }
       - { name: primaryColor, label: Primary maroon colour, type: string }
       - { name: accentColor, label: Signature gold colour, type: string }
-      - { name: secondaryAccentColor, label: Secondary green colour, type: string }
+      - { name: secondaryAccentColor, label: Secondary plum colour, type: string }
       - { name: conciergeEmail, label: Concierge email, type: string }
       - { name: whatsappNumber, label: WhatsApp number, type: string, description: "Use international format, for example +919326642337." }
       - { name: pressEmail, label: Press email, type: string }
