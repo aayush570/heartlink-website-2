@@ -1358,10 +1358,7 @@ main > .registry-section {
     linear-gradient(145deg, #491850 0%, #2b052e 72%);
 }
 .editorial-home-hero .hero-visual::before {
-  inset: 17% 9% 11%;
-  border: 1px solid rgba(232,203,133,.36);
-  border-radius: 48% 48% 0 0;
-  box-shadow: 0 0 0 14px rgba(232,203,133,.035), inset 0 0 80px rgba(232,203,133,.035);
+  content: none;
 }
 .editorial-home-hero .hero-founder img { height: clamp(450px, 61svh, 585px); }
 .editorial-home-hero .hero-founder span {
