@@ -4,12 +4,12 @@
   "logo": "/Heartlink Logo.png",
   "siteUrl": "https://heartlink.in",
   "headerCta": {
-    "showWhatsapp": false,
-    "whatsappLabel": "WhatsApp",
-    "primaryLabel": "Contact",
+    "showWhatsapp": true,
+    "whatsappLabel": "WhatsApp Enquiry",
+    "primaryLabel": "Contact Us",
     "primaryUrl": "#contact",
-    "mobileWhatsappLabel": "WhatsApp",
-    "mobilePrimaryLabel": "Contact"
+    "mobileWhatsappLabel": "WhatsApp Enquiry",
+    "mobilePrimaryLabel": "Contact Us"
   },
   "transactional": {
     "sendingLabel": "Sending privately...",

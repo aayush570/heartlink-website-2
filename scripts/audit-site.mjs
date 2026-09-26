@@ -84,7 +84,7 @@ for (const file of walk(publicDir)) {
     if (!is404 && !/<meta\s+property=["']og:url["']/i.test(text)) issue(`${relative}: missing static Open Graph URL`);
     if (!is404 && !/<meta\s+name=["']twitter:card["']/i.test(text)) issue(`${relative}: missing static Twitter card metadata`);
     if (is404 && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(text)) issue(`${relative}: 404 page must be noindex`);
-    if (!/\/styles\.css\?v=24/.test(text)) issue(`${relative}: stylesheet version is not current`);
+    if (!/\/styles\.css\?v=25/.test(text)) issue(`${relative}: stylesheet version is not current`);
     if (!/\/app\.js\?v=13/.test(text)) issue(`${relative}: app script version is not current`);
 
     for (const image of text.matchAll(/<img\b[^>]*>/gi)) {
