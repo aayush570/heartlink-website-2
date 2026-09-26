@@ -1297,15 +1297,16 @@ main > .registry-section {
 .simple-home-page .service-option {
   flex: 1 1 25%;
   min-width: 0;
-  padding: 30px clamp(16px, 2.1vw, 30px) 34px;
+  padding: 30px clamp(20px, 2.2vw, 30px) 34px;
   border-right: 1px solid var(--gold-soft);
 }
-.simple-home-page .service-option:first-child { padding-left: 0; }
-.simple-home-page .service-option:last-child { padding-right: 0; border-right: 0; }
+.simple-home-page .service-option:last-child { border-right: 0; }
 .simple-home-page .service-option h3 {
   margin: 24px 0 18px;
-  font-size: clamp(28px, 2.8vw, 40px);
+  font-size: clamp(20px, 2.35vw, 32px);
   line-height: 1.08;
+  white-space: nowrap;
+  letter-spacing: -.035em;
 }
 .simple-home-page .service-option p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
 
@@ -1336,8 +1337,6 @@ main > .registry-section {
     scrollbar-color: var(--gold) transparent;
   }
   .simple-home-page .service-option { flex: 0 0 min(72vw, 350px); scroll-snap-align: start; }
-  .simple-home-page .service-option:first-child { padding-left: 20px; }
-  .simple-home-page .service-option:last-child { padding-right: 20px; }
 }
 
 @media (max-width: 760px) {
