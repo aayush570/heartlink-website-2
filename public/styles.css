@@ -1220,3 +1220,14 @@ h1 em, h1 .accent, h2 em, h2 .accent, h3 em, h3 .accent, blockquote em, blockquo
   .career-role-list a > b { grid-column: 2; grid-row: 1 / span 2; }
   .section[id] { scroll-margin-top: 82px; }
 }
+
+/* Keep the opening hero deep plum and gently lift the rest of the page. */
+.home-hero { background: #2b052e; }
+main > section:not(.home-hero) { background-color: #3a1240; }
+main > .registry-section {
+  background: radial-gradient(circle at 88% 18%, rgba(217,184,108,.1), transparent 28%),
+    linear-gradient(135deg, #48134c, #3a1240);
+}
+.founder-card, .founder-stories article, .service-card, .partner-card,
+.contact-card, .privacy-grid article { background-color: #441b4b; }
+.plum-surface, .site-footer { background-color: #3a1240; }
