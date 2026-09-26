@@ -1269,3 +1269,81 @@ main > .registry-section {
 @media (max-width: 760px) {
   .simple-home-page .service-grid { grid-template-columns: 1fr; }
 }
+
+/* The homepage reads as a private editorial introduction. */
+.simple-home-page .founder-pair { gap: clamp(26px, 3.5vw, 48px); }
+.simple-home-page .founder-card {
+  display: block;
+  min-height: 0;
+  overflow: visible;
+  border: 0;
+  border-top: 1px solid var(--gold-soft);
+  background: transparent;
+}
+.simple-home-page .founder-card-portrait {
+  height: clamp(310px, 29vw, 420px);
+  background: radial-gradient(circle at 50% 24%, rgba(217,184,108,.12), transparent 36%), #3b1041;
+}
+.simple-home-page .founder-card-copy { display: block; min-height: 0; padding: 28px 0 0; }
+.simple-home-page .founder-card-copy h3 { margin: 12px 0 16px; }
+.simple-home-page .founder-card-copy p { max-width: 580px; margin: 0; font-size: 14px; line-height: 1.8; }
+
+.simple-home-page .service-options {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid var(--gold-soft);
+  border-bottom: 1px solid var(--gold-soft);
+}
+.simple-home-page .service-option {
+  flex: 1 1 25%;
+  min-width: 0;
+  padding: 30px clamp(16px, 2.1vw, 30px) 34px;
+  border-right: 1px solid var(--gold-soft);
+}
+.simple-home-page .service-option:first-child { padding-left: 0; }
+.simple-home-page .service-option:last-child { padding-right: 0; border-right: 0; }
+.simple-home-page .service-option h3 {
+  margin: 24px 0 18px;
+  font-size: clamp(28px, 2.8vw, 40px);
+  line-height: 1.08;
+}
+.simple-home-page .service-option p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+
+.simple-home-page .process-steps {
+  width: min(1050px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--gold-soft);
+}
+.simple-home-page .process-steps li {
+  display: grid;
+  grid-template-columns: 64px minmax(250px, .9fr) minmax(0, 1.1fr);
+  gap: 26px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--gold-soft);
+}
+.simple-home-page .process-steps li > span { color: var(--gold-bright); font: 500 27px/1 var(--serif); }
+.simple-home-page .process-steps h3 { margin: 0; font-size: clamp(25px, 2.6vw, 34px); line-height: 1.1; }
+.simple-home-page .process-steps p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+
+@media (max-width: 900px) {
+  .simple-home-page .service-options {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    scrollbar-color: var(--gold) transparent;
+  }
+  .simple-home-page .service-option { flex: 0 0 min(72vw, 350px); scroll-snap-align: start; }
+  .simple-home-page .service-option:first-child { padding-left: 20px; }
+  .simple-home-page .service-option:last-child { padding-right: 20px; }
+}
+
+@media (max-width: 760px) {
+  .simple-home-page .founder-card-portrait { height: 360px; }
+  .simple-home-page .founder-card-copy { padding-top: 24px; }
+  .simple-home-page .founder-card-copy p { font-size: 13px; }
+  .simple-home-page .process-steps li { grid-template-columns: 42px minmax(0, 1fr); gap: 8px 16px; padding: 22px 0; }
+  .simple-home-page .process-steps p { grid-column: 2; }
+}

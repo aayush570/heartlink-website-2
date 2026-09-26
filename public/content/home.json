@@ -7,11 +7,11 @@
     "ogImage": "/media/heartlink-heritage-invitation.png"
   },
   "hero": {
-    "eyebrow": "Private matchmaking · Mumbai, India & worldwide",
-    "title": "Thoughtful matchmaking for <em>select Indian families.</em>",
-    "description": "HeartLink brings trusted family networks and relationship insight together to make considered, personal introductions.",
-    "primaryButton": "Meet the founders",
-    "primaryUrl": "#founders",
+    "eyebrow": "HeartLink · Private Matchmaking",
+    "title": "Connecting people.<br><em>Bringing families together.</em>",
+    "description": "Personalised matchmaking and family guidance for Indian marriages, in India and around the world. Every introduction is handled with discretion and care.",
+    "primaryButton": "Begin a private conversation",
+    "primaryUrl": "#contact",
     "whatsappButton": "Quick WhatsApp Enquiry",
     "assurances": [
       "Personally led by both co-founders",
@@ -88,9 +88,9 @@
     "secondaryUrl": "#services"
   },
   "founderHeading": {
-    "eyebrow": "About the founders",
-    "title": "The people behind <em>HeartLink.</em>",
-    "description": "Gopi Shah and Alpa Apoorva personally guide every search."
+    "eyebrow": "The founders",
+    "title": "Personally led, <em>from the first conversation.</em>",
+    "description": "Gopi Shah and Alpa Apoorva bring family understanding and relationship insight to every search."
   },
   "founders": [
     {
@@ -98,7 +98,7 @@
       "role": "Co-Founder & Matchmaking Advisor",
       "image": "/media/gopi-shah.png",
       "imageAlt": "Gopi Shah, HeartLink co-founder",
-      "summary": "Gopi brings decades of family-first matchmaking, trusted networks and community experience.",
+      "summary": "Gopi Shah’s work has long centred on education, Indian culture and community. She began with Khar Education Society, shared Indian culture internationally and organised tribal showcases with NGO Jwala. Her matrimonial service, Jeevansathi, grew from personal trust. A recipient of the Dr. Sarojini Naidu International Award, she brings that same care and discretion to HeartLink.",
       "linkText": "Meet Gopi",
       "linkUrl": "#founders",
       "showLink": false
@@ -108,7 +108,7 @@
       "role": "Co-Founder & Relationship Advisor",
       "image": "/media/alpa-apoorva.png",
       "imageAlt": "Alpa Apoorva, HeartLink co-founder",
-      "summary": "Alpa brings relationship insight and emotional clarity to questions of readiness, compatibility and long-term fit.",
+      "summary": "Alpa Apoorva is a certified emotional therapist, relationship and transformation coach, and menopause trainer. She helps individuals understand themselves and approach relationships with clarity. At HeartLink, she guides conversations about compatibility, expectations and family dynamics with patience, compassion and sound judgment.",
       "linkText": "Meet Alpa",
       "linkUrl": "#founders",
       "showLink": false
