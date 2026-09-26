@@ -195,7 +195,7 @@ h1 em, h1 .accent, h2 em, h2 .accent, h3 em, h3 .accent, blockquote em, blockquo
   border-radius: 50% 50% 8px 8px;
   box-shadow: 0 0 0 18px rgba(255,255,255,.035);
 }
-.hero-founders { position: relative; z-index: 1; height: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(8px, 1.4vw, 20px); align-items: end; }
+.hero-founders { position: relative; z-index: 1; height: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; align-items: end; }
 .hero-founder { position: relative; height: 100%; min-width: 0; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; }
 .hero-founder img { width: 100%; height: clamp(410px, 57svh, 500px); object-fit: contain; object-position: center bottom; filter: saturate(.94) contrast(1.02); }
 .hero-founder span { position: absolute; right: 0; bottom: 0; left: 0; min-height: 56px; padding: 10px 12px; color: rgba(255,255,255,.7); background: rgba(50,1,48,.9); font-size: 6.5px; font-weight: 600; line-height: 1.45; letter-spacing: .13em; text-align: center; text-transform: uppercase; backdrop-filter: blur(8px); }
