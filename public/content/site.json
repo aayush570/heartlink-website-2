@@ -4,11 +4,12 @@
   "logo": "/Heartlink Logo.png",
   "siteUrl": "https://heartlink.in",
   "headerCta": {
+    "showWhatsapp": false,
     "whatsappLabel": "WhatsApp",
-    "primaryLabel": "Start an Enquiry",
+    "primaryLabel": "Contact",
     "primaryUrl": "#contact",
     "mobileWhatsappLabel": "WhatsApp",
-    "mobilePrimaryLabel": "Start an Enquiry"
+    "mobilePrimaryLabel": "Contact"
   },
   "transactional": {
     "sendingLabel": "Sending privately...",
@@ -31,86 +32,35 @@
   "privacyEmail": "privacy@heartlink.in",
   "partnershipsEmail": "partnerships@heartlink.in",
   "locations": "Mumbai · India · Global",
-  "footerStatement": "Private matchmaking,<br>personally led.",
-  "footerLegal": "Every enquiry is reviewed privately. Profiles are never public or searchable, and identifying details are shared only with permission.",
+  "footerStatement": "Private matchmaking, personally led.",
+  "footerLegal": "Every enquiry is reviewed privately. Profiles are shared only with permission.",
   "footerColumns": [
     {
-      "title": "Start Here",
+      "title": "Contact",
       "links": [
         {
-          "label": "Apply to Registry",
+          "label": "Contact form",
           "href": "#contact"
         },
         {
-          "label": "Quick WhatsApp Enquiry",
+          "label": "WhatsApp",
           "href": "{{whatsapp}}"
         },
         {
           "label": "concierge@heartlink.in",
           "href": "mailto:concierge@heartlink.in"
-        }
-      ]
-    },
-    {
-      "title": "Learn More",
-      "links": [
-        {
-          "label": "About Our Founders",
-          "href": "#founders"
         },
         {
-          "label": "Our process",
-          "href": "#process"
-        },
-        {
-          "label": "Trust & recognition",
-          "href": "#about"
-        }
-      ]
-    },
-    {
-      "title": "More",
-      "links": [
-        {
-          "label": "Services",
-          "href": "#services"
-        },
-        {
-          "label": "Partnerships",
-          "href": "#partners"
-        },
-        {
-          "label": "Careers",
-          "href": "#careers"
-        },
-        {
-          "label": "Privacy",
+          "label": "Privacy note",
           "href": "#privacy"
-        }
-      ]
-    },
-    {
-      "title": "Visit",
-      "links": [
-        {
-          "label": "Juhu, Mumbai",
-          "href": "#contact"
-        },
-        {
-          "label": "By appointment only",
-          "href": "#contact"
-        },
-        {
-          "label": "+91 93266 42337",
-          "href": "tel:+919326642337"
         }
       ]
     }
   ],
   "navigation": [
     {
-      "label": "About",
-      "href": "#about"
+      "label": "Founders",
+      "href": "#founders"
     },
     {
       "label": "Services",
@@ -119,14 +69,6 @@
     {
       "label": "Process",
       "href": "#process"
-    },
-    {
-      "label": "Founders",
-      "href": "#founders"
-    },
-    {
-      "label": "Partnerships",
-      "href": "#partners"
     },
     {
       "label": "Contact",

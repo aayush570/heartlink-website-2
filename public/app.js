@@ -300,6 +300,8 @@ function renderHeader() {
   if (!header) return;
   const headerCta = site.headerCta || {};
   const primaryUrl = siteHref(headerCta.primaryUrl || "/apply", "/apply");
+  const whatsappCta = headerCta.showWhatsapp === false ? "" : `<a class="button button-small button-outline desktop-contact" data-whatsapp-link href="${whatsappHref}">${escapeHtml(headerCta.whatsappLabel || "WhatsApp")}</a>`;
+  const mobileWhatsappCta = headerCta.showWhatsapp === false ? "" : `<a class="button button-outline" data-whatsapp-link href="${whatsappHref}">${escapeHtml(headerCta.mobileWhatsappLabel || headerCta.whatsappLabel || "Quick WhatsApp Enquiry")}</a>`;
   const main = document.querySelector("main");
   if (main && !main.id) main.id = "main-content";
   header.className = "site-header";
@@ -317,7 +319,7 @@ function renderHeader() {
         }).join("")}
       </nav>
       <div class="nav-actions">
-        <a class="button button-small button-outline desktop-contact" data-whatsapp-link href="${whatsappHref}">${escapeHtml(headerCta.whatsappLabel || "WhatsApp")}</a>
+        ${whatsappCta}
         <a class="button button-small desktop-apply" href="${escapeHtml(primaryUrl)}">${escapeHtml(headerCta.primaryLabel || "Apply to Registry")}</a>
       </div>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
@@ -328,7 +330,7 @@ function renderHeader() {
           const safeHref = siteHref(href, "/");
           return `<a href="${escapeHtml(safeHref)}" ${path === safeHref ? 'aria-current="page"' : ""}><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(label)}</a>`;
         }).join("")}
-        <div class="mobile-actions"><a class="button" href="${escapeHtml(primaryUrl)}">${escapeHtml(headerCta.mobilePrimaryLabel || headerCta.primaryLabel || "Apply to Registry")}</a><a class="button button-outline" data-whatsapp-link href="${whatsappHref}">${escapeHtml(headerCta.mobileWhatsappLabel || headerCta.whatsappLabel || "Quick WhatsApp Enquiry")}</a></div>
+        <div class="mobile-actions"><a class="button" href="${escapeHtml(primaryUrl)}">${escapeHtml(headerCta.mobilePrimaryLabel || headerCta.primaryLabel || "Apply to Registry")}</a>${mobileWhatsappCta}</div>
       </nav>
     </div>`;
 
@@ -459,7 +461,7 @@ function renderHome() {
             <span>${escapeHtml(founder.role)}</span>
             <h3>${escapeHtml(founder.name)}</h3>
             <p>${escapeHtml(founder.summary)}</p>
-            <a class="text-link" href="${escapeHtml(link)}">${escapeHtml(founder.linkText || `Meet ${founder.name}`)} <b>↗</b></a>
+            ${founder.showLink === false ? "" : `<a class="text-link" href="${escapeHtml(link)}">${escapeHtml(founder.linkText || `Meet ${founder.name}`)} <b>↗</b></a>`}
           </div>
         </article>`;
     }).join("");

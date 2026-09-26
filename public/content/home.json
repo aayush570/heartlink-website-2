@@ -7,11 +7,11 @@
     "ogImage": "/media/heartlink-heritage-invitation.png"
   },
   "hero": {
-    "eyebrow": "Founder-led · Mumbai, India & worldwide",
-    "title": "Private matchmaking, with <em>judgment at every step.</em>",
-    "description": "HeartLink helps select Indian families find serious, compatible introductions. Co-founders Gopi Shah and Alpa Apoorva personally combine trusted networks with relationship insight.",
-    "primaryButton": "Start a private enquiry",
-    "primaryUrl": "#contact",
+    "eyebrow": "Private matchmaking · Mumbai, India & worldwide",
+    "title": "Thoughtful matchmaking for <em>select Indian families.</em>",
+    "description": "HeartLink brings trusted family networks and relationship insight together to make considered, personal introductions.",
+    "primaryButton": "Meet the founders",
+    "primaryUrl": "#founders",
     "whatsappButton": "Quick WhatsApp Enquiry",
     "assurances": [
       "Personally led by both co-founders",
@@ -88,9 +88,9 @@
     "secondaryUrl": "#services"
   },
   "founderHeading": {
-    "eyebrow": "Personally led",
-    "title": "Two founders. <em>One thoughtful process.</em>",
-    "description": "Gopi Shah and Alpa Apoorva bring two equally important perspectives to every serious introduction."
+    "eyebrow": "About the founders",
+    "title": "The people behind <em>HeartLink.</em>",
+    "description": "Gopi Shah and Alpa Apoorva personally guide every search."
   },
   "founders": [
     {
@@ -98,18 +98,20 @@
       "role": "Co-Founder & Matchmaking Advisor",
       "image": "/media/gopi-shah.png",
       "imageAlt": "Gopi Shah, HeartLink co-founder",
-      "summary": "Gopi brings trusted family networks, community experience and practical matchmaking judgment.",
+      "summary": "Gopi brings decades of family-first matchmaking, trusted networks and community experience.",
       "linkText": "Meet Gopi",
-      "linkUrl": "#founders"
+      "linkUrl": "#founders",
+      "showLink": false
     },
     {
       "name": "Alpa Apoorva",
       "role": "Co-Founder & Relationship Advisor",
       "image": "/media/alpa-apoorva.png",
       "imageAlt": "Alpa Apoorva, HeartLink co-founder",
-      "summary": "Alpa brings relationship insight, emotional clarity and guidance for individuals and families.",
+      "summary": "Alpa brings relationship insight and emotional clarity to questions of readiness, compatibility and long-term fit.",
       "linkText": "Meet Alpa",
-      "linkUrl": "#founders"
+      "linkUrl": "#founders",
+      "showLink": false
     }
   ],
   "finalCta": {

@@ -1233,3 +1233,39 @@ main > .registry-section {
   background-color: #57255f;
 }
 .plum-surface, .site-footer { background-color: #4a1d52; }
+
+/* Simple homepage layout. */
+.home-hero.simple-home-hero {
+  display: block;
+  min-height: 0;
+  padding: clamp(68px, 9vw, 112px) 24px;
+  background: #2b052e;
+}
+.simple-home-hero .hero-invitation {
+  width: min(900px, 100%);
+  min-height: 0;
+  margin: 0 auto;
+  padding: 0;
+  align-items: center;
+  border: 0;
+  background: #2b052e;
+  text-align: center;
+  animation: none;
+}
+.simple-home-hero .invitation-rule { justify-content: center; }
+.simple-home-hero h1 { max-width: 860px; margin: 14px auto 18px; }
+.simple-home-hero .hero-copy { max-width: 660px; margin: 0 auto; }
+.simple-home-hero .hero-actions { justify-content: center; margin-top: 26px; }
+.simple-home-page .section-heading { margin-bottom: 28px; }
+.simple-home-page .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.simple-home-page .service-card { min-height: 0; padding: 28px; display: block; }
+.simple-home-page .service-card h3 { margin: 22px 0 12px; }
+.site-footer .footer-links { grid-template-columns: minmax(0, 1fr); }
+.privacy-note { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
+.privacy-note summary { color: var(--gold-bright); cursor: pointer; font-size: 12px; }
+.privacy-note p { margin: 14px 0 0; color: var(--muted); font-size: 12px; }
+.privacy-note a { color: var(--gold-bright); }
+
+@media (max-width: 760px) {
+  .simple-home-page .service-grid { grid-template-columns: 1fr; }
+}
