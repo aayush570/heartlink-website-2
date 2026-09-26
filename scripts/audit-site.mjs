@@ -84,7 +84,7 @@ for (const file of walk(publicDir)) {
     if (!is404 && !/<meta\s+property=["']og:url["']/i.test(text)) issue(`${relative}: missing static Open Graph URL`);
     if (!is404 && !/<meta\s+name=["']twitter:card["']/i.test(text)) issue(`${relative}: missing static Twitter card metadata`);
     if (is404 && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(text)) issue(`${relative}: 404 page must be noindex`);
-    if (!/\/styles\.css\?v=30/.test(text)) issue(`${relative}: stylesheet version is not current`);
+    if (!/\/styles\.css\?v=31/.test(text)) issue(`${relative}: stylesheet version is not current`);
     if (!/\/app\.js\?v=13/.test(text)) issue(`${relative}: app script version is not current`);
 
     for (const image of text.matchAll(/<img\b[^>]*>/gi)) {
@@ -119,9 +119,9 @@ for (const field of ["title", "description"]) {
 const siteSettings = JSON.parse(readFileSync(join(contentDir, "site.json"), "utf8"));
 if (siteSettings.siteUrl !== "https://heartlink.in") issue("public/content/site.json: siteUrl must be https://heartlink.in");
 if (!/^#[0-9a-f]{6}$/i.test(siteSettings.primaryColor || "")) issue("public/content/site.json: primaryColor must be a six-digit hex colour");
-if (siteSettings.themeColor?.toUpperCase() !== "#421648") issue("public/content/site.json: browser theme must use the current lighter plum #421648");
-if (siteSettings.primaryColor?.toUpperCase() !== "#421648") issue("public/content/site.json: primary colour must use the current lighter plum #421648");
-if (siteSettings.secondaryAccentColor?.toUpperCase() !== "#63336E") issue("public/content/site.json: secondary accent must use coordinated plum #63336E");
+if (siteSettings.themeColor?.toUpperCase() !== "#31002F") issue("public/content/site.json: browser theme must use the brochure plum #31002F");
+if (siteSettings.primaryColor?.toUpperCase() !== "#31002F") issue("public/content/site.json: primary colour must use the brochure plum #31002F");
+if (siteSettings.secondaryAccentColor?.toUpperCase() !== "#3B0A3B") issue("public/content/site.json: secondary accent must use coordinated plum #3B0A3B");
 
 const privacy = JSON.parse(readFileSync(join(contentDir, "privacy.json"), "utf8"));
 if ((privacy.content?.sections || []).length < 6) issue("public/content/privacy.json: privacy notice must retain all launch sections");

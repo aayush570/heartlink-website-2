@@ -20,11 +20,11 @@
     "defaultError": "We could not receive this enquiry. Please try again or contact HeartLink directly."
   },
   "defaultOgImage": "/media/heartlink-heritage-invitation.png",
-  "themeColor": "#421648",
-  "primaryColor": "#421648",
-  "headingColor": "#F8EEF7",
-  "accentColor": "#E8CB85",
-  "secondaryAccentColor": "#63336E",
+  "themeColor": "#31002F",
+  "primaryColor": "#31002F",
+  "headingColor": "#FFF8FF",
+  "accentColor": "#F3C600",
+  "secondaryAccentColor": "#3B0A3B",
   "conciergeEmail": "concierge@heartlink.in",
   "whatsappNumber": "+919326642337",
   "pressEmail": "press@heartlink.in",
@@ -58,6 +58,10 @@
     }
   ],
   "navigation": [
+    {
+      "label": "About",
+      "href": "#about"
+    },
     {
       "label": "Founders",
       "href": "#founders"
