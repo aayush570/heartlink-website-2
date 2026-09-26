@@ -1223,11 +1223,13 @@ h1 em, h1 .accent, h2 em, h2 .accent, h3 em, h3 .accent, blockquote em, blockquo
 
 /* Keep the opening hero deep plum and gently lift the rest of the page. */
 .home-hero { background: #2b052e; }
-main > section:not(.home-hero) { background-color: #3a1240; }
+main > section:not(.home-hero) { background-color: #4a1d52; }
 main > .registry-section {
   background: radial-gradient(circle at 88% 18%, rgba(217,184,108,.1), transparent 28%),
-    linear-gradient(135deg, #48134c, #3a1240);
+    linear-gradient(135deg, #51205a, #4a1d52);
 }
 .founder-card, .founder-stories article, .service-card, .partner-card,
-.contact-card, .privacy-grid article { background-color: #441b4b; }
-.plum-surface, .site-footer { background-color: #3a1240; }
+.contact-card, .privacy-grid article, .lens-card, .form-card {
+  background-color: #57255f;
+}
+.plum-surface, .site-footer { background-color: #4a1d52; }
