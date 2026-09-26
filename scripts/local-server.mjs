@@ -23,32 +23,23 @@ const types = {
 };
 
 const pageRoutes = new Map([
-  ["/", "index.html"],
-  ["/about", "about.html"],
-  ["/membership", "membership.html"],
-  ["/partnerships", "partnerships.html"],
-  ["/careers", "careers.html"],
-  ["/apply", "apply.html"],
-  ["/contact", "contact.html"],
-  ["/privacy", "privacy.html"]
+  ["/", "index.html"]
 ]);
 
 const redirectRoutes = new Map([
-  ["/impact", "/about#trust"],
-  ["/impact.html", "/about#trust"],
-  ["/methodology", "/membership#process"],
-  ["/methodology.html", "/membership#process"]
+  ["/about", "/#about"], ["/about.html", "/#about"],
+  ["/membership", "/#services"], ["/membership.html", "/#services"],
+  ["/partnerships", "/#partners"], ["/partnerships.html", "/#partners"],
+  ["/careers", "/#careers"], ["/careers.html", "/#careers"],
+  ["/apply", "/#contact"], ["/apply.html", "/#contact"],
+  ["/contact", "/#contact"], ["/contact.html", "/#contact"],
+  ["/privacy", "/#privacy"], ["/privacy.html", "/#privacy"],
+  ["/impact", "/#about"], ["/impact.html", "/#about"],
+  ["/methodology", "/#process"], ["/methodology.html", "/#process"]
 ]);
 
 const liveRoutes = new Map([
-  ["/", { priority: "1.0", changefreq: "weekly" }],
-  ["/about", { priority: "0.8", changefreq: "monthly" }],
-  ["/membership", { priority: "0.9", changefreq: "monthly" }],
-  ["/partnerships", { priority: "0.6", changefreq: "monthly" }],
-  ["/careers", { priority: "0.5", changefreq: "monthly" }],
-  ["/apply", { priority: "0.9", changefreq: "monthly" }],
-  ["/contact", { priority: "0.7", changefreq: "monthly" }],
-  ["/privacy", { priority: "0.3", changefreq: "yearly" }]
+  ["/", { priority: "1.0", changefreq: "weekly" }]
 ]);
 const securityHeaders = {
   "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; object-src 'none'",

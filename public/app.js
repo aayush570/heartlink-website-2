@@ -34,11 +34,16 @@ const whatsappHref = whatsappDigits ? `https://wa.me/${whatsappDigits}` : "/cont
 const siteOrigin = String(site.siteUrl || window.location.origin).replace(/\/$/, "");
 const canonicalHref = `${siteOrigin}${path === "/" ? "/" : path}`;
 
-document.documentElement.style.setProperty("--maroon", site.primaryColor || "#320130");
-document.documentElement.style.setProperty("--gold", site.accentColor || "#B8954F");
-document.documentElement.style.setProperty("--gold-bright", site.accentColor || "#B8954F");
-document.documentElement.style.setProperty("--plum-deep", site.secondaryAccentColor || "#4A1647");
-document.documentElement.style.setProperty("--headline-purple", site.primaryColor || "#320130");
+document.documentElement.style.setProperty("--maroon", site.primaryColor || "#2B052E");
+document.documentElement.style.setProperty("--gold", site.accentColor || "#E8CB85");
+document.documentElement.style.setProperty("--gold-bright", site.accentColor || "#E8CB85");
+document.documentElement.style.setProperty("--plum-deep", site.secondaryAccentColor || "#48134C");
+document.documentElement.style.setProperty("--headline-purple", site.headingColor || "#F8EEF7");
+
+function siteHref(url = "#", fallback = "/") {
+  const safe = safeUrl(url, fallback);
+  return pageKey !== "home" && safe.startsWith("#") ? `/${safe}` : safe;
+}
 
 function escapeHtml(value = "") {
   return String(value)
@@ -247,7 +252,7 @@ function updateMeta(seo = {}) {
     }
     tag.setAttribute("content", content);
   });
-  upsertHeadTag('meta[name="theme-color"]', "meta", { name: "theme-color", content: site.themeColor || "#FFFFFF" });
+  upsertHeadTag('meta[name="theme-color"]', "meta", { name: "theme-color", content: site.themeColor || "#2B052E" });
   if (!managedPages.has(pageKey)) {
     upsertHeadTag('meta[name="robots"]', "meta", { name: "robots", content: "noindex, nofollow" });
   }
@@ -294,7 +299,7 @@ function renderHeader() {
   const header = document.querySelector("[data-site-header]");
   if (!header) return;
   const headerCta = site.headerCta || {};
-  const primaryUrl = safeUrl(headerCta.primaryUrl || "/apply", "/apply");
+  const primaryUrl = siteHref(headerCta.primaryUrl || "/apply", "/apply");
   const main = document.querySelector("main");
   if (main && !main.id) main.id = "main-content";
   header.className = "site-header";
@@ -307,7 +312,7 @@ function renderHeader() {
       </a>
       <nav class="desktop-nav" aria-label="Primary navigation">
         ${navigation.map(({ href, label }) => {
-          const safeHref = safeUrl(href, "/");
+          const safeHref = siteHref(href, "/");
           return `<a href="${escapeHtml(safeHref)}" ${path === safeHref ? 'aria-current="page"' : ""}>${escapeHtml(label)}</a>`;
         }).join("")}
       </nav>
@@ -320,7 +325,7 @@ function renderHeader() {
     <div class="mobile-menu" aria-hidden="true">
       <nav aria-label="Mobile navigation">
         ${navigation.map(({ href, label }, index) => {
-          const safeHref = safeUrl(href, "/");
+          const safeHref = siteHref(href, "/");
           return `<a href="${escapeHtml(safeHref)}" ${path === safeHref ? 'aria-current="page"' : ""}><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(label)}</a>`;
         }).join("")}
         <div class="mobile-actions"><a class="button" href="${escapeHtml(primaryUrl)}">${escapeHtml(headerCta.mobilePrimaryLabel || headerCta.primaryLabel || "Apply to Registry")}</a><a class="button button-outline" data-whatsapp-link href="${whatsappHref}">${escapeHtml(headerCta.mobileWhatsappLabel || headerCta.whatsappLabel || "Quick WhatsApp Enquiry")}</a></div>
@@ -365,7 +370,7 @@ function renderFooter() {
         <div>
           <span>${escapeHtml(column.title)}</span>
           ${(column.links || []).map((link) => {
-            const href = link.href === "{{whatsapp}}" ? whatsappHref : safeUrl(link.href, "/");
+            const href = link.href === "{{whatsapp}}" ? whatsappHref : siteHref(link.href, "/");
             return `<a ${href === whatsappHref ? "data-whatsapp-link " : ""}href="${escapeHtml(href)}"${linkAttrs(href)}>${escapeHtml(link.label)}</a>`;
           }).join("")}
         </div>`).join("")}

@@ -5,10 +5,10 @@
   "siteUrl": "https://heartlink.in",
   "headerCta": {
     "whatsappLabel": "WhatsApp",
-    "primaryLabel": "Apply to Registry",
-    "primaryUrl": "/apply",
+    "primaryLabel": "Start an Enquiry",
+    "primaryUrl": "#contact",
     "mobileWhatsappLabel": "WhatsApp",
-    "mobilePrimaryLabel": "Apply to Registry"
+    "mobilePrimaryLabel": "Start an Enquiry"
   },
   "transactional": {
     "sendingLabel": "Sending privately...",
@@ -19,10 +19,11 @@
     "defaultError": "We could not receive this enquiry. Please try again or contact HeartLink directly."
   },
   "defaultOgImage": "/media/heartlink-heritage-invitation.png",
-  "themeColor": "#320130",
-  "primaryColor": "#320130",
-  "accentColor": "#B58A32",
-  "secondaryAccentColor": "#4A1647",
+  "themeColor": "#2B052E",
+  "primaryColor": "#2B052E",
+  "headingColor": "#F8EEF7",
+  "accentColor": "#E8CB85",
+  "secondaryAccentColor": "#48134C",
   "conciergeEmail": "concierge@heartlink.in",
   "whatsappNumber": "+919326642337",
   "pressEmail": "press@heartlink.in",
@@ -38,7 +39,7 @@
       "links": [
         {
           "label": "Apply to Registry",
-          "href": "/apply"
+          "href": "#contact"
         },
         {
           "label": "Quick WhatsApp Enquiry",
@@ -55,15 +56,15 @@
       "links": [
         {
           "label": "About Our Founders",
-          "href": "/about"
+          "href": "#founders"
         },
         {
           "label": "Our process",
-          "href": "/membership#process"
+          "href": "#process"
         },
         {
           "label": "Trust & recognition",
-          "href": "/about#trust"
+          "href": "#about"
         }
       ]
     },
@@ -72,19 +73,19 @@
       "links": [
         {
           "label": "Services",
-          "href": "/membership"
+          "href": "#services"
         },
         {
           "label": "Partnerships",
-          "href": "/partnerships"
+          "href": "#partners"
         },
         {
           "label": "Careers",
-          "href": "/careers"
+          "href": "#careers"
         },
         {
           "label": "Privacy",
-          "href": "/privacy"
+          "href": "#privacy"
         }
       ]
     },
@@ -93,11 +94,11 @@
       "links": [
         {
           "label": "Juhu, Mumbai",
-          "href": "/contact"
+          "href": "#contact"
         },
         {
           "label": "By appointment only",
-          "href": "/contact"
+          "href": "#contact"
         },
         {
           "label": "+91 93266 42337",
@@ -108,24 +109,28 @@
   ],
   "navigation": [
     {
-      "label": "Home",
-      "href": "/"
-    },
-    {
       "label": "About",
-      "href": "/about"
+      "href": "#about"
     },
     {
       "label": "Services",
-      "href": "/membership"
+      "href": "#services"
+    },
+    {
+      "label": "Process",
+      "href": "#process"
+    },
+    {
+      "label": "Founders",
+      "href": "#founders"
     },
     {
       "label": "Partnerships",
-      "href": "/partnerships"
+      "href": "#partners"
     },
     {
-      "label": "Careers",
-      "href": "/careers"
+      "label": "Contact",
+      "href": "#contact"
     }
   ]
 }

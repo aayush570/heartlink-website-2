@@ -10,8 +10,8 @@
     "eyebrow": "Founder-led · Mumbai, India & worldwide",
     "title": "Private matchmaking, with <em>judgment at every step.</em>",
     "description": "HeartLink helps select Indian families find serious, compatible introductions. Co-founders Gopi Shah and Alpa Apoorva personally combine trusted networks with relationship insight.",
-    "primaryButton": "Apply to the Registry",
-    "primaryUrl": "/apply",
+    "primaryButton": "Start a private enquiry",
+    "primaryUrl": "#contact",
     "whatsappButton": "Quick WhatsApp Enquiry",
     "assurances": [
       "Personally led by both co-founders",
@@ -45,7 +45,7 @@
       "We look beyond education and profession to values, temperament, lifestyle, family expectations and readiness for marriage. Nothing is shared until both sides are comfortable."
     ],
     "linkText": "Meet our founders",
-    "linkUrl": "/about"
+    "linkUrl": "#founders"
   },
   "audience": {
     "eyebrow": "One process, two perspectives",
@@ -82,10 +82,10 @@
     "paragraphs": [
       "If a current search appears relevant, we contact you first. Nothing identifying is shared without permission."
     ],
-    "primaryLabel": "Apply to the Registry",
-    "primaryUrl": "/apply",
+    "primaryLabel": "Discuss registry options",
+    "primaryUrl": "#contact",
     "secondaryLabel": "View service options",
-    "secondaryUrl": "/membership"
+    "secondaryUrl": "#services"
   },
   "founderHeading": {
     "eyebrow": "Personally led",
@@ -100,7 +100,7 @@
       "imageAlt": "Gopi Shah, HeartLink co-founder",
       "summary": "Gopi brings trusted family networks, community experience and practical matchmaking judgment.",
       "linkText": "Meet Gopi",
-      "linkUrl": "/about"
+      "linkUrl": "#founders"
     },
     {
       "name": "Alpa Apoorva",
@@ -109,15 +109,15 @@
       "imageAlt": "Alpa Apoorva, HeartLink co-founder",
       "summary": "Alpa brings relationship insight, emotional clarity and guidance for individuals and families.",
       "linkText": "Meet Alpa",
-      "linkUrl": "/about"
+      "linkUrl": "#founders"
     }
   ],
   "finalCta": {
     "eyebrow": "Start here",
     "title": "Tell us who you are looking for.<br><em>We will tell you honestly if we can help.</em>",
     "description": "Share a first picture of the individual and family. Every serious enquiry is reviewed privately before we recommend a next step.",
-    "primaryLabel": "Apply to the Registry",
-    "primaryUrl": "/apply",
+    "primaryLabel": "Request a conversation",
+    "primaryUrl": "#contact",
     "showWhatsapp": true,
     "whatsappLabel": "Quick WhatsApp Enquiry",
     "note": "By appointment only"

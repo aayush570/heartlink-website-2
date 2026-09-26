@@ -6,8 +6,24 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/impact", "destination": "/about#trust", "permanent": true },
-    { "source": "/methodology", "destination": "/membership#process", "permanent": true }
+    { "source": "/about", "destination": "/#about", "permanent": true },
+    { "source": "/membership", "destination": "/#services", "permanent": true },
+    { "source": "/partnerships", "destination": "/#partners", "permanent": true },
+    { "source": "/careers", "destination": "/#careers", "permanent": true },
+    { "source": "/apply", "destination": "/#contact", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true },
+    { "source": "/privacy", "destination": "/#privacy", "permanent": true },
+    { "source": "/about.html", "destination": "/#about", "permanent": true },
+    { "source": "/membership.html", "destination": "/#services", "permanent": true },
+    { "source": "/partnerships.html", "destination": "/#partners", "permanent": true },
+    { "source": "/careers.html", "destination": "/#careers", "permanent": true },
+    { "source": "/apply.html", "destination": "/#contact", "permanent": true },
+    { "source": "/contact.html", "destination": "/#contact", "permanent": true },
+    { "source": "/privacy.html", "destination": "/#privacy", "permanent": true },
+    { "source": "/impact", "destination": "/#about", "permanent": true },
+    { "source": "/impact.html", "destination": "/#about", "permanent": true },
+    { "source": "/methodology", "destination": "/#process", "permanent": true },
+    { "source": "/methodology.html", "destination": "/#process", "permanent": true }
   ],
   "rewrites": [
     { "source": "/api/applications", "destination": "/api/submissions" }

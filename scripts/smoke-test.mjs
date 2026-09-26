@@ -64,7 +64,7 @@ async function waitForServer() {
 try {
   await waitForServer();
 
-  for (const route of ["/", "/about", "/membership", "/partnerships", "/careers", "/apply", "/contact", "/privacy"]) {
+  for (const route of ["/"]) {
     const response = await fetch(`${origin}${route}`);
     const html = await response.text();
     assert(response.status === 200, `${route} returned ${response.status}`);
@@ -79,14 +79,22 @@ try {
   assert(missing.status === 404, `404 route returned ${missing.status}`);
   assert(/noindex, nofollow/i.test(missingHtml), "404 page is not marked noindex");
 
-  const redirect = await fetch(`${origin}/methodology`, { redirect: "manual" });
-  assert(redirect.status === 301, `legacy redirect returned ${redirect.status}`);
-  assert(redirect.headers.get("location") === "/membership#process", "legacy redirect target is incorrect");
+  for (const [route, destination] of [
+    ["/about", "/#about"], ["/membership", "/#services"],
+    ["/partnerships", "/#partners"], ["/careers", "/#careers"],
+    ["/apply", "/#contact"], ["/contact", "/#contact"],
+    ["/privacy", "/#privacy"], ["/methodology", "/#process"]
+  ]) {
+    const redirect = await fetch(`${origin}${route}`, { redirect: "manual" });
+    assert(redirect.status === 301, `${route} returned redirect status ${redirect.status}`);
+    assert(redirect.headers.get("location") === destination, `${route} redirect target is incorrect`);
+  }
 
   const robots = await (await fetch(`${origin}/robots.txt`)).text();
   assert(robots.includes("Disallow: /api/"), "robots.txt does not protect API routes");
   const sitemap = await (await fetch(`${origin}/sitemap.xml`)).text();
-  assert(sitemap.includes(`<loc>${origin}/apply</loc>`), "sitemap is missing the apply route");
+  assert(sitemap.includes(`<loc>${origin}/</loc>`), "sitemap is missing the single homepage route");
+  assert(!sitemap.includes(`${origin}/apply</loc>`), "sitemap still lists retired standalone pages");
 
   const invalidSubmission = await fetch(`${origin}/api/submissions`, {
     method: "POST",
